@@ -16,4 +16,5 @@ Card peek/pop controller
 <br><br><br><br>
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/navigation-stack/master/Navigation-Stack.gif)](https://github.com/Ramotion/navigation-stack)
+##NavigationStack
 Stack-modeled navigation controller
