@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841C950C1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C950B1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework */; };
+		841C950D1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 841C950B1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		841C95101DDEEE0000B997F5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C950F1DDEEE0000B997F5 /* Navigation.storyboard */; };
+		841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95121DDEEED400B997F5 /* CarouselViewController.swift */; };
+		841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95161DDEF39100B997F5 /* EasyCollectionView.swift */; };
+		841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */; };
+		841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */; };
 		844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE71D1DB4AD9F0029FBD4 /* RAMControls.swift */; };
 		844AE7201DB4AFF20029FBD4 /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE71F1DB4AFF20029FBD4 /* Controlls.swift */; };
 		844AE7231DB4C5590029FBD4 /* RAMReel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844AE7221DB4C5590029FBD4 /* RAMReel.framework */; };
@@ -21,9 +28,13 @@
 		844AE73B1DB4D9870029FBD4 /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7351DB4D9870029FBD4 /* FirstTableViewController.swift */; };
 		844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7371DB4D9870029FBD4 /* SecondViewController.swift */; };
 		844AE73D1DB4D9870029FBD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */; };
-		844AE73F1DB50DF30029FBD4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 844AE73E1DB50DF30029FBD4 /* Default-568h@2x.png */; };
 		847226681DAE5EFD00D6938B /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847226671DAE5EFD00D6938B /* CircleMenu.framework */; };
 		847226691DAE5EFD00D6938B /* CircleMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 847226671DAE5EFD00D6938B /* CircleMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8476E7161DDF2D010043B32C /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E7151DDF2D010043B32C /* Graphik-Medium.otf */; };
+		8476E7171DDF2D060043B32C /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E7141DDF066E0043B32C /* Graphik-Regular.otf */; };
+		8476E7191DDF46D00043B32C /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */; };
+		8476E71A1DDF46D00043B32C /* SwiftyAttributes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8476E71C1DDF4C860043B32C /* Graphik-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E71B1DDF4C860043B32C /* Graphik-Semibold.otf */; };
 		84B46EDB1DAFA98A0033CB15 /* PaperSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84B46EDA1DAFA98A0033CB15 /* PaperSwitch.framework */; };
 		84B46EDC1DAFA98A0033CB15 /* PaperSwitch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84B46EDA1DAFA98A0033CB15 /* PaperSwitch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84B46EDF1DAFAA6C0033CB15 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */; };
@@ -73,6 +84,8 @@
 				84B46EE71DAFC7320033CB15 /* PreviewTransition.framework in Embed Frameworks */,
 				84B46EE21DAFB5060033CB15 /* PaperOnboarding.framework in Embed Frameworks */,
 				84F5AB2C1DAF74FF00271439 /* FoldingCell.framework in Embed Frameworks */,
+				8476E71A1DDF46D00043B32C /* SwiftyAttributes.framework in Embed Frameworks */,
+				841C950D1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework in Embed Frameworks */,
 				84D4B7851DB0C59800EE38C6 /* ExpandingCollection.framework in Embed Frameworks */,
 				844AE72E1DB4D0400029FBD4 /* NavigationStack.framework in Embed Frameworks */,
 				847226691DAE5EFD00D6938B /* CircleMenu.framework in Embed Frameworks */,
@@ -86,6 +99,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		841C950B1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UPCarouselFlowLayout.framework; path = Carthage/Build/iOS/UPCarouselFlowLayout.framework; sourceTree = "<group>"; };
+		841C950F1DDEEE0000B997F5 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
+		841C95121DDEEED400B997F5 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		841C95161DDEF39100B997F5 /* EasyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCollectionView.swift; sourceTree = "<group>"; };
+		841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlCollectionViewCell.swift; sourceTree = "<group>"; };
+		841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselFlow.swift; sourceTree = "<group>"; };
 		844AE71D1DB4AD9F0029FBD4 /* RAMControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMControls.swift; sourceTree = "<group>"; };
 		844AE71F1DB4AFF20029FBD4 /* Controlls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		844AE7221DB4C5590029FBD4 /* RAMReel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RAMReel.framework; path = Carthage/Build/iOS/RAMReel.framework; sourceTree = "<group>"; };
@@ -93,13 +112,16 @@
 		844AE7281DB4C6BD0029FBD4 /* WordReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordReader.swift; sourceTree = "<group>"; };
 		844AE72A1DB4C6DA0029FBD4 /* data.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.txt; sourceTree = "<group>"; };
 		844AE72C1DB4D0400029FBD4 /* NavigationStack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NavigationStack.framework; path = Carthage/Build/iOS/NavigationStack.framework; sourceTree = "<group>"; };
-		844AE72F1DB4D5D30029FBD4 /* NavigationStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationStack.storyboard; sourceTree = "<group>"; };
+		844AE72F1DB4D5D30029FBD4 /* NavigationStack.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = NavigationStack.storyboard; path = ../NavigationStack.storyboard; sourceTree = "<group>"; };
 		844AE7331DB4D9870029FBD4 /* FifthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		844AE7351DB4D9870029FBD4 /* FirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
 		844AE7371DB4D9870029FBD4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		844AE73E1DB50DF30029FBD4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		847226671DAE5EFD00D6938B /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
+		8476E7141DDF066E0043B32C /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
+		8476E7151DDF2D010043B32C /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
+		8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
+		8476E71B1DDF4C860043B32C /* Graphik-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Semibold.otf"; sourceTree = "<group>"; };
 		84B46EDA1DAFA98A0033CB15 /* PaperSwitch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperSwitch.framework; path = Carthage/Build/iOS/PaperSwitch.framework; sourceTree = "<group>"; };
 		84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		84B46EE01DAFB5060033CB15 /* PaperOnboarding.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PaperOnboarding.framework; path = Carthage/Build/iOS/PaperOnboarding.framework; sourceTree = "<group>"; };
@@ -127,7 +149,7 @@
 		84D4B7951DB0C94700EE38C6 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 		84D4B7CF1DB1066100EE38C6 /* RAMAnimatedTabBarController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RAMAnimatedTabBarController.framework; path = Carthage/Build/iOS/RAMAnimatedTabBarController.framework; sourceTree = "<group>"; };
 		84D4B7D41DB107DF00EE38C6 /* ToolsAnimation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolsAnimation.plist; sourceTree = "<group>"; };
-		84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AnimatedTabBar.storyboard; sourceTree = "<group>"; };
+		84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AnimatedTabBar.storyboard; path = ../AnimatedTabBar.storyboard; sourceTree = "<group>"; };
 		84D4B7DD1DB1251F00EE38C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		84F5AB2A1DAF74FF00271439 /* FoldingCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoldingCell.framework; path = Carthage/Build/iOS/FoldingCell.framework; sourceTree = "<group>"; };
@@ -143,6 +165,8 @@
 				84B46EE61DAFC7320033CB15 /* PreviewTransition.framework in Frameworks */,
 				84B46EE11DAFB5060033CB15 /* PaperOnboarding.framework in Frameworks */,
 				84F5AB2B1DAF74FF00271439 /* FoldingCell.framework in Frameworks */,
+				8476E7191DDF46D00043B32C /* SwiftyAttributes.framework in Frameworks */,
+				841C950C1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework in Frameworks */,
 				84D4B7841DB0C59800EE38C6 /* ExpandingCollection.framework in Frameworks */,
 				844AE72D1DB4D0400029FBD4 /* NavigationStack.framework in Frameworks */,
 				847226681DAE5EFD00D6938B /* CircleMenu.framework in Frameworks */,
@@ -155,6 +179,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841C950E1DDEED1300B997F5 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				84C180D01DAE155300C056F8 /* Main.storyboard */,
+				84C180D51DAE155300C056F8 /* LaunchScreen.storyboard */,
+				84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */,
+				844AE72F1DB4D5D30029FBD4 /* NavigationStack.storyboard */,
+				841C950F1DDEEE0000B997F5 /* Navigation.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		841C95111DDEEEA200B997F5 /* CarouselViewController */ = {
+			isa = PBXGroup;
+			children = (
+				841C951B1DDEFA3200B997F5 /* Flow */,
+				841C95181DDEF71300B997F5 /* Cells */,
+				841C95121DDEEED400B997F5 /* CarouselViewController.swift */,
+			);
+			name = CarouselViewController;
+			path = ViewControllers/CarouselViewController;
+			sourceTree = "<group>";
+		};
+		841C95141DDEF30900B997F5 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				841C95151DDEF31A00B997F5 /* EasyCollection */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		841C95151DDEF31A00B997F5 /* EasyCollection */ = {
+			isa = PBXGroup;
+			children = (
+				841C95161DDEF39100B997F5 /* EasyCollectionView.swift */,
+			);
+			path = EasyCollection;
+			sourceTree = "<group>";
+		};
+		841C95181DDEF71300B997F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		841C951B1DDEFA3200B997F5 /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */,
+			);
+			path = Flow;
+			sourceTree = "<group>";
+		};
+		841C951E1DDF035400B997F5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8476E71B1DDF4C860043B32C /* Graphik-Semibold.otf */,
+				8476E7151DDF2D010043B32C /* Graphik-Medium.otf */,
+				8476E7141DDF066E0043B32C /* Graphik-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		844AE71B1DB4AC680029FBD4 /* ControllersList */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +332,6 @@
 		84C180C01DAE155300C056F8 = {
 			isa = PBXGroup;
 			children = (
-				844AE73E1DB50DF30029FBD4 /* Default-568h@2x.png */,
 				84D4B7DA1DB11D1500EE38C6 /* Frameworks */,
 				84C180CB1DAE155300C056F8 /* Showroom */,
 				84C180CA1DAE155300C056F8 /* Products */,
@@ -261,15 +349,14 @@
 		84C180CB1DAE155300C056F8 /* Showroom */ = {
 			isa = PBXGroup;
 			children = (
+				841C951E1DDF035400B997F5 /* Fonts */,
+				841C95141DDEF30900B997F5 /* Utilities */,
+				841C950E1DDEED1300B997F5 /* Storyboards */,
 				844AE71C1DB4AD4E0029FBD4 /* Enums */,
 				84D4B7DB1DB11DA400EE38C6 /* ViewControllers */,
 				84C180CC1DAE155300C056F8 /* AppDelegate.swift */,
-				84C180D01DAE155300C056F8 /* Main.storyboard */,
 				84C180D31DAE155300C056F8 /* Assets.xcassets */,
-				84C180D51DAE155300C056F8 /* LaunchScreen.storyboard */,
 				84C180D81DAE155300C056F8 /* Info.plist */,
-				84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */,
-				844AE72F1DB4D5D30029FBD4 /* NavigationStack.storyboard */,
 				84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */,
 			);
 			path = Showroom;
@@ -347,6 +434,8 @@
 		84D4B7DA1DB11D1500EE38C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */,
+				841C950B1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework */,
 				844AE72C1DB4D0400029FBD4 /* NavigationStack.framework */,
 				844AE7221DB4C5590029FBD4 /* RAMReel.framework */,
 				84D4B7CF1DB1066100EE38C6 /* RAMAnimatedTabBarController.framework */,
@@ -363,6 +452,7 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				841C95111DDEEEA200B997F5 /* CarouselViewController */,
 				844AE7311DB4D9640029FBD4 /* NavigaitionStack */,
 				844AE7251DB4C59F0029FBD4 /* SearchViewController */,
 				844AE71B1DB4AC680029FBD4 /* ControllersList */,
@@ -440,13 +530,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C180D71DAE155300C056F8 /* LaunchScreen.storyboard in Resources */,
+				8476E71C1DDF4C860043B32C /* Graphik-Semibold.otf in Resources */,
 				84D4B7D71DB1098C00EE38C6 /* AnimatedTabBar.storyboard in Resources */,
-				844AE73F1DB50DF30029FBD4 /* Default-568h@2x.png in Resources */,
 				84C180D41DAE155300C056F8 /* Assets.xcassets in Resources */,
 				844AE7301DB4D5D30029FBD4 /* NavigationStack.storyboard in Resources */,
 				84D4B7D51DB107DF00EE38C6 /* ToolsAnimation.plist in Resources */,
 				84C180D21DAE155300C056F8 /* Main.storyboard in Resources */,
+				8476E7171DDF2D060043B32C /* Graphik-Regular.otf in Resources */,
+				841C95101DDEEE0000B997F5 /* Navigation.storyboard in Resources */,
 				844AE72B1DB4C6DA0029FBD4 /* data.txt in Resources */,
+				8476E7161DDF2D010043B32C /* Graphik-Medium.otf in Resources */,
 				84D4B7901DB0C81B00EE38C6 /* DemoCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,14 +551,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */,
 				84B46EED1DAFCC8C0033CB15 /* DemoDetailViewController.swift in Sources */,
 				844AE7291DB4C6BD0029FBD4 /* WordReader.swift in Sources */,
 				84B46EF01DAFCED10033CB15 /* ScreenShot.swift in Sources */,
 				84F5AB301DAF765D00271439 /* DemoFoldginCell.swift in Sources */,
 				844AE73B1DB4D9870029FBD4 /* FirstTableViewController.swift in Sources */,
+				841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */,
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
+				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
+				841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */,
 				84C180CF1DAE155300C056F8 /* CircleViewController.swift in Sources */,
 				84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */,
 				84B46EDF1DAFAA6C0033CB15 /* SwitchViewController.swift in Sources */,
@@ -497,6 +594,7 @@
 				84C180D11DAE155300C056F8 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		84C180D51DAE155300C056F8 /* LaunchScreen.storyboard */ = {
@@ -505,6 +603,7 @@
 				84C180D61DAE155300C056F8 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
