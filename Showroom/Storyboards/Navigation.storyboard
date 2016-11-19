@@ -79,13 +79,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reel Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeF-qw-qnJ">
-                                                    <rect key="frame" x="20" y="206" width="247" height="20"/>
+                                                    <rect key="frame" x="20" y="206.5" width="247" height="20"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The control helps to search faster by proactively providing the most relevant keywords as you type." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHS-v8-bIM">
-                                                    <rect key="frame" x="20" y="241" width="267" height="39"/>
+                                                    <rect key="frame" x="20" y="241.5" width="267" height="39"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Human Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruj-18-XtQ">
-                                                    <rect key="frame" x="47" y="366.5" width="232" height="13"/>
+                                                    <rect key="frame" x="47" y="366" width="232" height="13"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588235294117" green="0.59607843137254901" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift, UIKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3n-GH-DHc">
-                                                    <rect key="frame" x="48" y="335.5" width="239" height="13"/>
+                                                    <rect key="frame" x="48" y="335" width="239" height="13"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588239999997" green="0.59607843140000005" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -170,7 +170,7 @@
                                     <outlet property="delegate" destination="Nd2-td-3Qt" id="aQ0-no-bU7"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7B-aG-u5A" userLabel="TopContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f7B-aG-u5A" userLabel="TopContainer" customClass="CarouselTitleView" customModule="Showroom" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RamotionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JVo-Yy-gXj">
@@ -192,6 +192,9 @@
                                     <constraint firstItem="JVo-Yy-gXj" firstAttribute="leading" secondItem="f7B-aG-u5A" secondAttribute="leading" constant="40" id="oR4-VE-me7"/>
                                     <constraint firstItem="kOG-ol-Mae" firstAttribute="centerY" secondItem="f7B-aG-u5A" secondAttribute="centerY" id="x8r-Sj-edn"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="infoButton" destination="kOG-ol-Mae" id="PHi-4W-yMd"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5N-fz-01k" userLabel="BottomContainer">
                                 <rect key="frame" x="0.0" y="513" width="375" height="154"/>
@@ -200,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-xj-2kp">
-                                                <rect key="frame" x="176" y="20.5" width="23.5" height="13"/>
+                                                <rect key="frame" x="176" y="20" width="23.5" height="13"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                 <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -286,13 +289,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="375" id="APm-pj-4K4"/>
                                             </constraints>
-                                            <mutableString key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
+                                            <string key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
 
 We are very proud that our customers entrusted us with such an important task as the improvement of their products' user interfaces.
 
 Today, we are pleased to introduce an evolved Ramotion, featuring designs in native code, and we hope to bring even more value to our customers' projects on which our team works.
 
-To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.</mutableString>
+To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.</string>
                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

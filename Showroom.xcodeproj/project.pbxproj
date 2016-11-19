@@ -33,6 +33,13 @@
 		84760B171DE05C1A00AF36FE /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84760B161DE05C1A00AF36FE /* EasyPeasy.framework */; };
 		84760B181DE05C1A00AF36FE /* EasyPeasy.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84760B161DE05C1A00AF36FE /* EasyPeasy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84760B1A1DE05E3500AF36FE /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84760B191DE05E3500AF36FE /* AboutView.swift */; };
+		84760B1C1DE078AA00AF36FE /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84760B1B1DE078AA00AF36FE /* pop.framework */; };
+		84760B1D1DE078AA00AF36FE /* pop.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84760B1B1DE078AA00AF36FE /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84760B231DE0796800AF36FE /* NodeAnimatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84760B1F1DE0796800AF36FE /* NodeAnimatable.swift */; };
+		84760B241DE0796800AF36FE /* NodeAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84760B201DE0796800AF36FE /* NodeAnimations.swift */; };
+		84760B251DE0796800AF36FE /* PopAnimationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84760B221DE0796800AF36FE /* PopAnimationFactory.swift */; };
+		84760B271DE07A1B00AF36FE /* Deley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84760B261DE07A1B00AF36FE /* Deley.swift */; };
+		84760B2A1DE07C3B00AF36FE /* CarouserTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84760B291DE07C3B00AF36FE /* CarouserTitleView.swift */; };
 		8476E7161DDF2D010043B32C /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E7151DDF2D010043B32C /* Graphik-Medium.otf */; };
 		8476E7171DDF2D060043B32C /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E7141DDF066E0043B32C /* Graphik-Regular.otf */; };
 		8476E7191DDF46D00043B32C /* SwiftyAttributes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */; };
@@ -92,6 +99,7 @@
 				841C950D1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework in Embed Frameworks */,
 				84D4B7851DB0C59800EE38C6 /* ExpandingCollection.framework in Embed Frameworks */,
 				844AE72E1DB4D0400029FBD4 /* NavigationStack.framework in Embed Frameworks */,
+				84760B1D1DE078AA00AF36FE /* pop.framework in Embed Frameworks */,
 				847226691DAE5EFD00D6938B /* CircleMenu.framework in Embed Frameworks */,
 				844AE7241DB4C5590029FBD4 /* RAMReel.framework in Embed Frameworks */,
 				84B46EDC1DAFA98A0033CB15 /* PaperSwitch.framework in Embed Frameworks */,
@@ -124,6 +132,12 @@
 		847226671DAE5EFD00D6938B /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		84760B161DE05C1A00AF36FE /* EasyPeasy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyPeasy.framework; path = Carthage/Build/iOS/EasyPeasy.framework; sourceTree = "<group>"; };
 		84760B191DE05E3500AF36FE /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		84760B1B1DE078AA00AF36FE /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
+		84760B1F1DE0796800AF36FE /* NodeAnimatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeAnimatable.swift; sourceTree = "<group>"; };
+		84760B201DE0796800AF36FE /* NodeAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NodeAnimations.swift; sourceTree = "<group>"; };
+		84760B221DE0796800AF36FE /* PopAnimationFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopAnimationFactory.swift; sourceTree = "<group>"; };
+		84760B261DE07A1B00AF36FE /* Deley.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deley.swift; sourceTree = "<group>"; };
+		84760B291DE07C3B00AF36FE /* CarouserTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouserTitleView.swift; sourceTree = "<group>"; };
 		8476E7141DDF066E0043B32C /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
 		8476E7151DDF2D010043B32C /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
 		8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyAttributes.framework; path = Carthage/Build/iOS/SwiftyAttributes.framework; sourceTree = "<group>"; };
@@ -176,6 +190,7 @@
 				841C950C1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework in Frameworks */,
 				84D4B7841DB0C59800EE38C6 /* ExpandingCollection.framework in Frameworks */,
 				844AE72D1DB4D0400029FBD4 /* NavigationStack.framework in Frameworks */,
+				84760B1C1DE078AA00AF36FE /* pop.framework in Frameworks */,
 				847226681DAE5EFD00D6938B /* CircleMenu.framework in Frameworks */,
 				844AE7231DB4C5590029FBD4 /* RAMReel.framework in Frameworks */,
 				84B46EDB1DAFA98A0033CB15 /* PaperSwitch.framework in Frameworks */,
@@ -201,6 +216,7 @@
 		841C95111DDEEEA200B997F5 /* CarouselViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84760B281DE07C0200AF36FE /* Views */,
 				841C951B1DDEFA3200B997F5 /* Flow */,
 				841C95181DDEF71300B997F5 /* Cells */,
 				841C95121DDEEED400B997F5 /* CarouselViewController.swift */,
@@ -212,7 +228,9 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				84760B1E1DE0794D00AF36FE /* Animations */,
 				841C95151DDEF31A00B997F5 /* EasyCollection */,
+				84760B261DE07A1B00AF36FE /* Deley.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -330,6 +348,32 @@
 			);
 			name = AboutView;
 			path = ViewControllers/AboutView;
+			sourceTree = "<group>";
+		};
+		84760B1E1DE0794D00AF36FE /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				84760B1F1DE0796800AF36FE /* NodeAnimatable.swift */,
+				84760B201DE0796800AF36FE /* NodeAnimations.swift */,
+				84760B211DE0796800AF36FE /* POPAnimationFactory */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
+		84760B211DE0796800AF36FE /* POPAnimationFactory */ = {
+			isa = PBXGroup;
+			children = (
+				84760B221DE0796800AF36FE /* PopAnimationFactory.swift */,
+			);
+			path = POPAnimationFactory;
+			sourceTree = "<group>";
+		};
+		84760B281DE07C0200AF36FE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84760B291DE07C3B00AF36FE /* CarouserTitleView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		84B46EE81DAFCC1C0033CB15 /* PreviewTransition */ = {
@@ -450,6 +494,7 @@
 		84D4B7DA1DB11D1500EE38C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84760B1B1DE078AA00AF36FE /* pop.framework */,
 				84760B161DE05C1A00AF36FE /* EasyPeasy.framework */,
 				8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */,
 				841C950B1DDEEA5A00B997F5 /* UPCarouselFlowLayout.framework */,
@@ -581,12 +626,16 @@
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
+				84760B241DE0796800AF36FE /* NodeAnimations.swift in Sources */,
 				841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */,
 				84C180CF1DAE155300C056F8 /* CircleViewController.swift in Sources */,
 				84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */,
 				84B46EDF1DAFAA6C0033CB15 /* SwitchViewController.swift in Sources */,
+				84760B271DE07A1B00AF36FE /* Deley.swift in Sources */,
 				84B46EF41DAFCF4E0033CB15 /* ConstraintsHalper.swift in Sources */,
 				84D4B78F1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift in Sources */,
+				84760B231DE0796800AF36FE /* NodeAnimatable.swift in Sources */,
+				84760B2A1DE07C3B00AF36FE /* CarouserTitleView.swift in Sources */,
 				84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */,
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift in Sources */,
@@ -599,6 +648,7 @@
 				84B46EF21DAFCF180033CB15 /* LayerAnimationHalper.swift in Sources */,
 				84D4B7DE1DB1251F00EE38C6 /* MainViewController.swift in Sources */,
 				84B46EEA1DAFCC7E0033CB15 /* Extensions.swift in Sources */,
+				84760B251DE0796800AF36FE /* PopAnimationFactory.swift in Sources */,
 				84B46EEE1DAFCC8C0033CB15 /* DemoTableViewController.swift in Sources */,
 				844AE7201DB4AFF20029FBD4 /* Controlls.swift in Sources */,
 			);

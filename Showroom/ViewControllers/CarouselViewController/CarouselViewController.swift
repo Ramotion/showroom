@@ -11,8 +11,8 @@ fileprivate struct C {
 // MARK: CarouselViewController
 class CarouselViewController: UIViewController {
   
-  @IBOutlet weak var topContainer: UIView!
-  @IBOutlet var aboutView: UIView!
+  @IBOutlet weak var topContainer: CarouselTitleView!
+  @IBOutlet var aboutView: AboutView!
   @IBOutlet weak var infoButton: UIButton!
   @IBOutlet weak var contactUsButton: UIButton!
   @IBOutlet weak var pageLabel: UILabel!
@@ -52,6 +52,7 @@ extension CarouselViewController {
     
     configureContactButton()
     pageLabel.text = "\(currentIndex + 1)/\(items.count)"
+    aboutView.titleView = topContainer
   }
 }
 
@@ -95,9 +96,9 @@ extension CarouselViewController {
   
   @IBAction func infoHandler(_ sender: UIButton) {
     if sender.isSelected == true {
-      hideAboutView()
+      aboutView.hide(on: view)
     } else {
-      showAboutView()
+      aboutView.show(on: view)
     }
     sender.isSelected = !sender.isSelected
   }
@@ -106,24 +107,5 @@ extension CarouselViewController {
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {
-  }
-}
-
-// MARK: Helpers
-private extension CarouselViewController {
-  
-  func showAboutView() {
-    view.addSubview(aboutView)
-    aboutView <- Edges(0)
-    
-    view.bringSubview(toFront: topContainer)
-    topContainer.backgroundColor = UIColor(white: 1, alpha: 0.96)
-  }
-  
-  func hideAboutView() {
-    aboutView.removeFromSuperview()
-    
-    view.bringSubview(toFront: topContainer)
-    topContainer.backgroundColor = .clear
   }
 }
