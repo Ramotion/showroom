@@ -1,6 +1,6 @@
 import Foundation
 
-struct RAMControls {
+struct Showroom {
   
   enum Control {
     case circleMenu

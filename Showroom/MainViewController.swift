@@ -2,7 +2,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
   
-  let items: [RAMControls.Control] = [.circleMenu,
+  let items: [Showroom.Control] = [.circleMenu,
                                       .foldingCell,
                                       .paperSwitch,
                                       .paperOnboarding,
@@ -39,7 +39,7 @@ extension MainViewController {
   override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     guard case let cell as ItemCell = cell else { return }
     
-    cell.itemTitle.text = items[indexPath.row].name
+    cell.itemTitle.text = items[indexPath.row].title
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
