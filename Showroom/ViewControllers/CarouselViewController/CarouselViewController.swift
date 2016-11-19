@@ -1,4 +1,5 @@
 import UIKit
+import EasyPeasy
 
 fileprivate struct C {
   
@@ -10,6 +11,8 @@ fileprivate struct C {
 // MARK: CarouselViewController
 class CarouselViewController: UIViewController {
   
+  @IBOutlet weak var topContainer: UIView!
+  @IBOutlet var aboutView: UIView!
   @IBOutlet weak var infoButton: UIButton!
   @IBOutlet weak var contactUsButton: UIButton!
   @IBOutlet weak var pageLabel: UILabel!
@@ -62,8 +65,6 @@ extension  CarouselViewController {
     contactUsButton.layer.shadowRadius = 4
     contactUsButton.layer.shadowOpacity = 0.3
   }
-  
-  
 }
 
 // MARK: UICollectionViewDelegate, UICollectionViewDataSource
@@ -92,12 +93,37 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
 // MARK: Actions
 extension CarouselViewController {
   
-  @IBAction func infoHandler(_ sender: Any) {
+  @IBAction func infoHandler(_ sender: UIButton) {
+    if sender.isSelected == true {
+      hideAboutView()
+    } else {
+      showAboutView()
+    }
+    sender.isSelected = !sender.isSelected
   }
   
   @IBAction func sharedHandler(_ sender: Any) {
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {
+  }
+}
+
+// MARK: Helpers
+private extension CarouselViewController {
+  
+  func showAboutView() {
+    view.addSubview(aboutView)
+    aboutView <- Edges(0)
+    
+    view.bringSubview(toFront: topContainer)
+    topContainer.backgroundColor = UIColor(white: 1, alpha: 0.96)
+  }
+  
+  func hideAboutView() {
+    aboutView.removeFromSuperview()
+    
+    view.bringSubview(toFront: topContainer)
+    topContainer.backgroundColor = .clear
   }
 }

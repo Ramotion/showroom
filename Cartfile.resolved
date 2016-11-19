@@ -1,3 +1,4 @@
+github "nakiostudio/EasyPeasy" "1.4"
 github "eddiekaiger/SwiftyAttributes" "v3.0.0"
 github "ober01/UPCarouselFlowLayout" "1.1.1"
 github "Ramotion/animated-tab-bar" "2.0.13"
