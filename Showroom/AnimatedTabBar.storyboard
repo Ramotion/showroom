@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTR-uO-otv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTR-uO-otv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,6 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FumeAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmq-tT-RgP">
+                                <rect key="frame" x="13.5" y="182.5" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="Usb-kh-lLp"/>
                                     <constraint firstAttribute="width" constant="348" id="bci-uf-WOP"/>
@@ -68,6 +73,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TransitionItemAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoW-Hw-RSu">
+                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="348" id="53E-wq-v8T"/>
                                     <constraint firstAttribute="height" constant="71" id="KrB-Me-Mu4"/>
@@ -121,6 +127,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RotationAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-KC-eWZ">
+                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="348" id="0Yq-EZ-XUo"/>
                                     <constraint firstAttribute="height" constant="71" id="KPJ-MZ-jcy"/>
@@ -184,7 +191,7 @@
         <!--Item4-->
         <scene sceneID="Nvw-78-lIl">
             <objects>
-                <viewController id="pFC-zY-OuJ" sceneMemberID="viewController">
+                <viewController id="pFC-zY-OuJ" customClass="BounceAnimationViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iCg-8x-zrC"/>
                         <viewControllerLayoutGuide type="bottom" id="4e7-2D-z2o"/>
@@ -194,6 +201,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bounce Animation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddZ-cn-FS6">
+                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="Jpp-R0-QUY"/>
                                     <constraint firstAttribute="width" constant="348" id="aYR-iI-fOu"/>
@@ -202,10 +210,19 @@
                                 <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqY-Im-oRJ">
+                                <rect key="frame" x="16" y="50" width="35" height="30"/>
+                                <state key="normal" title="done"/>
+                                <connections>
+                                    <action selector="dismisHandler:" destination="pFC-zY-OuJ" eventType="touchUpInside" id="ljU-FN-n6B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="EqY-Im-oRJ" firstAttribute="leading" secondItem="rC5-VN-nxu" secondAttribute="leadingMargin" id="RwM-qY-OmQ"/>
                             <constraint firstAttribute="centerX" secondItem="ddZ-cn-FS6" secondAttribute="centerX" id="Z0u-QU-m8t"/>
+                            <constraint firstItem="EqY-Im-oRJ" firstAttribute="top" secondItem="rC5-VN-nxu" secondAttribute="topMargin" constant="50" id="jXB-gR-nyz"/>
                             <constraint firstAttribute="centerY" secondItem="ddZ-cn-FS6" secondAttribute="centerY" constant="114.5" id="wZD-uz-a6I"/>
                         </constraints>
                     </view>
@@ -247,6 +264,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FrameItemAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOS-iI-REq">
+                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="348" id="3uB-b1-tpH"/>
                                     <constraint firstAttribute="height" constant="71" id="epT-Qv-lUg"/>

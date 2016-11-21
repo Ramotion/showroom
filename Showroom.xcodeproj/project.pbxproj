@@ -28,6 +28,8 @@
 		844AE73B1DB4D9870029FBD4 /* FirstTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7351DB4D9870029FBD4 /* FirstTableViewController.swift */; };
 		844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7371DB4D9870029FBD4 /* SecondViewController.swift */; };
 		844AE73D1DB4D9870029FBD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */; };
+		8468A72A1DE2E59000D40917 /* ViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468A7291DE2E59000D40917 /* ViewController+Dismiss.swift */; };
+		8468A72C1DE2E8D800D40917 /* BounceAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468A72B1DE2E8D800D40917 /* BounceAnimationViewController.swift */; };
 		847226681DAE5EFD00D6938B /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847226671DAE5EFD00D6938B /* CircleMenu.framework */; };
 		847226691DAE5EFD00D6938B /* CircleMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 847226671DAE5EFD00D6938B /* CircleMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84760B171DE05C1A00AF36FE /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84760B161DE05C1A00AF36FE /* EasyPeasy.framework */; };
@@ -129,6 +131,8 @@
 		844AE7351DB4D9870029FBD4 /* FirstTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTableViewController.swift; sourceTree = "<group>"; };
 		844AE7371DB4D9870029FBD4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		8468A7291DE2E59000D40917 /* ViewController+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Dismiss.swift"; sourceTree = "<group>"; };
+		8468A72B1DE2E8D800D40917 /* BounceAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationViewController.swift; sourceTree = "<group>"; };
 		847226671DAE5EFD00D6938B /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		84760B161DE05C1A00AF36FE /* EasyPeasy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyPeasy.framework; path = Carthage/Build/iOS/EasyPeasy.framework; sourceTree = "<group>"; };
 		84760B191DE05E3500AF36FE /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				84760B1E1DE0794D00AF36FE /* Animations */,
 				841C95151DDEF31A00B997F5 /* EasyCollection */,
 				84760B261DE07A1B00AF36FE /* Deley.swift */,
+				8468A7291DE2E59000D40917 /* ViewController+Dismiss.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -479,6 +484,7 @@
 			isa = PBXGroup;
 			children = (
 				84D4B7D31DB107DF00EE38C6 /* Resources */,
+				8468A72B1DE2E8D800D40917 /* BounceAnimationViewController.swift */,
 			);
 			path = AnimationTabBar;
 			sourceTree = "<group>";
@@ -621,6 +627,8 @@
 				84B46EF01DAFCED10033CB15 /* ScreenShot.swift in Sources */,
 				84F5AB301DAF765D00271439 /* DemoFoldginCell.swift in Sources */,
 				844AE73B1DB4D9870029FBD4 /* FirstTableViewController.swift in Sources */,
+				8468A72C1DE2E8D800D40917 /* BounceAnimationViewController.swift in Sources */,
+				8468A72A1DE2E59000D40917 /* ViewController+Dismiss.swift in Sources */,
 				841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */,
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,

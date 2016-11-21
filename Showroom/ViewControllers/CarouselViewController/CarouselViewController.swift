@@ -89,6 +89,18 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     let page = "\(currentIndex + 1)/\(items.count)"
     if pageLabel.text != page { pageLabel.text = page }
   }
+    
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let vc = items[indexPath.row].viewController
+    var nc: UIViewController 
+    if vc is UINavigationController {
+       nc = vc
+    } else {
+      nc = UINavigationController(rootViewController: vc)
+    }
+    vc.navigationItem.hidesBackButton = false
+    present(nc, animated: true, completion: nil)
+  }
 }
 
 // MARK: Actions
@@ -101,6 +113,7 @@ extension CarouselViewController {
       aboutView.show(on: view)
     }
     sender.isSelected = !sender.isSelected
+//    сделать добавления шарика и анимацию расширения с помощью поп 
   }
   
   @IBAction func sharedHandler(_ sender: Any) {

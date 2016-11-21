@@ -22,6 +22,8 @@ extension DemoExpandingViewController {
     fillCellIsOpeenArry()
     addGestureToView(collectionView!)
     configureNavBar()
+    
+    addBackButton()
   }
 }
 

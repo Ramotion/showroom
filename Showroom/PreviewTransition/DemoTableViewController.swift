@@ -6,6 +6,16 @@ public class DemoTableViewController: PTTableViewController {
   fileprivate let items = [("1", "River cruise"), ("2", "North Island"), ("3", "Mountain trail"), ("4", "Southern Coast"), ("5", "Fishing place")] // image names
 }
 
+// MARK: Life Cycle
+extension DemoTableViewController {
+  
+  override public func viewDidLoad() {
+    super.viewDidLoad()
+    addBackButton()
+  }
+  
+}
+
 // MARK: UITableViewDelegate
 extension DemoTableViewController {
   

@@ -18,6 +18,8 @@ extension MainViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    addBackButton()
   }
 }
 

@@ -15,6 +15,7 @@ class SwitchViewController: UIViewController {
     super.viewDidLoad()
     
     setupPaperSwitch()
+    addBackButton()
   }
 }
 

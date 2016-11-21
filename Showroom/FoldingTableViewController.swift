@@ -17,6 +17,7 @@ class FoldingTableViewController: UITableViewController {
     super.viewDidLoad()
     
     tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+    addBackButton()
   }
   
   override func didReceiveMemoryWarning() {

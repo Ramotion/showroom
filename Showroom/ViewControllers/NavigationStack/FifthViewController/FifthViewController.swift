@@ -10,6 +10,11 @@ import UIKit
 
 class FifthViewController: UITableViewController {
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    addBackButton()
+  }
+  
   @IBAction func backHandler(_ sender: AnyObject) {
     let _ = navigationController?.popViewController(animated: true)
   }
