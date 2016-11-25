@@ -113,7 +113,6 @@ extension CarouselViewController {
       aboutView.show(on: view)
     }
     sender.isSelected = !sender.isSelected
-//    сделать добавления шарика и анимацию расширения с помощью поп 
   }
   
   @IBAction func sharedHandler(_ sender: Any) {

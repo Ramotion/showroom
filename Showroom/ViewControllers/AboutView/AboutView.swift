@@ -8,8 +8,15 @@ class AboutView: UIView {
 
   @IBOutlet weak var scrollView: UIScrollView!
   @IBOutlet weak var infoText: UILabel!
+  @IBOutlet weak var sharedView: UIView!
+  @IBOutlet weak var sharedViewBottomConstraints: NSLayoutConstraint!
+  @IBOutlet weak var sharedViewHeightConstraint: NSLayoutConstraint!
   
-  var titleView: CarouselTitleView!
+  @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak var titleLabel: UILabel!
+  fileprivate var circleView: CircleView?
+
+  var titleView: CarouselTitleView! 
 }
 
 // MARK: Life Cycle
@@ -28,11 +35,35 @@ extension AboutView {
 extension AboutView {
   
   func show(on view: UIView) {
+    
+    if circleView == nil { circleView = .build(on: self, position: titleView.infoButton.center) }
+    
+    infoText.alpha = 0
+    
+    titleLabel.alpha = 0
+    titleLabel.animate(duration: 0.4, [.alpha(to: 1)], delay: 0.2)
+    
+    alpha = 0
+    animate(duration: 0.2, [.alpha(to: 1)])
+    
     view.addSubview(self)
     self <- Edges(0)
     
+    circleView?.show()
+    
+    // move animations
+    sharedViewBottomConstraints.constant = -sharedViewHeightConstraint.constant
+    titleLabelTopConstraint.constant += 40
+    layoutIfNeeded()
+    
+    sharedViewBottomConstraints.constant = 0
+    titleLabelTopConstraint.constant -= 40
+    UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseOut, animations: { [weak self] in
+      self?.layoutIfNeeded()
+    }, completion: nil)
+    
     view.bringSubview(toFront: titleView)
-    titleView.backgroundColor = UIColor(white: 1, alpha: 0.96)
+//    titleView.backgroundColor = UIColor(white: 1, alpha: 0.96)
   }
   
   func hide(on view: UIView) {
@@ -41,11 +72,12 @@ extension AboutView {
     view.bringSubview(toFront: titleView)
     titleView.backgroundColor = .clear
     titleView.animateSeparator(isShow: false)
+    circleView?.hide()
   }
 }
 
 // MARK: RX
-extension AboutView {
+private extension AboutView {
   
   func subscribeSeparatorAnimation() {
     _ = scrollView.rx.contentOffset

@@ -334,7 +334,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             </state>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="87a-X8-6EJ" secondAttribute="trailing" id="KXl-HT-NFy"/>
                                         <constraint firstItem="pz0-T3-6Em" firstAttribute="top" secondItem="87a-X8-6EJ" secondAttribute="bottom" constant="20" id="apH-Ar-iaU"/>
@@ -348,7 +348,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Ktb-dp-HeP" secondAttribute="bottom" id="8LF-A4-e1x"/>
                                 <constraint firstItem="Ktb-dp-HeP" firstAttribute="top" secondItem="Jhq-zk-5g0" secondAttribute="top" id="Saw-Qp-XAJ"/>
@@ -369,7 +369,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="center" semanticContentAttribute="forceLeftToRight" distribution="equalSpacing" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="yHk-YP-YM5">
-                                    <rect key="frame" x="40" y="19.5" width="295" height="35"/>
+                                    <rect key="frame" x="40" y="20" width="295" height="35"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dribbble-ball" translatesAutoresizingMaskIntoConstraints="NO" id="0EF-XJ-tJz">
                                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -425,7 +425,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.16470588235294117" green="0.23137254901960785" blue="0.33333333333333331" alpha="0.39875422297297297" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="0k2-bG-SbM" secondAttribute="bottom" id="2KL-Ai-B04"/>
                         <constraint firstAttribute="bottom" secondItem="Jhq-zk-5g0" secondAttribute="bottom" id="HhX-8G-vFW"/>
@@ -438,6 +438,11 @@ To help you evaluate the quality of development, we have created a mobile applic
                     <connections>
                         <outlet property="infoText" destination="pz0-T3-6Em" id="tzU-t0-Sjg"/>
                         <outlet property="scrollView" destination="Jhq-zk-5g0" id="KG3-1D-psU"/>
+                        <outlet property="sharedView" destination="0k2-bG-SbM" id="0lo-Oy-wtE"/>
+                        <outlet property="sharedViewBottomConstraints" destination="2KL-Ai-B04" id="xOU-pd-W4q"/>
+                        <outlet property="sharedViewHeightConstraint" destination="luU-oo-kMk" id="EbH-vF-Ebr"/>
+                        <outlet property="titleLabel" destination="87a-X8-6EJ" id="zjh-jt-8mr"/>
+                        <outlet property="titleLabelTopConstraint" destination="t4N-Xm-oQz" id="0T7-Fk-q9s"/>
                     </connections>
                 </view>
             </objects>
