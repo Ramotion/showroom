@@ -1,5 +1,8 @@
 import UIKit
+import RxSwift
+import RxCocoa
 import EasyPeasy
+import NSObject_Rx
 
 class AboutView: UIView {
 
@@ -7,7 +10,6 @@ class AboutView: UIView {
   @IBOutlet weak var infoText: UILabel!
   
   var titleView: CarouselTitleView!
-  
 }
 
 // MARK: Life Cycle
@@ -17,6 +19,18 @@ extension AboutView {
     super.awakeFromNib()
     
     configureInfoText()
+    
+    _ = scrollView.rx.contentOffset
+      .map { $0.y > 5 }
+      .distinctUntilChanged()
+      .subscribe { [weak self] in
+        guard let titleView = self?.titleView else { return }
+
+        if let isShow = $0.element {
+          titleView.animateSeparator(isShow: isShow)
+        }
+      }
+      .addDisposableTo(rx_disposeBag)
   }
 }
 
@@ -36,6 +50,7 @@ extension AboutView {
     
     view.bringSubview(toFront: titleView)
     titleView.backgroundColor = .clear
+    titleView.animateSeparator(isShow: false)
   }
 }
 
@@ -54,3 +69,13 @@ private extension AboutView {
     )
   }
 }
+
+//// MARK: UIScrollViewDelegate
+//extension AboutView: UIScrollViewDelegate {
+//
+//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//    print(scrollView.contentOffset.y)
+//    
+//    
+//  }
+//}

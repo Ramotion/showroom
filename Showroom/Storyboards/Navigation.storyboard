@@ -184,16 +184,27 @@
                                             <action selector="infoHandler:" destination="Nd2-td-3Qt" eventType="touchUpInside" id="IPD-Dz-NG5"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNk-dN-PqK" userLabel="separator">
+                                        <rect key="frame" x="0.0" y="97" width="375" height="1"/>
+                                        <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="Grp-7f-4QQ"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="kOG-ol-Mae" secondAttribute="trailing" constant="40" id="3Q1-RC-bw2"/>
+                                    <constraint firstItem="vNk-dN-PqK" firstAttribute="leading" secondItem="f7B-aG-u5A" secondAttribute="leading" id="JbD-5F-nPR"/>
                                     <constraint firstItem="JVo-Yy-gXj" firstAttribute="centerY" secondItem="f7B-aG-u5A" secondAttribute="centerY" id="K8o-zL-fDS"/>
+                                    <constraint firstAttribute="trailing" secondItem="vNk-dN-PqK" secondAttribute="trailing" id="U2X-xX-Me1"/>
+                                    <constraint firstAttribute="bottom" secondItem="vNk-dN-PqK" secondAttribute="bottom" id="c28-Oj-AaS"/>
                                     <constraint firstItem="JVo-Yy-gXj" firstAttribute="leading" secondItem="f7B-aG-u5A" secondAttribute="leading" constant="40" id="oR4-VE-me7"/>
                                     <constraint firstItem="kOG-ol-Mae" firstAttribute="centerY" secondItem="f7B-aG-u5A" secondAttribute="centerY" id="x8r-Sj-edn"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="infoButton" destination="kOG-ol-Mae" id="PHi-4W-yMd"/>
+                                    <outlet property="separator" destination="vNk-dN-PqK" id="nUW-bl-SP4"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p5N-fz-01k" userLabel="BottomContainer">
@@ -279,7 +290,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="783"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhq-zk-5g0">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhq-zk-5g0">
                             <rect key="frame" x="40" y="0.0" width="295" height="783"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-dp-HeP" userLabel="ContentView">
@@ -337,7 +348,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Ktb-dp-HeP" secondAttribute="bottom" id="8LF-A4-e1x"/>
                                 <constraint firstItem="Ktb-dp-HeP" firstAttribute="top" secondItem="Jhq-zk-5g0" secondAttribute="top" id="Saw-Qp-XAJ"/>
@@ -352,7 +363,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajq-rr-aIe" userLabel="line">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
-                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="N3b-2g-hxX"/>
                                     </constraints>

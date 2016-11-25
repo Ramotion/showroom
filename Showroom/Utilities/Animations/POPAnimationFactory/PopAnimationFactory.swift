@@ -1,7 +1,7 @@
 import pop
 import UIKit
 
-func createPopAlphaAnimation(_ from: CGFloat, to: CGFloat) -> POPBasicAnimation {
+func createPopAlphaAnimation(_ from: CGFloat?, to: CGFloat) -> POPBasicAnimation {
     
     let animaiton = POPBasicAnimation(propertyNamed: kPOPLayerOpacity)
     animaiton?.fromValue = (from)

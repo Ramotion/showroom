@@ -17,7 +17,7 @@ extension NodeAnimatable where Self: UIView {
             let animationObject = animation.createAnimation
             animationObject.duration = duration
             switch animation {
-            case .alpha, .color: layer.pop_add(animationObject, forKey: nil)
+            case .alpha, .alphaFrom, .color: layer.pop_add(animationObject, forKey: nil)
             case .titleColor: pop_add(animationObject, forKey: nil)
             }
         }

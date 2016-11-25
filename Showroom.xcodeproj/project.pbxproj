@@ -80,6 +80,12 @@
 		84D4B7D71DB1098C00EE38C6 /* AnimatedTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */; };
 		84D4B7DE1DB1251F00EE38C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7DD1DB1251F00EE38C6 /* MainViewController.swift */; };
 		84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */; };
+		84F0A9741DE827BA00C02332 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9731DE827BA00C02332 /* RxSwift.framework */; };
+		84F0A9751DE827BA00C02332 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9731DE827BA00C02332 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84F0A9771DE827CF00C02332 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9761DE827CF00C02332 /* RxCocoa.framework */; };
+		84F0A9781DE827CF00C02332 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9761DE827CF00C02332 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84F0A97A1DE82C8000C02332 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9791DE82C8000C02332 /* NSObject_Rx.framework */; };
+		84F0A97B1DE82C8000C02332 /* NSObject_Rx.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9791DE82C8000C02332 /* NSObject_Rx.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84F5AB2B1DAF74FF00271439 /* FoldingCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F5AB2A1DAF74FF00271439 /* FoldingCell.framework */; };
 		84F5AB2C1DAF74FF00271439 /* FoldingCell.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84F5AB2A1DAF74FF00271439 /* FoldingCell.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84F5AB2E1DAF75A600271439 /* FoldingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */; };
@@ -95,6 +101,9 @@
 			files = (
 				84B46EE71DAFC7320033CB15 /* PreviewTransition.framework in Embed Frameworks */,
 				84B46EE21DAFB5060033CB15 /* PaperOnboarding.framework in Embed Frameworks */,
+				84F0A97B1DE82C8000C02332 /* NSObject_Rx.framework in Embed Frameworks */,
+				84F0A9751DE827BA00C02332 /* RxSwift.framework in Embed Frameworks */,
+				84F0A9781DE827CF00C02332 /* RxCocoa.framework in Embed Frameworks */,
 				84F5AB2C1DAF74FF00271439 /* FoldingCell.framework in Embed Frameworks */,
 				84760B181DE05C1A00AF36FE /* EasyPeasy.framework in Embed Frameworks */,
 				8476E71A1DDF46D00043B32C /* SwiftyAttributes.framework in Embed Frameworks */,
@@ -176,6 +185,9 @@
 		84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AnimatedTabBar.storyboard; path = ../AnimatedTabBar.storyboard; sourceTree = "<group>"; };
 		84D4B7DD1DB1251F00EE38C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		84F0A9731DE827BA00C02332 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		84F0A9761DE827CF00C02332 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		84F0A9791DE82C8000C02332 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
 		84F5AB2A1DAF74FF00271439 /* FoldingCell.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FoldingCell.framework; path = Carthage/Build/iOS/FoldingCell.framework; sourceTree = "<group>"; };
 		84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingTableViewController.swift; sourceTree = "<group>"; };
 		84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoFoldginCell.swift; sourceTree = "<group>"; };
@@ -188,6 +200,9 @@
 			files = (
 				84B46EE61DAFC7320033CB15 /* PreviewTransition.framework in Frameworks */,
 				84B46EE11DAFB5060033CB15 /* PaperOnboarding.framework in Frameworks */,
+				84F0A97A1DE82C8000C02332 /* NSObject_Rx.framework in Frameworks */,
+				84F0A9741DE827BA00C02332 /* RxSwift.framework in Frameworks */,
+				84F0A9771DE827CF00C02332 /* RxCocoa.framework in Frameworks */,
 				84F5AB2B1DAF74FF00271439 /* FoldingCell.framework in Frameworks */,
 				84760B171DE05C1A00AF36FE /* EasyPeasy.framework in Frameworks */,
 				8476E7191DDF46D00043B32C /* SwiftyAttributes.framework in Frameworks */,
@@ -500,6 +515,9 @@
 		84D4B7DA1DB11D1500EE38C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84F0A9791DE82C8000C02332 /* NSObject_Rx.framework */,
+				84F0A9761DE827CF00C02332 /* RxCocoa.framework */,
+				84F0A9731DE827BA00C02332 /* RxSwift.framework */,
 				84760B1B1DE078AA00AF36FE /* pop.framework */,
 				84760B161DE05C1A00AF36FE /* EasyPeasy.framework */,
 				8476E7181DDF46D00043B32C /* SwiftyAttributes.framework */,
