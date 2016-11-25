@@ -35,6 +35,8 @@ extension ControlCollectionViewCell {
     hoursLabel.text = "\(control.hours) Human Hours"
     settingsLabel.text = control.languages
     setInfoText(text: control.info)
+    PreviewImage.image = UIImage(named: control.image)
+    PreviewImage.layer.masksToBounds = true
   }
 }
 

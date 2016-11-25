@@ -60,6 +60,20 @@ extension Showroom.Control {
     case .navigationStack: return "Swift, UIKit"
     }
   }
+    
+    var image: String {
+        switch self {
+        case .circleMenu: return ""
+        case .foldingCell: return "FoldingCell"
+        case .paperSwitch: return "PaperSwitch"
+        case .paperOnboarding: return "PaginationController"
+        case .expandingCollection: return "ExpandingController"
+        case .previewTransition: return "VRMenu"
+        case .animationTabBar: return "AnimatedTabBar"
+        case .realSearch: return "ReelSearch"
+        case .navigationStack: return "NavigationStack"
+        }
+    }
   
   var viewController: UIViewController {
     let main = UIStoryboard(storyboard: .Main)
