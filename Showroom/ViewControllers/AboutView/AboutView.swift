@@ -20,17 +20,7 @@ extension AboutView {
     
     configureInfoText()
     
-    _ = scrollView.rx.contentOffset
-      .map { $0.y > 5 }
-      .distinctUntilChanged()
-      .subscribe { [weak self] in
-        guard let titleView = self?.titleView else { return }
-
-        if let isShow = $0.element {
-          titleView.animateSeparator(isShow: isShow)
-        }
-      }
-      .addDisposableTo(rx_disposeBag)
+    subscribeSeparatorAnimation()
   }
 }
 
@@ -54,6 +44,24 @@ extension AboutView {
   }
 }
 
+// MARK: RX
+extension AboutView {
+  
+  func subscribeSeparatorAnimation() {
+    _ = scrollView.rx.contentOffset
+      .map { $0.y > 5 }
+      .distinctUntilChanged()
+      .subscribe { [weak self] in
+        guard let titleView = self?.titleView else { return }
+        
+        if let isShow = $0.element {
+          titleView.animateSeparator(isShow: isShow)
+        }
+      }
+      .addDisposableTo(rx_disposeBag)
+  }
+}
+
 // MARK: Helpers 
 private extension AboutView {
   
@@ -69,13 +77,3 @@ private extension AboutView {
     )
   }
 }
-
-//// MARK: UIScrollViewDelegate
-//extension AboutView: UIScrollViewDelegate {
-//
-//  func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//    print(scrollView.contentOffset.y)
-//    
-//    
-//  }
-//}
