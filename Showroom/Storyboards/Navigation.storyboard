@@ -63,7 +63,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzP-4h-fcC" userLabel="ImageContainer">
                                                     <rect key="frame" x="0.0" y="0.0" width="307" height="191"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageCollection" translatesAutoresizingMaskIntoConstraints="NO" id="dcd-w4-RdY">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageCollection" translatesAutoresizingMaskIntoConstraints="NO" id="dcd-w4-RdY">
                                                             <rect key="frame" x="0.0" y="0.0" width="307" height="186"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="186" id="UJ5-q8-3wi"/>
@@ -79,13 +79,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reel Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HeF-qw-qnJ">
-                                                    <rect key="frame" x="20" y="206.5" width="247" height="20"/>
+                                                    <rect key="frame" x="20" y="206" width="247" height="20"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The control helps to search faster by proactively providing the most relevant keywords as you type." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHS-v8-bIM">
-                                                    <rect key="frame" x="20" y="241.5" width="267" height="39"/>
+                                                    <rect key="frame" x="20" y="241" width="267" height="39"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Human Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruj-18-XtQ">
-                                                    <rect key="frame" x="47" y="366" width="232" height="13"/>
+                                                    <rect key="frame" x="47" y="366.5" width="232" height="13"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588235294117" green="0.59607843137254901" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -111,7 +111,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift, UIKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3n-GH-DHc">
-                                                    <rect key="frame" x="48" y="335" width="239" height="13"/>
+                                                    <rect key="frame" x="48" y="335.5" width="239" height="13"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588239999997" green="0.59607843140000005" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -203,7 +203,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-xj-2kp">
-                                                <rect key="frame" x="176.5" y="20.5" width="23.5" height="13"/>
+                                                <rect key="frame" x="176.5" y="21" width="23.5" height="13"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                 <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -283,20 +283,22 @@
                             <rect key="frame" x="40" y="0.0" width="295" height="783"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-dp-HeP" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="295" height="789"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295" height="837"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-T3-6Em">
-                                            <rect key="frame" x="0.0" y="186" width="295" height="375"/>
+                                            <rect key="frame" x="0.0" y="186" width="295" height="423"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="375" id="APm-pj-4K4"/>
+                                                <constraint firstAttribute="height" constant="423" id="APm-pj-4K4"/>
                                             </constraints>
-                                            <string key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
+                                            <mutableString key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
 
 We are very proud that our customers entrusted us with such an important task as the improvement of their products' user interfaces.
 
 Today, we are pleased to introduce an evolved Ramotion, featuring designs in native code, and we hope to bring even more value to our customers' projects on which our team works.
 
-To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.</string>
+To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.
+
+© 2016, Ramotion Inc.</mutableString>
                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -311,7 +313,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QlL-f4-QBt">
-                                            <rect key="frame" x="0.0" y="591" width="106" height="28"/>
+                                            <rect key="frame" x="0.0" y="639" width="106" height="28"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28" id="FAB-6A-Lya"/>
                                             </constraints>
@@ -346,7 +348,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                             </constraints>
                         </scrollView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0k2-bG-SbM" userLabel="BottomView">
-                            <rect key="frame" x="0.0" y="671" width="375" height="112"/>
+                            <rect key="frame" x="0.0" y="709" width="375" height="74"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajq-rr-aIe" userLabel="line">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
@@ -356,7 +358,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="center" semanticContentAttribute="forceLeftToRight" distribution="equalSpacing" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="yHk-YP-YM5">
-                                    <rect key="frame" x="40" y="22" width="295" height="35"/>
+                                    <rect key="frame" x="40" y="19.5" width="295" height="35"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dribbble-ball" translatesAutoresizingMaskIntoConstraints="NO" id="0EF-XJ-tJz">
                                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
@@ -399,26 +401,16 @@ To help you evaluate the quality of development, we have created a mobile applic
                                         <constraint firstAttribute="height" constant="35" id="fej-G0-Da3"/>
                                     </constraints>
                                 </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2016, Ramotion Inc." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRn-2L-Qn0">
-                                    <rect key="frame" x="40" y="76" width="295" height="14"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="14"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="bRn-2L-Qn0" secondAttribute="trailing" constant="40" id="6b9-sd-72z"/>
-                                <constraint firstItem="yHk-YP-YM5" firstAttribute="top" secondItem="0k2-bG-SbM" secondAttribute="top" constant="22" id="8jz-21-OLE"/>
                                 <constraint firstItem="yHk-YP-YM5" firstAttribute="leading" secondItem="0k2-bG-SbM" secondAttribute="leading" constant="40" id="CKC-bE-Qra"/>
                                 <constraint firstAttribute="trailing" secondItem="yHk-YP-YM5" secondAttribute="trailing" constant="40" id="Dkp-ld-Mr5"/>
-                                <constraint firstAttribute="bottom" secondItem="bRn-2L-Qn0" secondAttribute="bottom" constant="22" id="HyQ-LZ-A6g"/>
+                                <constraint firstItem="yHk-YP-YM5" firstAttribute="centerY" secondItem="0k2-bG-SbM" secondAttribute="centerY" id="JQB-94-UHJ"/>
                                 <constraint firstItem="ajq-rr-aIe" firstAttribute="leading" secondItem="0k2-bG-SbM" secondAttribute="leading" id="bbW-v6-Tso"/>
                                 <constraint firstItem="ajq-rr-aIe" firstAttribute="top" secondItem="0k2-bG-SbM" secondAttribute="top" id="lKY-dX-wmp"/>
-                                <constraint firstAttribute="height" constant="112" id="luU-oo-kMk"/>
+                                <constraint firstAttribute="height" constant="74" id="luU-oo-kMk"/>
                                 <constraint firstAttribute="trailing" secondItem="ajq-rr-aIe" secondAttribute="trailing" id="uDW-vv-qzN"/>
-                                <constraint firstItem="bRn-2L-Qn0" firstAttribute="leading" secondItem="0k2-bG-SbM" secondAttribute="leading" constant="40" id="vzS-zf-t0N"/>
                             </constraints>
                         </view>
                     </subviews>

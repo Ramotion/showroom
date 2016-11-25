@@ -63,12 +63,12 @@ extension Showroom.Control {
     
     var image: String {
         switch self {
-        case .circleMenu: return ""
+        case .circleMenu: return "CircleMenu"
         case .foldingCell: return "FoldingCell"
         case .paperSwitch: return "PaperSwitch"
         case .paperOnboarding: return "PaginationController"
         case .expandingCollection: return "ExpandingController"
-        case .previewTransition: return "VRMenu"
+        case .previewTransition: return "PreviewTransition"
         case .animationTabBar: return "AnimatedTabBar"
         case .realSearch: return "ReelSearch"
         case .navigationStack: return "NavigationStack"
