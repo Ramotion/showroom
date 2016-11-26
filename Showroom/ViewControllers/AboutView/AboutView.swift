@@ -12,6 +12,9 @@ class AboutView: UIView {
   @IBOutlet weak var sharedViewBottomConstraints: NSLayoutConstraint!
   @IBOutlet weak var sharedViewHeightConstraint: NSLayoutConstraint!
   
+  @IBOutlet weak var infoTextHeightconstraint: NSLayoutConstraint!
+  @IBOutlet weak var infoTextTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak var titleLabelHeight: NSLayoutConstraint!
   @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var titleLabel: UILabel!
   fileprivate var circleView: CircleView?
@@ -38,32 +41,41 @@ extension AboutView {
     
     if circleView == nil { circleView = .build(on: self, position: titleView.infoButton.center) }
     
-    infoText.alpha = 0
-    
-    titleLabel.alpha = 0
-    titleLabel.animate(duration: 0.4, [.alpha(to: 1)], delay: 0.2)
-    
-    alpha = 0
-    animate(duration: 0.2, [.alpha(to: 1)])
-    
     view.addSubview(self)
     self <- Edges(0)
-    
-    circleView?.show()
-    
-    // move animations
-    sharedViewBottomConstraints.constant = -sharedViewHeightConstraint.constant
-    titleLabelTopConstraint.constant += 40
-    layoutIfNeeded()
-    
-    sharedViewBottomConstraints.constant = 0
-    titleLabelTopConstraint.constant -= 40
-    UIView.animate(withDuration: 0.4, delay: 0.4, options: .curveEaseOut, animations: { [weak self] in
-      self?.layoutIfNeeded()
-    }, completion: nil)
-    
     view.bringSubview(toFront: titleView)
-//    titleView.backgroundColor = UIColor(white: 1, alpha: 0.96)
+    
+    circleView?.show() { [weak self] in
+      self?.titleView.backgroundColor = UIColor(white: 1, alpha: 0.96)
+    }
+    
+    alpha = 0
+    animate(duration: 0.4, [.alphaFrom(0, to: 1, removed: false)])
+
+    // move animations
+    sharedView.pop_removeAllAnimations()
+    sharedView.alpha = 0
+    sharedView.animate(duration: 0.001, delay: 0.4, [.alpha(to: 1)])
+    sharedView.animate(duration: 0.6, delay: 0.3,
+                       [
+                        .layerPositionY(from: Showroom.screen.height + sharedViewHeightConstraint.constant / 2,
+                                        to: Showroom.screen.height - sharedViewHeightConstraint.constant / 2)
+                       ])
+    
+    titleLabel.pop_removeAllAnimations()
+    titleLabel.alpha = 0
+    titleLabel.animate(duration: 0.4, delay: 0.2, [.alphaFrom(0, to: 1, removed: false)])
+    titleLabel.animate(duration: 0.4, delay: 0.2,
+                       [.layerPositionY(from: titleLabelTopConstraint.constant + titleLabelHeight.constant / 2 + sharedViewHeightConstraint.constant / 2,
+                                        to: titleLabelTopConstraint.constant + titleLabelHeight.constant / 2)
+                       ])
+    
+    infoText.pop_removeAllAnimations()
+    infoText.alpha = 0
+    infoText.animate(duration: 0.5, delay: 0.3, [.alphaFrom(0, to: 1, removed: false)])
+    let from = titleLabelTopConstraint.constant + titleLabelHeight.constant + infoTextHeightconstraint.constant / 2 + infoTextTopConstraint.constant + sharedViewHeightConstraint.constant / 2
+    infoText.animate(duration: 0.5, delay: 0.3, [.layerPositionY(from: from, to: from - sharedViewHeightConstraint.constant / 2)])
+    
   }
   
   func hide(on view: UIView) {

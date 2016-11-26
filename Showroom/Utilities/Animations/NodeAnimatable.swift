@@ -26,15 +26,19 @@ private extension NodeAnimatinos.Timing {
 }
 
 
-protocol NodeAnimatable {
-  func animate(duration: TimeInterval, _ animations: [NodeAnimations], timing: NodeAnimatinos.Timing?, delay: TimeInterval?, completion: (() -> ())?)
+protocol NodeAnimatable: class {
+  func animate(duration: TimeInterval, delay: TimeInterval?, _ animations: [NodeAnimations], timing: NodeAnimatinos.Timing?, completion: (() -> ())?)
 }
 
 extension NodeAnimatable where Self: UIView {
   
-  func animate(duration: TimeInterval, _ animations: [NodeAnimations], timing: NodeAnimatinos.Timing? = nil, delay: TimeInterval? = nil, completion: (() -> ())? = nil) {
+  func animate(duration: TimeInterval,
+               delay: TimeInterval? = nil,
+               _ animations: [NodeAnimations],
+               timing: NodeAnimatinos.Timing? = nil,
+               completion: (() -> ())? = nil) {
     
-    if let completion = completion { startDelay(duration, completion) }
+    if let completion = completion { startDelay(duration + (delay ?? 0), completion) }
     
     for animation in animations {
       let animationObject = animation.createAnimation
@@ -42,8 +46,8 @@ extension NodeAnimatable where Self: UIView {
       if let timing = timing { animationObject.timingFunction = timing.popTiming }
       if let delay = delay { animationObject.beginTime = CACurrentMediaTime() + delay }
       switch animation {
-      case .alpha, .alphaFrom, .color, .layerPositionY: layer.pop_add(animationObject, forKey: nil)
-      case .titleColor, .viewScale: pop_add(animationObject, forKey: nil)
+      case .color, .layerPositionY: layer.pop_add(animationObject, forKey: nil)
+      case .alpha, .alphaFrom, .titleColor, .viewScale: pop_add(animationObject, forKey: nil)
       }
     }
   }

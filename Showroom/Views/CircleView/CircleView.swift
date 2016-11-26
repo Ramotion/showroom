@@ -7,6 +7,7 @@ class CircleView: UIView {
     super.init(frame: frame)
     
     backgroundColor = .white
+    layer.shouldRasterize = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -33,10 +34,10 @@ extension CircleView {
 // MARK: Animations
 extension CircleView {
   
-  func show() {
+  func show(completion: @escaping () -> Void) {
     alpha = 0
     animate(duration: 0.1, [.alpha(to: 1)])
-    animate(duration: 0.4, [.viewScale(from: 0, to: 1)], timing: .easyInEasyOut)
+    animate(duration: 0.4, [.viewScale(from: 0, to: 1)], timing: .easyInEasyOut, completion: completion)
   }
   
   func hide() {

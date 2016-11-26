@@ -185,7 +185,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNk-dN-PqK" userLabel="separator">
-                                        <rect key="frame" x="0.0" y="97" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="97.5" width="375" height="1"/>
                                         <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="Grp-7f-4QQ"/>
@@ -301,7 +301,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="423" id="APm-pj-4K4"/>
                                             </constraints>
-                                            <mutableString key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
+                                            <string key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
 
 We are very proud that our customers entrusted us with such an important task as the improvement of their products' user interfaces.
 
@@ -309,7 +309,7 @@ Today, we are pleased to introduce an evolved Ramotion, featuring designs in nat
 
 To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.
 
-© 2016, Ramotion Inc.</mutableString>
+© 2016, Ramotion Inc.</string>
                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -437,11 +437,14 @@ To help you evaluate the quality of development, we have created a mobile applic
                     </constraints>
                     <connections>
                         <outlet property="infoText" destination="pz0-T3-6Em" id="tzU-t0-Sjg"/>
+                        <outlet property="infoTextHeightconstraint" destination="APm-pj-4K4" id="PMt-ya-VfB"/>
+                        <outlet property="infoTextTopConstraint" destination="apH-Ar-iaU" id="agj-O9-8ej"/>
                         <outlet property="scrollView" destination="Jhq-zk-5g0" id="KG3-1D-psU"/>
                         <outlet property="sharedView" destination="0k2-bG-SbM" id="0lo-Oy-wtE"/>
                         <outlet property="sharedViewBottomConstraints" destination="2KL-Ai-B04" id="xOU-pd-W4q"/>
                         <outlet property="sharedViewHeightConstraint" destination="luU-oo-kMk" id="EbH-vF-Ebr"/>
                         <outlet property="titleLabel" destination="87a-X8-6EJ" id="zjh-jt-8mr"/>
+                        <outlet property="titleLabelHeight" destination="oyz-RS-Zja" id="u27-75-vPB"/>
                         <outlet property="titleLabelTopConstraint" destination="t4N-Xm-oQz" id="0T7-Fk-q9s"/>
                     </connections>
                 </view>

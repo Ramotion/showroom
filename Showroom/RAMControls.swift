@@ -1,6 +1,8 @@
-import Foundation
+import UIKit
 
 struct Showroom {
+  
+  static let screen = UIScreen.main.bounds.size
   
   enum Control {
     case circleMenu
