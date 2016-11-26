@@ -8,7 +8,13 @@ class CircleView: UIView {
     
     backgroundColor = .white
     layer.shouldRasterize = true
+    
+    layer.shadowOpacity = 1
+    layer.shadowColor = UIColor.white.cgColor
+    layer.shadowOffset = CGSize(width: -40, height: 30);
+    layer.shadowRadius = 20
   }
+//  enableBlurWithAngle
   
   required init?(coder aDecoder: NSCoder) {
     fatalError("init(coder:) has not been implemented")

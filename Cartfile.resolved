@@ -1,4 +1,5 @@
 github "nakiostudio/EasyPeasy" "1.4"
+github "ober01/MotionBlur" "2.0.0"
 github "ReactiveX/RxSwift" "3.0.1"
 github "eddiekaiger/SwiftyAttributes" "v3.0.0"
 github "ober01/UPCarouselFlowLayout" "1.1.1"
