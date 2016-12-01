@@ -56,7 +56,7 @@ extension AboutView {
     sharedView.pop_removeAllAnimations()
     sharedView.alpha = 0
     sharedView.animate(duration: 0.001, delay: 0.4, [.alpha(to: 1)])
-    sharedView.animate(duration: 0.6, delay: 0.3,
+    sharedView.animate(duration: 0.8, delay: 0.4,
                        [
                         .layerPositionY(from: Showroom.screen.height + sharedViewHeightConstraint.constant / 2,
                                         to: Showroom.screen.height - sharedViewHeightConstraint.constant / 2)
@@ -65,7 +65,7 @@ extension AboutView {
     titleLabel.pop_removeAllAnimations()
     titleLabel.alpha = 0
     titleLabel.animate(duration: 0.4, delay: 0.2, [.alphaFrom(0, to: 1, removed: false)])
-    titleLabel.animate(duration: 0.4, delay: 0.2,
+    titleLabel.animate(duration: 0.6, delay: 0.2,
                        [.layerPositionY(from: titleLabelTopConstraint.constant + titleLabelHeight.constant / 2 + sharedViewHeightConstraint.constant / 2,
                                         to: titleLabelTopConstraint.constant + titleLabelHeight.constant / 2)
                        ])
@@ -74,7 +74,7 @@ extension AboutView {
     infoText.alpha = 0
     infoText.animate(duration: 0.5, delay: 0.3, [.alphaFrom(0, to: 1, removed: false)])
     let from = titleLabelTopConstraint.constant + titleLabelHeight.constant + infoTextHeightconstraint.constant / 2 + infoTextTopConstraint.constant + sharedViewHeightConstraint.constant / 2
-    infoText.animate(duration: 0.5, delay: 0.3, [.layerPositionY(from: from, to: from - sharedViewHeightConstraint.constant / 2)])
+    infoText.animate(duration: 0.7, delay: 0.3, [.layerPositionY(from: from, to: from - sharedViewHeightConstraint.constant / 2)])
     
   }
   
