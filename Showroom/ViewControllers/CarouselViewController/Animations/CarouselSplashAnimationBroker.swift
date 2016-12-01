@@ -31,12 +31,13 @@ struct CarouselSplashAnimationBroker {
     self.bottomRectangle = bottomRectangle
     self.backgroudView = backgroudView
     
-    [collectionView, infoButton, contactUsButton, pageLabel, topRectangle, bottomRectangle].forEach { $0.alpha = 0 }
+    [collectionView, contactUsButton, pageLabel, topRectangle, bottomRectangle, infoButton].forEach { $0.alpha = 0 }
     backgroudView.backgroundColor = .white
     
     // rLogo Animation
     rLogoAnimation()
     ramotionLogoAnimation()
+    infoButtonAnimation()
   }
 }
 
@@ -67,6 +68,11 @@ extension CarouselSplashAnimationBroker {
     titleContainer.ramotionLabel.animate(duration: 0.001, [.layerPositionXY(from: hidePosition, to: hidePosition)])
     titleContainer.ramotionLabel.animate(duration: 0.8, delay: 1.4, [.layerPositionX(from: xHidePosition, to: ramotionLabelStartPosition.x)], timing: .easyInEasyOut)
     titleContainer.ramotionLabel.animate(duration: 0.7, delay: 2.2, [.layerPositionY(from: Showroom.screenCenter.y, to: ramotionLabelStartPosition.y)], timing: .easyInEasyOut)
+  }
+  
+  func infoButtonAnimation() {
+    infoButton.animate(duration: 0, delay: 2.5, [.springScale(from: 0, to: 1, bounce: 23, spring: 5)])
+    infoButton.animate(duration: 0.1, delay: 2.5, [.alpha(to: 1)])
   }
   
 }

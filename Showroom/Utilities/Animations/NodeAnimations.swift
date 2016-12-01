@@ -10,11 +10,13 @@ enum NodeAnimations {
   case layerPositionY(from: CGFloat, to: CGFloat)
   case layerPositionX(from: CGFloat, to: CGFloat)
   case layerPositionXY(from: CGPoint, to: CGPoint)
+  
+  case springScale(from: CGFloat, to: CGFloat, bounce: CGFloat, spring: CGFloat)
 }
 
 extension NodeAnimations {
   
-  var createAnimation: POPBasicAnimation {
+  var createAnimation: POPPropertyAnimation {
     switch self {
     case .alphaFrom(let from, let to, let removed): return createPopAlphaAnimation(from, to: to, removed: removed)
     case .alpha(let to): return createPopAlphaAnimation(nil, to: to, removed: false)
@@ -24,6 +26,8 @@ extension NodeAnimations {
     case .layerPositionY(let from, let to): return createPopLayerYAnimation(from: from, to: to)
     case .layerPositionX(let from, let to): return createPopLayerXAnimation(from: from, to: to)
     case .layerPositionXY(let from, let to): return createPopLayerXYAnimation(from: from, to: to)
+    case .springScale(let from, let to, let bounce, let spring):
+      return createPopSpringScale(from: CGSize(width: from, height: from), to: CGSize(width: to, height: to), bounce: bounce, spring: spring)
     }
   }
 }

@@ -58,3 +58,15 @@ func createPopLayerXYAnimation(from: CGPoint, to: CGPoint) -> POPBasicAnimation 
   animaiton?.removedOnCompletion = true
   return animaiton!
 }
+
+func createPopSpringScale(from: CGSize, to: CGSize, bounce: CGFloat, spring: CGFloat) -> POPSpringAnimation {
+  
+  let animaiton = POPSpringAnimation(propertyNamed: kPOPLayerScaleXY)
+  animaiton?.toValue = (to)
+  animaiton?.fromValue = (from)
+  animaiton?.springBounciness = bounce
+  animaiton?.springSpeed = spring
+  animaiton?.removedOnCompletion = true
+  return animaiton!
+}
+
