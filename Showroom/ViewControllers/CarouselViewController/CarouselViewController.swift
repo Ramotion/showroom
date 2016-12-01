@@ -11,6 +11,8 @@ fileprivate struct C {
 // MARK: CarouselViewController
 class CarouselViewController: UIViewController {
   
+  @IBOutlet weak var bottomRectangle: UIImageView!
+  @IBOutlet weak var topRectangle: UIImageView!
   @IBOutlet weak var topContainer: CarouselTitleView!
   @IBOutlet var aboutView: AboutView!
   @IBOutlet weak var infoButton: UIButton!
@@ -27,6 +29,8 @@ class CarouselViewController: UIViewController {
                                                .animationTabBar,
                                                .realSearch,
                                                .navigationStack]
+  
+  fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!
   
   // Index of current cell
   fileprivate var currentIndex: Int {
@@ -49,6 +53,15 @@ extension CarouselViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
+                                                          infoButton: infoButton,
+                                                          contactUsButton: contactUsButton,
+                                                          pageLabel: pageLabel,
+                                                          titleContainer: topContainer,
+                                                          topRectangle: topRectangle,
+                                                          bottomRectangle: bottomRectangle,
+                                                          backgroudView: self.view)
     
     configureContactButton()
     pageLabel.text = "\(currentIndex + 1)/\(items.count)"

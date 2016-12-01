@@ -46,7 +46,7 @@ extension NodeAnimatable where Self: UIView {
       if let timing = timing { animationObject.timingFunction = timing.popTiming }
       if let delay = delay { animationObject.beginTime = CACurrentMediaTime() + delay }
       switch animation {
-      case .color, .layerPositionY: layer.pop_add(animationObject, forKey: nil)
+      case .color, .layerPositionY, .layerPositionXY, .layerPositionX: layer.pop_add(animationObject, forKey: nil)
       case .alpha, .alphaFrom, .titleColor, .viewScale: pop_add(animationObject, forKey: nil)
       }
     }

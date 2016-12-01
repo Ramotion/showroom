@@ -16,6 +16,7 @@
 		841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */; };
 		842E3F401DF004620071037A /* UIView+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F3F1DF004620071037A /* UIView+Build.swift */; };
 		842E3F431DF016FF0071037A /* AboutTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F421DF016FF0071037A /* AboutTopView.swift */; };
+		842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F451DF0214E0071037A /* CarouselSplashAnimationBroker.swift */; };
 		844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE71D1DB4AD9F0029FBD4 /* RAMControls.swift */; };
 		844AE7201DB4AFF20029FBD4 /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE71F1DB4AFF20029FBD4 /* Controlls.swift */; };
 		844AE7231DB4C5590029FBD4 /* RAMReel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844AE7221DB4C5590029FBD4 /* RAMReel.framework */; };
@@ -133,6 +134,7 @@
 		841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselFlow.swift; sourceTree = "<group>"; };
 		842E3F3F1DF004620071037A /* UIView+Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Build.swift"; sourceTree = "<group>"; };
 		842E3F421DF016FF0071037A /* AboutTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTopView.swift; sourceTree = "<group>"; };
+		842E3F451DF0214E0071037A /* CarouselSplashAnimationBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselSplashAnimationBroker.swift; sourceTree = "<group>"; };
 		844AE71D1DB4AD9F0029FBD4 /* RAMControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMControls.swift; sourceTree = "<group>"; };
 		844AE71F1DB4AFF20029FBD4 /* Controlls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		844AE7221DB4C5590029FBD4 /* RAMReel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RAMReel.framework; path = Carthage/Build/iOS/RAMReel.framework; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 		841C95111DDEEEA200B997F5 /* CarouselViewController */ = {
 			isa = PBXGroup;
 			children = (
+				842E3F441DF020EE0071037A /* Animations */,
 				84760B281DE07C0200AF36FE /* Views */,
 				841C951B1DDEFA3200B997F5 /* Flow */,
 				841C95181DDEF71300B997F5 /* Cells */,
@@ -310,6 +313,14 @@
 				842E3F421DF016FF0071037A /* AboutTopView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		842E3F441DF020EE0071037A /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				842E3F451DF0214E0071037A /* CarouselSplashAnimationBroker.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		844AE71B1DB4AC680029FBD4 /* ControllersList */ = {
@@ -693,6 +704,7 @@
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
+				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,
 				84760B241DE0796800AF36FE /* NodeAnimations.swift in Sources */,
 				841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */,
 				84F0A97F1DE834F900C02332 /* CircleView.swift in Sources */,

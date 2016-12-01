@@ -40,3 +40,21 @@ func createPopLayerYAnimation(from: CGFloat, to: CGFloat) -> POPBasicAnimation {
   animaiton?.removedOnCompletion = true
   return animaiton!
 }
+
+func createPopLayerXAnimation(from: CGFloat, to: CGFloat) -> POPBasicAnimation {
+  
+  let animaiton = POPBasicAnimation(propertyNamed: kPOPLayerPositionX)
+  animaiton?.toValue = (to)
+  animaiton?.fromValue = (from)
+  animaiton?.removedOnCompletion = true
+  return animaiton!
+}
+
+func createPopLayerXYAnimation(from: CGPoint, to: CGPoint) -> POPBasicAnimation {
+  
+  let animaiton = POPBasicAnimation(propertyNamed: kPOPLayerPosition)
+  animaiton?.toValue = (to)
+  animaiton?.fromValue = (from)
+  animaiton?.removedOnCompletion = true
+  return animaiton!
+}

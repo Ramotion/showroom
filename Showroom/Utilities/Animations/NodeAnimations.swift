@@ -8,6 +8,8 @@ enum NodeAnimations {
   case titleColor(to: UIColor) // only for UILabel
   case viewScale(from: CGFloat, to: CGFloat)
   case layerPositionY(from: CGFloat, to: CGFloat)
+  case layerPositionX(from: CGFloat, to: CGFloat)
+  case layerPositionXY(from: CGPoint, to: CGPoint)
 }
 
 extension NodeAnimations {
@@ -20,6 +22,8 @@ extension NodeAnimations {
     case .titleColor(let to): return createPopTitleColorAnimation(to)
     case .viewScale(let from, let to): return createPopViewScaleAnimation(from: from, to: to)
     case .layerPositionY(let from, let to): return createPopLayerYAnimation(from: from, to: to)
+    case .layerPositionX(let from, let to): return createPopLayerXAnimation(from: from, to: to)
+    case .layerPositionXY(let from, let to): return createPopLayerXYAnimation(from: from, to: to)
     }
   }
 }
