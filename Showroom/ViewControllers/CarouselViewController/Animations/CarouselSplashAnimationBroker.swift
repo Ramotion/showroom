@@ -31,13 +31,15 @@ struct CarouselSplashAnimationBroker {
     self.bottomRectangle = bottomRectangle
     self.backgroudView = backgroudView
     
-    [collectionView, contactUsButton, pageLabel, topRectangle, bottomRectangle, infoButton].forEach { $0.alpha = 0 }
-    backgroudView.backgroundColor = .white
+    [collectionView, pageLabel, infoButton].forEach { $0.alpha = 0 }
     
     // rLogo Animation
     rLogoAnimation()
     ramotionLogoAnimation()
     infoButtonAnimation()
+    
+    backgroundAnimation()
+    contactUsButtonAnimation()
   }
 }
 
@@ -67,7 +69,7 @@ extension CarouselSplashAnimationBroker {
     let hidePosition = CGPoint(x: xHidePosition, y: Showroom.screenCenter.y)
     titleContainer.ramotionLabel.animate(duration: 0.001, [.layerPositionXY(from: hidePosition, to: hidePosition)])
     titleContainer.ramotionLabel.animate(duration: 0.8, delay: 1.4, [.layerPositionX(from: xHidePosition, to: ramotionLabelStartPosition.x)], timing: .easyInEasyOut)
-    titleContainer.ramotionLabel.animate(duration: 0.7, delay: 2.2, [.layerPositionY(from: Showroom.screenCenter.y, to: ramotionLabelStartPosition.y)], timing: .easyInEasyOut)
+    titleContainer.ramotionLabel.animate(duration: 0.7, delay: 2.23, [.layerPositionY(from: Showroom.screenCenter.y, to: ramotionLabelStartPosition.y)], timing: .easyInEasyOut)
   }
   
   func infoButtonAnimation() {
@@ -75,4 +77,19 @@ extension CarouselSplashAnimationBroker {
     infoButton.animate(duration: 0.1, delay: 2.5, [.alpha(to: 1)])
   }
   
+  func backgroundAnimation() {
+    backgroudView.backgroundColor = .white
+    backgroudView.animate(duration: 0.8, delay: 0.5, [.color(to: UIColor(red:0.93, green:0.93, blue:0.95, alpha:1.00))])
+  }
+  
+  func contactUsButtonAnimation() {
+    let startPosition = contactUsButton.layer.position
+    contactUsButton.animate(duration: 0.001, [
+      .layerPositionY(from: Showroom.screen.height, to: Showroom.screen.height)
+      ])
+    
+    contactUsButton.animate(duration: 0.8, delay: 2.2, [
+      .layerPositionY(from: Showroom.screen.height, to: startPosition.y)
+      ])
+  }
 }
