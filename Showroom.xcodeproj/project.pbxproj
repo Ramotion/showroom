@@ -14,6 +14,8 @@
 		841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95161DDEF39100B997F5 /* EasyCollectionView.swift */; };
 		841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */; };
 		841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */; };
+		842E3F401DF004620071037A /* UIView+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F3F1DF004620071037A /* UIView+Build.swift */; };
+		842E3F431DF016FF0071037A /* AboutTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F421DF016FF0071037A /* AboutTopView.swift */; };
 		844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE71D1DB4AD9F0029FBD4 /* RAMControls.swift */; };
 		844AE7201DB4AFF20029FBD4 /* Controlls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE71F1DB4AFF20029FBD4 /* Controlls.swift */; };
 		844AE7231DB4C5590029FBD4 /* RAMReel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844AE7221DB4C5590029FBD4 /* RAMReel.framework */; };
@@ -129,6 +131,8 @@
 		841C95161DDEF39100B997F5 /* EasyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCollectionView.swift; sourceTree = "<group>"; };
 		841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlCollectionViewCell.swift; sourceTree = "<group>"; };
 		841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselFlow.swift; sourceTree = "<group>"; };
+		842E3F3F1DF004620071037A /* UIView+Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Build.swift"; sourceTree = "<group>"; };
+		842E3F421DF016FF0071037A /* AboutTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTopView.swift; sourceTree = "<group>"; };
 		844AE71D1DB4AD9F0029FBD4 /* RAMControls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMControls.swift; sourceTree = "<group>"; };
 		844AE71F1DB4AFF20029FBD4 /* Controlls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controlls.swift; sourceTree = "<group>"; };
 		844AE7221DB4C5590029FBD4 /* RAMReel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RAMReel.framework; path = Carthage/Build/iOS/RAMReel.framework; sourceTree = "<group>"; };
@@ -249,6 +253,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				842E3F3E1DF004420071037A /* Build */,
 				84760B1E1DE0794D00AF36FE /* Animations */,
 				841C95151DDEF31A00B997F5 /* EasyCollection */,
 				84760B261DE07A1B00AF36FE /* Deley.swift */,
@@ -289,6 +294,22 @@
 				8476E7141DDF066E0043B32C /* Graphik-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		842E3F3E1DF004420071037A /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				842E3F3F1DF004620071037A /* UIView+Build.swift */,
+			);
+			path = Build;
+			sourceTree = "<group>";
+		};
+		842E3F411DF016C30071037A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				842E3F421DF016FF0071037A /* AboutTopView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		844AE71B1DB4AC680029FBD4 /* ControllersList */ = {
@@ -366,6 +387,7 @@
 		84760B151DE052D700AF36FE /* AboutView */ = {
 			isa = PBXGroup;
 			children = (
+				842E3F411DF016C30071037A /* Views */,
 				84760B191DE05E3500AF36FE /* AboutView.swift */,
 			);
 			name = AboutView;
@@ -693,10 +715,12 @@
 				84C180CD1DAE155300C056F8 /* AppDelegate.swift in Sources */,
 				84B46EF21DAFCF180033CB15 /* LayerAnimationHalper.swift in Sources */,
 				84D4B7DE1DB1251F00EE38C6 /* MainViewController.swift in Sources */,
+				842E3F431DF016FF0071037A /* AboutTopView.swift in Sources */,
 				84B46EEA1DAFCC7E0033CB15 /* Extensions.swift in Sources */,
 				84760B251DE0796800AF36FE /* PopAnimationFactory.swift in Sources */,
 				84B46EEE1DAFCC8C0033CB15 /* DemoTableViewController.swift in Sources */,
 				844AE7201DB4AFF20029FBD4 /* Controlls.swift in Sources */,
+				842E3F401DF004620071037A /* UIView+Build.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -31,8 +31,10 @@ extension CircleView {
     let circleView = CircleView(frame: CGRect(x: 0, y: 0, width: diagonal, height: diagonal))
     circleView.layer.cornerRadius = diagonal / 2
     circleView.center = position
-    view.addSubview(circleView)
-    view.sendSubview(toBack: circleView)
+//    view.addSubview(circleView)
+//    view.sendSubview(toBack: circleView)
+    view.layer.mask = circleView.layer
+    
     return circleView
   }
 }
@@ -40,13 +42,13 @@ extension CircleView {
 // MARK: Animations
 extension CircleView {
   
-  func show(completion: @escaping () -> Void) {
+  func show(completion: @escaping () -> Void = {}) {
     alpha = 0
     animate(duration: 0.1, [.alpha(to: 1)])
     animate(duration: 0.4, [.viewScale(from: 0, to: 1)], timing: .easyInEasyOut, completion: completion)
   }
   
-  func hide() {
-    animate(duration: 0.4, [.viewScale(from: 1, to: 0)])
+  func hide(completion: @escaping () -> Void) {
+    animate(duration: 0.4, [.viewScale(from: 1, to: 0)], timing: .easyInEasyOut, completion: completion)
   }
 }

@@ -11,6 +11,9 @@ class AboutView: UIView {
   @IBOutlet weak var sharedView: UIView!
   @IBOutlet weak var sharedViewBottomConstraints: NSLayoutConstraint!
   @IBOutlet weak var sharedViewHeightConstraint: NSLayoutConstraint!
+  @IBOutlet weak var learnMoreLabel: UIButton!
+  @IBOutlet weak var learnMoreSpace: NSLayoutConstraint!
+  @IBOutlet weak var learnMoreHeight: NSLayoutConstraint!
   
   @IBOutlet weak var infoTextHeightconstraint: NSLayoutConstraint!
   @IBOutlet weak var infoTextTopConstraint: NSLayoutConstraint!
@@ -18,8 +21,13 @@ class AboutView: UIView {
   @IBOutlet weak var titleLabelTopConstraint: NSLayoutConstraint!
   @IBOutlet weak var titleLabel: UILabel!
   fileprivate var circleView: CircleView?
-
-  var titleView: CarouselTitleView! 
+  
+  @IBOutlet weak var topView: AboutTopView!
+  @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+  
+  var titleView: CarouselTitleView!
+  
+  let transperentView: UIView = .build(color: UIColor(red:0.16, green:0.23, blue:0.33, alpha:1.00), alpha: 0)
 }
 
 // MARK: Life Cycle
@@ -40,17 +48,21 @@ extension AboutView {
   func show(on view: UIView) {
     
     if circleView == nil { circleView = .build(on: self, position: titleView.infoButton.center) }
+    scrollView.alpha = 1
+    scrollView.contentOffset.y = 0
     
     view.addSubview(self)
     self <- Edges(0)
+    
     view.bringSubview(toFront: titleView)
     
-    circleView?.show() { [weak self] in
-      self?.titleView.backgroundColor = UIColor(white: 1, alpha: 0.96)
-    }
+    circleView?.show()
+    topViewHeight.constant = titleView.bounds.size.height
     
-    alpha = 0
-    animate(duration: 0.4, [.alphaFrom(0, to: 1, removed: false)])
+    superview?.insertSubview(transperentView, belowSubview: self)
+    transperentView <- Edges(0)
+    transperentView.alpha = 0
+    transperentView.animate(duration: 0.4, [.alphaFrom(0, to: 0.4, removed: false)])
 
     // move animations
     sharedView.pop_removeAllAnimations()
@@ -76,15 +88,25 @@ extension AboutView {
     let from = titleLabelTopConstraint.constant + titleLabelHeight.constant + infoTextHeightconstraint.constant / 2 + infoTextTopConstraint.constant + sharedViewHeightConstraint.constant / 2
     infoText.animate(duration: 0.7, delay: 0.3, [.layerPositionY(from: from, to: from - sharedViewHeightConstraint.constant / 2)])
     
+    learnMoreLabel.pop_removeAllAnimations()
+    learnMoreLabel.alpha = 0
+    learnMoreLabel.animate(duration: 0.5, delay: 0.3, [.alphaFrom(0, to: 1, removed: false)])
+    let infofrom = titleLabelTopConstraint.constant + titleLabelHeight.constant + infoTextHeightconstraint.constant + infoTextTopConstraint.constant 
+    let lfrom = infofrom + learnMoreSpace.constant + learnMoreHeight.constant / 2 + sharedViewHeightConstraint.constant / 2
+    learnMoreLabel.animate(duration: 0.7, delay: 0.3, [.layerPositionY(from: lfrom, to: lfrom - sharedViewHeightConstraint.constant / 2)])
+    
   }
   
   func hide(on view: UIView) {
-    self.removeFromSuperview()
-    
-    view.bringSubview(toFront: titleView)
-    titleView.backgroundColor = .clear
-    titleView.animateSeparator(isShow: false)
-    circleView?.hide()
+   
+//    view.bringSubview(toFront: titleView)
+    scrollView.animate(duration: 0.3, [.alpha(to: 0)], timing: .easyInEasyOut)
+    transperentView.animate(duration: 0.4, [.alphaFrom(0.4, to: 0, removed: false)])
+    topView.animateSeparator(isShow: false)
+    circleView?.hide() { [weak self] in
+      self?.transperentView.removeFromSuperview()
+      self?.removeFromSuperview()
+    }
   }
 }
 
@@ -96,10 +118,10 @@ private extension AboutView {
       .map { $0.y > 5 }
       .distinctUntilChanged()
       .subscribe { [weak self] in
-        guard let titleView = self?.titleView else { return }
+        guard let topView = self?.topView else { return }
         
         if let isShow = $0.element {
-          titleView.animateSeparator(isShow: isShow)
+          topView.animateSeparator(isShow: isShow)
         }
       }
       .addDisposableTo(rx_disposeBag)
