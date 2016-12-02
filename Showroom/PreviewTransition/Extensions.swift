@@ -58,6 +58,7 @@ extension UIStoryboard {
     case Main
     case AnimatedTabBar
     case NavigationStack
+    case Navigation
   }
   
   convenience init(storyboard: Storyboard, bundle: Bundle? = nil) {

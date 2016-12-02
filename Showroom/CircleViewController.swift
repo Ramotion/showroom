@@ -23,6 +23,12 @@ extension CircleViewController {
     circleButton.delegate = self
     addBackButton()
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    ThingersTapViewController.showPopup(on: self)
+  }
 }
 
 extension CircleViewController: CircleMenuDelegate {

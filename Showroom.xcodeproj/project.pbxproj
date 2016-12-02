@@ -33,6 +33,8 @@
 		844AE73D1DB4D9870029FBD4 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */; };
 		8468A72A1DE2E59000D40917 /* ViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468A7291DE2E59000D40917 /* ViewController+Dismiss.swift */; };
 		8468A72C1DE2E8D800D40917 /* BounceAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8468A72B1DE2E8D800D40917 /* BounceAnimationViewController.swift */; };
+		846E6FA91DF18D7300A7F02E /* ThingersTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E6FA81DF18D7300A7F02E /* ThingersTapViewController.swift */; };
+		846E6FAC1DF1909200A7F02E /* ShowAlphaModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */; };
 		847226681DAE5EFD00D6938B /* CircleMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 847226671DAE5EFD00D6938B /* CircleMenu.framework */; };
 		847226691DAE5EFD00D6938B /* CircleMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 847226671DAE5EFD00D6938B /* CircleMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84760B171DE05C1A00AF36FE /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84760B161DE05C1A00AF36FE /* EasyPeasy.framework */; };
@@ -149,6 +151,8 @@
 		844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		8468A7291DE2E59000D40917 /* ViewController+Dismiss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Dismiss.swift"; sourceTree = "<group>"; };
 		8468A72B1DE2E8D800D40917 /* BounceAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BounceAnimationViewController.swift; sourceTree = "<group>"; };
+		846E6FA81DF18D7300A7F02E /* ThingersTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingersTapViewController.swift; sourceTree = "<group>"; };
+		846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAlphaModalTransition.swift; sourceTree = "<group>"; };
 		847226671DAE5EFD00D6938B /* CircleMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CircleMenu.framework; path = Carthage/Build/iOS/CircleMenu.framework; sourceTree = "<group>"; };
 		84760B161DE05C1A00AF36FE /* EasyPeasy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EasyPeasy.framework; path = Carthage/Build/iOS/EasyPeasy.framework; sourceTree = "<group>"; };
 		84760B191DE05E3500AF36FE /* AboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				846E6FAA1DF1907600A7F02E /* Transitions */,
 				842E3F3E1DF004420071037A /* Build */,
 				84760B1E1DE0794D00AF36FE /* Animations */,
 				841C95151DDEF31A00B997F5 /* EasyCollection */,
@@ -393,6 +398,23 @@
 				844AE7391DB4D9870029FBD4 /* ThirdViewController.swift */,
 			);
 			path = ThirdViewController;
+			sourceTree = "<group>";
+		};
+		846E6FA71DF171E800A7F02E /* ThingersTapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				846E6FA81DF18D7300A7F02E /* ThingersTapViewController.swift */,
+			);
+			name = ThingersTapViewController;
+			path = ViewControllers/ThingersTapViewController;
+			sourceTree = "<group>";
+		};
+		846E6FAA1DF1907600A7F02E /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		84760B151DE052D700AF36FE /* AboutView */ = {
@@ -574,6 +596,7 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				846E6FA71DF171E800A7F02E /* ThingersTapViewController */,
 				84760B151DE052D700AF36FE /* AboutView */,
 				841C95111DDEEEA200B997F5 /* CarouselViewController */,
 				844AE7311DB4D9640029FBD4 /* NavigaitionStack */,
@@ -717,6 +740,7 @@
 				84760B231DE0796800AF36FE /* NodeAnimatable.swift in Sources */,
 				84760B2A1DE07C3B00AF36FE /* CarouserTitleView.swift in Sources */,
 				84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */,
+				846E6FAC1DF1909200A7F02E /* ShowAlphaModalTransition.swift in Sources */,
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift in Sources */,
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,
@@ -732,6 +756,7 @@
 				84760B251DE0796800AF36FE /* PopAnimationFactory.swift in Sources */,
 				84B46EEE1DAFCC8C0033CB15 /* DemoTableViewController.swift in Sources */,
 				844AE7201DB4AFF20029FBD4 /* Controlls.swift in Sources */,
+				846E6FA91DF18D7300A7F02E /* ThingersTapViewController.swift in Sources */,
 				842E3F401DF004620071037A /* UIView+Build.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
