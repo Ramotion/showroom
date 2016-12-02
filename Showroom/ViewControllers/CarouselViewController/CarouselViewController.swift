@@ -19,6 +19,9 @@ class CarouselViewController: UIViewController {
   @IBOutlet weak var contactUsButton: UIButton!
   @IBOutlet weak var pageLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var bottomContainer: UIView!
+  
+  fileprivate var isSplashAnimation = true
   
   fileprivate let items: [Showroom.Control] = [.circleMenu,
                                                .foldingCell,
@@ -61,11 +64,20 @@ extension CarouselViewController {
                                                           titleContainer: topContainer,
                                                           topRectangle: topRectangle,
                                                           bottomRectangle: bottomRectangle,
-                                                          backgroudView: self.view)
+                                                          backgroudView: self.view,
+                                                          bottomContainer: bottomContainer)
     
     configureContactButton()
     pageLabel.text = "\(currentIndex + 1)/\(items.count)"
     aboutView.titleView = topContainer
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if isSplashAnimation == true {
+      splashBrokerAnimation.startAnimations()
+      isSplashAnimation = false
+    }
   }
 }
 
