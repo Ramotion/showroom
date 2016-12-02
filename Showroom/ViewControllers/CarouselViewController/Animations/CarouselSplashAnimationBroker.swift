@@ -49,6 +49,8 @@ extension CarouselSplashAnimationBroker {
     backgroundAnimation()
     contactUsButtonAnimation()
     collectionViewAnimation()
+    
+    pageLabel.animate(duration: 0.4, delay: 2.5, [.alpha(to: 1)], timing: .easyInEasyOut)
   }
 }
 
