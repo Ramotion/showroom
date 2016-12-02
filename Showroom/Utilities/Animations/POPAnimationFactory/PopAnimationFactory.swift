@@ -32,6 +32,15 @@ func createPopViewScaleAnimation(from: CGFloat, to: CGFloat) -> POPBasicAnimatio
   return animaiton!
 }
 
+func createPopLayerScaleAnimation(from: CGFloat, to: CGFloat) -> POPBasicAnimation {
+  
+  let animaiton = POPBasicAnimation(propertyNamed: kPOPLayerScaleXY)
+  animaiton?.toValue = NSValue(cgPoint: CGPoint(x: to, y: to))
+  animaiton?.fromValue = NSValue(cgPoint: CGPoint(x: from, y: from))
+  return animaiton!
+}
+
+
 func createPopLayerYAnimation(from: CGFloat, to: CGFloat) -> POPBasicAnimation {
   
   let animaiton = POPBasicAnimation(propertyNamed: kPOPLayerPositionY)
