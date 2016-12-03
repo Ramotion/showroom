@@ -485,22 +485,6 @@
 		84C180C01DAE155300C056F8 = {
 			isa = PBXGroup;
 			children = (
-				84E1D0CD1DF2D8E3006F620F /* NavigationStack.framework */,
-				84E1D0CE1DF2D8E3006F620F /* NSObject_Rx.framework */,
-				84E1D0CF1DF2D8E3006F620F /* PaperOnboarding.framework */,
-				84E1D0D01DF2D8E3006F620F /* PaperSwitch.framework */,
-				84E1D0D11DF2D8E3006F620F /* pop.framework */,
-				84E1D0D21DF2D8E3006F620F /* PreviewTransition.framework */,
-				84E1D0D31DF2D8E3006F620F /* RAMAnimatedTabBarController.framework */,
-				84E1D0D41DF2D8E3006F620F /* RAMReel.framework */,
-				84E1D0D51DF2D8E3006F620F /* RxCocoa.framework */,
-				84E1D0D61DF2D8E3006F620F /* RxSwift.framework */,
-				84E1D0D71DF2D8E3006F620F /* SwiftyAttributes.framework */,
-				84E1D0D81DF2D8E3006F620F /* UPCarouselFlowLayout.framework */,
-				84E1D0CA1DF2D8C9006F620F /* FoldingCell.framework */,
-				84E1D0C71DF2D8C0006F620F /* ExpandingCollection.framework */,
-				84E1D0C41DF2D8B7006F620F /* EasyPeasy.framework */,
-				84E1D0C01DF2D8A0006F620F /* CircleMenu.framework */,
 				84D4B7DA1DB11D1500EE38C6 /* Frameworks */,
 				84C180CB1DAE155300C056F8 /* Showroom */,
 				84C180CA1DAE155300C056F8 /* Products */,
@@ -605,6 +589,22 @@
 		84D4B7DA1DB11D1500EE38C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84E1D0CD1DF2D8E3006F620F /* NavigationStack.framework */,
+				84E1D0CE1DF2D8E3006F620F /* NSObject_Rx.framework */,
+				84E1D0CF1DF2D8E3006F620F /* PaperOnboarding.framework */,
+				84E1D0D01DF2D8E3006F620F /* PaperSwitch.framework */,
+				84E1D0D11DF2D8E3006F620F /* pop.framework */,
+				84E1D0D21DF2D8E3006F620F /* PreviewTransition.framework */,
+				84E1D0D31DF2D8E3006F620F /* RAMAnimatedTabBarController.framework */,
+				84E1D0D41DF2D8E3006F620F /* RAMReel.framework */,
+				84E1D0D51DF2D8E3006F620F /* RxCocoa.framework */,
+				84E1D0D61DF2D8E3006F620F /* RxSwift.framework */,
+				84E1D0D71DF2D8E3006F620F /* SwiftyAttributes.framework */,
+				84E1D0D81DF2D8E3006F620F /* UPCarouselFlowLayout.framework */,
+				84E1D0CA1DF2D8C9006F620F /* FoldingCell.framework */,
+				84E1D0C71DF2D8C0006F620F /* ExpandingCollection.framework */,
+				84E1D0C41DF2D8B7006F620F /* EasyPeasy.framework */,
+				84E1D0C01DF2D8A0006F620F /* CircleMenu.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

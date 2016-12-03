@@ -39,8 +39,8 @@ extension MenuPopUpViewController {
     let vc: MenuPopUpViewController = storybord.instantiateViewController()
     vc.presenter = PopUpPresenter(controller: vc,
                                   on: on,
-                                  showTransition: ShowMenuPopUpTransition(duration: 1),
-                                  hideTransition: ShowMenuPopUpTransition(duration: 0.8))
+                                  showTransition: ShowMenuPopUpTransition(duration: 0.2),
+                                  hideTransition: HideMenuPopUpTransition(duration: 0.2))
   }
 }
 
@@ -54,5 +54,6 @@ extension MenuPopUpViewController {
   }
   
   @IBAction func backHandler(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
   }
 }
