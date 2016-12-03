@@ -1,5 +1,7 @@
 import UIKit
 import CircleMenu
+import RxCocoa
+import RxSwift
 
 class CircleViewController: UIViewController {
 
@@ -14,6 +16,7 @@ class CircleViewController: UIViewController {
     ]
 }
 
+
 // MARK: Life Cycle
 extension CircleViewController {
   
@@ -22,12 +25,29 @@ extension CircleViewController {
     
     circleButton.delegate = self
     addBackButton()
+    
+    // remove
+    
+    
+    let gesture = UITapGestureRecognizer()
+    gesture.numberOfTouchesRequired = 3
+    view.addGestureRecognizer(gesture)
+    
+    _ = gesture.rx.event.asObservable().subscribe { [weak self] event in
+      guard let `self` = self else { return }
+      MenuPopUpViewController.showPopup(on: self)
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
     ThingersTapViewController.showPopup(on: self)
+  }
+  
+  func gestureHandler() {
+    print("t")
+  
   }
 }
 

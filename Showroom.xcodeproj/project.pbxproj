@@ -86,6 +86,8 @@
 		84D4B7D71DB1098C00EE38C6 /* AnimatedTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */; };
 		84D4B7DE1DB1251F00EE38C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7DD1DB1251F00EE38C6 /* MainViewController.swift */; };
 		84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */; };
+		84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */; };
+		84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1D09E1DF2B863006F620F /* PopUpPresenter.swift */; };
 		84F0A9741DE827BA00C02332 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9731DE827BA00C02332 /* RxSwift.framework */; };
 		84F0A9751DE827BA00C02332 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9731DE827BA00C02332 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84F0A9771DE827CF00C02332 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F0A9761DE827CF00C02332 /* RxCocoa.framework */; };
@@ -198,6 +200,8 @@
 		84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AnimatedTabBar.storyboard; path = ../AnimatedTabBar.storyboard; sourceTree = "<group>"; };
 		84D4B7DD1DB1251F00EE38C6 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPopUpTransition.swift; sourceTree = "<group>"; };
+		84E1D09E1DF2B863006F620F /* PopUpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPresenter.swift; path = ViewControllers/PopUps/PopUpPresenter.swift; sourceTree = "<group>"; };
 		84F0A9731DE827BA00C02332 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		84F0A9761DE827CF00C02332 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		84F0A9791DE82C8000C02332 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
@@ -263,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				846E6FAA1DF1907600A7F02E /* Transitions */,
-				842E3F3E1DF004420071037A /* Build */,
+				842E3F3E1DF004420071037A /* Creater */,
 				84760B1E1DE0794D00AF36FE /* Animations */,
 				841C95151DDEF31A00B997F5 /* EasyCollection */,
 				84760B261DE07A1B00AF36FE /* Deley.swift */,
@@ -306,12 +310,12 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		842E3F3E1DF004420071037A /* Build */ = {
+		842E3F3E1DF004420071037A /* Creater */ = {
 			isa = PBXGroup;
 			children = (
 				842E3F3F1DF004620071037A /* UIView+Build.swift */,
 			);
-			path = Build;
+			path = Creater;
 			sourceTree = "<group>";
 		};
 		842E3F411DF016C30071037A /* Views */ = {
@@ -415,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */,
+				84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -607,8 +612,7 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				846E6FAD1DF1BEF500A7F02E /* MenuPopUpViewController */,
-				846E6FA71DF171E800A7F02E /* ThingersTapViewController */,
+				84E1D09D1DF2B842006F620F /* PopUps */,
 				84760B151DE052D700AF36FE /* AboutView */,
 				841C95111DDEEEA200B997F5 /* CarouselViewController */,
 				844AE7311DB4D9640029FBD4 /* NavigaitionStack */,
@@ -624,6 +628,16 @@
 				84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		84E1D09D1DF2B842006F620F /* PopUps */ = {
+			isa = PBXGroup;
+			children = (
+				846E6FAD1DF1BEF500A7F02E /* MenuPopUpViewController */,
+				846E6FA71DF171E800A7F02E /* ThingersTapViewController */,
+				84E1D09E1DF2B863006F620F /* PopUpPresenter.swift */,
+			);
+			name = PopUps;
 			sourceTree = "<group>";
 		};
 		84F0A97C1DE834A900C02332 /* Views */ = {
@@ -736,7 +750,9 @@
 				8468A72A1DE2E59000D40917 /* ViewController+Dismiss.swift in Sources */,
 				841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */,
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
+				84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
+				84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
 				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,
