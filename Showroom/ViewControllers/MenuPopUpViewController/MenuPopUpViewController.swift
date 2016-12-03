@@ -40,6 +40,11 @@ extension MenuPopUpViewController {
     super.viewWillAppear(animated)
     containerAnimations()
   }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    infoView.alpha = 0
+  }
 }
 
 // MARK: Methods
@@ -86,12 +91,26 @@ extension MenuPopUpViewController {
   
   }
   
+  func showInfoView() {
+    if infoView.alpha == 1 { return }
+    
+    infoView.alpha = 1
+    
+    let from = Showroom.screen.height - menuViewHeight.constant + infoViewHeight.constant / 2
+    let to = Showroom.screen.height - menuViewHeight.constant - infoViewHeight.constant / 2
+    
+    infoView.animate(duration: 0.2, [.layerPositionY(from: from, to: to)], timing: .easyInEasyOut)
+    infoView.animate(duration: 0.2, delay:1, [.layerPositionY(from: to, to: from)], timing: .easyInEasyOut) { [weak self] in
+      self?.infoView.alpha = 0
+    }
+  }
 }
 
 // MARK: Actions
 extension MenuPopUpViewController {
   
   @IBAction func copyLinkHandler(_ sender: Any) {
+    showInfoView()
   }
   
   @IBAction func sharedHandler(_ sender: Any) {
