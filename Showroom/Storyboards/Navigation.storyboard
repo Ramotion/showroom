@@ -821,11 +821,14 @@ and go back to home screen.</string>
                     </view>
                     <connections>
                         <outlet property="copiedLabel" destination="bih-hS-JR2" id="JGX-FD-UFj"/>
+                        <outlet property="copyLinkContainer" destination="fMQ-1l-xds" id="Ixt-jn-QqI"/>
+                        <outlet property="exitContainer" destination="Jsr-24-mHx" id="6fU-iu-Ldc"/>
                         <outlet property="infoView" destination="4IP-m7-qfU" id="n41-R2-3Ao"/>
                         <outlet property="infoViewBottom" destination="Xue-kW-tpb" id="TBs-s4-IrQ"/>
                         <outlet property="infoViewHeight" destination="1dP-ud-Giz" id="hkp-re-lgG"/>
                         <outlet property="menuView" destination="lKc-B4-1xF" id="GCi-Us-UYZ"/>
                         <outlet property="menuViewHeight" destination="e37-vR-MNm" id="0LC-cd-wyL"/>
+                        <outlet property="shareContainer" destination="LMd-8p-Iox" id="bzu-rP-ZYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vId-lV-FX3" userLabel="First Responder" sceneMemberID="firstResponder"/>

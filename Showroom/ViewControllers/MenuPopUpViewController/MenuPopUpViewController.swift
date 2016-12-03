@@ -12,7 +12,10 @@ class MenuPopUpViewController: UIViewController {
   @IBOutlet weak var infoViewHeight: NSLayoutConstraint!
   @IBOutlet weak var infoViewBottom: NSLayoutConstraint!
   @IBOutlet weak var copiedLabel: UILabel!
+  @IBOutlet weak var exitContainer: UIView!
   
+  @IBOutlet weak var shareContainer: UIView!
+  @IBOutlet weak var copyLinkContainer: UIView!
   @IBOutlet weak var infoView: UIView!
   @IBOutlet weak var menuView: UIView!
   fileprivate var presenter: PopUpPresenter?
@@ -27,6 +30,15 @@ extension MenuPopUpViewController {
     
     infoViewBottom.constant = -infoViewHeight.constant
     infoView.alpha = 0
+    
+    shareContainer.alpha = 0
+    copyLinkContainer.alpha = 0
+    exitContainer.alpha = 0
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    containerAnimations()
   }
 }
 
@@ -42,6 +54,38 @@ extension MenuPopUpViewController {
                                   showTransition: ShowMenuPopUpTransition(duration: 0.2),
                                   hideTransition: HideMenuPopUpTransition(duration: 0.2))
   }
+}
+
+// MARK: Animations
+extension MenuPopUpViewController {
+  
+  func containerAnimations() {
+    exitContainer.animate(duration: 0.001, delay: 0, [.alpha(to: 1)], timing: .easyOut)
+    
+    exitContainer.animate(duration: 0.4,
+                          delay: 0,
+                          [.layerPositionY(from: menuViewHeight.constant + exitContainer.bounds.size.height / 2,
+                                            to: menuViewHeight.constant / 2)],
+                           timing: .easyOut)
+    
+    copyLinkContainer.animate(duration: 0.001, delay: 0.08, [.alpha(to: 1)], timing: .easyOut)
+    
+    copyLinkContainer.animate(duration: 0.4,
+                              delay: 0.08,
+                              [.layerPositionY(from: menuViewHeight.constant + copyLinkContainer.bounds.size.height / 2,
+                                            to: menuViewHeight.constant / 2)],
+                           timing: .easyOut)
+    
+    shareContainer.animate(duration: 0.001, delay: 0.16, [.alpha(to: 1)], timing: .easyOut)
+    
+    shareContainer.animate(duration: 0.4,
+                           delay: 0.16,
+                           [.layerPositionY(from: menuViewHeight.constant + shareContainer.bounds.size.height / 2,
+                                            to: menuViewHeight.constant / 2)],
+                           timing: .easyOut)
+  
+  }
+  
 }
 
 // MARK: Actions
