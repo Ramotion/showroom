@@ -26,6 +26,7 @@ extension MenuPopUpViewController {
     copiedLabel.attributedText = C.Copied.withKern(1)
     
     infoViewBottom.constant = -infoViewHeight.constant
+    infoView.alpha = 0
   }
 }
 

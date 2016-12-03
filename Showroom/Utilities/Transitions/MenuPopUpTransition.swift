@@ -35,7 +35,10 @@ extension ShowMenuPopUpTransition: UIViewControllerAnimatedTransitioning {
     toViewController.view?.animate(duration: duration / 2, [.alphaFrom(0, to: 1, removed: false)])
     
     toViewController.menuView.animate(duration: duration,
-                                      [.layerPositionY(from: Showroom.screen.height + toViewController.menuViewHeight.constant / 2, to: Showroom.screen.height - toViewController.menuViewHeight.constant)],
+                                      [
+                                        .layerPositionY(from: Showroom.screen.height + toViewController.menuViewHeight.constant / 2,
+                                                       to: Showroom.screen.height - toViewController.menuViewHeight.constant / 2)
+                            ],
                                       timing: .easyInEasyOut) {
                                         transitionContext.completeTransition(true)
                                       }
