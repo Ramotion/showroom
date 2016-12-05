@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NavigationStack
+import Navigation_stack
 // MARK: FirstTableViewController
 
 class FirstTableViewController: UITableViewController {

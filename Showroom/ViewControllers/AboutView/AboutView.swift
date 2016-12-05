@@ -45,7 +45,7 @@ extension AboutView {
 // MARK: Methods
 extension AboutView {
   
-  func show(on view: UIView) {
+  func show(on view: UIView, completion: @escaping () -> Void) {
     
     if circleView == nil { circleView = .build(on: self, position: titleView.infoButton.center) }
     scrollView.alpha = 1
@@ -72,7 +72,8 @@ extension AboutView {
                        [
                         .layerPositionY(from: Showroom.screen.height + sharedViewHeightConstraint.constant / 2,
                                         to: Showroom.screen.height - sharedViewHeightConstraint.constant / 2)
-                       ])
+                       ],
+                       completion: completion)
     
     titleLabel.pop_removeAllAnimations()
     titleLabel.alpha = 0
@@ -97,15 +98,15 @@ extension AboutView {
     
   }
   
-  func hide(on view: UIView) {
+  func hide(on view: UIView, completion: @escaping () -> Void) {
    
-//    view.bringSubview(toFront: titleView)
     scrollView.animate(duration: 0.3, [.alpha(to: 0)], timing: .easyInEasyOut)
     transperentView.animate(duration: 0.4, [.alphaFrom(0.4, to: 0, removed: false)])
     topView.animateSeparator(isShow: false)
     circleView?.hide() { [weak self] in
       self?.transperentView.removeFromSuperview()
       self?.removeFromSuperview()
+      completion()
     }
   }
 }

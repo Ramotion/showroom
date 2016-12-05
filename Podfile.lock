@@ -1,0 +1,68 @@
+PODS:
+  - CircleMenu (2.0.1)
+  - EasyPeasy (1.4)
+  - expanding-collection (1.0.4)
+  - FoldingCell (2.0.3)
+  - Navigation-stack (1.0.0)
+  - NSObject+Rx (2.0.0):
+    - RxSwift
+  - paper-onboarding (2.0.1)
+  - pop (1.0.9)
+  - PreviewTransition (2.0.1)
+  - RAMAnimatedTabBarController (2.1.1)
+  - RAMPaperSwitch (2.0.2)
+  - RAMReel (2.0.2)
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.1)
+  - SwiftyAttributes (3.0.0)
+  - UPCarouselFlowLayout (1.0.0)
+
+DEPENDENCIES:
+  - CircleMenu
+  - EasyPeasy
+  - expanding-collection
+  - FoldingCell
+  - Navigation-stack
+  - NSObject+Rx
+  - paper-onboarding
+  - pop
+  - PreviewTransition
+  - RAMAnimatedTabBarController
+  - RAMPaperSwitch
+  - RAMReel
+  - RxCocoa
+  - RxSwift
+  - SwiftyAttributes
+  - UPCarouselFlowLayout (from `https://github.com/ink-spot/UPCarouselFlowLayout.git`)
+
+EXTERNAL SOURCES:
+  UPCarouselFlowLayout:
+    :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
+
+CHECKOUT OPTIONS:
+  UPCarouselFlowLayout:
+    :commit: df51f35b7b4df76d283db8dd3c78ac59b542545d
+    :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
+
+SPEC CHECKSUMS:
+  CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
+  EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
+  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
+  FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
+  Navigation-stack: 85ac0a7bd4002e7888c528d8817f10ffe2c225da
+  NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
+  paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  PreviewTransition: 2f612e341ccae573a1c08b8521fe19a28fe5d763
+  RAMAnimatedTabBarController: 128e0d71dc802766de575a3c59c6fdcc8e2f921b
+  RAMPaperSwitch: 1b7a2cd640a0e5beda0e280ecb33c5704a3e20d1
+  RAMReel: f9dd6643aaa001b52c55d5fbe4b42170dd271298
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  SwiftyAttributes: 92a9f6512be7a11a2530046220f1c1fbb644e407
+  UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
+
+PODFILE CHECKSUM: 5ad265008b8d334bdfe0c409fde02476d76b80f9
+
+COCOAPODS: 1.1.1
