@@ -5,7 +5,6 @@ fileprivate struct C {
   
   static let radius: CGFloat = 5
   static let itemSize: CGSize = CGSize(width: 307, height: 400)
-  
 }
 
 // MARK: CarouselViewController
@@ -34,6 +33,7 @@ class CarouselViewController: UIViewController {
                                                .navigationStack]
   
   fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!
+  fileprivate var transitionBrokerAnimation: CarouselTransitionAnimationBroker?
   
   // Index of current cell
   fileprivate var currentIndex: Int {
@@ -67,9 +67,16 @@ extension CarouselViewController {
                                                           backgroudView: self.view,
                                                           bottomContainer: bottomContainer)
     
+    transitionBrokerAnimation = CarouselTransitionAnimationBroker(collectionView: collectionView,
+                                                                  infoButton: infoButton,
+                                                                  contactUsButton: contactUsButton,
+                                                                  pageLabel: pageLabel,
+                                                                  titleContainer: topContainer,
+                                                                  bottomContainer: bottomContainer)
     configureContactButton()
     pageLabel.text = "\(currentIndex + 1)/\(items.count)"
     aboutView.titleView = topContainer
+    collectionView.layer.masksToBounds = false
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -90,6 +97,18 @@ extension  CarouselViewController {
     contactUsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     contactUsButton.layer.shadowRadius = 4
     contactUsButton.layer.shadowOpacity = 0.3
+  }
+}
+
+// MARK: Methods
+extension CarouselViewController {
+  
+  func transitionController(isOpen: Bool) {
+    if isOpen == true {
+      transitionBrokerAnimation?.showTranstion(collectionItemIndex: currentIndex)
+    } else {
+      transitionBrokerAnimation?.hideTranstion(collectionItemIndex: currentIndex)
+    }
   }
 }
 
@@ -124,6 +143,9 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
       nc = UINavigationController(rootViewController: vc)
     }
     vc.navigationItem.hidesBackButton = false
+    
+    nc.transitioningDelegate = self
+    nc.modalPresentationStyle = .custom
     present(nc, animated: true, completion: nil)
   }
 }
@@ -150,5 +172,17 @@ extension CarouselViewController {
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {
+  }
+}
+
+// MARK: transtion delegate
+extension CarouselViewController: UIViewControllerTransitioningDelegate {
+  
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return OpenControllerTransition(duration: 1)
+  }
+  
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return HideControllerTransition(duration: 0.5)
   }
 }

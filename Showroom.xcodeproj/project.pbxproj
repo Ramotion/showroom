@@ -47,6 +47,8 @@
 		84B46EF01DAFCED10033CB15 /* ScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EEF1DAFCED10033CB15 /* ScreenShot.swift */; };
 		84B46EF21DAFCF180033CB15 /* LayerAnimationHalper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EF11DAFCF180033CB15 /* LayerAnimationHalper.swift */; };
 		84B46EF41DAFCF4E0033CB15 /* ConstraintsHalper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EF31DAFCF4D0033CB15 /* ConstraintsHalper.swift */; };
+		84B743E81DFC00B500504C7A /* CarouselTransitionAnimationBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B743E71DFC00B500504C7A /* CarouselTransitionAnimationBroker.swift */; };
+		84B743EA1DFC077200504C7A /* OpenControllerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B743E91DFC077200504C7A /* OpenControllerTransition.swift */; };
 		84C180CD1DAE155300C056F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C180CC1DAE155300C056F8 /* AppDelegate.swift */; };
 		84C180CF1DAE155300C056F8 /* CircleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C180CE1DAE155300C056F8 /* CircleViewController.swift */; };
 		84C180D21DAE155300C056F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C180D01DAE155300C056F8 /* Main.storyboard */; };
@@ -125,6 +127,8 @@
 		84B46EEF1DAFCED10033CB15 /* ScreenShot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenShot.swift; sourceTree = "<group>"; };
 		84B46EF11DAFCF180033CB15 /* LayerAnimationHalper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerAnimationHalper.swift; sourceTree = "<group>"; };
 		84B46EF31DAFCF4D0033CB15 /* ConstraintsHalper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintsHalper.swift; sourceTree = "<group>"; };
+		84B743E71DFC00B500504C7A /* CarouselTransitionAnimationBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselTransitionAnimationBroker.swift; sourceTree = "<group>"; };
+		84B743E91DFC077200504C7A /* OpenControllerTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenControllerTransition.swift; sourceTree = "<group>"; };
 		84C180C91DAE155300C056F8 /* Showroom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Showroom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C180CC1DAE155300C056F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C180CE1DAE155300C056F8 /* CircleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				842E3F451DF0214E0071037A /* CarouselSplashAnimationBroker.swift */,
+				84B743E71DFC00B500504C7A /* CarouselTransitionAnimationBroker.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			children = (
 				846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */,
 				84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */,
+				84B743E91DFC077200504C7A /* OpenControllerTransition.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -723,6 +729,7 @@
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
 				84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
+				84B743E81DFC00B500504C7A /* CarouselTransitionAnimationBroker.swift in Sources */,
 				84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
@@ -733,6 +740,7 @@
 				84C180CF1DAE155300C056F8 /* CircleViewController.swift in Sources */,
 				84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */,
 				84B46EDF1DAFAA6C0033CB15 /* SwitchViewController.swift in Sources */,
+				84B743EA1DFC077200504C7A /* OpenControllerTransition.swift in Sources */,
 				84760B271DE07A1B00AF36FE /* Deley.swift in Sources */,
 				84B46EF41DAFCF4E0033CB15 /* ConstraintsHalper.swift in Sources */,
 				84D4B78F1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift in Sources */,
