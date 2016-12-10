@@ -132,10 +132,16 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
 extension CarouselViewController {
   
   @IBAction func infoHandler(_ sender: UIButton) {
+    sender.isUserInteractionEnabled = false
+    sender.animate(duration: 0, delay: 0, [.springScale(from: 0.9, to: 1, bounce: 20, spring: 10)])
     if sender.isSelected == true {
-      aboutView.hide(on: view)
+      aboutView.hide(on: view) {
+        sender.isUserInteractionEnabled = true
+      }
     } else {
-      aboutView.show(on: view)
+      aboutView.show(on: view) {
+        sender.isUserInteractionEnabled = true
+      }
     }
     sender.isSelected = !sender.isSelected
   }

@@ -1,5 +1,5 @@
 import UIKit
-import PaperSwitch
+import RAMPaperSwitch
 
 class SwitchViewController: UIViewController {
   

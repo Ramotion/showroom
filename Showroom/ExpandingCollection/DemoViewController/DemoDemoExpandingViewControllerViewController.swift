@@ -1,5 +1,5 @@
 import UIKit
-import ExpandingCollection
+import expanding_collection
 
 class DemoExpandingViewController: ExpandingViewController {
   
