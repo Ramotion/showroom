@@ -39,7 +39,7 @@ class ThirdViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/navigation-stack") { [weak self] in
       self?.hideNavBar = true
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)

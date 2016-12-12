@@ -25,7 +25,7 @@ class FirstTableViewController: UITableViewController {
     navigationController?.navigationBar.shadowImage = nil
     navigationController?.navigationBar.isTranslucent = false
     
-    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/navigation-stack") { [weak self] in
       self?.hideNavBar = true
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)

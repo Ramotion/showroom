@@ -21,6 +21,8 @@ class MenuPopUpViewController: UIViewController {
   @IBOutlet weak var infoView: UIView!
   @IBOutlet weak var menuView: UIView!
   fileprivate var presenter: PopUpPresenter?
+  
+  fileprivate var shareUrlString: String!
 }
 
 // MARK: Life Cycle
@@ -36,6 +38,13 @@ extension MenuPopUpViewController {
     shareContainer.alpha = 0
     copyLinkContainer.alpha = 0
     exitContainer.alpha = 0
+    
+    let gesture = UITapGestureRecognizer()
+    view.addGestureRecognizer(gesture)
+    
+    _ = gesture.rx.event.asObservable().subscribe { [weak self] _ in
+      self?.dismiss(animated: true, completion: nil)
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -52,11 +61,12 @@ extension MenuPopUpViewController {
 // MARK: Methods
 extension MenuPopUpViewController {
   
-  class func showPopup(on: UIViewController, backButtonTap: @escaping () -> Void) {
+  class func showPopup(on: UIViewController, url: String, backButtonTap: @escaping () -> Void) {
     
     on.threeThingersToch {
       let storybord = UIStoryboard(storyboard: .Navigation)
       let vc: MenuPopUpViewController = storybord.instantiateViewController()
+      vc.shareUrlString = url
       vc.backButtonTap = backButtonTap
       vc.presenter = PopUpPresenter(controller: vc,
                                     on: on,
@@ -116,6 +126,7 @@ extension MenuPopUpViewController {
   
   @IBAction func copyLinkHandler(_ sender: Any) {
     showInfoView()
+    UIPasteboard.general.string = shareUrlString
   }
   
   @IBAction func sharedHandler(_ sender: Any) {

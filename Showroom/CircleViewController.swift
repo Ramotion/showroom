@@ -25,7 +25,7 @@ extension CircleViewController {
     
     circleButton.delegate = self
     
-    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }

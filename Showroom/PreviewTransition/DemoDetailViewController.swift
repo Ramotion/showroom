@@ -34,7 +34,7 @@ extension DemoDetailViewController {
   public override func viewDidLoad() {
     super.viewDidLoad()
     
-    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/preview-transition") { [weak self] in
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
