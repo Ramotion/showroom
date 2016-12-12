@@ -21,6 +21,16 @@ public class DemoDetailViewController: PTDetailViewController {
 
 extension DemoDetailViewController {
   
+  override public func viewWillAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    UIApplication.shared.isStatusBarHidden = false
+  }
+  
+  override public func viewWillDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    UIApplication.shared.isStatusBarHidden = true
+  }
+  
   public override func viewDidLoad() {
     super.viewDidLoad()
     

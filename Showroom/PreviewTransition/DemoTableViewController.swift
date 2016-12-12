@@ -1,7 +1,7 @@
 import UIKit
 import PreviewTransition
 
-public class DemoTableViewController: PTTableViewController {
+class DemoTableViewController: PTTableViewController {
   
   fileprivate let items = [("1", "River cruise"), ("2", "North Island"), ("3", "Mountain trail"), ("4", "Southern Coast"), ("5", "Fishing place")] // image names
 }
@@ -9,11 +9,19 @@ public class DemoTableViewController: PTTableViewController {
 // MARK: UITableViewDelegate
 extension DemoTableViewController {
   
-  public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//  override var prefersStatusBarHidden: Bool {
+//    return false
+//  }
+  
+//  override func prefersStatusBarHidden() -> Bool {
+//    return true
+//  }
+  
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 100
   }
   
-  public override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     guard let cell = cell as? ParallaxCell else { return }
     
     let index = indexPath.row % items.count
@@ -25,15 +33,14 @@ extension DemoTableViewController {
     }
   }
   
-  public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: ParallaxCell = tableView.getReusableCellWithIdentifier(indexPath: indexPath)
     return cell
   }
   
-  public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let storyboard = UIStoryboard.storyboard(storyboard: .Main)
     let detaleViewController: DemoDetailViewController = storyboard.instantiateViewController()
     pushViewController(detaleViewController)
   }
-
 }
