@@ -130,6 +130,9 @@ extension MenuPopUpViewController {
   }
   
   @IBAction func sharedHandler(_ sender: Any) {
+    
+    let activity = UIActivityViewController(activityItems: [shareUrlString], applicationActivities: nil)
+    present(activity, animated: true, completion: nil)
   }
   
   @IBAction func backHandler(_ sender: Any) {
