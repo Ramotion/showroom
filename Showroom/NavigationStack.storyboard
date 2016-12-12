@@ -39,14 +39,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-0" translatesAutoresizingMaskIntoConstraints="NO" id="bPQ-Ya-DTi">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="9K6-ja-zvM"/>
                                                         <constraint firstAttribute="height" constant="45" id="EaY-Tn-Pzw"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Annie Yates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHN-5I-Euu">
-                                                    <rect key="frame" x="69" y="22.5" width="84" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="84" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="gR3-6f-9H3"/>
                                                     </constraints>
@@ -55,7 +55,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="KvJ-Hu-ZQk">
-                                                    <rect key="frame" x="353" y="26.5" width="7" height="11"/>
+                                                    <rect key="frame" x="353" y="27" width="7" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11" id="lXe-WV-qKz"/>
                                                         <constraint firstAttribute="width" constant="7" id="m4K-gg-16v"/>
@@ -80,14 +80,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iat-we-zIn">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="GpC-2U-V4z"/>
                                                         <constraint firstAttribute="height" constant="45" id="fCk-mr-GWf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mabelle Mills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZbE-gE-eBC">
-                                                    <rect key="frame" x="69" y="22.5" width="93.5" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="94" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="Z8t-77-CEn"/>
                                                     </constraints>
@@ -96,7 +96,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="miO-D8-3i1">
-                                                    <rect key="frame" x="353" y="26.5" width="7" height="11"/>
+                                                    <rect key="frame" x="353" y="27" width="7" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11" id="EW5-4E-nW2"/>
                                                         <constraint firstAttribute="width" constant="7" id="h7k-SP-Nw8"/>
@@ -121,14 +121,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="Zph-bv-YK7">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="7Yu-zn-grO"/>
                                                         <constraint firstAttribute="width" constant="45" id="S3D-Hm-cbI"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isaiah Byrd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EjK-7R-pCk">
-                                                    <rect key="frame" x="69" y="22.5" width="80" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="80" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="Xri-iA-1Yd"/>
                                                     </constraints>
@@ -137,7 +137,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="mtz-F1-UgJ">
-                                                    <rect key="frame" x="353" y="26.5" width="7" height="11"/>
+                                                    <rect key="frame" x="353" y="27" width="7" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="7" id="i37-dp-Hv1"/>
                                                         <constraint firstAttribute="height" constant="11" id="vow-yN-nMr"/>
@@ -162,14 +162,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="OW6-Z2-YBS">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="fbv-hh-MQf"/>
                                                         <constraint firstAttribute="width" constant="45" id="qI1-gn-CVu"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ramotion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1op-NG-ytg">
-                                                    <rect key="frame" x="69" y="22.5" width="69.5" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="70" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="qOa-f6-KeW"/>
                                                     </constraints>
@@ -178,7 +178,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="e1g-uL-tfy">
-                                                    <rect key="frame" x="353" y="26.5" width="7" height="11"/>
+                                                    <rect key="frame" x="353" y="27" width="7" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="7" id="08A-Oc-K7i"/>
                                                         <constraint firstAttribute="height" constant="11" id="5vS-tQ-rj3"/>
@@ -203,14 +203,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-4" translatesAutoresizingMaskIntoConstraints="NO" id="bNP-Bo-o6w">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="98p-h7-K8f"/>
                                                         <constraint firstAttribute="width" constant="45" id="tkV-r5-Yh8"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carrie Hudson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7Y-Qj-aA5">
-                                                    <rect key="frame" x="69" y="22.5" width="103.5" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="104" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="2ca-CH-qbC"/>
                                                     </constraints>
@@ -219,7 +219,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Arrow" translatesAutoresizingMaskIntoConstraints="NO" id="avO-ce-d6m">
-                                                    <rect key="frame" x="353" y="26.5" width="7" height="11"/>
+                                                    <rect key="frame" x="353" y="27" width="7" height="11"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="11" id="5Xi-Kv-5H6"/>
                                                         <constraint firstAttribute="width" constant="7" id="g3G-6n-xbl"/>
@@ -245,13 +245,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Avt-G1-zNd">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="ehg-Qy-A97">
-                            <connections>
-                                <action selector="doneHandler:" destination="9Ct-AB-DOc" id="cpg-qe-sja"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Avt-G1-zNd"/>
                     <connections>
                         <outlet property="search" destination="w8B-dB-9wA" id="nwS-76-4cb"/>
                         <segue destination="iaH-ZQ-ay5" kind="show" identifier="push" id="HYI-Ga-o9f"/>
@@ -288,14 +282,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifth-Icon-0" translatesAutoresizingMaskIntoConstraints="NO" id="ORf-X7-gzN">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="9iZ-bw-EeU"/>
                                                         <constraint firstAttribute="width" constant="45" id="NBI-cD-Ru0"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Millie Burton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Cx-bX-nb2">
-                                                    <rect key="frame" x="69" y="22.5" width="89.5" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="90" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="lL0-gA-TC4"/>
                                                     </constraints>
@@ -333,14 +327,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifth-Icon-1" translatesAutoresizingMaskIntoConstraints="NO" id="eJm-tM-0xh">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="Mer-9g-gAn"/>
                                                         <constraint firstAttribute="height" constant="45" id="WJr-4v-Vr2"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Isaiah Byrd" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ujo-Pe-HGu">
-                                                    <rect key="frame" x="69" y="22.5" width="80" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="80" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="nCg-6A-MYS"/>
                                                     </constraints>
@@ -378,14 +372,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifth-Icon-2" translatesAutoresizingMaskIntoConstraints="NO" id="mpo-Gf-2rW">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="45" id="CZs-XA-1La"/>
                                                         <constraint firstAttribute="height" constant="45" id="fwV-mJ-dwf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raymond Tucker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYj-le-ZE9">
-                                                    <rect key="frame" x="69" y="22.5" width="121" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="121" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="JCI-VY-PKr"/>
                                                     </constraints>
@@ -423,14 +417,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fifth-Icon-3" translatesAutoresizingMaskIntoConstraints="NO" id="maf-Qg-fhA">
-                                                    <rect key="frame" x="14" y="9.5" width="45" height="45"/>
+                                                    <rect key="frame" x="14" y="10" width="45" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="45" id="8ee-dD-Jgr"/>
                                                         <constraint firstAttribute="width" constant="45" id="x7K-rf-jlr"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ian Haynes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HdW-L1-UK2">
-                                                    <rect key="frame" x="69" y="22.5" width="80" height="19"/>
+                                                    <rect key="frame" x="69" y="23" width="80" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="lessThanOrEqual" constant="525" id="LQZ-JM-zAA"/>
                                                     </constraints>
@@ -503,13 +497,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BridgeImage" translatesAutoresizingMaskIntoConstraints="NO" id="wyr-9m-ibm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="405.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8gC-RP-EBQ" userLabel="ContainerView">
-                                                    <rect key="frame" x="87.5" y="90" width="200" height="280"/>
+                                                    <rect key="frame" x="88" y="90" width="200" height="280"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RamotionBig" translatesAutoresizingMaskIntoConstraints="NO" id="a3b-No-X0O">
-                                                            <rect key="frame" x="27.5" y="0.0" width="145" height="145"/>
+                                                            <rect key="frame" x="27" y="0.0" width="145" height="145"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="145" id="7fr-hK-bHl"/>
                                                                 <constraint firstAttribute="height" constant="145" id="dcc-xd-LKe"/>
@@ -543,7 +537,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZj-NI-Jg7">
-                                                            <rect key="frame" x="55.5" y="185" width="89.5" height="33"/>
+                                                            <rect key="frame" x="55" y="185" width="90" height="33"/>
                                                             <string key="text">San Francisco
 USA</string>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
@@ -601,7 +595,7 @@ USA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8g-LD-agg">
-                                                    <rect key="frame" x="20" y="73" width="335" height="81.5"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="82"/>
                                                     <string key="text">At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected, one thing is undeniable: we</string>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.41176470590000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -643,7 +637,7 @@ USA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB7-Zg-qYc">
-                                                    <rect key="frame" x="20" y="73" width="335" height="81.5"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="82"/>
                                                     <string key="text">At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected, one thing is undeniable: we</string>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.41176470590000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -685,7 +679,7 @@ USA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47b-fv-wTs">
-                                                    <rect key="frame" x="20" y="73" width="335" height="81.5"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="82"/>
                                                     <string key="text">At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected, one thing is undeniable: we</string>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.41176470590000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -738,7 +732,7 @@ USA</string>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4z8-om-Bbm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="4z8-om-Bbm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -793,7 +787,7 @@ USA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZY-t1-gAo">
-                                                    <rect key="frame" x="20" y="73" width="335" height="421.5"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="422"/>
                                                     <string key="text">At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected, one thing is undeniable: we have a chance to learn and grow every day, no matter what we did not do yesterday or neglected to do last week.  Make Use of This Moment
 
 Making use of this moment, of the NOW, is a principle that stress management experts, psycho-therapists, meditators, and many authors such as Dr. Wayne Dyer, Jon Kabat-Zinn, and Eckhart Tolle have been talking and writing about for years. 
@@ -917,13 +911,13 @@ The only moment, the only life we have is in the NOW. What happened a few moment
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BridgeImage" translatesAutoresizingMaskIntoConstraints="NO" id="Lh0-U8-KhC">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="405.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K9z-Jc-aAJ" userLabel="ContainerView">
-                                                    <rect key="frame" x="87.5" y="93.5" width="200" height="280"/>
+                                                    <rect key="frame" x="88" y="94" width="200" height="280"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sally Perkins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X6z-h6-md7">
-                                                            <rect key="frame" x="48.5" y="157" width="103" height="21"/>
+                                                            <rect key="frame" x="48" y="157" width="103" height="21"/>
                                                             <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="18"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -958,7 +952,7 @@ USA</string>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GirlsBig" translatesAutoresizingMaskIntoConstraints="NO" id="8Hw-xX-eKi">
-                                                            <rect key="frame" x="27.5" y="0.0" width="145" height="145"/>
+                                                            <rect key="frame" x="27" y="0.0" width="145" height="145"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="145" id="ZLs-mQ-XPB"/>
                                                                 <constraint firstAttribute="width" constant="145" id="wjY-Qi-Pke"/>
@@ -1015,7 +1009,7 @@ USA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRv-6L-lsi">
-                                                    <rect key="frame" x="20" y="73" width="335" height="81.5"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="82"/>
                                                     <string key="text">At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected, one thing is undeniable: we</string>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.41176470590000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1057,7 +1051,7 @@ USA</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tc-qB-gq3">
-                                                    <rect key="frame" x="20" y="73" width="335" height="81.5"/>
+                                                    <rect key="frame" x="20" y="73" width="335" height="82"/>
                                                     <string key="text">At about this time of year, some months after New Year’s resolutions have been made and kept, or made and neglected, one thing is undeniable: we</string>
                                                     <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.41176470590000003" blue="0.52156862749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1086,7 +1086,7 @@ added to your friends list.</string>
                                 <rect key="frame" x="0.0" y="-24" width="375" height="691"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV7-ry-Zec">
-                                <rect key="frame" x="172" y="626.5" width="31" height="20.5"/>
+                                <rect key="frame" x="172" y="626" width="31" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.85882352939999995" green="0.86666666670000003" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1109,7 +1109,7 @@ added to your friends list.</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-sJ-Tqb">
-                                    <rect key="frame" x="94.5" y="8.5" width="51" height="16"/>
+                                    <rect key="frame" x="95" y="9" width="51" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="51" id="HSI-T0-AHE"/>
                                         <constraint firstAttribute="height" constant="16" id="ccJ-b1-WTJ"/>

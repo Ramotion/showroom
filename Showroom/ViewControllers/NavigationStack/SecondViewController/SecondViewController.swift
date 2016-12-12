@@ -10,6 +10,8 @@ import UIKit
 
 class SecondViewController: UITableViewController {
   
+  var hideNavBar = false
+  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
@@ -18,6 +20,25 @@ class SecondViewController: UITableViewController {
 ////      tableView.contentOffset = CGPoint(x: 0, y: -44)
 ////      navigationController.navigationBar.translucent = true
 //    }
+  }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.hideNavBar = true
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
+  }
+  
+  override func viewDidDisappear(_ animated: Bool) {
+    super.viewDidDisappear(animated)
+    if hideNavBar == false { return }
+    
+    navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+    navigationController?.navigationBar.shadowImage = UIImage()
+    navigationController?.navigationBar.isTranslucent = true
   }
 
 
