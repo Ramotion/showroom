@@ -24,7 +24,6 @@ extension CircleViewController {
     super.viewDidLoad()
     
     circleButton.delegate = self
-    addBackButton()
     
     // remove
     

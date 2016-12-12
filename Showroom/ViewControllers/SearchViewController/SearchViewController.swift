@@ -21,8 +21,6 @@ class SearchViewController: UIViewController {
     
     self.view.addSubview(ramReel.view)
     ramReel.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-    
-    addBackButton()
   }
   
   

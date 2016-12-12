@@ -10,7 +10,6 @@ class OnboardingViewController: UIViewController {
     super.viewDidLoad()
     
     skipButton.isHidden = true
-    addBackButton()
   }
 }
 

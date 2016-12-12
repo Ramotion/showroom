@@ -13,16 +13,6 @@ class MainViewController: UITableViewController {
                                       .navigationStack]
 }
 
-// MARK: Configure
-extension MainViewController {
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    addBackButton()
-  }
-}
-
 // MARK: UITableViewDatasource
 extension MainViewController {
   
