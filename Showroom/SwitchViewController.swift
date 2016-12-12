@@ -25,7 +25,15 @@ extension SwitchViewController {
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    ThingersTapViewController.showPopup(on: self)
+  }
 }
+
+
 
 extension SwitchViewController {
   

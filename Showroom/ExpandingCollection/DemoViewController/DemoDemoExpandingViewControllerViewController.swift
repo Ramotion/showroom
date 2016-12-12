@@ -11,7 +11,6 @@ class DemoExpandingViewController: ExpandingViewController {
 }
 
 // MARK: life cicle
-
 extension DemoExpandingViewController {
   
   override func viewDidLoad() {
@@ -22,6 +21,17 @@ extension DemoExpandingViewController {
     fillCellIsOpeenArry()
     addGestureToView(collectionView!)
     configureNavBar()
+    
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    ThingersTapViewController.showPopup(on: self)
   }
 }
 
