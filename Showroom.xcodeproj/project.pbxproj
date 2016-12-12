@@ -38,6 +38,7 @@
 		8476E7161DDF2D010043B32C /* Graphik-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E7151DDF2D010043B32C /* Graphik-Medium.otf */; };
 		8476E7171DDF2D060043B32C /* Graphik-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E7141DDF066E0043B32C /* Graphik-Regular.otf */; };
 		8476E71C1DDF4C860043B32C /* Graphik-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8476E71B1DDF4C860043B32C /* Graphik-Semibold.otf */; };
+		84ADF2961DFE85E60097F7C6 /* ThreeThingersTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ADF2951DFE85E60097F7C6 /* ThreeThingersTouch.swift */; };
 		84B46EDF1DAFAA6C0033CB15 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */; };
 		84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */; };
 		84B46EEA1DAFCC7E0033CB15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B46EE91DAFCC7E0033CB15 /* Extensions.swift */; };
@@ -117,6 +118,7 @@
 		8476E7141DDF066E0043B32C /* Graphik-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Regular.otf"; sourceTree = "<group>"; };
 		8476E7151DDF2D010043B32C /* Graphik-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Medium.otf"; sourceTree = "<group>"; };
 		8476E71B1DDF4C860043B32C /* Graphik-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graphik-Semibold.otf"; sourceTree = "<group>"; };
+		84ADF2951DFE85E60097F7C6 /* ThreeThingersTouch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeThingersTouch.swift; sourceTree = "<group>"; };
 		84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		84B46EE91DAFCC7E0033CB15 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				84ADF2941DFE852F0097F7C6 /* ThreeThingersTouch */,
 				846E6FAA1DF1907600A7F02E /* Transitions */,
 				842E3F3E1DF004420071037A /* Creater */,
 				84760B1E1DE0794D00AF36FE /* Animations */,
@@ -395,6 +398,14 @@
 				84760B291DE07C3B00AF36FE /* CarouserTitleView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		84ADF2941DFE852F0097F7C6 /* ThreeThingersTouch */ = {
+			isa = PBXGroup;
+			children = (
+				84ADF2951DFE85E60097F7C6 /* ThreeThingersTouch.swift */,
+			);
+			path = ThreeThingersTouch;
 			sourceTree = "<group>";
 		};
 		84B46EE81DAFCC1C0033CB15 /* PreviewTransition */ = {
@@ -731,6 +742,7 @@
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
 				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,
 				84760B241DE0796800AF36FE /* NodeAnimations.swift in Sources */,
+				84ADF2961DFE85E60097F7C6 /* ThreeThingersTouch.swift in Sources */,
 				841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */,
 				84F0A97F1DE834F900C02332 /* CircleView.swift in Sources */,
 				84C180CF1DAE155300C056F8 /* CircleViewController.swift in Sources */,

@@ -7,6 +7,8 @@ fileprivate struct C {
 }
 
 class MenuPopUpViewController: UIViewController {
+  
+  var backButtonTap: () -> Void = {}
 
   @IBOutlet weak var menuViewHeight: NSLayoutConstraint!
   @IBOutlet weak var infoViewHeight: NSLayoutConstraint!
@@ -50,14 +52,17 @@ extension MenuPopUpViewController {
 // MARK: Methods
 extension MenuPopUpViewController {
   
-  class func showPopup(on: UIViewController) {
+  class func showPopup(on: UIViewController, backButtonTap: @escaping () -> Void) {
     
-    let storybord = UIStoryboard(storyboard: .Navigation)
-    let vc: MenuPopUpViewController = storybord.instantiateViewController()
-    vc.presenter = PopUpPresenter(controller: vc,
-                                  on: on,
-                                  showTransition: ShowMenuPopUpTransition(duration: 0.2),
-                                  hideTransition: HideMenuPopUpTransition(duration: 0.2))
+    on.threeThingersToch {
+      let storybord = UIStoryboard(storyboard: .Navigation)
+      let vc: MenuPopUpViewController = storybord.instantiateViewController()
+      vc.backButtonTap = backButtonTap
+      vc.presenter = PopUpPresenter(controller: vc,
+                                    on: on,
+                                    showTransition: ShowMenuPopUpTransition(duration: 0.2),
+                                    hideTransition: HideMenuPopUpTransition(duration: 0.2))
+    }
   }
 }
 
@@ -117,6 +122,7 @@ extension MenuPopUpViewController {
   }
   
   @IBAction func backHandler(_ sender: Any) {
+    backButtonTap()
     dismiss(animated: true, completion: nil)
   }
 }

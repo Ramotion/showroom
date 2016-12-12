@@ -25,16 +25,9 @@ extension CircleViewController {
     
     circleButton.delegate = self
     
-    // remove
-    
-    
-    let gesture = UITapGestureRecognizer()
-    gesture.numberOfTouchesRequired = 3
-    view.addGestureRecognizer(gesture)
-    
-    _ = gesture.rx.event.asObservable().subscribe { [weak self] event in
-      guard let `self` = self else { return }
-      MenuPopUpViewController.showPopup(on: self)
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
     }
   }
   
@@ -42,11 +35,6 @@ extension CircleViewController {
     super.viewDidAppear(animated)
     
     ThingersTapViewController.showPopup(on: self)
-  }
-  
-  func gestureHandler() {
-    print("t")
-  
   }
 }
 
