@@ -916,22 +916,6 @@ added to your friends list.</string>
             </objects>
             <point key="canvasLocation" x="4404" y="-109"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="KVj-2O-hfp">
-            <objects>
-                <navigationController id="abA-57-w2C" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="E5Z-Ib-k95">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="bs3-F4-fXG" kind="relationship" relationship="rootViewController" id="Ep9-KN-7xO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HHm-Nh-I6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="185" y="949"/>
-        </scene>
         <!--Demo Table View Controller-->
         <scene sceneID="h01-yg-ytg">
             <objects>
@@ -963,9 +947,6 @@ added to your friends list.</string>
                     </tableView>
                     <navigationItem key="navigationItem" id="pWr-fj-FN0"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <segue destination="2AR-gY-bqC" kind="show" id="YMe-Mc-6Yn"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9M-zt-lr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -54,10 +54,6 @@ class CarouselViewController: UIViewController {
 // MARK: Life Cycle
 extension CarouselViewController {
   
-//  override var prefersStatusBarHidden: Bool {
-//    return true
-//  }
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     UIApplication.shared.isStatusBarHidden = true
