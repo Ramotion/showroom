@@ -34,6 +34,11 @@ extension DemoDetailViewController {
   public override func viewDidLoad() {
     super.viewDidLoad()
     
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     backButton = createBackButton()
     let _ = createNavigationBarBackItem(button: backButton)
     

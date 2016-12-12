@@ -28,8 +28,8 @@ class CarouselViewController: UIViewController {
                                                .paperOnboarding,
                                                .expandingCollection,
                                                .previewTransition,
-                                               .animationTabBar,
-                                               .realSearch,
+//                                               .animationTabBar,
+//                                               .realSearch,
                                                .navigationStack]
   
   fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!

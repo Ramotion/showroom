@@ -6,6 +6,20 @@ class DemoTableViewController: PTTableViewController {
   fileprivate let items = [("1", "River cruise"), ("2", "North Island"), ("3", "Mountain trail"), ("4", "Southern Coast"), ("5", "Fishing place")] // image names
 }
 
+// MARK: Life Cycle
+extension DemoTableViewController {
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
+  }
+  
+}
+
 // MARK: UITableViewDelegate
 extension DemoTableViewController {
   
@@ -23,6 +37,7 @@ extension DemoTableViewController {
   
   override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     guard let cell = cell as? ParallaxCell else { return }
+    cell.isMultipleTouchEnabled = false
     
     let index = indexPath.row % items.count
     let imageName = items[index].0
