@@ -31,6 +31,11 @@ class FirstTableViewController: UITableViewController {
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
   }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    ThingersTapViewController.showPopup(on: self)
+  }
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)

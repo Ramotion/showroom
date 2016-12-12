@@ -29,6 +29,7 @@ class FifthViewController: UITableViewController {
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.isTranslucent = true
+    
   }
   
   @IBAction func backHandler(_ sender: AnyObject) {

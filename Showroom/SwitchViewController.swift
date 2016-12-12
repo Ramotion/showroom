@@ -33,8 +33,6 @@ extension SwitchViewController {
   }
 }
 
-
-
 extension SwitchViewController {
   
   fileprivate func setupPaperSwitch() {
