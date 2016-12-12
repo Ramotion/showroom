@@ -4,19 +4,25 @@ import paper_onboarding
 class OnboardingViewController: UIViewController {
   
   @IBOutlet weak var onboarding: PaperOnboarding!
-  @IBOutlet weak var skipButton: UIButton!
+  
+}
+
+// MARK: Life Cycle
+extension OnboardingViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    skipButton.isHidden = true
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
   }
 }
 
 extension OnboardingViewController: PaperOnboardingDelegate {
   
   func onboardingWillTransitonToIndex(_ index: Int) {
-    skipButton.isHidden = index == 2 ? false : true
   }
   
   func onboardingDidTransitonToIndex(_ index: Int) {

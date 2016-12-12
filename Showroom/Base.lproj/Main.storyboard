@@ -902,29 +902,15 @@ added to your friends list.</string>
                                     <outlet property="delegate" destination="3vX-xR-rLj" id="h5q-Je-rQO"/>
                                 </connections>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ot-UR-enx">
-                                <rect key="frame" x="309" y="40" width="30" height="30"/>
-                                <state key="normal" title="skip">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonHandler:" destination="3vX-xR-rLj" eventType="touchUpInside" id="TMS-GZ-evP"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="k9b-3Y-xeB" firstAttribute="leading" secondItem="fyz-tH-Cyg" secondAttribute="leading" id="Kpp-oc-yfm"/>
-                            <constraint firstAttribute="trailing" secondItem="k9b-3Y-xeB" secondAttribute="trailing" id="Z4A-fb-rfD"/>
-                            <constraint firstItem="pJp-qt-v2p" firstAttribute="top" secondItem="k9b-3Y-xeB" secondAttribute="bottom" id="oag-Gq-UR0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9Ot-UR-enx" secondAttribute="trailing" constant="20" id="tax-4e-Hey"/>
-                            <constraint firstItem="k9b-3Y-xeB" firstAttribute="top" secondItem="kQ9-3Q-EOs" secondAttribute="bottom" constant="-20" id="wSl-UX-aYN"/>
-                            <constraint firstItem="9Ot-UR-enx" firstAttribute="top" secondItem="kQ9-3Q-EOs" secondAttribute="bottom" constant="20" id="yDd-zo-hpI"/>
+                            <constraint firstItem="k9b-3Y-xeB" firstAttribute="top" secondItem="fyz-tH-Cyg" secondAttribute="top" id="0lz-aX-wLQ"/>
+                            <constraint firstItem="k9b-3Y-xeB" firstAttribute="leading" secondItem="fyz-tH-Cyg" secondAttribute="leading" id="93m-eq-eO7"/>
+                            <constraint firstItem="pJp-qt-v2p" firstAttribute="top" secondItem="k9b-3Y-xeB" secondAttribute="bottom" id="TPQ-Uu-qdk"/>
+                            <constraint firstAttribute="trailing" secondItem="k9b-3Y-xeB" secondAttribute="trailing" id="dmC-PX-X6e"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="skipButton" destination="9Ot-UR-enx" id="AZJ-x9-NDZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuf-Pk-0rX" sceneMemberID="firstResponder"/>
             </objects>
