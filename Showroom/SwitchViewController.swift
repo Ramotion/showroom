@@ -10,11 +10,20 @@ class SwitchViewController: UIViewController {
   @IBOutlet weak var allowDiscoveryLabel: UILabel!
   @IBOutlet weak var phone2ImageView: UIImageView!
   @IBOutlet weak var paperSwitch2: RAMPaperSwitch!
+}
+
+// MARK: SwitchViewController
+extension SwitchViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     setupPaperSwitch()
+    
+    MenuPopUpViewController.showPopup(on: self) { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
   }
 }
 

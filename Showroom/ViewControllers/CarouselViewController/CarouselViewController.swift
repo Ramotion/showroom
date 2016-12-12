@@ -23,7 +23,7 @@ class CarouselViewController: UIViewController {
   fileprivate var isSplashAnimation = true
   
   fileprivate let items: [Showroom.Control] = [.circleMenu,
-                                               .foldingCell,
+//                                               .foldingCell,
                                                .paperSwitch,
                                                .paperOnboarding,
                                                .expandingCollection,
