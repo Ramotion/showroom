@@ -170,6 +170,9 @@ extension CarouselViewController {
   }
   
   @IBAction func sharedHandler(_ sender: Any) {
+    let sharedUrl = items[currentIndex].sharedURL
+    let activity = UIActivityViewController(activityItems: [sharedUrl], applicationActivities: nil)
+    present(activity, animated: true, completion: nil)
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {

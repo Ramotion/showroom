@@ -47,6 +47,20 @@ extension Showroom.Control {
     }
   }
   
+  var sharedURL: String {
+    switch self {
+    case .circleMenu: return "https://github.com/Ramotion/circle-menu"
+    case .foldingCell: return "https://github.com/Ramotion/folding-cell"
+    case .paperSwitch: return "https://github.com/Ramotion/paper-switch"
+    case .paperOnboarding: return "https://github.com/Ramotion/paper-onboarding"
+    case .expandingCollection: return "https://github.com/Ramotion/expanding-collection"
+    case .previewTransition: return "https://github.com/Ramotion/preview-transition"
+    case .animationTabBar: return "https://github.com/Ramotion/animated-tab-bar"
+    case .realSearch: return "https://github.com/Ramotion/reel-search"
+    case .navigationStack: return "https://github.com/Ramotion/navigation-stack"
+    }
+  }
+  
   var languages: String {
     switch self {
     case .circleMenu: return "Swift, UIKit"
