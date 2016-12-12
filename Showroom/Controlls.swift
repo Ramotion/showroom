@@ -16,6 +16,7 @@ extension Showroom.Control {
     case .animationTabBar: return "Animation TabBar"
     case .realSearch: return "Real Search"
     case .navigationStack: return "Navigation Stack"
+    case .vr: return "VR Demo"
     }
   }
   
@@ -30,6 +31,7 @@ extension Showroom.Control {
     case .animationTabBar: return "A module for adding animation to tab bar items. Helps to push native tab bar a bit further with subtle animations."
     case .realSearch: return "The control helps to search faster by proactively providing the most relevant keywords as you type."
     case .navigationStack: return "No Text"
+    case .vr: return "Universal web VR control created for mobiles. Makes navigation between product sections faster and more natural."
     }
   }
   
@@ -44,6 +46,7 @@ extension Showroom.Control {
     case .animationTabBar: return "120"
     case .realSearch: return "120"
     case .navigationStack: return "000"
+    case .vr: return "160"
     }
   }
   
@@ -58,6 +61,7 @@ extension Showroom.Control {
     case .animationTabBar: return "https://github.com/Ramotion/animated-tab-bar"
     case .realSearch: return "https://github.com/Ramotion/reel-search"
     case .navigationStack: return "https://github.com/Ramotion/navigation-stack"
+    case .vr: return "https://ramotion.github.io/vr-menu-demo/main.html"
     }
   }
   
@@ -72,6 +76,7 @@ extension Showroom.Control {
     case .animationTabBar: return "Swift, UIKit"
     case .realSearch: return "Swift, UIKit"
     case .navigationStack: return "Swift, UIKit"
+    case .vr: return "JavaScript, WebGL, WebVR"
     }
   }
     
@@ -86,6 +91,7 @@ extension Showroom.Control {
         case .animationTabBar: return "AnimatedTabBar"
         case .realSearch: return "ReelSearch"
         case .navigationStack: return "NavigationStack"
+        case .vr: return "VRMenu"
         }
     }
   
@@ -103,6 +109,7 @@ extension Showroom.Control {
     case .animationTabBar: return tabbar.instantiateViewController() as RAMAnimatedTabBarController
     case .realSearch: return main.instantiateViewController() as SearchViewController
     case .navigationStack: return stack.instantiateViewController() as NavigationStack
+    case .vr: return UIViewController()
     }
   }
 }

@@ -15,5 +15,6 @@ struct Showroom {
     case animationTabBar
     case realSearch
     case navigationStack
+    case vr
   }
 }
