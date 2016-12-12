@@ -173,6 +173,10 @@ extension CarouselViewController {
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {
+    
+    if let url = URL(string: "https://business.ramotion.com/?utm_source=app&utm_medium=special&utm_campaign=v1") {
+      UIApplication.shared.open(url)
+    }
   }
 }
 
