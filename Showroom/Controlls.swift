@@ -108,7 +108,7 @@ extension Showroom.Control {
     case .previewTransition: return UINavigationController(rootViewController: main.instantiateViewController() as DemoTableViewController)
     case .animationTabBar: return UINavigationController(rootViewController: tabbar.instantiateViewController() as RAMAnimatedTabBarController)
     case .realSearch: return UIViewController() // don't use look in carousevc
-    case .navigationStack: return UINavigationController(rootViewController: stack.instantiateViewController() as NavigationStack)
+    case .navigationStack: return stack.instantiateViewController() as NavigationStack
     case .vr: return main.instantiateViewController() as VRViewController
     }
   }

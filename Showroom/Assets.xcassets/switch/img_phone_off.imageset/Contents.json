@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "phone_off.png"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "phone_off.png",
       "scale" : "2x"
     },
     {

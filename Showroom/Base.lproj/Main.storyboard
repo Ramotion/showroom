@@ -752,10 +752,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-UU-NLq" userLabel="TitleView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Sync" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1El-7h-TA2">
-                                        <rect key="frame" x="140" y="57.5" width="94" height="19"/>
+                                        <rect key="frame" x="140" y="58" width="94" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -768,80 +768,116 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0r-tS-9si" userLabel="container">
-                                <rect key="frame" x="0.0" y="81.5" width="375" height="504"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leS-yF-yKr" userLabel="Blue View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Connect Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-0C-6Jf">
-                                                <rect key="frame" x="113" y="56" width="149.5" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                                                <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m7-Ec-ZOh" userLabel="Description">
-                                                <rect key="frame" x="71" y="91" width="233.5" height="28.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <string key="text">All your phone Contacts will be automatically 
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHb-vi-gEU" userLabel="CenterView">
+                                                <rect key="frame" x="8" y="45" width="359" height="162"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-0C-6Jf">
+                                                        <rect key="frame" x="104" y="0.0" width="150" height="23"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                                        <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m7-Ec-ZOh" userLabel="Description">
+                                                        <rect key="frame" x="62" y="33" width="234" height="29"/>
+                                                        <string key="text">All your phone Contacts will be automatically 
 added to your friends list.</string>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_users1" translatesAutoresizingMaskIntoConstraints="NO" id="V00-Rl-vy6">
-                                                <rect key="frame" x="98" y="139.5" width="39" height="56"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-Xj-Znk">
-                                                <rect key="frame" x="145" y="149.5" width="23" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ubf-zP-9Pb" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
-                                                <rect key="frame" x="228" y="151.5" width="51" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="onTintColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </switch>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                        <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-Xj-Znk">
+                                                        <rect key="frame" x="134" y="109" width="22" height="35"/>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_users1" translatesAutoresizingMaskIntoConstraints="NO" id="V00-Rl-vy6">
+                                                        <rect key="frame" x="90" y="97" width="38" height="55"/>
+                                                    </imageView>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ubf-zP-9Pb" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
+                                                        <rect key="frame" x="213" y="111" width="51" height="31"/>
+                                                        <color key="onTintColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="HFe-Xj-Znk" firstAttribute="centerX" secondItem="QHb-vi-gEU" secondAttribute="centerX" constant="-35" id="2QT-7d-aem"/>
+                                                    <constraint firstItem="Ph6-0C-6Jf" firstAttribute="top" secondItem="QHb-vi-gEU" secondAttribute="top" id="40I-XJ-qeH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="V00-Rl-vy6" secondAttribute="bottom" constant="10" id="6hk-4S-gao"/>
+                                                    <constraint firstItem="HFe-Xj-Znk" firstAttribute="top" secondItem="1m7-Ec-ZOh" secondAttribute="bottom" constant="47" id="NZa-cg-Mtc"/>
+                                                    <constraint firstItem="V00-Rl-vy6" firstAttribute="centerX" secondItem="QHb-vi-gEU" secondAttribute="centerX" constant="-70.5" id="Reg-c5-t9X"/>
+                                                    <constraint firstItem="1m7-Ec-ZOh" firstAttribute="top" secondItem="Ph6-0C-6Jf" secondAttribute="bottom" constant="10" id="iZZ-yh-xLR"/>
+                                                    <constraint firstItem="Ubf-zP-9Pb" firstAttribute="centerX" secondItem="QHb-vi-gEU" secondAttribute="centerX" constant="58" id="mxz-V9-Rka"/>
+                                                    <constraint firstItem="Ph6-0C-6Jf" firstAttribute="centerX" secondItem="QHb-vi-gEU" secondAttribute="centerX" id="n54-PQ-GpS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="HFe-Xj-Znk" secondAttribute="bottom" constant="18" id="ql8-eH-4aC"/>
+                                                    <constraint firstItem="1m7-Ec-ZOh" firstAttribute="centerX" secondItem="QHb-vi-gEU" secondAttribute="centerX" id="ql9-8H-yAO"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Ubf-zP-9Pb" secondAttribute="bottom" constant="20" id="yID-pp-5ev"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="236" id="yK6-CO-6f5"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="252" id="NeO-Oh-p9a"/>
+                                            <constraint firstAttribute="trailing" secondItem="QHb-vi-gEU" secondAttribute="trailing" constant="8" id="bXR-B4-pkt"/>
+                                            <constraint firstItem="QHb-vi-gEU" firstAttribute="centerY" secondItem="leS-yF-yKr" secondAttribute="centerY" id="jHr-Ts-Zao"/>
+                                            <constraint firstItem="QHb-vi-gEU" firstAttribute="leading" secondItem="leS-yF-yKr" secondAttribute="leading" constant="8" id="qjs-7k-7Qt"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uP-cI-jhA" userLabel="Green View">
                                         <rect key="frame" x="0.0" y="252" width="375" height="252"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allow Discovery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-4V-jXV">
-                                                <rect key="frame" x="123.5" y="56" width="128.5" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                                                <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Turn on to allow your phone number to be dis-played in your friends’ Contacts." textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5P1-nV-F9j" userLabel="Description">
-                                                <rect key="frame" x="67.5" y="91" width="240" height="28.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                                                <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-hx-KBq">
-                                                <rect key="frame" x="97" y="149.5" width="23" height="36"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_users2" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-9j-O6q">
-                                                <rect key="frame" x="128" y="139.5" width="39" height="56"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-cI-mYM" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
-                                                <rect key="frame" x="228" y="151.5" width="51" height="31"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="onTintColor" red="0.5568627451" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </switch>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLq-xb-a9U" userLabel="CenterView">
+                                                <rect key="frame" x="0.0" y="48.5" width="375" height="155"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_users2" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-9j-O6q">
+                                                        <rect key="frame" x="139" y="100" width="38" height="55"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Discovery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-4V-jXV">
+                                                        <rect key="frame" x="123" y="0.0" width="129" height="23"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                                        <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on to allow your phone number to be dis-played in your friends’ Contacts." textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5P1-nV-F9j" userLabel="Description">
+                                                        <rect key="frame" x="79" y="33" width="217" height="29"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                                        <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-hx-KBq">
+                                                        <rect key="frame" x="109" y="110" width="22" height="35"/>
+                                                    </imageView>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-cI-mYM" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
+                                                        <rect key="frame" x="224" y="112" width="51" height="31"/>
+                                                        <color key="onTintColor" red="0.5568627451" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="xZL-hx-KBq" secondAttribute="bottom" constant="10" id="2qa-6f-Njk"/>
+                                                    <constraint firstItem="0U4-cI-mYM" firstAttribute="top" secondItem="5P1-nV-F9j" secondAttribute="bottom" constant="50" id="9Gg-it-YaR"/>
+                                                    <constraint firstItem="5P1-nV-F9j" firstAttribute="top" secondItem="4Tc-4V-jXV" secondAttribute="bottom" constant="10" id="C9h-LV-e2A"/>
+                                                    <constraint firstItem="ALk-9j-O6q" firstAttribute="centerX" secondItem="RLq-xb-a9U" secondAttribute="centerX" constant="-29.5" id="Elf-08-NVL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ALk-9j-O6q" secondAttribute="bottom" id="JvJ-bk-PV1"/>
+                                                    <constraint firstItem="4Tc-4V-jXV" firstAttribute="top" secondItem="RLq-xb-a9U" secondAttribute="top" id="UEi-rX-eTL"/>
+                                                    <constraint firstItem="0U4-cI-mYM" firstAttribute="centerX" secondItem="RLq-xb-a9U" secondAttribute="centerX" constant="61" id="W1s-rA-YvF"/>
+                                                    <constraint firstItem="4Tc-4V-jXV" firstAttribute="centerX" secondItem="RLq-xb-a9U" secondAttribute="centerX" id="XJK-iC-eGk"/>
+                                                    <constraint firstItem="xZL-hx-KBq" firstAttribute="centerX" secondItem="RLq-xb-a9U" secondAttribute="centerX" constant="-68" id="Xmg-w4-qtF"/>
+                                                    <constraint firstItem="5P1-nV-F9j" firstAttribute="centerX" secondItem="RLq-xb-a9U" secondAttribute="centerX" id="hFD-9N-Brk"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="244" id="k2a-Qo-JaY"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0U4-cI-mYM" secondAttribute="bottom" constant="12" id="ziE-2w-bmH"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstItem="RLq-xb-a9U" firstAttribute="leading" secondItem="0uP-cI-jhA" secondAttribute="leading" id="DNW-fP-QCk"/>
                                             <constraint firstAttribute="height" constant="252" id="Hou-hv-VS1"/>
+                                            <constraint firstAttribute="trailing" secondItem="RLq-xb-a9U" secondAttribute="trailing" id="Z6P-Go-ZdU"/>
+                                            <constraint firstItem="RLq-xb-a9U" firstAttribute="centerY" secondItem="0uP-cI-jhA" secondAttribute="centerY" id="enD-QS-Wg5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -1536,9 +1572,9 @@ added to your friends list.</string>
         <image name="face2" width="40" height="39"/>
         <image name="heand" width="14" height="13"/>
         <image name="image" width="340" height="165"/>
-        <image name="img_phone_off" width="45" height="71"/>
-        <image name="img_users1" width="77" height="111"/>
-        <image name="img_users2" width="77" height="111"/>
+        <image name="img_phone_off" width="22" height="35"/>
+        <image name="img_users1" width="38" height="55"/>
+        <image name="img_users2" width="38" height="55"/>
         <image name="map" width="375" height="124"/>
         <image name="menuButton" width="120" height="120"/>
         <image name="photo" width="98" height="98"/>
