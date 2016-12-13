@@ -30,7 +30,7 @@ class CarouselViewController: UIViewController {
                                                .expandingCollection,
                                                .previewTransition,
 //                                               .animationTabBar,
-//                                               .realSearch,
+                                               .realSearch,
                                                .navigationStack,
                                                .vr]
   
@@ -38,6 +38,7 @@ class CarouselViewController: UIViewController {
   fileprivate var transitionBrokerAnimation: CarouselTransitionAnimationBroker?
   
   fileprivate var foldingCellVC: UIViewController!
+  fileprivate var searchVC: SearchViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
   
   // Index of current cell
   fileprivate var currentIndex: Int {
@@ -84,7 +85,9 @@ extension CarouselViewController {
     pageLabel.text = "\(currentIndex + 1)/\(items.count)"
     aboutView.titleView = topContainer
     collectionView.layer.masksToBounds = false
+    
     preloadfoldinCellVC()
+    preloadSearchVC()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -111,6 +114,10 @@ extension  CarouselViewController {
     let foldingVC = UIStoryboard(storyboard: .Main).instantiateViewController() as FoldingTableViewController
     _ = foldingVC.view // preload controller
     foldingCellVC = foldingVC
+  }
+  
+  func preloadSearchVC() {
+    _ = searchVC.view
   }
 }
 
@@ -154,6 +161,7 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     let vc: UIViewController
     switch item {
     case .foldingCell:  vc = foldingCellVC
+    case .realSearch: vc = searchVC
     default: vc = item.viewController
     }
     

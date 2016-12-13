@@ -21,8 +21,12 @@ class SearchViewController: UIViewController {
     
     self.view.addSubview(ramReel.view)
     ramReel.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
+      self?.dismiss(animated: true, completion: nil)
+      self?.dismiss(animated: true, completion: nil)
+    }
   }
-  
   
   fileprivate let data: [String] = {
     do {
