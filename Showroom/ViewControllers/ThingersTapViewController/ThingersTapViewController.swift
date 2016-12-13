@@ -5,6 +5,7 @@ class ThingersTapViewController: UIViewController {
 
   @IBOutlet weak var hand: UIImageView!
   @IBOutlet weak var handTouches: UIImageView!
+  @IBOutlet weak var infoTextLabel: UILabel!
   
   fileprivate var presenter: PopUpPresenter?
 }
@@ -23,6 +24,7 @@ extension ThingersTapViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     heandAnimation()
+    configureInfoLabel()
   }
 }
 
@@ -42,6 +44,21 @@ extension ThingersTapViewController {
                    showTransition: ShowAlphaModalTransition(duration: 1),
                    hideTransition: HideAlphaModalTransition(duration: 0.8))
   }
+}
+
+// MARK: Configure
+extension ThingersTapViewController {
+  
+  func configureInfoLabel() {
+    guard let text = infoTextLabel.text else { return }
+
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 3
+    style.alignment = .center
+    let attributedText = text.withAttributes([.paragraphStyle(style)])
+    infoTextLabel.attributedText = attributedText
+  }
+  
 }
 
 // MARK: Animations

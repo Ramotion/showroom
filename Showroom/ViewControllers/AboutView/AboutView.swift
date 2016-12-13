@@ -35,7 +35,6 @@ class AboutView: UIView {
   
   var titleView: CarouselTitleView!
   
-  
   let transperentView: UIView = .build(color: UIColor(red:0.16, green:0.23, blue:0.33, alpha:1.00), alpha: 0)
 }
 
@@ -46,7 +45,6 @@ extension AboutView {
     super.awakeFromNib()
     
     configureInfoText()
-    
     subscribeSeparatorAnimation()
   }
 }

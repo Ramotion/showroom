@@ -215,7 +215,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gz0-k6-5sb" userLabel="Page Container">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="53"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-xj-2kp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-xj-2kp" customClass="TOMSMorphingLabel">
                                                 <rect key="frame" x="176" y="20.5" width="23.5" height="13"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                 <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
@@ -584,7 +584,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTr-rH-iWQ" userLabel="Tap to access the main menu  and go back to home screen.">
                                                                 <rect key="frame" x="0.0" y="30" width="307" height="33"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="33" id="dgL-06-h4a"/>
+                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="dgL-06-h4a"/>
                                                                 </constraints>
                                                                 <string key="text">Tap to access the main menu 
 and go back to home screen.</string>
@@ -672,6 +672,7 @@ and go back to home screen.</string>
                         <outlet property="backgroundView" destination="pY5-pT-ZX2" id="m8H-sm-b7O"/>
                         <outlet property="hand" destination="GIe-b0-d6j" id="7pP-S7-qJV"/>
                         <outlet property="handTouches" destination="LVR-aK-aDO" id="X1r-5A-pP8"/>
+                        <outlet property="infoTextLabel" destination="dTr-rH-iWQ" id="HnS-Ik-Trs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3o-Vl-7da" userLabel="First Responder" sceneMemberID="firstResponder"/>

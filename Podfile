@@ -21,5 +21,6 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'NSObject+Rx'
 pod "Device"
+pod "TOMSMorphingLabel"
 
 end

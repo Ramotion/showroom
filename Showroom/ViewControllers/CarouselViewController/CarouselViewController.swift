@@ -1,6 +1,7 @@
 import UIKit
 import EasyPeasy
 import Device
+import TOMSMorphingLabel
 
 fileprivate struct C {
   
@@ -17,7 +18,7 @@ class CarouselViewController: UIViewController {
   @IBOutlet var aboutView: AboutView!
   @IBOutlet weak var infoButton: UIButton!
   @IBOutlet weak var contactUsButton: UIButton!
-  @IBOutlet weak var pageLabel: UILabel!
+  @IBOutlet weak var pageLabel: TOMSMorphingLabel!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bottomContainer: UIView!
   
