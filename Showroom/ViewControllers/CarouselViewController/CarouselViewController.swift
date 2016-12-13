@@ -138,17 +138,10 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let vc = items[indexPath.row].viewController
-    var nc: UIViewController 
-    if vc is UINavigationController {
-       nc = vc
-    } else {
-      nc = UINavigationController(rootViewController: vc)
-    }
-    vc.navigationItem.hidesBackButton = false
     
-    nc.transitioningDelegate = self
-    nc.modalPresentationStyle = .custom
-    present(nc, animated: true, completion: nil)
+    vc.transitioningDelegate = self
+    vc.modalPresentationStyle = .custom
+    present(vc, animated: true, completion: nil)
   }
 }
 

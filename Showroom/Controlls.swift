@@ -100,16 +100,16 @@ extension Showroom.Control {
     let tabbar = UIStoryboard(storyboard: .AnimatedTabBar)
     let stack = UIStoryboard(storyboard: .NavigationStack)
     switch self {
-    case .circleMenu: return main.instantiateViewController() as CircleViewController
-    case .foldingCell: return main.instantiateViewController() as FoldingTableViewController
-    case .paperSwitch: return main.instantiateViewController() as SwitchViewController
-    case .paperOnboarding: return main.instantiateViewController() as OnboardingViewController
-    case .expandingCollection: return main.instantiateViewController() as DemoExpandingViewController
-    case .previewTransition: return main.instantiateViewController() as DemoTableViewController
-    case .animationTabBar: return tabbar.instantiateViewController() as RAMAnimatedTabBarController
-    case .realSearch: return main.instantiateViewController() as SearchViewController
-    case .navigationStack: return stack.instantiateViewController() as NavigationStack
-    case .vr: return UIViewController()
+    case .circleMenu: return UINavigationController(rootViewController: main.instantiateViewController() as CircleViewController)
+    case .foldingCell: return UINavigationController(rootViewController: main.instantiateViewController() as FoldingTableViewController)
+    case .paperSwitch: return UINavigationController(rootViewController: main.instantiateViewController() as SwitchViewController)
+    case .paperOnboarding: return UINavigationController(rootViewController: main.instantiateViewController() as OnboardingViewController)
+    case .expandingCollection: return UINavigationController(rootViewController: main.instantiateViewController() as DemoExpandingViewController)
+    case .previewTransition: return UINavigationController(rootViewController: main.instantiateViewController() as DemoTableViewController)
+    case .animationTabBar: return UINavigationController(rootViewController: tabbar.instantiateViewController() as RAMAnimatedTabBarController)
+    case .realSearch: return UINavigationController(rootViewController: main.instantiateViewController() as SearchViewController)
+    case .navigationStack: return UINavigationController(rootViewController: stack.instantiateViewController() as NavigationStack)
+    case .vr: return main.instantiateViewController() as VRViewController
     }
   }
 }

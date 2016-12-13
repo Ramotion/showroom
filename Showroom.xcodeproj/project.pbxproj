@@ -54,6 +54,7 @@
 		84C180D21DAE155300C056F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C180D01DAE155300C056F8 /* Main.storyboard */; };
 		84C180D41DAE155300C056F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84C180D31DAE155300C056F8 /* Assets.xcassets */; };
 		84C180D71DAE155300C056F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C180D51DAE155300C056F8 /* LaunchScreen.storyboard */; };
+		84C2F9761DFEF48200E97FD5 /* VRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2F9751DFEF48200E97FD5 /* VRViewController.swift */; };
 		84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7881DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift */; };
 		84D4B78F1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B78B1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift */; };
 		84D4B7901DB0C81B00EE38C6 /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B78C1DB0C81B00EE38C6 /* DemoCollectionViewCell.xib */; };
@@ -136,6 +137,7 @@
 		84C180D31DAE155300C056F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84C180D61DAE155300C056F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84C180D81DAE155300C056F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84C2F9751DFEF48200E97FD5 /* VRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VRViewController.swift; sourceTree = "<group>"; };
 		84D4B7881DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoExpandingTableViewController.swift; sourceTree = "<group>"; };
 		84D4B78B1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		84D4B78C1DB0C81B00EE38C6 /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -456,6 +458,15 @@
 			path = Showroom;
 			sourceTree = "<group>";
 		};
+		84C2F9741DFEF45B00E97FD5 /* VRViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84C2F9751DFEF48200E97FD5 /* VRViewController.swift */,
+			);
+			name = VRViewController;
+			path = ViewControllers/VRViewController;
+			sourceTree = "<group>";
+		};
 		84D4B7861DB0C7CC00EE38C6 /* ExpandingCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,6 +548,7 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84C2F9741DFEF45B00E97FD5 /* VRViewController */,
 				84E1D09D1DF2B842006F620F /* PopUps */,
 				84760B151DE052D700AF36FE /* AboutView */,
 				841C95111DDEEEA200B997F5 /* CarouselViewController */,
@@ -756,6 +768,7 @@
 				84760B2A1DE07C3B00AF36FE /* CarouserTitleView.swift in Sources */,
 				84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */,
 				846E6FAC1DF1909200A7F02E /* ShowAlphaModalTransition.swift in Sources */,
+				84C2F9761DFEF48200E97FD5 /* VRViewController.swift in Sources */,
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift in Sources */,
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,

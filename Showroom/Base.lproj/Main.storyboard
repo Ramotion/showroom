@@ -950,7 +950,7 @@ added to your friends list.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9M-zt-lr6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="988" y="949"/>
+            <point key="canvasLocation" x="1604" y="603"/>
         </scene>
         <!--Demo Detail View Controller-->
         <scene sceneID="mJy-As-BSJ">
@@ -1031,7 +1031,40 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2du-od-Sjb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="949"/>
+            <point key="canvasLocation" x="2390" y="603"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="E1K-hT-Q86">
+            <objects>
+                <viewController storyboardIdentifier="VRViewController" id="eSq-gA-xcG" customClass="VRViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TGn-tM-cBU"/>
+                        <viewControllerLayoutGuide type="bottom" id="3W5-MT-yLG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U60-AG-mVS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-qV-Ym2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="N6R-qV-Ym2" secondAttribute="trailing" id="9Pd-fF-SQ3"/>
+                            <constraint firstItem="N6R-qV-Ym2" firstAttribute="leading" secondItem="U60-AG-mVS" secondAttribute="leading" id="MkB-iQ-vuV"/>
+                            <constraint firstItem="N6R-qV-Ym2" firstAttribute="top" secondItem="TGn-tM-cBU" secondAttribute="bottom" constant="-20" id="e6m-Wm-zJQ"/>
+                            <constraint firstItem="3W5-MT-yLG" firstAttribute="top" secondItem="N6R-qV-Ym2" secondAttribute="bottom" id="zxM-fp-DVy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="N6R-qV-Ym2" id="fV3-zZ-mMT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zut-3j-Tgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3433" y="612"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="RAN-O0-JZ0">
@@ -1122,7 +1155,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKC-ne-lgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1065" y="1765"/>
+            <point key="canvasLocation" x="1681" y="1419"/>
         </scene>
         <!--Demo Expanding Table View Controller-->
         <scene sceneID="YDe-iO-TjP">
@@ -1485,7 +1518,7 @@ added to your friends list.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67J-eA-zUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1774" y="1765"/>
+            <point key="canvasLocation" x="2390" y="1419"/>
         </scene>
     </scenes>
     <resources>
