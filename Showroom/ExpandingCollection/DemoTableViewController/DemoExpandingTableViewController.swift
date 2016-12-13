@@ -9,6 +9,11 @@ class DemoExpandingTableViewController: ExpandingTableViewController {
     configureNavBar()
     let image1 = UIImage(named: "BackgroundImage")
     tableView.backgroundView = UIImageView(image: image1)
+    
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
   }
 }
 // MARK: Helpers
@@ -43,18 +48,6 @@ extension DemoExpandingTableViewController {
 extension DemoExpandingTableViewController {
   
   override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//    if scrollView.contentOffset.y < -25 {
-//      // buttonAnimation
-//      let viewControllers: [DemoViewController?] = navigationController?.viewControllers.map { $0 as? DemoViewController } ?? []
-//
-//      for viewController in viewControllers {
-//        if let rightButton = viewController?.navigationItem.rightBarButtonItem as? AnimatingBarButton {
-//          rightButton.animationSelected(false)
-//        }
-//      }
-//      popTransitionAnimation()
-//    }
-    
     scrollOffsetY = scrollView.contentOffset.y
   }
 }

@@ -1,7 +1,6 @@
 import UIKit
 import EasyPeasy
 import Device
-import TOMSMorphingLabel
 
 fileprivate struct C {
   
@@ -18,7 +17,7 @@ class CarouselViewController: UIViewController {
   @IBOutlet var aboutView: AboutView!
   @IBOutlet weak var infoButton: UIButton!
   @IBOutlet weak var contactUsButton: UIButton!
-  @IBOutlet weak var pageLabel: TOMSMorphingLabel!
+  @IBOutlet weak var pageLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bottomContainer: UIView!
   
@@ -31,7 +30,7 @@ class CarouselViewController: UIViewController {
                                                .expandingCollection,
                                                .previewTransition,
 //                                               .animationTabBar,
-                                               .realSearch,
+//                                               .realSearch,
                                                .navigationStack,
                                                .vr]
   
@@ -39,7 +38,7 @@ class CarouselViewController: UIViewController {
   fileprivate var transitionBrokerAnimation: CarouselTransitionAnimationBroker?
   
   fileprivate var foldingCellVC: UIViewController!
-  fileprivate var searchVC: SearchViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
+//  fileprivate var searchVC: SearchViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
   
   // Index of current cell
   fileprivate var currentIndex: Int {
@@ -88,7 +87,7 @@ extension CarouselViewController {
     collectionView.layer.masksToBounds = false
     
     preloadfoldinCellVC()
-    preloadSearchVC()
+//    preloadSearchVC()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -117,9 +116,9 @@ extension  CarouselViewController {
     foldingCellVC = foldingVC
   }
   
-  func preloadSearchVC() {
-    _ = searchVC.view
-  }
+//  func preloadSearchVC() {
+//    _ = searchVC.view
+//  }
 }
 
 // MARK: Methods
@@ -162,7 +161,7 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     let vc: UIViewController
     switch item {
     case .foldingCell:  vc = foldingCellVC
-    case .realSearch: vc = searchVC
+//    case .realSearch: vc = searchVC
     default: vc = item.viewController
     }
     

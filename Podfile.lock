@@ -17,7 +17,6 @@ PODS:
     - RxSwift (~> 3.0)
   - RxSwift (3.0.1)
   - SwiftyAttributes (3.0.0)
-  - TOMSMorphingLabel (0.5.1)
   - UPCarouselFlowLayout (1.0.0)
 
 DEPENDENCIES:
@@ -37,7 +36,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftyAttributes
-  - TOMSMorphingLabel
   - UPCarouselFlowLayout (from `https://github.com/ink-spot/UPCarouselFlowLayout.git`)
 
 EXTERNAL SOURCES:
@@ -66,9 +64,8 @@ SPEC CHECKSUMS:
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   SwiftyAttributes: 92a9f6512be7a11a2530046220f1c1fbb644e407
-  TOMSMorphingLabel: 3e88a2bf5257f8993ebc51fb3109187a0bfb2c4d
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: 6f447d71db41606648056928d9bdeb26c030b377
+PODFILE CHECKSUM: e1442480cc4b7cbbfba58da0d8f9b13ff1bc30d4
 
 COCOAPODS: 1.1.1
