@@ -23,7 +23,7 @@ class CarouselViewController: UIViewController {
   fileprivate var isSplashAnimation = true
   
   fileprivate let items: [Showroom.Control] = [.circleMenu,
-//                                               .foldingCell,
+                                               .foldingCell,
                                                .paperSwitch,
                                                .paperOnboarding,
                                                .expandingCollection,
@@ -35,6 +35,8 @@ class CarouselViewController: UIViewController {
   
   fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!
   fileprivate var transitionBrokerAnimation: CarouselTransitionAnimationBroker?
+  
+  fileprivate var foldingCellVC: UIViewController!
   
   // Index of current cell
   fileprivate var currentIndex: Int {
@@ -58,6 +60,15 @@ extension CarouselViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     UIApplication.shared.isStatusBarHidden = true
+    
+    let foldingVC = UIStoryboard(storyboard: .Main).instantiateViewController() as FoldingTableViewController
+    _ = foldingVC.view // preload controller
+    foldingCellVC = UINavigationController(rootViewController: foldingVC)
+    _ = foldingCellVC.view
+    
+    let table = foldingVC.tableView
+    table?.reloadData()
+    
     
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,
@@ -137,7 +148,13 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
   }
     
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let vc = items[indexPath.row].viewController
+    let item = items[indexPath.row]
+    
+    let vc: UIViewController
+    switch item {
+    case .foldingCell:  vc = foldingCellVC
+    default: vc = item.viewController
+    }
     
     vc.transitioningDelegate = self
     vc.modalPresentationStyle = .custom

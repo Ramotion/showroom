@@ -2,7 +2,7 @@ import UIKit
 
 fileprivate struct C {
   
-  static let count = 9
+  static let count: Int = 4
   
   struct CellHeight {
     static let close: CGFloat = 179
@@ -13,15 +13,28 @@ class FoldingTableViewController: UITableViewController {
   
   var cellHeight = (0..<C.count).map { _ in C.CellHeight.close }
   
+  var preloadCells: [UITableViewCell]!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     tableView.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+    
+    preloadCells = (0..<C.count).enumerated().map { (index, element) in
+      let indexPath = IndexPath(row: index, section: 0)
+      return tableView.dequeueReusableCell(withIdentifier: String(describing: DemoFoldginCell.self), for: indexPath)
+    }
+    
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+      self?.navigationController?.dismiss(animated: true, completion: nil)
+    }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    
+    ThingersTapViewController.showPopup(on: self)
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +42,8 @@ class FoldingTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return tableView.dequeueReusableCell(withIdentifier: String(describing: DemoFoldginCell.self), for: indexPath)
+    //    return tableView.dequeueReusableCell(withIdentifier: String(describing: DemoFoldginCell.self), for: indexPath)
+    return preloadCells[indexPath.row]
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -55,6 +69,6 @@ class FoldingTableViewController: UITableViewController {
     UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
       tableView.beginUpdates()
       tableView.endUpdates()
-      }, completion: nil)
+    }, completion: nil)
   }
 }
