@@ -9,6 +9,7 @@ class VRViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    
     MenuPopUpViewController.showPopup(on: self, url: urlString) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
       self?.dismiss(animated: true, completion: nil)
@@ -17,6 +18,9 @@ class VRViewController: UIViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    
+    ThingersTapViewController.showPopup(on: self)
+
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url)
       webView.loadRequest(request)

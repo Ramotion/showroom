@@ -22,15 +22,15 @@ extension Showroom.Control {
   
   var info: String {
     switch self {
-    case .circleMenu: return "No Text"
-    case .foldingCell: return "An expanding content cell inspired by folding paper material. It helps to navigate between cards in userinterfaces."
-    case .paperSwitch: return "The module paints over the parent view when the switch is turned on. Inspired by Google’s Material Design. "
+    case .circleMenu: return "A menu module with a circular layout. Works for applications with visually rich interactions."
+    case .foldingCell: return "An expanding content cell inspired by folding paper material. It helps to navigate between cards in user interfaces."
+    case .paperSwitch: return "The module paints over the parent view when the switch is turned on. Inspired by Google’s Material Design."
     case .paperOnboarding: return "A Material Design pagination controller. It is used for onboarding flows or tutorials."
-    case .expandingCollection: return "No Text"
-    case .previewTransition: return "No Text"
+    case .expandingCollection: return "A controller that expands cards from a preview to a middle state, and full screen. Can be used for navigation in card-based UIs."
+    case .previewTransition: return "A simple preview gallery controller with a slight parallax effect. Works well for apps with visual content."
     case .animationTabBar: return "A module for adding animation to tab bar items. Helps to push native tab bar a bit further with subtle animations."
     case .realSearch: return "The control helps to search faster by proactively providing the most relevant keywords as you type."
-    case .navigationStack: return "No Text"
+    case .navigationStack: return "A stack-modeled navigation controller. It helps to go through a deep structure of screens faster."
     case .vr: return "Universal web VR control created for mobiles. Makes navigation between product sections faster and more natural."
     }
   }

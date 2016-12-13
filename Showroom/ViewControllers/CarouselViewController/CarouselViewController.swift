@@ -61,15 +61,6 @@ extension CarouselViewController {
     super.viewDidLoad()
     UIApplication.shared.isStatusBarHidden = true
     
-    let foldingVC = UIStoryboard(storyboard: .Main).instantiateViewController() as FoldingTableViewController
-    _ = foldingVC.view // preload controller
-    foldingCellVC = UINavigationController(rootViewController: foldingVC)
-    _ = foldingCellVC.view
-    
-    let table = foldingVC.tableView
-    table?.reloadData()
-    
-    
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,
                                                           contactUsButton: contactUsButton,
@@ -90,6 +81,7 @@ extension CarouselViewController {
     pageLabel.text = "\(currentIndex + 1)/\(items.count)"
     aboutView.titleView = topContainer
     collectionView.layer.masksToBounds = false
+    preloadfoldinCellVC()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -110,6 +102,16 @@ extension  CarouselViewController {
     contactUsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     contactUsButton.layer.shadowRadius = 4
     contactUsButton.layer.shadowOpacity = 0.3
+  }
+  
+  func preloadfoldinCellVC() {
+    let foldingVC = UIStoryboard(storyboard: .Main).instantiateViewController() as FoldingTableViewController
+    _ = foldingVC.view // preload controller
+    foldingCellVC = UINavigationController(rootViewController: foldingVC)
+    _ = foldingCellVC.view
+    
+//    let table = foldingVC.tableView
+//    table?.reloadData()
   }
 }
 
