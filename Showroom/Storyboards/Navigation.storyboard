@@ -338,6 +338,9 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             <state key="normal" title="Learn more →">
                                                 <color key="titleColor" red="0.42352941176470588" green="0.58823529411764708" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="LearnMoreHandler:" destination="o9h-hl-fuV" eventType="touchUpInside" id="dW8-aT-Q7F"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

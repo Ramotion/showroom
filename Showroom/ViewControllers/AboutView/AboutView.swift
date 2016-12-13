@@ -35,6 +35,7 @@ class AboutView: UIView {
   
   var titleView: CarouselTitleView!
   
+  
   let transperentView: UIView = .build(color: UIColor(red:0.16, green:0.23, blue:0.33, alpha:1.00), alpha: 0)
 }
 
@@ -65,6 +66,11 @@ extension AboutView {
     case .instagram: urlString = "https://instagram.com/ramotion"
     }
     
+    if let url = URL(string: urlString) { UIApplication.shared.open(url) }
+  }
+  
+  @IBAction func LearnMoreHandler(_ sender: UIButton) {
+    let urlString = "https://business.ramotion.com/?utm_source=showroom&utm_medium=special&utm_campaign=learnmore"
     if let url = URL(string: urlString) { UIApplication.shared.open(url) }
   }
 }
