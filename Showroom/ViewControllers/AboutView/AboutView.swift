@@ -56,8 +56,6 @@ extension AboutView {
     self <- Edges(0)
     
     view.layoutIfNeeded()
-    print(infoText.bounds.size.height)
-    
     view.bringSubview(toFront: titleView)
     
     circleView?.show()

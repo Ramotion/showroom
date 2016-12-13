@@ -1,5 +1,6 @@
 PODS:
   - CircleMenu (2.0.1)
+  - Device (2.0.0)
   - EasyPeasy (1.4)
   - expanding-collection (1.0.4)
   - FoldingCell (2.0.3)
@@ -20,6 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - CircleMenu
+  - Device
   - EasyPeasy
   - expanding-collection
   - FoldingCell
@@ -47,6 +49,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
+  Device: d18c6b7f5c38f3be11dd05c4f24a091bb7061b36
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
   expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
   FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
@@ -63,6 +66,6 @@ SPEC CHECKSUMS:
   SwiftyAttributes: 92a9f6512be7a11a2530046220f1c1fbb644e407
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: 5ad265008b8d334bdfe0c409fde02476d76b80f9
+PODFILE CHECKSUM: e1442480cc4b7cbbfba58da0d8f9b13ff1bc30d4
 
 COCOAPODS: 1.1.1

@@ -101,7 +101,7 @@ extension Showroom.Control {
     let stack = UIStoryboard(storyboard: .NavigationStack)
     switch self {
     case .circleMenu: return UINavigationController(rootViewController: main.instantiateViewController() as CircleViewController)
-    case .foldingCell: return UINavigationController(rootViewController: main.instantiateViewController() as FoldingTableViewController)
+    case .foldingCell: return UIViewController() // don't use look in carousevc
     case .paperSwitch: return UINavigationController(rootViewController: main.instantiateViewController() as SwitchViewController)
     case .paperOnboarding: return UINavigationController(rootViewController: main.instantiateViewController() as OnboardingViewController)
     case .expandingCollection: return UINavigationController(rootViewController: main.instantiateViewController() as DemoExpandingViewController)

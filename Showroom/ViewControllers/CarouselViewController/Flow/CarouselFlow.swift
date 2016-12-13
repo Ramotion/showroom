@@ -1,16 +1,14 @@
 import Foundation
 import UPCarouselFlowLayout
-
-fileprivate struct C {
-  
-  static let size = CGSize(width: 307, height: 400)
-}
+import Device
 
 class CarouselFlowLayout: UPCarouselFlowLayout {
   
+  static let cellSize: CGSize = Size.screen4Inch == Device.size() ? CGSize(width: 270, height: 352) : CGSize(width: 307, height: 400)
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-    itemSize = C.size
+    itemSize = CarouselFlowLayout.cellSize
     scrollDirection = .horizontal
     
     sideItemScale = 0.86

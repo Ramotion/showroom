@@ -1,15 +1,16 @@
 import UIKit
 import EasyPeasy
+import Device
 
 fileprivate struct C {
   
   static let radius: CGFloat = 5
-  static let itemSize: CGSize = CGSize(width: 307, height: 400)
 }
 
 // MARK: CarouselViewController
 class CarouselViewController: UIViewController {
   
+  @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
   @IBOutlet weak var bottomRectangle: UIImageView!
   @IBOutlet weak var topRectangle: UIImageView!
   @IBOutlet weak var topContainer: CarouselTitleView!
@@ -42,14 +43,14 @@ class CarouselViewController: UIViewController {
   fileprivate var currentIndex: Int {
     guard let collectionView = self.collectionView else { return 0 }
     
-    let startOffset = (collectionView.bounds.size.width - C.itemSize.width) / 2
+    let startOffset = (collectionView.bounds.size.width - CarouselFlowLayout.cellSize.width) / 2
     guard let collectionLayout  = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
       return 0
     }
     
     let minimumLineSpacing = collectionLayout.minimumLineSpacing
-    let a = collectionView.contentOffset.x + startOffset + C.itemSize.width / 2
-    let b = C.itemSize.width + minimumLineSpacing
+    let a = collectionView.contentOffset.x + startOffset + CarouselFlowLayout.cellSize.width / 2
+    let b = CarouselFlowLayout.cellSize.width + minimumLineSpacing
     return Int(a / b)
   }
 }
@@ -60,6 +61,8 @@ extension CarouselViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     UIApplication.shared.isStatusBarHidden = true
+    
+    collectionViewHeight.constant = CarouselFlowLayout.cellSize.height
     
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,
@@ -107,11 +110,7 @@ extension  CarouselViewController {
   func preloadfoldinCellVC() {
     let foldingVC = UIStoryboard(storyboard: .Main).instantiateViewController() as FoldingTableViewController
     _ = foldingVC.view // preload controller
-    foldingCellVC = UINavigationController(rootViewController: foldingVC)
-    _ = foldingCellVC.view
-    
-//    let table = foldingVC.tableView
-//    table?.reloadData()
+    foldingCellVC = foldingVC
   }
 }
 

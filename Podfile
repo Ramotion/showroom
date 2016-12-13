@@ -20,5 +20,6 @@ pod 'pop'
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'NSObject+Rx'
+pod "Device"
 
 end
