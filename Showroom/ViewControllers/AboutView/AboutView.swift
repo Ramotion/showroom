@@ -4,6 +4,14 @@ import RxCocoa
 import EasyPeasy
 import NSObject_Rx
 
+private enum SocialNetwork: Int {
+  case dribbble = 0
+  case facebook
+  case twitter
+  case github
+  case instagram
+}
+
 class AboutView: UIView {
 
   @IBOutlet weak var scrollView: UIScrollView!
@@ -42,6 +50,24 @@ extension AboutView {
   }
 }
 
+// MARK: Actions
+extension AboutView {
+  
+  @IBAction func socialNetworkHandler(_ sender: UIButton) {
+    guard let item = SocialNetwork(rawValue: sender.tag) else { return }
+
+    let urlString: String
+    switch item {
+    case .dribbble: urlString = "https://dribbble.com/ramotion/?utm_source=showroom&utm_medium=special&utm_campaign=socialbuton"
+    case .facebook: urlString = "https://facebook.com/ramotioncom"
+    case .twitter: urlString = "https://twitter.com/ramotion"
+    case .github: urlString = "https://github.com/ramotion"
+    case .instagram: urlString = "https://instagram.com/ramotion"
+    }
+    
+    if let url = URL(string: urlString) { UIApplication.shared.open(url) }
+  }
+}
 // MARK: Methods
 extension AboutView {
   
@@ -102,8 +128,6 @@ extension AboutView {
   
   func hide(on view: UIView, completion: @escaping () -> Void) {
     
-    print(infoText.bounds.size.height)
-   
     scrollView.animate(duration: 0.3, [.alpha(to: 0)], timing: .easyInEasyOut)
     transperentView.animate(duration: 0.4, [.alphaFrom(0.4, to: 0, removed: false)])
     topView.animateSeparator(isShow: false)

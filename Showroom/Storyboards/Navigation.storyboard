@@ -377,41 +377,61 @@ To help you evaluate the quality of development, we have created a mobile applic
                                 <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="equalSpacing" alignment="firstBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="yHk-YP-YM5">
                                     <rect key="frame" x="40" y="20" width="295" height="35"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dribbble-ball" translatesAutoresizingMaskIntoConstraints="NO" id="0EF-XJ-tJz">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spF-bk-l2s">
                                             <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="4IW-M3-6TC"/>
-                                                <constraint firstAttribute="width" constant="35" id="PYU-vl-2QB"/>
+                                                <constraint firstAttribute="height" constant="35" id="0vH-hk-8iA"/>
+                                                <constraint firstAttribute="width" constant="35" id="Ce7-ZB-TYs"/>
                                             </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="BN8-SF-wMi">
+                                            <state key="normal" image="dribbble-ball"/>
+                                            <connections>
+                                                <action selector="socialNetworkHandler:" destination="o9h-hl-fuV" eventType="touchUpInside" id="h6L-ix-Ovp"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7i-u6-Zx5">
                                             <rect key="frame" x="65" y="0.0" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="WD0-FH-w3A"/>
-                                                <constraint firstAttribute="width" constant="35" id="hhT-GU-GWp"/>
+                                                <constraint firstAttribute="width" constant="35" id="KV8-ds-t8d"/>
+                                                <constraint firstAttribute="height" constant="35" id="jSk-fn-TNo"/>
                                             </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="dUK-U1-TxM">
+                                            <state key="normal" image="facebook"/>
+                                            <connections>
+                                                <action selector="socialNetworkHandler:" destination="o9h-hl-fuV" eventType="touchUpInside" id="MNf-Rn-Ao8"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhS-GM-U7F">
                                             <rect key="frame" x="130" y="0.0" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="35" id="Jhu-i4-wvH"/>
-                                                <constraint firstAttribute="height" constant="35" id="p0t-IL-hnY"/>
+                                                <constraint firstAttribute="width" constant="35" id="Dnq-Fp-xYM"/>
+                                                <constraint firstAttribute="height" constant="35" id="Eao-Zk-1CH"/>
                                             </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="githubIcon" translatesAutoresizingMaskIntoConstraints="NO" id="S9b-0w-63P">
-                                            <rect key="frame" x="195" y="0.0" width="35" height="35"/>
+                                            <state key="normal" image="twitter"/>
+                                            <connections>
+                                                <action selector="socialNetworkHandler:" destination="o9h-hl-fuV" eventType="touchUpInside" id="dzR-Yb-VW4"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coc-gz-gn5">
+                                            <rect key="frame" x="195" y="-0.5" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="35" id="DuN-qH-R2d"/>
-                                                <constraint firstAttribute="height" constant="35" id="pM2-M8-6UJ"/>
+                                                <constraint firstAttribute="width" constant="35" id="CmH-XQ-ete"/>
+                                                <constraint firstAttribute="height" constant="35" id="fVq-HL-zLL"/>
                                             </constraints>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagramm" translatesAutoresizingMaskIntoConstraints="NO" id="noN-vz-Ppc">
+                                            <state key="normal" image="githubIcon"/>
+                                            <connections>
+                                                <action selector="socialNetworkHandler:" destination="o9h-hl-fuV" eventType="touchUpInside" id="qVz-rd-4fk"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGD-iH-UtV">
                                             <rect key="frame" x="260" y="0.0" width="35" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="35" id="Wby-dB-fKU"/>
-                                                <constraint firstAttribute="width" constant="35" id="YcB-JT-lLH"/>
+                                                <constraint firstAttribute="width" constant="35" id="gvJ-1D-p4S"/>
+                                                <constraint firstAttribute="height" constant="35" id="wWk-tL-Ajx"/>
                                             </constraints>
-                                        </imageView>
+                                            <state key="normal" image="Instagramm"/>
+                                            <connections>
+                                                <action selector="socialNetworkHandler:" destination="o9h-hl-fuV" eventType="touchUpInside" id="diK-E4-Ced"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
