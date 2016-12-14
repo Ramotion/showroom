@@ -68,6 +68,7 @@ extension AboutView {
   }
   
   @IBAction func LearnMoreHandler(_ sender: UIButton) {
+    sendAction(.button, a: "learn more", l: "about", v: 1)
     let urlString = "https://business.ramotion.com/?utm_source=showroom&utm_medium=special&utm_campaign=learnmore"
     if let url = URL(string: urlString) { UIApplication.shared.open(url) }
   }

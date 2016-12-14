@@ -3,7 +3,32 @@ PODS:
   - Device (2.0.0)
   - EasyPeasy (1.4)
   - expanding-collection (1.0.4)
+  - Firebase/Core (3.11.0):
+    - FirebaseAnalytics (= 3.6.0)
+    - FirebaseCore (= 3.4.6)
+  - FirebaseAnalytics (3.6.0):
+    - FirebaseCore (~> 3.4)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.4.6):
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.8)
   - FoldingCell (2.0.3)
+  - Google/Analytics (3.0.3):
+    - Google/Core
+    - GoogleAnalytics (~> 3.12)
+  - Google/Core (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+  - GoogleAnalytics (3.17.0)
+  - GoogleInterchangeUtilities (1.2.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleSymbolUtilities (1.1.2)
+  - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/NSData+zlib (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
   - Navigation-stack (1.0.0)
   - NSObject+Rx (2.0.0):
     - RxSwift
@@ -24,7 +49,9 @@ DEPENDENCIES:
   - Device
   - EasyPeasy
   - expanding-collection
+  - Firebase/Core
   - FoldingCell
+  - Google/Analytics
   - Navigation-stack
   - NSObject+Rx
   - paper-onboarding
@@ -52,7 +79,16 @@ SPEC CHECKSUMS:
   Device: d18c6b7f5c38f3be11dd05c4f24a091bb7061b36
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
   expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
+  Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
+  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
+  FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
+  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
+  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
+  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   Navigation-stack: 85ac0a7bd4002e7888c528d8817f10ffe2c225da
   NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
   paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
@@ -66,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: e1442480cc4b7cbbfba58da0d8f9b13ff1bc30d4
+PODFILE CHECKSUM: fbb1a33761b670b66c79ab5baadfec17b2cda111
 
 COCOAPODS: 1.1.1
