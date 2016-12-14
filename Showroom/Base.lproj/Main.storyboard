@@ -799,9 +799,12 @@ added to your friends list.</string>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ubf-zP-9Pb" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
                                                         <rect key="frame" x="213" y="111" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <outlet property="parentView" destination="leS-yF-yKr" id="a3M-zw-0K0"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstItem="HFe-Xj-Znk" firstAttribute="centerX" secondItem="QHb-vi-gEU" secondAttribute="centerX" constant="-35" id="2QT-7d-aem"/>
                                                     <constraint firstItem="Ph6-0C-6Jf" firstAttribute="top" secondItem="QHb-vi-gEU" secondAttribute="top" id="40I-XJ-qeH"/>
@@ -853,9 +856,12 @@ added to your friends list.</string>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-cI-mYM" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
                                                         <rect key="frame" x="224" y="112" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.5568627451" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <outlet property="parentView" destination="0uP-cI-jhA" id="QBd-Ih-Nro"/>
+                                                        </connections>
                                                     </switch>
                                                 </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="xZL-hx-KBq" secondAttribute="bottom" constant="10" id="2qa-6f-Njk"/>
                                                     <constraint firstItem="0U4-cI-mYM" firstAttribute="top" secondItem="5P1-nV-F9j" secondAttribute="bottom" constant="50" id="9Gg-it-YaR"/>

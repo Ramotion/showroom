@@ -11,12 +11,12 @@ PODS:
   - pop (1.0.9)
   - PreviewTransition (2.0.1)
   - RAMAnimatedTabBarController (2.1.1)
-  - RAMPaperSwitch (2.0.2)
+  - RAMPaperSwitch (2.0.4)
   - RAMReel (2.0.2)
   - RxCocoa (3.0.1):
     - RxSwift (~> 3.0)
   - RxSwift (3.0.1)
-  - SwiftyAttributes (3.0.0)
+  - SwiftyAttributes (3.1.0)
   - UPCarouselFlowLayout (1.0.0)
 
 DEPENDENCIES:
@@ -59,11 +59,11 @@ SPEC CHECKSUMS:
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   PreviewTransition: 2f612e341ccae573a1c08b8521fe19a28fe5d763
   RAMAnimatedTabBarController: 128e0d71dc802766de575a3c59c6fdcc8e2f921b
-  RAMPaperSwitch: 1b7a2cd640a0e5beda0e280ecb33c5704a3e20d1
+  RAMPaperSwitch: d24db52c5423c14812d4069073c3159cffcf3992
   RAMReel: f9dd6643aaa001b52c55d5fbe4b42170dd271298
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
-  SwiftyAttributes: 92a9f6512be7a11a2530046220f1c1fbb644e407
+  SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
 PODFILE CHECKSUM: e1442480cc4b7cbbfba58da0d8f9b13ff1bc30d4

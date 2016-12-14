@@ -37,15 +37,15 @@ extension Showroom.Control {
   
   var hours: String {
     switch self {
-    case .circleMenu: return "000"
+    case .circleMenu: return "120"
     case .foldingCell: return "160"
     case .paperSwitch: return "80"
     case .paperOnboarding: return "120"
-    case .expandingCollection: return "000"
-    case .previewTransition: return "000"
+    case .expandingCollection: return "160"
+    case .previewTransition: return "120"
     case .animationTabBar: return "120"
     case .realSearch: return "120"
-    case .navigationStack: return "000"
+    case .navigationStack: return "120"
     case .vr: return "160"
     }
   }
