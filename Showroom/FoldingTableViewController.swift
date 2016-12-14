@@ -8,12 +8,17 @@ fileprivate struct C {
     static let close: CGFloat = 179
     static let open: CGFloat = 488
   }
+  
 }
 class FoldingTableViewController: UITableViewController {
   
   var cellHeight = (0..<C.count).map { _ in C.CellHeight.close }
   
   var preloadCells: [UITableViewCell]!
+  
+  let colors = [UIColor(red:0.35, green:0.29, blue:0.61, alpha:1.00),
+                UIColor(red:0.32, green:0.64, blue:0.23, alpha:1.00),
+                UIColor(red:0.97, green:0.67, blue:0.09, alpha:1.00)]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -37,12 +42,16 @@ class FoldingTableViewController: UITableViewController {
     ThingersTapViewController.showPopup(on: self)
   }
   
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    guard case let cell as DemoFoldginCell = cell else { return }
+    cell.setCellCollor(color: colors[indexPath.row % colors.count])
+  }
+  
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return C.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //    return tableView.dequeueReusableCell(withIdentifier: String(describing: DemoFoldginCell.self), for: indexPath)
     return preloadCells[indexPath.row]
   }
   

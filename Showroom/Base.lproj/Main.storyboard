@@ -647,7 +647,7 @@
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                                             <state key="normal" title="REQUEST">
-                                                                <color key="titleColor" red="0.27058823529999998" green="0.2156862745" blue="0.08235294118" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -723,9 +723,13 @@
                                 <connections>
                                     <outlet property="containerView" destination="Huc-q6-EPh" id="QAJ-iA-SO0"/>
                                     <outlet property="containerViewTop" destination="C2z-Wd-dyw" id="Bdz-yx-Jc7"/>
+                                    <outlet property="fixedView" destination="LMh-pw-afR" id="teY-uB-zC1"/>
                                     <outlet property="foregroundView" destination="4kw-r2-IKA" id="UDZ-7n-5jB"/>
                                     <outlet property="foregroundViewTop" destination="cGr-bb-lj7" id="sIY-Yd-GYx"/>
+                                    <outlet property="leftView" destination="MYu-5i-6jK" id="qwy-4B-CeF"/>
+                                    <outlet property="requiestButton" destination="OPb-gR-sKK" id="4YF-e0-97g"/>
                                     <outlet property="topBar" destination="IsV-Mc-VfP" id="Vzn-0f-DAS"/>
+                                    <outlet property="topView" destination="IsV-Mc-VfP" id="YAb-8S-28H"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -737,7 +741,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8i-mb-hb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2527" y="-109"/>
+            <point key="canvasLocation" x="2390" y="-77"/>
         </scene>
         <!--Switch View Controller-->
         <scene sceneID="jvY-RR-SrW">
@@ -1130,7 +1134,7 @@ added to your friends list.</string>
         <scene sceneID="8Kg-F3-QPl">
             <objects>
                 <navigationController storyboardIdentifier="NavBar1" id="8eq-CR-YlI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kHu-oJ-t6K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kHu-oJ-t6K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
