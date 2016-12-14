@@ -300,7 +300,7 @@
                             <rect key="frame" x="40" y="0.0" width="295" height="796"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ktb-dp-HeP" userLabel="ContentView">
-                                    <rect key="frame" x="0.0" y="0.0" width="295" height="864"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295" height="794"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pz0-T3-6Em">
                                             <rect key="frame" x="0.0" y="186" width="295" height="450"/>
@@ -350,7 +350,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                         <constraint firstItem="QlL-f4-QBt" firstAttribute="top" secondItem="pz0-T3-6Em" secondAttribute="bottom" constant="30" id="bfg-7M-oNd"/>
                                         <constraint firstItem="QlL-f4-QBt" firstAttribute="leading" secondItem="Ktb-dp-HeP" secondAttribute="leading" id="du3-OP-zHn"/>
                                         <constraint firstItem="pz0-T3-6Em" firstAttribute="leading" secondItem="Ktb-dp-HeP" secondAttribute="leading" id="fZQ-8U-uJP"/>
-                                        <constraint firstAttribute="bottom" secondItem="QlL-f4-QBt" secondAttribute="bottom" constant="170" id="mxP-oe-CLk"/>
+                                        <constraint firstAttribute="bottom" secondItem="QlL-f4-QBt" secondAttribute="bottom" constant="100" id="mxP-oe-CLk"/>
                                         <constraint firstItem="87a-X8-6EJ" firstAttribute="leading" secondItem="Ktb-dp-HeP" secondAttribute="leading" id="qKr-gT-EX6"/>
                                         <constraint firstItem="87a-X8-6EJ" firstAttribute="top" secondItem="Ktb-dp-HeP" secondAttribute="top" constant="128" id="t4N-Xm-oQz"/>
                                         <constraint firstAttribute="trailing" secondItem="pz0-T3-6Em" secondAttribute="trailing" id="z0b-Z2-QMl"/>
@@ -414,7 +414,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coc-gz-gn5">
-                                            <rect key="frame" x="195" y="0.0" width="35" height="35"/>
+                                            <rect key="frame" x="195" y="-0.5" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="35" id="CmH-XQ-ete"/>
                                                 <constraint firstAttribute="height" constant="35" id="fVq-HL-zLL"/>
@@ -617,7 +617,7 @@ and go back to home screen.</string>
                                                 <rect key="frame" x="0.0" y="106.5" width="307" height="105"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1m-Ns-2Ge">
-                                                        <rect key="frame" x="129.5" y="38" width="48" height="30"/>
+                                                        <rect key="frame" x="131" y="36.5" width="45" height="33"/>
                                                         <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="18"/>
                                                         <state key="normal" title="Got It">
                                                             <color key="titleColor" red="0.094117647058823528" green="0.38823529411764707" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
