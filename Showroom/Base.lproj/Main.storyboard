@@ -1130,22 +1130,6 @@ added to your friends list.</string>
             </objects>
             <point key="canvasLocation" x="5300" y="-109"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="8Kg-F3-QPl">
-            <objects>
-                <navigationController storyboardIdentifier="NavBar1" id="8eq-CR-YlI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="kHu-oJ-t6K">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="RQM-Cv-AG5" kind="relationship" relationship="rootViewController" id="2aa-jb-6NO"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="exP-HS-q8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="910" y="1418"/>
-        </scene>
         <!--Demo Expanding View Controller-->
         <scene sceneID="ThT-uQ-fiE">
             <objects>
