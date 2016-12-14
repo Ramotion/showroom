@@ -15,6 +15,10 @@ class DemoExpandingTableViewController: ExpandingTableViewController {
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }
 // MARK: Helpers
 

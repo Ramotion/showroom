@@ -62,6 +62,10 @@ class FirstTableViewController: UITableViewController {
   @IBAction func doneHandler(_ sender: AnyObject) {
     dismiss(animated: true, completion: nil)
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }
 
 // MARK: UIGestureRecognizerDelegate

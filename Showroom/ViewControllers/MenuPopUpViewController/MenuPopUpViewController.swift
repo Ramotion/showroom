@@ -56,6 +56,10 @@ extension MenuPopUpViewController {
     super.viewWillDisappear(animated)
     infoView.alpha = 0
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }
 
 // MARK: Methods

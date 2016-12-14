@@ -24,6 +24,10 @@ class BounceAnimationViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
     
 
     /*

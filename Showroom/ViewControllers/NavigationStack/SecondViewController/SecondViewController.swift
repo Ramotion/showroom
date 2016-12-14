@@ -49,5 +49,9 @@ class SecondViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "push", sender: nil)
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 
 }

@@ -80,4 +80,8 @@ class FoldingTableViewController: UITableViewController {
       tableView.endUpdates()
     }, completion: nil)
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }

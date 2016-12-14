@@ -35,4 +35,8 @@ class FifthViewController: UITableViewController {
   @IBAction func backHandler(_ sender: AnyObject) {
     let _ = navigationController?.popViewController(animated: true)
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }

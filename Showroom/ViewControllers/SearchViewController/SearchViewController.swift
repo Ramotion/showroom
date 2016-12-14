@@ -42,4 +42,8 @@ class SearchViewController: UIViewController {
       return []
     }
   }()
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }

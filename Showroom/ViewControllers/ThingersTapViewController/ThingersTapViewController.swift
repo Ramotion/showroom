@@ -26,6 +26,10 @@ extension ThingersTapViewController {
     heandAnimation()
     configureInfoLabel()
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }
 
 private var isAlredyShow = false

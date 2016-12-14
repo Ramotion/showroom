@@ -45,4 +45,8 @@ class ThirdViewController: UITableViewController {
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
   }
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }

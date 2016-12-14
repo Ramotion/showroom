@@ -11,6 +11,10 @@ class MainViewController: UITableViewController {
                                       .animationTabBar,
                                       .realSearch,
                                       .navigationStack]
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
 }
 
 // MARK: UITableViewDatasource

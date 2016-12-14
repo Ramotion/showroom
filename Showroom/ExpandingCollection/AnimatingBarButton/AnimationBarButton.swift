@@ -30,6 +30,8 @@ extension AnimatingBarButton {
     
     configurateImageViews()
   }
+  
+  
 }
 
 // MARK: public

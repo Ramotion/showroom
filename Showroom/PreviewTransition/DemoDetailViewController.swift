@@ -31,6 +31,10 @@ extension DemoDetailViewController {
     UIApplication.shared.isStatusBarHidden = true
   }
   
+  override open var shouldAutorotate: Bool {
+    return false
+  }
+  
   public override func viewDidLoad() {
     super.viewDidLoad()
     

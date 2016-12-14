@@ -2,6 +2,13 @@ import UIKit
 import EasyPeasy
 import Device
 
+extension UINavigationController {
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
+}
+
 fileprivate struct C {
   
   static let radius: CGFloat = 5
@@ -58,6 +65,10 @@ class CarouselViewController: UIViewController {
 
 // MARK: Life Cycle
 extension CarouselViewController {
+  
+  override open var shouldAutorotate: Bool {
+    return false
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()

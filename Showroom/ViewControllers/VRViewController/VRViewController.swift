@@ -26,4 +26,16 @@ class VRViewController: UIViewController {
       webView.loadRequest(request)
     }
   }
+  
+  override open var shouldAutorotate: Bool {
+    return true
+  }
+  
+//  override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+//    return .landscapeLeft
+//  }
+//  
+//  override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+//    return .landscapeLeft
+//  }
 }
