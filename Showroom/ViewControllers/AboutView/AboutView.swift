@@ -61,7 +61,14 @@ extension AboutView {
     case .facebook: urlString = "https://facebook.com/ramotioncom"
     case .twitter: urlString = "https://twitter.com/ramotion"
     case .github: urlString = "https://github.com/ramotion"
-    case .instagram: urlString = "https://instagram.com/ramotion"
+    case .instagram:
+      guard let url = URL(string: "instagram://user?username=ramotion") else { return }
+      if UIApplication.shared.canOpenURL(url) {
+        UIApplication.shared.open(url)
+        return
+      }
+      
+      urlString = "https://instagram.com/ramotion"
     }
     
     if let url = URL(string: urlString) { UIApplication.shared.open(url) }

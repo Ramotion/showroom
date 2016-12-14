@@ -38,7 +38,7 @@ class CarouselViewController: UIViewController {
                                                .previewTransition,
 //                                               .animationTabBar,
 //                                               .realSearch,
-                                               .navigationStack,
+//                                               .navigationStack,
                                                .vr]
   
   fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!
