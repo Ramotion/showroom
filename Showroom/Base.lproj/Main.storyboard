@@ -1126,6 +1126,22 @@ added to your friends list.</string>
             </objects>
             <point key="canvasLocation" x="5300" y="-109"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8Kg-F3-QPl">
+            <objects>
+                <navigationController storyboardIdentifier="NavBar1" id="8eq-CR-YlI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kHu-oJ-t6K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RQM-Cv-AG5" kind="relationship" relationship="rootViewController" id="2aa-jb-6NO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exP-HS-q8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="910" y="1418"/>
+        </scene>
         <!--Demo Expanding View Controller-->
         <scene sceneID="ThT-uQ-fiE">
             <objects>
@@ -1139,7 +1155,7 @@ added to your friends list.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-2r-IxN">
-                                <rect key="frame" x="0.0" y="-24" width="375" height="691"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV7-ry-Zec">
                                 <rect key="frame" x="172" y="626" width="31" height="21"/>
@@ -1160,6 +1176,7 @@ added to your friends list.</string>
                     </view>
                     <navigationItem key="navigationItem" id="cWm-zt-2nt">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="KPs-IG-Cip"/>
                         <view key="titleView" contentMode="scaleToFill" id="yaP-HZ-Grb">
                             <rect key="frame" x="68" y="6" width="240" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
