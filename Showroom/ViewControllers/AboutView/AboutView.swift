@@ -77,7 +77,6 @@ extension AboutView {
   
   func show(on view: UIView, completion: @escaping () -> Void) {
     
-    
     if circleView == nil { circleView = .build(on: self, position: titleView.infoButton.center) }
     scrollView.alpha = 1
     scrollView.contentOffset.y = 0
@@ -90,6 +89,7 @@ extension AboutView {
     
     circleView?.show()
     topViewHeight.constant = titleView.bounds.size.height
+    titleLabelTopConstraint.constant =  titleView.bounds.size.height + 20
     
     superview?.insertSubview(transperentView, belowSubview: self)
     transperentView <- Edges(0)
