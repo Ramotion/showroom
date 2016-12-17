@@ -1,5 +1,8 @@
 import UIKit
 import SwiftyAttributes
+import NSObject_Rx
+import RxCocoa
+import RxSwift
 
 fileprivate struct C {
   
@@ -20,7 +23,7 @@ class MenuPopUpViewController: UIViewController {
   @IBOutlet weak var copyLinkContainer: UIView!
   @IBOutlet weak var infoView: UIView!
   @IBOutlet weak var menuView: UIView!
-  fileprivate var presenter: PopUpPresenter?
+  var presenter: PopUpPresenter?
   
   fileprivate var shareUrlString: String!
 }
@@ -67,7 +70,8 @@ extension MenuPopUpViewController {
   
   class func showPopup(on: UIViewController, url: String, backButtonTap: @escaping () -> Void) {
     
-    on.threeThingersToch {
+    on.threeThingersToch.subscribe { [weak on] _ in
+      guard let on = on else { return }
       let storybord = UIStoryboard(storyboard: .Navigation)
       let vc: MenuPopUpViewController = storybord.instantiateViewController()
       vc.shareUrlString = url
@@ -76,7 +80,7 @@ extension MenuPopUpViewController {
                                     on: on,
                                     showTransition: ShowMenuPopUpTransition(duration: 0.2),
                                     hideTransition: HideMenuPopUpTransition(duration: 0.2))
-    }
+    }.addDisposableTo(on.rx_disposeBag)
   }
 }
 

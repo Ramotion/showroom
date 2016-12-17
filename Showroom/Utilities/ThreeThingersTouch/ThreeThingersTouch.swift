@@ -1,20 +1,34 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol ThreeThingersTouchCompatibility {
   
-  func threeThingersToch(_ onTap: @escaping () -> Void) 
+  var threeThingersToch: ControlEvent<UITapGestureRecognizer> { get }
 }
 
 extension ThreeThingersTouchCompatibility where Self: UIViewController {
   
-  func threeThingersToch(_ onTap: @escaping () -> Void) {
+  var threeThingersToch: ControlEvent<UITapGestureRecognizer> {
     
     let gesture = UITapGestureRecognizer()
     gesture.numberOfTouchesRequired = 3
     view.addGestureRecognizer(gesture)
     
-    _ = gesture.rx.event.asObservable().subscribe { _ in onTap() }
+    return gesture.rx.event
   }
 }
+
+//extension ThreeThingersTouchCompatibility where Self: UITableViewController {
+//  
+//  var threeThingersToch: ControlEvent<UITapGestureRecognizer> {
+//    
+//    let gesture = UITapGestureRecognizer()
+//    gesture.numberOfTouchesRequired = 3
+//    tableView.addGestureRecognizer(gesture)
+//    
+//    return gesture.rx.event
+//  }
+//}
 
 extension UIViewController: ThreeThingersTouchCompatibility {}

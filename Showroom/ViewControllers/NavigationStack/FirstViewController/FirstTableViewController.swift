@@ -8,9 +8,22 @@
 
 import UIKit
 import Navigation_stack
-// MARK: FirstTableViewController
+import RxSwift
+import RxCocoa
 
 class FirstTableViewController: UITableViewController {
+  
+  var thinger: ThingerTapView?
+    
+  deinit {
+   print("FirstTableViewController")
+  }
+  
+  @IBAction func closeHandler(_ sender: Any) {
+    
+    self.navigationController?.dismiss(animated: true, completion: nil)
+
+  }
   
   @IBOutlet var search: UISearchBar!
   var hideNavBar = false
@@ -30,11 +43,18 @@ class FirstTableViewController: UITableViewController {
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
+    
+    if let view = navigationController?.view {
+      thinger = ThingerTapView.create(on: view, type: .tap)
+      thinger?.alpha = 0
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     ThingersTapViewController.showPopup(on: self)
+    
+    thinger?.show(delay: 2)
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +65,12 @@ class FirstTableViewController: UITableViewController {
     }
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
+    thinger?.hide(delay: 0)
+  }
+  
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     if hideNavBar == false { return }
@@ -52,8 +78,8 @@ class FirstTableViewController: UITableViewController {
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.isTranslucent = true
+    
   }
-  
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     performSegue(withIdentifier: "push", sender: nil)

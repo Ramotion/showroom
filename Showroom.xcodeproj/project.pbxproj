@@ -12,6 +12,7 @@
 		841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95161DDEF39100B997F5 /* EasyCollectionView.swift */; };
 		841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */; };
 		841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */; };
+		842E1D2D1E05396F00F75DF9 /* ThingerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E1D2C1E05396F00F75DF9 /* ThingerView.swift */; };
 		842E3F401DF004620071037A /* UIView+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F3F1DF004620071037A /* UIView+Build.swift */; };
 		842E3F431DF016FF0071037A /* AboutTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F421DF016FF0071037A /* AboutTopView.swift */; };
 		842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842E3F451DF0214E0071037A /* CarouselSplashAnimationBroker.swift */; };
@@ -95,6 +96,7 @@
 		841C95161DDEF39100B997F5 /* EasyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCollectionView.swift; sourceTree = "<group>"; };
 		841C95191DDEF74B00B997F5 /* ControlCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlCollectionViewCell.swift; sourceTree = "<group>"; };
 		841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselFlow.swift; sourceTree = "<group>"; };
+		842E1D2C1E05396F00F75DF9 /* ThingerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThingerView.swift; sourceTree = "<group>"; };
 		842E3F3F1DF004620071037A /* UIView+Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Build.swift"; sourceTree = "<group>"; };
 		842E3F421DF016FF0071037A /* AboutTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTopView.swift; sourceTree = "<group>"; };
 		842E3F451DF0214E0071037A /* CarouselSplashAnimationBroker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselSplashAnimationBroker.swift; sourceTree = "<group>"; };
@@ -245,6 +247,14 @@
 				8476E7141DDF066E0043B32C /* Graphik-Regular.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		842E1D2B1E05394F00F75DF9 /* ThingerView */ = {
+			isa = PBXGroup;
+			children = (
+				842E1D2C1E05396F00F75DF9 /* ThingerView.swift */,
+			);
+			path = ThingerView;
 			sourceTree = "<group>";
 		};
 		842E3F3E1DF004420071037A /* Creater */ = {
@@ -596,6 +606,7 @@
 		84F0A97C1DE834A900C02332 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				842E1D2B1E05394F00F75DF9 /* ThingerView */,
 				84F0A97D1DE834C900C02332 /* CircleView */,
 			);
 			path = Views;
@@ -787,6 +798,7 @@
 				84760B2A1DE07C3B00AF36FE /* CarouserTitleView.swift in Sources */,
 				84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */,
 				846E6FAC1DF1909200A7F02E /* ShowAlphaModalTransition.swift in Sources */,
+				842E1D2D1E05396F00F75DF9 /* ThingerView.swift in Sources */,
 				84C2F9761DFEF48200E97FD5 /* VRViewController.swift in Sources */,
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift in Sources */,

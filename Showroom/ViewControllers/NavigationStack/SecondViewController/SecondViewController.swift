@@ -10,17 +10,18 @@ import UIKit
 
 class SecondViewController: UITableViewController {
   
+  var thinger: ThingerTapView? {
+    return (navigationController?.view.subviews.filter { $0 is ThingerTapView })?.first as? ThingerTapView
+  }
+  
   var hideNavBar = false
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     
-//    if let navigationController = navigationController {
-////      navigationController.navigationBar.barTintColor = UIColor(red:0.61, green:0.86, blue:0.87, alpha:1)
-////      tableView.contentOffset = CGPoint(x: 0, y: -44)
-////      navigationController.navigationBar.translucent = true
-//    }
+    thinger?.show(delay: 2)
   }
+  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,16 +33,21 @@ class SecondViewController: UITableViewController {
     }
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    thinger?.hide(delay: 0)
+  }
+  
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
+
     if hideNavBar == false { return }
     
     navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
     navigationController?.navigationBar.shadowImage = UIImage()
     navigationController?.navigationBar.isTranslucent = true
   }
-
-
+  
   @IBAction func backHandler(_ sender: AnyObject) {
     let _ = navigationController?.popViewController(animated: true)
   }
