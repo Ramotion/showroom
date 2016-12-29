@@ -30,12 +30,4 @@ class VRViewController: UIViewController {
   override open var shouldAutorotate: Bool {
     return true
   }
-  
-//  override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-//    return .landscapeLeft
-//  }
-//  
-//  override open var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
-//    return .landscapeLeft
-//  }
 }

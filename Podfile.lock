@@ -1,6 +1,6 @@
 PODS:
   - CircleMenu (2.0.1)
-  - Device (2.0.0)
+  - Device (2.0.1)
   - EasyPeasy (1.4)
   - expanding-collection (1.0.4)
   - Firebase/Core (3.11.0):
@@ -17,12 +17,6 @@ PODS:
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.8)
   - FoldingCell (2.0.3)
-  - Google/Analytics (3.0.3):
-    - Google/Core
-    - GoogleAnalytics (~> 3.12)
-  - Google/Core (3.0.3):
-    - FirebaseAnalytics (~> 3.2)
-  - GoogleAnalytics (3.17.0)
   - GoogleInterchangeUtilities (1.2.2):
     - GoogleSymbolUtilities (~> 1.1)
   - GoogleSymbolUtilities (1.1.2)
@@ -38,9 +32,9 @@ PODS:
   - RAMAnimatedTabBarController (2.1.1)
   - RAMPaperSwitch (2.0.4)
   - RAMReel (2.0.2)
-  - RxCocoa (3.0.1):
-    - RxSwift (~> 3.0)
-  - RxSwift (3.0.1)
+  - RxCocoa (3.1.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.1.0)
   - SwiftyAttributes (3.1.0)
   - UPCarouselFlowLayout (1.0.0)
 
@@ -51,7 +45,6 @@ DEPENDENCIES:
   - expanding-collection
   - Firebase/Core
   - FoldingCell
-  - Google/Analytics
   - Navigation-stack
   - NSObject+Rx
   - paper-onboarding
@@ -76,7 +69,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
-  Device: d18c6b7f5c38f3be11dd05c4f24a091bb7061b36
+  Device: 7dd12a4fc8a72a90211f2c9ac8975a728322a148
   EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
   expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
   Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
@@ -84,8 +77,6 @@ SPEC CHECKSUMS:
   FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
-  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
-  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
@@ -97,11 +88,11 @@ SPEC CHECKSUMS:
   RAMAnimatedTabBarController: 128e0d71dc802766de575a3c59c6fdcc8e2f921b
   RAMPaperSwitch: d24db52c5423c14812d4069073c3159cffcf3992
   RAMReel: f9dd6643aaa001b52c55d5fbe4b42170dd271298
-  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
-  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
+  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
   UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: fbb1a33761b670b66c79ab5baadfec17b2cda111
+PODFILE CHECKSUM: d05532fc85a8b63832c0ed728b18dcd3608f39d8
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.1

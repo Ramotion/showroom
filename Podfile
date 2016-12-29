@@ -21,7 +21,6 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'NSObject+Rx'
 pod "Device"
-pod 'Google/Analytics'
 pod 'Firebase/Core'
 
 end

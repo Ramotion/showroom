@@ -74,7 +74,7 @@ extension CarouselViewController {
     super.viewDidLoad()
     UIApplication.shared.isStatusBarHidden = true
     
-    trackScreen(string: "CarouselViewController") // analytics
+    Analytics.screen(event: .google(name: "CarouselViewController", vc: self))
     
     collectionViewHeight.constant = CarouselFlowLayout.cellSize.height
     
@@ -171,7 +171,6 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let item = items[indexPath.row]
     
-    trackScreen(control: item) // analytics
     
     let vc: UIViewController
     switch item {
@@ -180,6 +179,8 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     default: vc = item.viewController
     }
     
+    Analytics.screen(event: .google(name: item.title, vc: vc))
+
     vc.transitioningDelegate = self
     vc.modalPresentationStyle = .custom
     present(vc, animated: true, completion: nil)
@@ -193,13 +194,13 @@ extension CarouselViewController {
     sender.isUserInteractionEnabled = false
     sender.animate(duration: 0, delay: 0, [.springScale(from: 0.9, to: 1, bounce: 20, spring: 10)])
     if sender.isSelected == true {
-      sendAction(.button, a: "hide about", l: "home", v: 1)
+        Analytics.event(.google(name: "Buttons", parametr: "hide about"))
       aboutView.hide(on: view) {
         sender.isUserInteractionEnabled = true
       }
     } else {
-      sendAction(.button, a: "show about", l: "home", v: 1)
-      aboutView.show(on: view) {
+        Analytics.event(.google(name: "Buttons", parametr: "show about"))
+        aboutView.show(on: view) {
         sender.isUserInteractionEnabled = true
       }
     }
@@ -208,13 +209,13 @@ extension CarouselViewController {
   
   @IBAction func sharedHandler(_ sender: Any) {
     let sharedUrl = items[currentIndex].sharedURL
-    sendAction(.button, a: "control shared: \(sharedUrl)", l: "home", v: 1)
+    Analytics.event(.google(name: "Buttons", parametr: "control shared: \(sharedUrl)"))
     let activity = UIActivityViewController(activityItems: [sharedUrl], applicationActivities: nil)
     present(activity, animated: true, completion: nil)
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {
-    sendAction(.button, a: "contact us", l: "home", v: 1)
+    Analytics.event(.google(name: "Buttons", parametr: "contact us"))
     
     if let url = URL(string: "https://business.ramotion.com/?utm_source=showroom&utm_medium=special&utm_campaign=v1/#Contact") {
       UIApplication.shared.open(url)

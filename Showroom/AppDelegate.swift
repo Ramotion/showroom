@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Override point for customization after application launch.
     
     configureNavigationBar()
-    setupGoogleAnalitics()
+    Analytics.configuration([.google])
     
     return true
   }
@@ -62,19 +62,5 @@ extension AppDelegate {
         NSFontAttributeName : font
       ]
     }
-  }
-  
-  func setupGoogleAnalitics() {
-    var error: NSError?
-    GGLContext.sharedInstance().configureWithError(&error)
-    assert((error != nil), "gogle analitycs error \(error)")
-    
-    if let gai = GAI.sharedInstance() {
-      gai.trackUncaughtExceptions = true
-      
-    } else {
-      print("google analitycs don't create")
-    }
-    FIRApp.configure()
   }
 }
