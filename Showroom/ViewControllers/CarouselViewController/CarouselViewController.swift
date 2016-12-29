@@ -34,7 +34,7 @@ class CarouselViewController: UIViewController {
                                                .foldingCell,
                                                .paperSwitch,
                                                .paperOnboarding,
-                                               .expandingCollection,
+//                                               .expandingCollection,
                                                .previewTransition,
 //                                               .animationTabBar,
 //                                               .realSearch,
@@ -216,7 +216,7 @@ extension CarouselViewController {
   @IBAction func contactUsHandler(_ sender: Any) {
     sendAction(.button, a: "contact us", l: "home", v: 1)
     
-    if let url = URL(string: "https://business.ramotion.com/?utm_source=app&utm_medium=special&utm_campaign=v1") {
+    if let url = URL(string: "https://business.ramotion.com/?utm_source=showroom&utm_medium=special&utm_campaign=v1/#Contact") {
       UIApplication.shared.open(url)
     }
   }
