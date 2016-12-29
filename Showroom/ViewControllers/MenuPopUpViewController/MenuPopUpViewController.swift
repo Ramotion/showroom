@@ -25,6 +25,8 @@ class MenuPopUpViewController: UIViewController {
   @IBOutlet weak var menuView: UIView!
   var presenter: PopUpPresenter?
   
+  var isAutorotate: Bool = false
+  
   fileprivate var shareUrlString: String!
 }
 
@@ -53,6 +55,7 @@ extension MenuPopUpViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     containerAnimations()
+    print("menu: \(view.bounds)")
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -61,19 +64,20 @@ extension MenuPopUpViewController {
   }
   
   override open var shouldAutorotate: Bool {
-    return false
+    return isAutorotate
   }
 }
 
 // MARK: Methods
 extension MenuPopUpViewController {
   
-  class func showPopup(on: UIViewController, url: String, backButtonTap: @escaping () -> Void) {
+  class func showPopup(on: UIViewController, url: String, isRotate: Bool = false,  backButtonTap: @escaping () -> Void) -> MenuPopUpViewController {
     
+    let storybord = UIStoryboard(storyboard: .Navigation)
+    let vc: MenuPopUpViewController = storybord.instantiateViewController()
+    vc.isAutorotate = isRotate
     on.threeThingersToch.subscribe { [weak on] _ in
       guard let on = on else { return }
-      let storybord = UIStoryboard(storyboard: .Navigation)
-      let vc: MenuPopUpViewController = storybord.instantiateViewController()
       vc.shareUrlString = url
       vc.backButtonTap = backButtonTap
       vc.presenter = PopUpPresenter(controller: vc,
@@ -81,6 +85,8 @@ extension MenuPopUpViewController {
                                     showTransition: ShowMenuPopUpTransition(duration: 0.2),
                                     hideTransition: HideMenuPopUpTransition(duration: 0.2))
     }.addDisposableTo(on.rx_disposeBag)
+    
+    return vc
   }
 }
 

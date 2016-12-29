@@ -21,10 +21,10 @@ extension ShowMenuPopUpTransition: UIViewControllerAnimatedTransitioning {
     guard case let toViewController as MenuPopUpViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else { fatalError() }
     
     
-    let fromView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)?.view
+    guard let fromView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)?.view else { fatalError() }
     
-    fromView?.tintAdjustmentMode     = .dimmed
-    fromView?.isUserInteractionEnabled = false
+    fromView.tintAdjustmentMode     = .dimmed
+    fromView.isUserInteractionEnabled = false
     
     let containerVeiw = transitionContext.containerView
     toViewController.view.center = containerVeiw.center
@@ -36,8 +36,8 @@ extension ShowMenuPopUpTransition: UIViewControllerAnimatedTransitioning {
     
     toViewController.menuView.animate(duration: duration,
                                       [
-                                        .layerPositionY(from: Showroom.screen.height + toViewController.menuViewHeight.constant / 2,
-                                                       to: Showroom.screen.height - toViewController.menuViewHeight.constant / 2)
+                                        .layerPositionY(from: fromView.bounds.size.height + toViewController.menuViewHeight.constant / 2,
+                                                        to: fromView.bounds.size.height - toViewController.menuViewHeight.constant / 2)
                             ],
                                       timing: .easyOut) {
                                         transitionContext.completeTransition(true)
@@ -65,9 +65,9 @@ extension HideMenuPopUpTransition: UIViewControllerAnimatedTransitioning {
   public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
     guard case let fromViewController as MenuPopUpViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else { fatalError() }
     
-    let toView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)?.view
-    toView?.tintAdjustmentMode     = .normal
-    toView?.isUserInteractionEnabled = true
+    guard let toView = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)?.view else { fatalError() }
+    toView.tintAdjustmentMode     = .normal
+    toView.isUserInteractionEnabled = true
     
     // animation
     fromViewController.view.animate(duration: duration, [.alphaFrom(1, to: 0, removed: false)]) {
@@ -76,8 +76,8 @@ extension HideMenuPopUpTransition: UIViewControllerAnimatedTransitioning {
     
     fromViewController.menuView.animate(duration: duration,
                                       [
-                                        .layerPositionY(from: Showroom.screen.height - fromViewController.menuViewHeight.constant / 2,
-                                                        to: Showroom.screen.height + fromViewController.menuViewHeight.constant / 2)
+                                        .layerPositionY(from: toView.bounds.size.height - fromViewController.menuViewHeight.constant / 2,
+                                                        to: toView.bounds.size.height + fromViewController.menuViewHeight.constant / 2)
       ],
                                       timing: .easyIn)
   }

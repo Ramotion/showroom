@@ -67,14 +67,12 @@ class CarouselViewController: UIViewController {
 extension CarouselViewController {
   
   override open var shouldAutorotate: Bool {
-    return false
+    return true
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     UIApplication.shared.isStatusBarHidden = true
-    
-    Analytics.screen(event: .google(name: "CarouselViewController", vc: self))
     
     collectionViewHeight.constant = CarouselFlowLayout.cellSize.height
     
@@ -108,10 +106,20 @@ extension CarouselViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+    
     if isSplashAnimation == true {
       splashBrokerAnimation.startAnimations()
       isSplashAnimation = false
     }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    Analytics.screen(event: .google(name: "CarouselViewController", vc: self))
+  }
+  
+  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    return .portrait
   }
 }
 

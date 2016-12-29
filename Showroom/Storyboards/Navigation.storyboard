@@ -283,6 +283,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="QiQ-Hi-w2G"/>
                     <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="aboutView" destination="o9h-hl-fuV" id="8VZ-ns-4yg"/>
                         <outlet property="bottomContainer" destination="p5N-fz-01k" id="s9b-rY-J9W"/>
@@ -419,7 +421,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coc-gz-gn5">
-                                            <rect key="frame" x="195" y="-0.5" width="35" height="35"/>
+                                            <rect key="frame" x="195" y="0.0" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="35" id="CmH-XQ-ete"/>
                                                 <constraint firstAttribute="height" constant="35" id="fVq-HL-zLL"/>
@@ -513,7 +515,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                     </connections>
                 </view>
             </objects>
-            <point key="canvasLocation" x="336.80000000000001" y="147.97601199400302"/>
+            <point key="canvasLocation" x="1276" y="147.97601199400302"/>
         </scene>
         <!--Thingers Tap View Controller-->
         <scene sceneID="pl6-Nz-v9V">
@@ -682,7 +684,7 @@ and go back to home screen.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3o-Vl-7da" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1114" y="148"/>
+            <point key="canvasLocation" x="2052" y="147.97601199400302"/>
         </scene>
         <!--Menu Pop Up View Controller-->
         <scene sceneID="Dtm-gy-5Su">
@@ -865,7 +867,7 @@ and go back to home screen.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vId-lV-FX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="148"/>
+            <point key="canvasLocation" x="2871.1999999999998" y="147.97601199400302"/>
         </scene>
     </scenes>
     <resources>

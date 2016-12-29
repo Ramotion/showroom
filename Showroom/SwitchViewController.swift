@@ -20,7 +20,7 @@ extension SwitchViewController {
     
     setupPaperSwitch()
     
-    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/paper-switch") { [weak self] in
+    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/paper-switch") { [weak self] in
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }

@@ -30,7 +30,7 @@ class FoldingTableViewController: UITableViewController {
       return tableView.dequeueReusableCell(withIdentifier: String(describing: DemoFoldginCell.self), for: indexPath)
     }
     
-    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
+    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
       self?.dismiss(animated: true, completion: nil)
       self?.dismiss(animated: true, completion: nil)
     }

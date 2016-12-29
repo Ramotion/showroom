@@ -10,7 +10,8 @@ class VRViewController: UIViewController {
     super.viewDidLoad()
     
     
-    MenuPopUpViewController.showPopup(on: self, url: urlString) { [weak self] in
+    _ = MenuPopUpViewController.showPopup(on: self, url: urlString, isRotate: true) { [weak self] in
+      UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
       self?.dismiss(animated: true, completion: nil)
       self?.dismiss(animated: true, completion: nil)
     }
