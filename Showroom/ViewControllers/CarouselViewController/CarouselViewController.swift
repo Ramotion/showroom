@@ -178,12 +178,14 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
 //    case .realSearch: vc = searchVC
     default: vc = item.viewController
     }
-    
-    Analytics.screen(event: .google(name: item.title, vc: vc))
 
     vc.transitioningDelegate = self
     vc.modalPresentationStyle = .custom
-    present(vc, animated: true, completion: nil)
+    present(vc, animated: true) { [weak vc] in
+      guard let vc = vc else { return }
+
+      Analytics.screen(event: .google(name: item.title, vc: vc))
+    }
   }
 }
 
