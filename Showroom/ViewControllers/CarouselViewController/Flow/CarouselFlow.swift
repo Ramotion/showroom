@@ -4,7 +4,11 @@ import Device
 
 class CarouselFlowLayout: UPCarouselFlowLayout {
   
-  static let cellSize: CGSize = Size.screen4Inch == Device.size() ? CGSize(width: 270, height: 352) : CGSize(width: 307, height: 400)
+  static var cellSize: CGSize {
+    if  Size.screen4Inch == Device.size() { return CGSize(width: 270, height: 352) }
+    if  Size.screen3_5Inch == Device.size() { return CGSize(width: 270, height: 352) }
+    return CGSize(width: 307, height: 400)
+  } 
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
