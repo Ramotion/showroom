@@ -1092,7 +1092,7 @@ added to your friends list.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-qV-Ym2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
@@ -1100,7 +1100,7 @@ added to your friends list.</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="N6R-qV-Ym2" secondAttribute="trailing" id="9Pd-fF-SQ3"/>
                             <constraint firstItem="N6R-qV-Ym2" firstAttribute="leading" secondItem="U60-AG-mVS" secondAttribute="leading" id="MkB-iQ-vuV"/>
-                            <constraint firstItem="N6R-qV-Ym2" firstAttribute="top" secondItem="TGn-tM-cBU" secondAttribute="bottom" constant="-20" id="e6m-Wm-zJQ"/>
+                            <constraint firstItem="N6R-qV-Ym2" firstAttribute="top" secondItem="TGn-tM-cBU" secondAttribute="bottom" id="e6m-Wm-zJQ"/>
                             <constraint firstItem="3W5-MT-yLG" firstAttribute="top" secondItem="N6R-qV-Ym2" secondAttribute="bottom" id="zxM-fp-DVy"/>
                         </constraints>
                     </view>

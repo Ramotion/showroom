@@ -100,6 +100,9 @@ extension CarouselViewController {
     collectionView.layer.masksToBounds = false
     
     preloadfoldinCellVC()
+    if #available(iOS 10.0, *) {
+      collectionView?.isPrefetchingEnabled = false
+    }
 //    preloadSearchVC()
   }
   
