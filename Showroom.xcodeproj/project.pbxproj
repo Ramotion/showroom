@@ -74,6 +74,7 @@
 		84F0A97F1DE834F900C02332 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F0A97E1DE834F900C02332 /* CircleView.swift */; };
 		84F5AB2E1DAF75A600271439 /* FoldingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */; };
 		84F5AB301DAF765D00271439 /* DemoFoldginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */; };
+		84FC43071E165B5B008D4BC4 /* PageCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FC43061E165B5B008D4BC4 /* PageCollectionLayout.swift */; };
 		EACBBC787315D5EB519B123A /* Pods_Showroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D7A4FAAD9F6794937531A6 /* Pods_Showroom.framework */; };
 /* End PBXBuildFile section */
 
@@ -162,6 +163,7 @@
 		84F0A97E1DE834F900C02332 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingTableViewController.swift; sourceTree = "<group>"; };
 		84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoFoldginCell.swift; sourceTree = "<group>"; };
+		84FC43061E165B5B008D4BC4 /* PageCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionLayout.swift; sourceTree = "<group>"; };
 		94D7A4FAAD9F6794937531A6 /* Pods_Showroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE95552CDC265C4A066E4E13 /* Pods-Showroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +239,7 @@
 		841C951B1DDEFA3200B997F5 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				84FC43061E165B5B008D4BC4 /* PageCollectionLayout.swift */,
 				841C951C1DDEFA5B00B997F5 /* CarouselFlow.swift */,
 			);
 			path = Flow;
@@ -785,6 +788,7 @@
 				84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
+				84FC43071E165B5B008D4BC4 /* PageCollectionLayout.swift in Sources */,
 				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,
 				84760B241DE0796800AF36FE /* NodeAnimations.swift in Sources */,
 				84ADF2961DFE85E60097F7C6 /* ThreeThingersTouch.swift in Sources */,

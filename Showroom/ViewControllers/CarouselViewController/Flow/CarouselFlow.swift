@@ -1,8 +1,7 @@
 import Foundation
-import UPCarouselFlowLayout
 import Device
 
-class CarouselFlowLayout: UPCarouselFlowLayout {
+class CarouselFlowLayout: PageCollectionLayout {
   
   static var cellSize: CGSize {
     if  Size.screen4Inch == Device.size() { return CGSize(width: 270, height: 352) }
@@ -15,8 +14,8 @@ class CarouselFlowLayout: UPCarouselFlowLayout {
     itemSize = CarouselFlowLayout.cellSize
     scrollDirection = .horizontal
     
-    sideItemScale = 0.86
-    sideItemAlpha = 0.49
-    spacingMode = .fixed(spacing: 17)
+//    sideItemScale = 0.86
+//    sideItemAlpha = 0.49
+//    spacingMode = .fixed(spacing: 17)
   }
 }

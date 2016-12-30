@@ -87,7 +87,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-W0-fCr" userLabel="ShareButton">
-                                                    <rect key="frame" x="263" y="191" width="44" height="44"/>
+                                                    <rect key="frame" x="263" y="192" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="B5n-JY-bTB"/>
                                                         <constraint firstAttribute="height" constant="44" id="bXG-mq-1Mt"/>

@@ -75,6 +75,7 @@ extension CarouselViewController {
     UIApplication.shared.isStatusBarHidden = true
     
     collectionViewHeight.constant = CarouselFlowLayout.cellSize.height
+    collectionView.decelerationRate = UIScrollViewDecelerationRateFast
     
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,

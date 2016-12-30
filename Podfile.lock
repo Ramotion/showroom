@@ -36,7 +36,6 @@ PODS:
     - RxSwift (~> 3.1)
   - RxSwift (3.1.0)
   - SwiftyAttributes (3.1.0)
-  - UPCarouselFlowLayout (1.0.0)
 
 DEPENDENCIES:
   - CircleMenu
@@ -56,16 +55,6 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SwiftyAttributes
-  - UPCarouselFlowLayout (from `https://github.com/ink-spot/UPCarouselFlowLayout.git`)
-
-EXTERNAL SOURCES:
-  UPCarouselFlowLayout:
-    :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
-
-CHECKOUT OPTIONS:
-  UPCarouselFlowLayout:
-    :commit: df51f35b7b4df76d283db8dd3c78ac59b542545d
-    :git: https://github.com/ink-spot/UPCarouselFlowLayout.git
 
 SPEC CHECKSUMS:
   CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
@@ -91,8 +80,7 @@ SPEC CHECKSUMS:
   RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
   RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
   SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
-  UPCarouselFlowLayout: adfa361c52315c0efc56dbe2555c494b8940f58a
 
-PODFILE CHECKSUM: d05532fc85a8b63832c0ed728b18dcd3608f39d8
+PODFILE CHECKSUM: a19f382af7972ff965c095cc1a8da16370dee13d
 
 COCOAPODS: 1.2.0.beta.1
