@@ -14,6 +14,8 @@ class VRViewController: UIViewController {
       UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
       self?.dismiss(animated: true, completion: nil)
       self?.dismiss(animated: true, completion: nil)
+      
+      
     }
   }
   
@@ -25,6 +27,9 @@ class VRViewController: UIViewController {
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url)
       webView.loadRequest(request)
+      
+//      [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
+      webView.stringByEvaluatingJavaScript(from: "document.documentElement.style.webkitUserSelect='none';")
     }
   }
   
