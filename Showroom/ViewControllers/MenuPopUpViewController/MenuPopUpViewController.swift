@@ -28,6 +28,7 @@ class MenuPopUpViewController: UIViewController {
   var isAutorotate: Bool = false
   
   fileprivate var shareUrlString: String!
+  
 }
 
 // MARK: Life Cycle
@@ -40,10 +41,6 @@ extension MenuPopUpViewController {
     infoViewBottom.constant = -infoViewHeight.constant
     infoView.alpha = 0
     
-    shareContainer.alpha = 0
-    copyLinkContainer.alpha = 0
-    exitContainer.alpha = 0
-    
     let gesture = UITapGestureRecognizer()
     view.addGestureRecognizer(gesture)
     
@@ -55,7 +52,9 @@ extension MenuPopUpViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     containerAnimations()
-    print("menu: \(view.bounds)")
+    shareContainer.alpha = 0
+    copyLinkContainer.alpha = 0
+    exitContainer.alpha = 0
   }
   
   override func viewWillDisappear(_ animated: Bool) {
