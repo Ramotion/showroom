@@ -22,4 +22,5 @@ Stack-modeled navigation controller
 
 ## Play with our UI controls here
 
-[![get on iTunes](https://github.com/Ramotion/navigation-stack/raw/master/Download_on_the_App_Store_Badge_US-UK_135x40.png)](https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=gthb-showroom&mt=8)
+
+<a href="https://itunes.apple.com/app/apple-store/id1182360240?pt=550053&ct=gthb-showroom&mt=8" > <img src="https://github.com/Ramotion/navigation-stack/raw/master/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="170" height="58"></a>
