@@ -17,6 +17,8 @@ extension Showroom.Control {
     case .realSearch: return "Real Search"
     case .navigationStack: return "Navigation Stack"
     case .vr: return "VR Demo"
+    case .elongationPreview: return "Elongation Preview"
+    case .glidingCollection: return "Gliding Collection"
     }
   }
   
@@ -32,6 +34,8 @@ extension Showroom.Control {
     case .realSearch: return "The control helps to search faster by proactively providing the most relevant keywords as you type."
     case .navigationStack: return "A stack-modeled navigation controller. It helps to go through a deep structure of screens faster."
     case .vr: return "Universal web VR control created for mobiles. Makes navigation between product sections faster and more natural."
+    case .elongationPreview: return "ElongationPreview is an elegant push-pop style view controller"
+    case .glidingCollection: return "Gliding Collection is a smooth, flowing, customizable decision for a UICollectionView Swift Controller"
     }
   }
   
@@ -47,6 +51,8 @@ extension Showroom.Control {
     case .realSearch: return "120"
     case .navigationStack: return "120"
     case .vr: return "160"
+    case .elongationPreview: return "120"
+    case .glidingCollection: return "120"
     }
   }
   
@@ -62,6 +68,8 @@ extension Showroom.Control {
     case .realSearch: return "https://github.com/Ramotion/reel-search"
     case .navigationStack: return "https://github.com/Ramotion/navigation-stack"
     case .vr: return "https://ramotion.github.io/vr-menu-demo/main.html"
+    case .elongationPreview: return "https://github.com/Ramotion/elongation-preview"
+    case .glidingCollection: return "https://github.com/ramotion/gliding-collection"
     }
   }
   
@@ -77,6 +85,8 @@ extension Showroom.Control {
     case .realSearch: return "Swift, UIKit"
     case .navigationStack: return "Swift, UIKit"
     case .vr: return "JavaScript, WebGL, WebVR"
+    case .elongationPreview: return "Swift, UIKit"
+    case .glidingCollection: return "Swift, UIKit"
     }
   }
     
@@ -92,6 +102,8 @@ extension Showroom.Control {
         case .realSearch: return "ReelSearch"
         case .navigationStack: return "NavigationStack"
         case .vr: return "VRMenu"
+        case .elongationPreview: return "ElongationPreview"
+        case .glidingCollection: return "GlidingCollection"
         }
     }
   
@@ -110,6 +122,8 @@ extension Showroom.Control {
     case .realSearch: return UIViewController() // don't use look in carousevc
     case .navigationStack: return stack.instantiateViewController() as NavigationStack
     case .vr: return main.instantiateViewController() as VRViewController
+    case .elongationPreview: return ElongationDemoViewController(style: UITableViewStyle.plain)
+    case .glidingCollection: return GlidingCollectionDemoViewController(nibName: nil, bundle: nil)
     }
   }
 }

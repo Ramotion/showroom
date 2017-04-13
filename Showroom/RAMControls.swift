@@ -16,5 +16,7 @@ struct Showroom {
     case realSearch
     case navigationStack
     case vr
+    case elongationPreview
+    case glidingCollection
   }
 }

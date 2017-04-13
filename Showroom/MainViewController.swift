@@ -10,7 +10,9 @@ class MainViewController: UITableViewController {
                                       .previewTransition,
                                       .animationTabBar,
                                       .realSearch,
-                                      .navigationStack]
+                                      .navigationStack,
+                                      .elongationPreview,
+                                      .glidingCollection]
   
   override open var shouldAutorotate: Bool {
     return false
