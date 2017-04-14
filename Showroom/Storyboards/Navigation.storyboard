@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nd2-td-3Qt">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nd2-td-3Qt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -314,7 +314,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="APm-pj-4K4"/>
                                             </constraints>
-                                            <string key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
+                                            <mutableString key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
 
 We are very proud that our customers entrusted us with such an important task as the improvement of their products' user interfaces.
 
@@ -322,7 +322,7 @@ Today, we are pleased to introduce an evolved Ramotion, featuring designs in nat
 
 To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.
 
-© 2016, Ramotion Inc.</string>
+© 2017, Ramotion Inc.</mutableString>
                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -421,7 +421,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             </connections>
                                         </button>
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="coc-gz-gn5">
-                                            <rect key="frame" x="195" y="0.0" width="35" height="35"/>
+                                            <rect key="frame" x="195" y="-0.5" width="35" height="35"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="35" id="CmH-XQ-ete"/>
                                                 <constraint firstAttribute="height" constant="35" id="fVq-HL-zLL"/>
@@ -702,11 +702,11 @@ and go back to home screen.</string>
                                 <rect key="frame" x="0.0" y="470" width="375" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bih-hS-JR2">
-                                        <rect key="frame" x="0.0" y="19.5" width="375" height="16"/>
+                                        <rect key="frame" x="0.0" y="18" width="375" height="19.5"/>
                                         <attributedString key="attributedText">
                                             <fragment content="COPIED">
                                                 <attributes>
-                                                    <font key="NSFont" size="16" name="Graphik-Regular"/>
+                                                    <font key="NSFont" metaFont="system" size="16"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                                 </attributes>
                                             </fragment>

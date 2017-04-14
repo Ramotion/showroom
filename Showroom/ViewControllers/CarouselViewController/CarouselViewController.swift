@@ -30,7 +30,10 @@ class CarouselViewController: UIViewController {
   
   fileprivate var isSplashAnimation = true
   
-  fileprivate let items: [Showroom.Control] = [.circleMenu,
+  fileprivate let items: [Showroom.Control] = [
+                                               .elongationPreview,
+                                               .glidingCollection,
+                                               .circleMenu,
                                                .foldingCell,
                                                .paperSwitch,
                                                .paperOnboarding,
@@ -39,7 +42,8 @@ class CarouselViewController: UIViewController {
 //                                               .animationTabBar,
 //                                               .realSearch,
 //                                               .navigationStack,
-                                               .vr]
+                                               .vr,
+                                                ]
   
   fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!
   fileprivate var transitionBrokerAnimation: CarouselTransitionAnimationBroker?
