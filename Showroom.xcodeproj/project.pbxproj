@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A74E6FC1EA112640092A57C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */; };
 		841C95101DDEEE0000B997F5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C950F1DDEEE0000B997F5 /* Navigation.storyboard */; };
 		841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95121DDEEED400B997F5 /* CarouselViewController.swift */; };
 		841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95161DDEF39100B997F5 /* EasyCollectionView.swift */; };
@@ -70,7 +71,6 @@
 		84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */; };
 		84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */; };
 		84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1D09E1DF2B863006F620F /* PopUpPresenter.swift */; };
-		84E571E21E016E8D0070A08E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84E571E11E016E8D0070A08E /* GoogleService-Info.plist */; };
 		84F0A97F1DE834F900C02332 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F0A97E1DE834F900C02332 /* CircleView.swift */; };
 		84F5AB2E1DAF75A600271439 /* FoldingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */; };
 		84F5AB301DAF765D00271439 /* DemoFoldginCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */; };
@@ -136,6 +136,7 @@
 
 /* Begin PBXFileReference section */
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
+		5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		841C950F1DDEEE0000B997F5 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		841C95121DDEEED400B997F5 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		841C95161DDEF39100B997F5 /* EasyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCollectionView.swift; sourceTree = "<group>"; };
@@ -202,7 +203,6 @@
 		84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPopUpTransition.swift; sourceTree = "<group>"; };
 		84E1D09E1DF2B863006F620F /* PopUpPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PopUpPresenter.swift; path = ViewControllers/PopUps/PopUpPresenter.swift; sourceTree = "<group>"; };
 		84E571DD1E016D210070A08E /* Showroom-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Showroom-Bridging-Header.h"; sourceTree = "<group>"; };
-		84E571E11E016E8D0070A08E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84F0A97E1DE834F900C02332 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingTableViewController.swift; sourceTree = "<group>"; };
 		84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoFoldginCell.swift; sourceTree = "<group>"; };
@@ -552,6 +552,7 @@
 		84C180CB1DAE155300C056F8 /* Showroom */ = {
 			isa = PBXGroup;
 			children = (
+				5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */,
 				84F0A97C1DE834A900C02332 /* Views */,
 				841C951E1DDF035400B997F5 /* Fonts */,
 				841C95141DDEF30900B997F5 /* Utilities */,
@@ -561,7 +562,6 @@
 				84C180CC1DAE155300C056F8 /* AppDelegate.swift */,
 				84C180D31DAE155300C056F8 /* Assets.xcassets */,
 				84C180D81DAE155300C056F8 /* Info.plist */,
-				84E571E11E016E8D0070A08E /* GoogleService-Info.plist */,
 				84D4B7DF1DB1273300EE38C6 /* ItemCell.swift */,
 				84E571DD1E016D210070A08E /* Showroom-Bridging-Header.h */,
 			);
@@ -952,7 +952,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E571E21E016E8D0070A08E /* GoogleService-Info.plist in Resources */,
 				9D6F55041E97B8650059B49A /* Roboto-Medium.ttf in Resources */,
 				9D6F54E41E97B7750059B49A /* Gloves4.jpeg in Resources */,
 				9D6F54D81E97B7750059B49A /* Bindings4.jpeg in Resources */,
@@ -963,6 +962,7 @@
 				9D6F55081E97B8650059B49A /* DemoElongationCell.xib in Resources */,
 				9D6F54DD1E97B7750059B49A /* Boots4.jpeg in Resources */,
 				9D6F54E61E97B7750059B49A /* Gloves6.jpeg in Resources */,
+				5A74E6FC1EA112640092A57C /* GoogleService-Info.plist in Resources */,
 				9D6F550A1E97B8650059B49A /* GridViewCell.xib in Resources */,
 				9D6F54D61E97B7750059B49A /* Bindings2.jpeg in Resources */,
 				9D6F54E81E97B7750059B49A /* Hoodie2.jpeg in Resources */,
@@ -1013,7 +1013,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A5256FA3ADC55E7C2C4674AB /* [CP] Copy Pods Resources */ = {
