@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     configureNavigationBar()
     Analytics.configuration([.google])
+    configureElongationPreviewControl()
     
     return true
   }
