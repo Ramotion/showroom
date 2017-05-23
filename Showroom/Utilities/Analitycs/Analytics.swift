@@ -1,7 +1,7 @@
 import Foundation
 import Firebase
 
-class Analytics {
+class AppAnalytics {
     
     enum Types {
         case google
@@ -16,26 +16,26 @@ class Analytics {
     }
     
     // create
-    class func configuration(_ analytics: [Analytics.Types]) {
+    class func configuration(_ analytics: [AppAnalytics.Types]) {
         analytics.forEach { $0.configure() }
     }
 }
 
 // MARK: Events
-extension Analytics {
+extension AppAnalytics {
     
     class func screen(event: ScreenEvents) {
         switch event {
-        case .google(let name, let vc): FIRAnalytics.setScreenName(name, screenClass: vc.classForCoder.description())
+        case .google(let name, let vc): Analytics.setScreenName(name, screenClass: vc.classForCoder.description())
         }
     }
     
-    class func event(_ event: Analytics.Events) {
+    class func event(_ event: AppAnalytics.Events) {
         
         switch event {
         case .google(let name, let parametr):
-            FIRAnalytics.logEvent(withName: name, parameters: [
-                kFIRParameterItemName: parametr as NSObject,
+            Analytics.logEvent(name, parameters: [
+                AnalyticsParameterItemName: parametr as NSObject,
                 ])
         }
         
@@ -43,12 +43,12 @@ extension Analytics {
 }
 
 // MARK: Configure
-private extension Analytics.Types {
+private extension AppAnalytics.Types {
     
     func configure() -> Void {
         switch self {
         case .google:
-            FIRApp.configure()
+            FirebaseApp.configure()
         }
     }
 }
