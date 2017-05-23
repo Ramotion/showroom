@@ -13,7 +13,7 @@ struct Showroom {
     case expandingCollection
     case previewTransition
     case animationTabBar
-    case realSearch
+    case reelSearch
     case navigationStack
     case vr
     case elongationPreview

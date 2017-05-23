@@ -118,6 +118,7 @@
 		9D6F550F1E97B8D80059B49A /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F550C1E97B8D80059B49A /* UICollectionView.swift */; };
 		9D6F55101E97B8D80059B49A /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F550D1E97B8D80059B49A /* UIEdgeInsets.swift */; };
 		9D6F55111E97B8D80059B49A /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F550E1E97B8D80059B49A /* UITableView.swift */; };
+		9D7F045B1ED4A2F3001B1A27 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F045A1ED4A2F3001B1A27 /* SearchViewModel.swift */; };
 		EACBBC787315D5EB519B123A /* Pods_Showroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D7A4FAAD9F6794937531A6 /* Pods_Showroom.framework */; };
 /* End PBXBuildFile section */
 
@@ -251,6 +252,7 @@
 		9D6F550C1E97B8D80059B49A /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
 		9D6F550D1E97B8D80059B49A /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9D6F550E1E97B8D80059B49A /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		9D7F045A1ED4A2F3001B1A27 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		CE95552CDC265C4A066E4E13 /* Pods-Showroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -397,6 +399,7 @@
 				844AE72A1DB4C6DA0029FBD4 /* data.txt */,
 				844AE7281DB4C6BD0029FBD4 /* WordReader.swift */,
 				844AE7261DB4C5F40029FBD4 /* SearchViewController.swift */,
+				9D7F045A1ED4A2F3001B1A27 /* SearchViewModel.swift */,
 			);
 			name = SearchViewController;
 			path = ViewControllers/SearchViewController;
@@ -923,7 +926,7 @@
 				TargetAttributes = {
 					84C180C81DAE155300C056F8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 34MUF9YXTA;
+						DevelopmentTeam = 2VFCBFYPFW;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1067,6 +1070,7 @@
 				841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */,
 				9D6F55001E97B8650059B49A /* ElongationDemoDetailViewController.swift in Sources */,
 				9D6F54D11E97B7750059B49A /* CollectionCell.swift in Sources */,
+				9D7F045B1ED4A2F3001B1A27 /* SearchViewModel.swift in Sources */,
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
 				9D6F55071E97B8650059B49A /* DemoElongationCell.swift in Sources */,
 				84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */,
@@ -1261,13 +1265,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 34MUF9YXTA;
+				DEVELOPMENT_TEAM = 2VFCBFYPFW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Showroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.showroom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jauzee.showroom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Showroom/Showroom-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1283,13 +1287,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 34MUF9YXTA;
+				DEVELOPMENT_TEAM = 2VFCBFYPFW;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Showroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.showroom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jauzee.showroom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Showroom/Showroom-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

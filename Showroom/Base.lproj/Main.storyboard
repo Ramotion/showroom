@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -741,7 +741,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z8i-mb-hb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="-77"/>
+            <point key="canvasLocation" x="2390" y="-109"/>
         </scene>
         <!--Switch View Controller-->
         <scene sceneID="jvY-RR-SrW">
@@ -926,7 +926,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yU-vl-JR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3410.4000000000001" y="-109.29535232383809"/>
+            <point key="canvasLocation" x="3268" y="-109"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="woc-JV-vHt">
@@ -960,7 +960,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yuf-Pk-0rX" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4404" y="-109"/>
+            <point key="canvasLocation" x="4118" y="-109"/>
         </scene>
         <!--Demo Table View Controller-->
         <scene sceneID="h01-yg-ytg">
@@ -975,7 +975,7 @@ added to your friends list.</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="240"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BQ8-aX-qRV" id="Usa-b1-P1K">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="239.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1110,7 +1110,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zut-3j-Tgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3433" y="612"/>
+            <point key="canvasLocation" x="3268" y="602"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="RAN-O0-JZ0">
@@ -1128,7 +1128,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Syx-kj-ACk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5300" y="-109"/>
+            <point key="canvasLocation" x="4930" y="-109"/>
         </scene>
         <!--Demo Expanding View Controller-->
         <scene sceneID="ThT-uQ-fiE">
@@ -1202,7 +1202,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKC-ne-lgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1681" y="1419"/>
+            <point key="canvasLocation" x="1604" y="1337"/>
         </scene>
         <!--Demo Expanding Table View Controller-->
         <scene sceneID="YDe-iO-TjP">
@@ -1565,7 +1565,7 @@ added to your friends list.</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67J-eA-zUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="1419"/>
+            <point key="canvasLocation" x="2390" y="1336"/>
         </scene>
     </scenes>
     <resources>
