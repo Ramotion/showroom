@@ -926,7 +926,7 @@
 				TargetAttributes = {
 					84C180C81DAE155300C056F8 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 2VFCBFYPFW;
+						DevelopmentTeam = 34MUF9YXTA;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -1265,13 +1265,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2VFCBFYPFW;
+				DEVELOPMENT_TEAM = 34MUF9YXTA;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Showroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jauzee.showroom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.showroom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Showroom/Showroom-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1287,13 +1287,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 2VFCBFYPFW;
+				DEVELOPMENT_TEAM = 34MUF9YXTA;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Showroom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.jauzee.showroom;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ramotion.showroom;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Showroom/Showroom-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
