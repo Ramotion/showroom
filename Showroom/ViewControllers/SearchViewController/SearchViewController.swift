@@ -64,7 +64,7 @@ class SearchViewController: UIViewController {
         
         self.hideOverlay(true)
       })
-      .disposed(by: bag)
+      .addDisposableTo(bag)
   }
   
   private func setupLoadingIndicator() {
