@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTR-uO-otv">
-    <device id="retina4_7" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nTR-uO-otv">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Fume-->
         <scene sceneID="qVz-k3-Tvk">
             <objects>
                 <viewController id="7Xx-BE-Sbs" sceneMemberID="viewController">
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="7fn-45-Qbp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lzh-PY-yuy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FumeAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmq-tT-RgP">
-                                <rect key="frame" x="13.5" y="182.5" width="348" height="71"/>
+                                <rect key="frame" x="-14" y="89" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="Usb-kh-lLp"/>
                                     <constraint firstAttribute="width" constant="348" id="bci-uf-WOP"/>
@@ -38,7 +38,7 @@
                             <constraint firstAttribute="centerX" secondItem="pmq-tT-RgP" secondAttribute="centerX" id="iwI-qI-fgK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="drop" id="Gez-4m-5Kv" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Fume" image="drop" id="Gez-4m-5Kv" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="1349" y="-239"/>
         </scene>
-        <!--Item1-->
+        <!--Flip-->
         <scene sceneID="uhE-Yc-yfF">
             <objects>
                 <viewController id="42O-Ao-FbU" sceneMemberID="viewController">
@@ -69,11 +69,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Nt4-04-65E"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YoF-hX-CRc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TransitionItemAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AoW-Hw-RSu">
-                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
+                                <rect key="frame" x="-14" y="90" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="348" id="53E-wq-v8T"/>
                                     <constraint firstAttribute="height" constant="71" id="KrB-Me-Mu4"/>
@@ -89,7 +89,7 @@
                             <constraint firstAttribute="centerY" secondItem="AoW-Hw-RSu" secondAttribute="centerY" constant="114.5" id="lVu-Tj-IPd"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item1" image="icon_pin" id="iSE-Yz-L6y" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Flip" image="icon_pin" id="iSE-Yz-L6y" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,7 +114,7 @@
             </objects>
             <point key="canvasLocation" x="1349" y="479"/>
         </scene>
-        <!--Item2-->
+        <!--Rotate-->
         <scene sceneID="dS5-i0-oB3">
             <objects>
                 <viewController id="Imi-R9-fIZ" sceneMemberID="viewController">
@@ -123,11 +123,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Rt3-Zu-Ad3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Q9-Lc-kcp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RotationAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgc-KC-eWZ">
-                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
+                                <rect key="frame" x="-14" y="90" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="348" id="0Yq-EZ-XUo"/>
                                     <constraint firstAttribute="height" constant="71" id="KPJ-MZ-jcy"/>
@@ -143,7 +143,7 @@
                             <constraint firstAttribute="centerY" secondItem="fgc-KC-eWZ" secondAttribute="centerY" constant="114.5" id="T2Z-EI-6dH"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item2" image="icon_user" id="efa-Dy-5Tu" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Rotate" image="icon_user" id="efa-Dy-5Tu" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,10 +165,10 @@
             </objects>
             <point key="canvasLocation" x="1349" y="1228"/>
         </scene>
-        <!--Animated Tab Bar Controller-->
+        <!--Animated Tab Bar View Controller-->
         <scene sceneID="qSh-1X-lUr">
             <objects>
-                <tabBarController storyboardIdentifier="RAMAnimatedTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="nTR-uO-otv" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="RAMAnimatedTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="nTR-uO-otv" customClass="AnimatedTabBarViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cYc-q5-Asg">
@@ -188,7 +188,7 @@
             </objects>
             <point key="canvasLocation" x="537" y="479"/>
         </scene>
-        <!--Item4-->
+        <!--Bounce-->
         <scene sceneID="Nvw-78-lIl">
             <objects>
                 <viewController id="pFC-zY-OuJ" customClass="BounceAnimationViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,11 +197,11 @@
                         <viewControllerLayoutGuide type="bottom" id="4e7-2D-z2o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rC5-VN-nxu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bounce Animation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddZ-cn-FS6">
-                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
+                                <rect key="frame" x="-14" y="90" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="Jpp-R0-QUY"/>
                                     <constraint firstAttribute="width" constant="348" id="aYR-iI-fOu"/>
@@ -210,23 +210,14 @@
                                 <color key="textColor" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EqY-Im-oRJ">
-                                <rect key="frame" x="16" y="50" width="35" height="30"/>
-                                <state key="normal" title="done"/>
-                                <connections>
-                                    <action selector="dismisHandler:" destination="pFC-zY-OuJ" eventType="touchUpInside" id="ljU-FN-n6B"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="EqY-Im-oRJ" firstAttribute="leading" secondItem="rC5-VN-nxu" secondAttribute="leadingMargin" id="RwM-qY-OmQ"/>
                             <constraint firstAttribute="centerX" secondItem="ddZ-cn-FS6" secondAttribute="centerX" id="Z0u-QU-m8t"/>
-                            <constraint firstItem="EqY-Im-oRJ" firstAttribute="top" secondItem="rC5-VN-nxu" secondAttribute="topMargin" constant="50" id="jXB-gR-nyz"/>
                             <constraint firstAttribute="centerY" secondItem="ddZ-cn-FS6" secondAttribute="centerY" constant="114.5" id="wZD-uz-a6I"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item4" image="Settings" id="Eh6-Nj-j6B" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Bounce" image="Settings" id="Eh6-Nj-j6B" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -251,7 +242,7 @@
             </objects>
             <point key="canvasLocation" x="-237" y="1228"/>
         </scene>
-        <!--Item3-->
+        <!--Transform-->
         <scene sceneID="4yz-ST-cNI">
             <objects>
                 <viewController id="OfP-b3-buV" sceneMemberID="viewController">
@@ -260,11 +251,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Oul-xk-NL1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6Gk-Oa-ok2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FrameItemAnimation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOS-iI-REq">
-                                <rect key="frame" x="13.5" y="183.5" width="348" height="71"/>
+                                <rect key="frame" x="-14" y="90" width="348" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="348" id="3uB-b1-tpH"/>
                                     <constraint firstAttribute="height" constant="71" id="epT-Qv-lUg"/>
@@ -280,7 +271,7 @@
                             <constraint firstAttribute="centerX" secondItem="FOS-iI-REq" secondAttribute="centerX" id="xJj-L1-hBL"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item3" image="Tools_00028" id="jvs-QR-4qe" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                    <tabBarItem key="tabBarItem" title="Transform" image="Tools_00028" id="jvs-QR-4qe" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                 <color key="value" red="0.33333333329999998" green="0.33333333329999998" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

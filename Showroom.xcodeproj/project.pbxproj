@@ -119,6 +119,7 @@
 		9D6F55101E97B8D80059B49A /* UIEdgeInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F550D1E97B8D80059B49A /* UIEdgeInsets.swift */; };
 		9D6F55111E97B8D80059B49A /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6F550E1E97B8D80059B49A /* UITableView.swift */; };
 		9D7F045B1ED4A2F3001B1A27 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F045A1ED4A2F3001B1A27 /* SearchViewModel.swift */; };
+		9D7F045D1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D7F045C1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift */; };
 		EACBBC787315D5EB519B123A /* Pods_Showroom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94D7A4FAAD9F6794937531A6 /* Pods_Showroom.framework */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +254,7 @@
 		9D6F550D1E97B8D80059B49A /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9D6F550E1E97B8D80059B49A /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		9D7F045A1ED4A2F3001B1A27 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		9D7F045C1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatedTabBarViewController.swift; sourceTree = "<group>"; };
 		CE95552CDC265C4A066E4E13 /* Pods-Showroom.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.release.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -646,6 +648,7 @@
 			children = (
 				84D4B7D31DB107DF00EE38C6 /* Resources */,
 				8468A72B1DE2E8D800D40917 /* BounceAnimationViewController.swift */,
+				9D7F045C1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift */,
 			);
 			path = AnimationTabBar;
 			sourceTree = "<group>";
@@ -1059,6 +1062,7 @@
 				84760B1A1DE05E3500AF36FE /* AboutView.swift in Sources */,
 				841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */,
 				84B46EED1DAFCC8C0033CB15 /* DemoDetailViewController.swift in Sources */,
+				9D7F045D1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift in Sources */,
 				9D6F55021E97B8650059B49A /* LoremSwiftum.swift in Sources */,
 				844AE7291DB4C6BD0029FBD4 /* WordReader.swift in Sources */,
 				84B46EF01DAFCED10033CB15 /* ScreenShot.swift in Sources */,
