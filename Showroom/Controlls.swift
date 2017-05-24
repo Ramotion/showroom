@@ -14,7 +14,7 @@ extension Showroom.Control {
     case .expandingCollection: return "Expanding Collection"
     case .previewTransition: return "Preview Transition"
     case .animationTabBar: return "Animation TabBar"
-    case .realSearch: return "Real Search"
+    case .reelSearch: return "Reel Search"
     case .navigationStack: return "Navigation Stack"
     case .vr: return "VR Demo"
     case .elongationPreview: return "Elongation Preview"
@@ -31,7 +31,7 @@ extension Showroom.Control {
     case .expandingCollection: return "A controller that expands cards from a preview to a middle state, and full screen. Can be used for navigation in card-based UIs."
     case .previewTransition: return "A simple preview gallery controller with a slight parallax effect. Works well for apps with visual content."
     case .animationTabBar: return "A module for adding animation to tab bar items. Helps to push native tab bar a bit further with subtle animations."
-    case .realSearch: return "The control helps to search faster by proactively providing the most relevant keywords as you type."
+    case .reelSearch: return "The control helps to search faster by proactively providing the most relevant keywords as you type."
     case .navigationStack: return "A stack-modeled navigation controller. It helps to go through a deep structure of screens faster."
     case .vr: return "Universal web VR control created for mobiles. Makes navigation between product sections faster and more natural."
     case .elongationPreview: return "ElongationPreview is an elegant push-pop style view controller"
@@ -48,7 +48,7 @@ extension Showroom.Control {
     case .expandingCollection: return "160"
     case .previewTransition: return "120"
     case .animationTabBar: return "120"
-    case .realSearch: return "120"
+    case .reelSearch: return "120"
     case .navigationStack: return "120"
     case .vr: return "160"
     case .elongationPreview: return "120"
@@ -65,7 +65,7 @@ extension Showroom.Control {
     case .expandingCollection: return "https://github.com/Ramotion/expanding-collection"
     case .previewTransition: return "https://github.com/Ramotion/preview-transition"
     case .animationTabBar: return "https://github.com/Ramotion/animated-tab-bar"
-    case .realSearch: return "https://github.com/Ramotion/reel-search"
+    case .reelSearch: return "https://github.com/Ramotion/reel-search"
     case .navigationStack: return "https://github.com/Ramotion/navigation-stack"
     case .vr: return "https://ramotion.github.io/vr-menu-demo/main.html"
     case .elongationPreview: return "https://github.com/Ramotion/elongation-preview"
@@ -82,7 +82,7 @@ extension Showroom.Control {
     case .expandingCollection: return "Swift, UIKit"
     case .previewTransition: return "Swift, UIKit"
     case .animationTabBar: return "Swift, UIKit"
-    case .realSearch: return "Swift, UIKit"
+    case .reelSearch: return "Swift, UIKit"
     case .navigationStack: return "Swift, UIKit"
     case .vr: return "JavaScript, WebGL, WebVR"
     case .elongationPreview: return "Swift, UIKit"
@@ -99,7 +99,7 @@ extension Showroom.Control {
         case .expandingCollection: return "ExpandingController"
         case .previewTransition: return "PreviewTransition"
         case .animationTabBar: return "AnimatedTabBar"
-        case .realSearch: return "ReelSearch"
+        case .reelSearch: return "ReelSearch"
         case .navigationStack: return "NavigationStack"
         case .vr: return "VRMenu"
         case .elongationPreview: return "ElongationPreview"
@@ -119,7 +119,9 @@ extension Showroom.Control {
     case .expandingCollection: return UINavigationController(rootViewController: main.instantiateViewController() as DemoExpandingViewController)
     case .previewTransition: return UINavigationController(rootViewController: main.instantiateViewController() as DemoTableViewController)
     case .animationTabBar: return UINavigationController(rootViewController: tabbar.instantiateViewController() as RAMAnimatedTabBarController)
-    case .realSearch: return UIViewController() // don't use look in carousevc
+    case .reelSearch:
+      
+      return SearchViewController(viewModel: .shared) // don't use look in carousevc
     case .navigationStack: return stack.instantiateViewController() as NavigationStack
     case .vr: return main.instantiateViewController() as VRViewController
     case .elongationPreview: return ElongationDemoViewController(style: UITableViewStyle.plain)

@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     configureNavigationBar()
     AppAnalytics.configuration([.google])
     configureElongationPreviewControl()
+    ReelSearchViewModel.shared.initializeDatabase()
     
     return true
   }

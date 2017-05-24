@@ -70,6 +70,7 @@ extension MenuPopUpViewController {
 // MARK: Methods
 extension MenuPopUpViewController {
   
+  @discardableResult
   class func showPopup(on: UIViewController, url: String, isRotate: Bool = false,  backButtonTap: @escaping () -> Void) -> MenuPopUpViewController {
     
     let storybord = UIStoryboard(storyboard: .Navigation)

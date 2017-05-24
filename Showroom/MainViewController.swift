@@ -9,7 +9,7 @@ class MainViewController: UITableViewController {
                                       .expandingCollection,
                                       .previewTransition,
                                       .animationTabBar,
-                                      .realSearch,
+                                      .reelSearch,
                                       .navigationStack,
                                       .elongationPreview,
                                       .glidingCollection]
