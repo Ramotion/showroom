@@ -1,42 +1,37 @@
 PODS:
-  - CircleMenu (2.0.1)
-  - Device (2.0.1)
-  - EasyPeasy (1.4)
-  - ElongationPreview (1.0.2)
-  - expanding-collection (1.0.4)
-  - Firebase/Core (3.11.0):
-    - FirebaseAnalytics (= 3.6.0)
-    - FirebaseCore (= 3.4.6)
-  - FirebaseAnalytics (3.6.0):
-    - FirebaseCore (~> 3.4)
-    - FirebaseInstanceID (~> 1.0)
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
+  - CircleMenu (2.0.5)
+  - Device (3.0.1)
+  - EasyPeasy (1.4.2)
+  - ElongationPreview (1.0.4)
+  - expanding-collection (1.1.0)
+  - Firebase/Core (4.0.0):
+    - FirebaseAnalytics (= 4.0.0)
+    - FirebaseCore (= 4.0.0)
+  - FirebaseAnalytics (4.0.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (3.4.6):
-    - GoogleInterchangeUtilities (~> 1.2)
+  - FirebaseCore (4.0.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (1.0.8)
-  - FoldingCell (2.0.3)
-  - GlidingCollection (1.0)
-  - GoogleInterchangeUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleSymbolUtilities (1.1.2)
-  - GoogleToolboxForMac/Defines (2.1.0)
-  - GoogleToolboxForMac/NSData+zlib (2.1.0):
-    - GoogleToolboxForMac/Defines (= 2.1.0)
+  - FirebaseInstanceID (2.0.0):
+    - FirebaseCore (~> 4.0)
+  - FoldingCell (2.0.5)
+  - GlidingCollection (1.0.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
   - Navigation-stack (1.0.0)
-  - NSObject+Rx (2.0.0):
-    - RxSwift
-  - paper-onboarding (2.0.1)
+  - NSObject+Rx (2.3.0):
+    - RxSwift (~> 3.0)
+  - paper-onboarding (2.1.0)
   - pop (1.0.9)
   - PreviewTransition (2.0.1)
-  - RAMAnimatedTabBarController (2.1.1)
-  - RAMPaperSwitch (2.0.4)
-  - RAMReel (2.0.2)
-  - RxCocoa (3.1.0):
-    - RxSwift (~> 3.1)
-  - RxSwift (3.1.0)
+  - RAMAnimatedTabBarController (2.2.0)
+  - RAMPaperSwitch (2.0.5)
+  - RAMReel (2.1.0)
+  - RxCocoa (3.4.1):
+    - RxSwift (~> 3.4)
+  - RxSwift (3.4.1)
   - SwiftyAttributes (3.1.0)
 
 DEPENDENCIES:
@@ -61,30 +56,28 @@ DEPENDENCIES:
   - SwiftyAttributes
 
 SPEC CHECKSUMS:
-  CircleMenu: a964e8b03aae58c84b40d5cf64630b62bef077eb
-  Device: 7dd12a4fc8a72a90211f2c9ac8975a728322a148
-  EasyPeasy: c2e49ceb822edc0a5fffefd66240fff10129047d
-  ElongationPreview: f16804a5ca42245985b748b0b6ca1c2c8343be2e
-  expanding-collection: be78b5822d7382d3da02b52d52273f4661567a64
-  Firebase: b8134e285eb33201115bc688bc5d7f112923bc1f
-  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
-  FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
-  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  FoldingCell: 2f3113051609167776743415fc00ed877ac6d62c
-  GlidingCollection: fa1308fd8785df0c4e11550e6136114b85341938
-  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
-  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
-  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  CircleMenu: 7cef16b4401de5b545e5f06d720cb202ec64800d
+  Device: c793851589633bc515b65e08a2b5a223bc87c45a
+  EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
+  ElongationPreview: ed0f4f744b266cba85f1cd103df183ce3424adf2
+  expanding-collection: c923d3806abbd5a5cdb58a2c036defa16c9e1e07
+  Firebase: 284eea779b73fdff309791817da7c68bff8dd572
+  FirebaseAnalytics: 6f08e746f7d66f5452931bc2e822b5df9c66b64a
+  FirebaseCore: 85ad466044c2f013cdb167f85d426d15b128114a
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
+  GlidingCollection: 2469c90a15cf43b61290a5418da3faec26cc96e9
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Navigation-stack: 85ac0a7bd4002e7888c528d8817f10ffe2c225da
-  NSObject+Rx: 2a9cd801d9c847e6d2486cbad8d7701b67834e70
-  paper-onboarding: a8e001214d9ce9decf78e160b3823f396dbd51ac
+  NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
+  paper-onboarding: b694e7c8d74b48309cc7485143386857be24897a
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   PreviewTransition: 2f612e341ccae573a1c08b8521fe19a28fe5d763
-  RAMAnimatedTabBarController: 128e0d71dc802766de575a3c59c6fdcc8e2f921b
-  RAMPaperSwitch: d24db52c5423c14812d4069073c3159cffcf3992
-  RAMReel: f9dd6643aaa001b52c55d5fbe4b42170dd271298
-  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
-  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
+  RAMAnimatedTabBarController: 4904a0ec08f2a4e935d0d3a5824551a77390b965
+  RAMPaperSwitch: 8e547186be122e858aa060596708f0dcbfe7593f
+  RAMReel: 73bcef3d46a8b924ffef1b11e73a9671a6e2b88b
+  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
+  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
   SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
 
 PODFILE CHECKSUM: 742d6f2c785edd7221d23ad0ed4dbf3dc0b11c95

@@ -120,7 +120,7 @@ extension CarouselViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    Analytics.screen(event: .google(name: "CarouselViewController", vc: self))
+    AppAnalytics.screen(event: .google(name: "CarouselViewController", vc: self))
   }
   
   override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -200,7 +200,7 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     present(vc, animated: true) { [weak vc] in
       guard let vc = vc else { return }
 
-      Analytics.screen(event: .google(name: item.title, vc: vc))
+      AppAnalytics.screen(event: .google(name: item.title, vc: vc))
     }
   }
 }
@@ -212,12 +212,12 @@ extension CarouselViewController {
     sender.isUserInteractionEnabled = false
     sender.animate(duration: 0, delay: 0, [.springScale(from: 0.9, to: 1, bounce: 20, spring: 10)])
     if sender.isSelected == true {
-        Analytics.event(.google(name: "Buttons", parametr: "hide about"))
+        AppAnalytics.event(.google(name: "Buttons", parametr: "hide about"))
       aboutView.hide(on: view) {
         sender.isUserInteractionEnabled = true
       }
     } else {
-        Analytics.event(.google(name: "Buttons", parametr: "show about"))
+        AppAnalytics.event(.google(name: "Buttons", parametr: "show about"))
         aboutView.show(on: view) {
         sender.isUserInteractionEnabled = true
       }
@@ -227,13 +227,13 @@ extension CarouselViewController {
   
   @IBAction func sharedHandler(_ sender: Any) {
     let sharedUrl = items[currentIndex].sharedURL
-    Analytics.event(.google(name: "Buttons", parametr: "control shared: \(sharedUrl)"))
+    AppAnalytics.event(.google(name: "Buttons", parametr: "control shared: \(sharedUrl)"))
     let activity = UIActivityViewController(activityItems: [sharedUrl], applicationActivities: nil)
     present(activity, animated: true, completion: nil)
   }
   
   @IBAction func contactUsHandler(_ sender: Any) {
-    Analytics.event(.google(name: "Buttons", parametr: "contact us"))
+    AppAnalytics.event(.google(name: "Buttons", parametr: "contact us"))
     
     if let url = URL(string: "https://business.ramotion.com/?utm_source=showroom&utm_medium=special&utm_campaign=v1/#Contact") {
       UIApplication.shared.open(url)

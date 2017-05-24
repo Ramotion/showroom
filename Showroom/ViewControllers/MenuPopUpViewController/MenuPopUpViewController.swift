@@ -12,7 +12,7 @@ fileprivate struct C {
 class MenuPopUpViewController: UIViewController {
   
   var backButtonTap: () -> Void = {}
-
+  
   @IBOutlet weak var menuViewHeight: NSLayoutConstraint!
   @IBOutlet weak var infoViewHeight: NSLayoutConstraint!
   @IBOutlet weak var infoViewBottom: NSLayoutConstraint!
@@ -83,7 +83,7 @@ extension MenuPopUpViewController {
                                     on: on,
                                     showTransition: ShowMenuPopUpTransition(duration: 0.2),
                                     hideTransition: HideMenuPopUpTransition(duration: 0.2))
-    }.addDisposableTo(on.rx_disposeBag)
+      }.addDisposableTo(on.rx_disposeBag)
     
     return vc
   }
@@ -98,16 +98,16 @@ extension MenuPopUpViewController {
     exitContainer.animate(duration: 0.4,
                           delay: 0,
                           [.layerPositionY(from: menuViewHeight.constant + exitContainer.bounds.size.height / 2,
-                                            to: menuViewHeight.constant / 2)],
-                           timing: .easyOut)
+                                           to: menuViewHeight.constant / 2)],
+                          timing: .easyOut)
     
     copyLinkContainer.animate(duration: 0.001, delay: 0.08, [.alpha(to: 1)], timing: .easyOut)
     
     copyLinkContainer.animate(duration: 0.4,
                               delay: 0.08,
                               [.layerPositionY(from: menuViewHeight.constant + copyLinkContainer.bounds.size.height / 2,
-                                            to: menuViewHeight.constant / 2)],
-                           timing: .easyOut)
+                                               to: menuViewHeight.constant / 2)],
+                              timing: .easyOut)
     
     shareContainer.animate(duration: 0.001, delay: 0.16, [.alpha(to: 1)], timing: .easyOut)
     
@@ -116,7 +116,7 @@ extension MenuPopUpViewController {
                            [.layerPositionY(from: menuViewHeight.constant + shareContainer.bounds.size.height / 2,
                                             to: menuViewHeight.constant / 2)],
                            timing: .easyOut)
-  
+    
   }
   
   func showInfoView() {
@@ -139,19 +139,19 @@ extension MenuPopUpViewController {
   
   @IBAction func copyLinkHandler(_ sender: Any) {
     showInfoView()
-      Analytics.event(.google(name: "Buttons", parametr: "copy link popup: \(shareUrlString)"))
+    AppAnalytics.event(.google(name: "Buttons", parametr: "copy link popup: \(shareUrlString)"))
     UIPasteboard.general.string = shareUrlString
   }
   
   @IBAction func sharedHandler(_ sender: Any) {
     
-    Analytics.event(.google(name: "Buttons", parametr: "shared link popup: \(shareUrlString)"))
+    AppAnalytics.event(.google(name: "Buttons", parametr: "shared link popup: \(shareUrlString)"))
     let activity = UIActivityViewController(activityItems: [shareUrlString], applicationActivities: nil)
     present(activity, animated: true, completion: nil)
   }
   
   @IBAction func backHandler(_ sender: Any) {
-    Analytics.event(.google(name: "Buttons", parametr: "back button popup"))
+    AppAnalytics.event(.google(name: "Buttons", parametr: "back button popup"))
     backButtonTap()
     dismiss(animated: true, completion: nil)
   }
