@@ -14,15 +14,10 @@ class ElongationDemoViewController: ElongationViewController {
   
   var datasource: [Villa] = Villa.testData
   
-}
-
-// MARK: - Lifecycle 🌎
-extension ElongationDemoViewController {
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
-    
+
     // Setup Showroom
     _ = MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.elongationPreview.sharedURL) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
@@ -39,26 +34,22 @@ extension ElongationDemoViewController {
     return .lightContent
   }
   
+  override func openDetailView(for indexPath: IndexPath) {
+    let detailViewController = ElongationDemoDetailViewController(style: UITableViewStyle.grouped)
+    let villa = datasource[indexPath.row]
+    detailViewController.title = villa.title
+    expand(viewController: detailViewController)
+  }
+  
 }
 
 // MARK: - Setup ⛏
 private extension ElongationDemoViewController {
   
   func setup() {
+    view.backgroundColor = .black
     tableView.backgroundColor = UIColor.black
     tableView.registerNib(DemoElongationCell.self)
-  }
-  
-}
-
-// MARK: - Actions ⚡
-extension ElongationDemoViewController {
-  
-  override func openDetailView(for indexPath: IndexPath) {
-    let detailViewController = ElongationDemoDetailViewController(style: UITableViewStyle.grouped)
-    let villa = datasource[indexPath.row]
-    detailViewController.title = villa.title
-    expand(viewController: detailViewController)
   }
   
 }
