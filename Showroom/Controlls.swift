@@ -8,12 +8,12 @@ extension Showroom.Control {
   var title: String {
     switch self {
     case .circleMenu: return "Circle Menu"
-    case .foldingCell: return "FoldingCell"
+    case .foldingCell: return "Folding Cell"
     case .paperSwitch: return "Paper Switch"
     case .paperOnboarding: return "Pagination Controller"
     case .expandingCollection: return "Expanding Collection"
     case .previewTransition: return "Preview Transition"
-    case .animationTabBar: return "Animation TabBar"
+    case .animationTabBar: return "Animation Tab Bar"
     case .reelSearch: return "Reel Search"
     case .navigationStack: return "Navigation Stack"
     case .vr: return "VR Demo"
