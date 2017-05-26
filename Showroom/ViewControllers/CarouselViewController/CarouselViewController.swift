@@ -39,7 +39,7 @@ class CarouselViewController: UIViewController {
                                                .paperOnboarding,
                                                .expandingCollection,
                                                .previewTransition,
-                                               .reelSearch,
+//                                               .reelSearch,
                                                .animationTabBar,
 //                                               .navigationStack,
                                                .vr,
