@@ -15,6 +15,15 @@ public class DemoDetailViewController: PTDetailViewController {
   @IBOutlet weak var hertIconView: UIImageView!
   
   var backButton: UIButton?
+  
+  
+  var bottomSafeArea: CGFloat {
+    var result: CGFloat = 0
+    if #available(iOS 11.0, *) {
+      result = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+    }
+    return result
+  }
 }
 
 // MARK: life cicle
@@ -50,7 +59,7 @@ extension DemoDetailViewController {
     showBackButtonDuration(duration: 0.3)
     showControlViewDuration(duration: 0.3)
     
-     let _ = createBlurView()
+    let _ = createBlurView()
   }
 }
 
@@ -76,12 +85,14 @@ extension DemoDetailViewController {
   }
   
   fileprivate func createBlurView() -> UIView {
-    let imageFrame = CGRect(x: 0, y: view.frame.size.height - controlHeightConstraint.constant, width: view.frame.width, height: controlHeightConstraint.constant)
+    let height = controlView.bounds.height + bottomSafeArea
+    let imageFrame = CGRect(x: 0, y: view.frame.size.height - height, width: view.frame.width, height: height)
     let image = view.makeScreenShotFromFrame(frame: imageFrame)
     let screnShotImageView = UIImageView(image: image)
     screnShotImageView.translatesAutoresizingMaskIntoConstraints = false
     screnShotImageView.blurViewValue(value: 5)
     controlView.insertSubview(screnShotImageView, at: 0)
+    
     // added constraints
     [NSLayoutAttribute.left, .right, .bottom, .top].forEach { attribute in
       (self.controlView, screnShotImageView) >>>- {
@@ -89,12 +100,12 @@ extension DemoDetailViewController {
         return
       }
     }
-    
+
     createMaskView(onView: screnShotImageView)
-    
+
     return screnShotImageView
   }
-
+  
   fileprivate func createMaskView(onView: UIView) {
     let blueView = UIView(frame: CGRect.zero)
     blueView.backgroundColor = .black
@@ -129,15 +140,16 @@ extension DemoDetailViewController {
   }
   
   fileprivate func moveUpControllerDuration(duration: Double) {
-    controlBottomConstrant.constant = -controlHeightConstraint.constant
+    controlBottomConstrant.constant = -controlHeightConstraint.constant - bottomSafeArea
+    
     view.layoutIfNeeded()
     
-    controlBottomConstrant.constant = 0
+    controlBottomConstrant.constant = -bottomSafeArea
     UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { 
       self.view.layoutIfNeeded()
     }, completion: nil)
   }
-
+  
   fileprivate func showControlButtonsDuration(duration: Double) {
     [plusImageView, shareImageView, hertIconView].forEach {
       $0?.rotateDuration(duration: duration, from: -CGFloat.pi / 4, to: 0, delay: duration)
@@ -146,7 +158,7 @@ extension DemoDetailViewController {
       $0?.opacityDuration(duration: duration, from: 0, to: 1, delay: duration, remove: false)
     }
   }
-
+  
   fileprivate func showControlLabelDuration(duration: Double) {
     controlTextLabel.alpha = 0
     controlTextLabel.opacityDuration(duration: duration, from: 0, to: 1, delay: duration, remove: false)
@@ -167,7 +179,7 @@ extension DemoDetailViewController {
 
 extension DemoDetailViewController {
   
-    @objc func backButtonHandler() {
+  @objc func backButtonHandler() {
     popViewController()
   }
 }
