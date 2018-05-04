@@ -14,7 +14,7 @@ class DemoExpandingViewController: ExpandingViewController {
 extension DemoExpandingViewController {
   
   override func viewDidLoad() {
-    itemSize = CGSize(width: 256, height: 335)
+    itemSize = CGSize(width: 256, height: 460)
     super.viewDidLoad()
     
     registerCell()
@@ -22,7 +22,7 @@ extension DemoExpandingViewController {
     addGestureToView(collectionView!)
     configureNavBar()
     
-    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/expanding-collection") { [weak self] in
+    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/expanding-collection") { [weak self] in
       self?.navigationController?.dismiss(animated: true, completion: nil)
       self?.navigationController?.dismiss(animated: true, completion: nil)
     }
@@ -80,8 +80,8 @@ extension DemoExpandingViewController {
     toView.addGestureRecognizer(gestureUp)
     toView.addGestureRecognizer(gestureDown)
   }
-
-    @objc func swipeHandler(_ sender: UISwipeGestureRecognizer) {
+  
+  @objc func swipeHandler(_ sender: UISwipeGestureRecognizer) {
     let indexPath = IndexPath(row: currentIndex, section: 0)
     guard let cell  = collectionView?.cellForItem(at: indexPath) as? DemoCollectionViewCell else { return }
     // double swipe Up transition
@@ -115,7 +115,7 @@ extension DemoExpandingViewController {
   override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     super.collectionView(collectionView, willDisplay: cell, forItemAt: indexPath)
     guard let cell = cell as? DemoCollectionViewCell else { return }
-
+    
     let index = (indexPath as NSIndexPath).row % items.count
     let info = items[index]
     cell.backgroundImageView?.image = UIImage(named: info.imageName)
@@ -125,8 +125,8 @@ extension DemoExpandingViewController {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: IndexPath) {
     guard let cell = collectionView.cellForItem(at: indexPath) as? DemoCollectionViewCell
-          , currentIndex == (indexPath as NSIndexPath).row else { return }
-
+      , currentIndex == (indexPath as NSIndexPath).row else { return }
+    
     if cell.isOpened == false {
       cell.cellIsOpen(true)
     } else {

@@ -10,6 +10,15 @@ import UIKit
 
 class AnimatingBarButton: UIBarButtonItem, Rotatable {
   
+  fileprivate final class CustomView: UIView {
+    var onLayoutSubviews: () -> Void = {}
+    
+    override func layoutSubviews() {
+      super.layoutSubviews()
+      onLayoutSubviews()
+    }
+  }
+  
   @IBInspectable var normalImageName: String = ""
   @IBInspectable var selectedImageName: String = ""
   
@@ -25,13 +34,10 @@ extension AnimatingBarButton {
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    customView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
-//    customView?.backgroundColor = .redColor()
-    
-    configurateImageViews()
+    let view = CustomView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+    view.onLayoutSubviews = { [weak self] in self?.configurateImageViews() }
+    customView = view
   }
-  
-  
 }
 
 // MARK: public
@@ -56,35 +62,25 @@ extension AnimatingBarButton {
     configureImageView(selectedView, imageName: selectedImageName)
     
     selectedView.alpha = 0
-//    normalView.hidden = true
   }
-
+  
   fileprivate func configureImageView(_ imageView: UIImageView, imageName: String) {
     guard let customView = customView else { return }
-
-    imageView.translatesAutoresizingMaskIntoConstraints = false
-    imageView.image = UIImage(named: imageName)
+    guard let image = UIImage(named: imageName)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate) else { return }
+    
+    imageView.image = image
     imageView.contentMode = .scaleAspectFit
-//    imageView.backgroundColor = .greenColor()
+    imageView.tintColor = tintColor
     
-//    imageView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+    imageView.layer.shadowColor = UIColor.black.cgColor
+    imageView.layer.shadowRadius = 0.6
+    imageView.layer.shadowOffset = CGSize(width: 0, height: 1.5)
+    imageView.layer.shadowOpacity = 0.3
+    
+    let x = (customView.bounds.size.width - image.size.width) / 2 + 12
+    let y = (customView.bounds.size.height - image.size.height) / 2
+    imageView.frame = CGRect(origin: CGPoint(x: x, y: y), size: image.size)
     customView.addSubview(imageView)
-    
-    // add constraints
-    [(NSLayoutAttribute.centerX, 12), (.centerY, -1)].forEach { info in
-      (customView, imageView) >>>- {
-        $0.attribute = info.0
-        $0.constant = CGFloat(info.1)
-        return
-      }
-    }
-    
-    [NSLayoutAttribute.height, .width].forEach { attribute in
-      imageView >>>- {
-        $0.attribute = attribute
-        $0.constant = 20
-        return
-      }
-    }
   }
 }
+

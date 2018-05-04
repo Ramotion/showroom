@@ -1145,78 +1145,6 @@ added to your friends list.</string>
             </objects>
             <point key="canvasLocation" x="4930" y="-109"/>
         </scene>
-        <!--Demo Expanding View Controller-->
-        <scene sceneID="ThT-uQ-fiE">
-            <objects>
-                <viewController storyboardIdentifier="DemoExpandingViewController" automaticallyAdjustsScrollViewInsets="NO" id="RQM-Cv-AG5" customClass="DemoExpandingViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gEt-fH-3hQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="jRo-UZ-JsN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="awf-U3-1p3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-2r-IxN">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV7-ry-Zec">
-                                <rect key="frame" x="172" y="626" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.85882352939999995" green="0.86666666670000003" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="3Mh-2r-IxN" secondAttribute="trailing" id="FPB-ea-e54"/>
-                            <constraint firstItem="jV7-ry-Zec" firstAttribute="centerX" secondItem="awf-U3-1p3" secondAttribute="centerX" id="SZb-iQ-a9Z"/>
-                            <constraint firstItem="3Mh-2r-IxN" firstAttribute="top" secondItem="gEt-fH-3hQ" secondAttribute="bottom" id="VeJ-b2-wdD"/>
-                            <constraint firstItem="jRo-UZ-JsN" firstAttribute="top" secondItem="jV7-ry-Zec" secondAttribute="bottom" constant="20" id="YnH-Cb-PUV"/>
-                            <constraint firstItem="jRo-UZ-JsN" firstAttribute="top" secondItem="3Mh-2r-IxN" secondAttribute="bottom" id="b4G-yC-9p1"/>
-                            <constraint firstItem="3Mh-2r-IxN" firstAttribute="leading" secondItem="awf-U3-1p3" secondAttribute="leading" id="gZ1-Qs-tIl"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="cWm-zt-2nt">
-                        <nil key="title"/>
-                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="KPs-IG-Cip"/>
-                        <view key="titleView" contentMode="scaleToFill" id="yaP-HZ-Grb">
-                            <rect key="frame" x="68" y="6" width="240" height="33"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="bN5-sJ-Tqb">
-                                    <rect key="frame" x="95" y="9" width="51" height="16"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="51" id="HSI-T0-AHE"/>
-                                        <constraint firstAttribute="height" constant="16" id="ccJ-b1-WTJ"/>
-                                    </constraints>
-                                </imageView>
-                            </subviews>
-                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            <constraints>
-                                <constraint firstItem="bN5-sJ-Tqb" firstAttribute="centerY" secondItem="yaP-HZ-Grb" secondAttribute="centerY" id="3Zx-8C-u7C"/>
-                                <constraint firstItem="bN5-sJ-Tqb" firstAttribute="centerX" secondItem="yaP-HZ-Grb" secondAttribute="centerX" id="4X7-F4-lag"/>
-                            </constraints>
-                        </view>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="WqS-BC-OG7" customClass="AnimatingBarButton" customModule="Showroom" customModuleProvider="target">
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="normalImageName" value="locationButton"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="selectedImageName" value="CloseButton"/>
-                                <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                    <real key="value" value="0.29999999999999999"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="pageLabel" destination="jV7-ry-Zec" id="xjQ-iF-CKM"/>
-                        <segue destination="MgO-fN-hnF" kind="show" identifier="NoName" id="CKM-qL-21F"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HKC-ne-lgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1604" y="1337"/>
-        </scene>
         <!--Demo Expanding Table View Controller-->
         <scene sceneID="YDe-iO-TjP">
             <objects>
@@ -1585,6 +1513,78 @@ added to your friends list.</string>
             </objects>
             <point key="canvasLocation" x="2390" y="1336"/>
         </scene>
+        <!--Demo Expanding View Controller-->
+        <scene sceneID="jdC-kD-vb8">
+            <objects>
+                <viewController storyboardIdentifier="DemoExpandingViewController" automaticallyAdjustsScrollViewInsets="NO" id="1BT-Re-uSj" customClass="DemoExpandingViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IxH-VM-dch"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Cg-g9-KzE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y8U-C4-AbO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="7lj-hf-g8e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AB5-cT-BDd">
+                                <rect key="frame" x="172" y="626.5" width="31" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.85882352939999995" green="0.86666666670000003" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7lj-hf-g8e" firstAttribute="top" secondItem="y8U-C4-AbO" secondAttribute="top" id="0vW-I5-fMk"/>
+                            <constraint firstItem="8Cg-g9-KzE" firstAttribute="top" secondItem="AB5-cT-BDd" secondAttribute="bottom" constant="20" id="8PU-pX-lSw"/>
+                            <constraint firstAttribute="trailing" secondItem="7lj-hf-g8e" secondAttribute="trailing" id="9Xd-yz-zGa"/>
+                            <constraint firstAttribute="bottom" secondItem="7lj-hf-g8e" secondAttribute="bottom" id="Ekc-Yr-M4K"/>
+                            <constraint firstItem="AB5-cT-BDd" firstAttribute="centerX" secondItem="y8U-C4-AbO" secondAttribute="centerX" id="GKF-HU-RrG"/>
+                            <constraint firstItem="7lj-hf-g8e" firstAttribute="leading" secondItem="y8U-C4-AbO" secondAttribute="leading" id="gaB-Z9-2aF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="paI-xR-ncj">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" id="m2X-WT-QXo"/>
+                        <view key="titleView" contentMode="scaleToFill" id="INk-0Z-OPY">
+                            <rect key="frame" x="67.5" y="5.5" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="YKE-UU-ujm">
+                                    <rect key="frame" x="94.5" y="8.5" width="51" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="16" id="LOF-9l-M1L"/>
+                                        <constraint firstAttribute="width" constant="51" id="syM-6B-GvM"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="YKE-UU-ujm" firstAttribute="centerY" secondItem="INk-0Z-OPY" secondAttribute="centerY" id="aNw-9v-NrK"/>
+                                <constraint firstItem="YKE-UU-ujm" firstAttribute="centerX" secondItem="INk-0Z-OPY" secondAttribute="centerX" id="xbv-jg-Bgr"/>
+                            </constraints>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="locationButton" id="zLE-h7-MET" customClass="AnimatingBarButton" customModule="DemoExpandingCollection" customModuleProvider="target">
+                            <color key="tintColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="normalImageName" value="locationButton"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="selectedImageName" value="CloseButton"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                    <real key="value" value="0.29999999999999999"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pageLabel" destination="AB5-cT-BDd" id="eo7-Nu-xrE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZoC-2r-3SA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="1336"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BackgroundImage" width="375" height="667"/>
@@ -1604,6 +1604,7 @@ added to your friends list.</string>
         <image name="img_phone_off" width="22" height="35"/>
         <image name="img_users1" width="38" height="55"/>
         <image name="img_users2" width="38" height="55"/>
+        <image name="locationButton" width="20" height="20"/>
         <image name="map" width="375" height="124"/>
         <image name="menuButton" width="120" height="120"/>
         <image name="photo" width="98" height="98"/>

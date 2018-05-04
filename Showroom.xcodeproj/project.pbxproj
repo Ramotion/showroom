@@ -62,7 +62,7 @@
 		84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7881DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift */; };
 		84D4B78F1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B78B1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift */; };
 		84D4B7901DB0C81B00EE38C6 /* DemoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B78C1DB0C81B00EE38C6 /* DemoCollectionViewCell.xib */; };
-		84D4B7911DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B78D1DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift */; };
+		84D4B7911DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B78D1DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift */; };
 		84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7931DB0C94700EE38C6 /* AnimationBarButton.swift */; };
 		84D4B7971DB0C94700EE38C6 /* Rotatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D4B7951DB0C94700EE38C6 /* Rotatable.swift */; };
 		84D4B7D51DB107DF00EE38C6 /* ToolsAnimation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84D4B7D41DB107DF00EE38C6 /* ToolsAnimation.plist */; };
@@ -195,8 +195,8 @@
 		84D4B7881DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoExpandingTableViewController.swift; sourceTree = "<group>"; };
 		84D4B78B1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCollectionViewCell.swift; sourceTree = "<group>"; };
 		84D4B78C1DB0C81B00EE38C6 /* DemoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCollectionViewCell.xib; sourceTree = "<group>"; };
-		84D4B78D1DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDemoExpandingViewControllerViewController.swift; sourceTree = "<group>"; };
-		84D4B7931DB0C94700EE38C6 /* AnimationBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationBarButton.swift; sourceTree = "<group>"; };
+		84D4B78D1DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = DemoExpandingViewControllerViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
+		84D4B7931DB0C94700EE38C6 /* AnimationBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = AnimationBarButton.swift; sourceTree = "<group>"; tabWidth = 2; };
 		84D4B7951DB0C94700EE38C6 /* Rotatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotatable.swift; sourceTree = "<group>"; };
 		84D4B7D41DB107DF00EE38C6 /* ToolsAnimation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ToolsAnimation.plist; sourceTree = "<group>"; };
 		84D4B7D61DB1098C00EE38C6 /* AnimatedTabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = AnimatedTabBar.storyboard; path = ../AnimatedTabBar.storyboard; sourceTree = "<group>"; };
@@ -612,7 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				84D4B78A1DB0C81B00EE38C6 /* Cells */,
-				84D4B78D1DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift */,
+				84D4B78D1DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift */,
 			);
 			path = DemoViewController;
 			sourceTree = "<group>";
@@ -1136,7 +1136,7 @@
 				84C2F9761DFEF48200E97FD5 /* VRViewController.swift in Sources */,
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				9D6F550F1E97B8D80059B49A /* UICollectionView.swift in Sources */,
-				84D4B7911DB0C81B00EE38C6 /* DemoDemoExpandingViewControllerViewController.swift in Sources */,
+				84D4B7911DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift in Sources */,
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,
 				844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */,
 				84D4B7971DB0C94700EE38C6 /* Rotatable.swift in Sources */,
