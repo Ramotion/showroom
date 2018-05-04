@@ -84,8 +84,8 @@ extension MenuPopUpViewController {
                                     on: on,
                                     showTransition: ShowMenuPopUpTransition(duration: 0.2),
                                     hideTransition: HideMenuPopUpTransition(duration: 0.2))
-      }.addDisposableTo(on.rx_disposeBag)
-    
+      }.disposed(by: on.rx.disposeBag)
+
     return vc
   }
 }

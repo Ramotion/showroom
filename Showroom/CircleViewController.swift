@@ -52,6 +52,6 @@ extension CircleViewController: CircleMenuDelegate {
     // set highlited image
     let highlightedImage  = UIImage(named: items[atIndex].icon)?.withRenderingMode(.alwaysTemplate)
     button.setImage(highlightedImage, for: .highlighted)
-    button.tintColor = UIColor.init(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
+    button.tintColor = UIColor.white.withAlphaComponent(0.3)
   }
 }

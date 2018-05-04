@@ -73,10 +73,10 @@ extension ElongationDemoViewController {
     let villa = datasource[indexPath.row]
     
     let attributedLocality = NSMutableAttributedString(string: villa.locality.uppercased(), attributes: [
-      NSFontAttributeName: UIFont.robotoFont(ofSize: 22, weight: .medium),
-      NSKernAttributeName: 8.2,
-      NSForegroundColorAttributeName: UIColor.white
-      ])
+        kCTFontAttributeName: UIFont.robotoFont(ofSize: 22, weight: .medium),
+        kCTKernAttributeName: 8.2,
+        kCTForegroundColorAttributeName: UIColor.white
+      ] as [NSAttributedStringKey : Any])
     
     cell.topImageView?.image = UIImage(named: villa.imageName)
     cell.localityLabel?.attributedText = attributedLocality

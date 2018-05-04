@@ -167,7 +167,7 @@ extension DemoDetailViewController {
 
 extension DemoDetailViewController {
   
-  func backButtonHandler() {
+    @objc func backButtonHandler() {
     popViewController()
   }
 }

@@ -67,11 +67,12 @@ class FoldingTableViewController: UITableViewController {
     var duration = 0.0
     if cellHeight[indexPath.row] == C.CellHeight.close { // open cell
       cellHeight[indexPath.row] = C.CellHeight.open
-      cell.selectedAnimation(true, animated: true, completion: nil)
+      cell.setSelected(true, animated: true)
       duration = 0.5
     } else {// close cell
       cellHeight[indexPath.row] = C.CellHeight.close
-      cell.selectedAnimation(false, animated: true, completion: nil)
+      cell.setSelected(false, animated: true)
+      
       duration = 1.1
     }
     

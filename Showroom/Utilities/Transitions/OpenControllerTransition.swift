@@ -27,7 +27,7 @@ extension OpenControllerTransition: UIViewControllerAnimatedTransitioning {
     let whiteView = UIView(frame: .zero)
     toView?.addSubview(whiteView)
     whiteView.backgroundColor = .white
-    whiteView <- Edges()
+    whiteView.easy.layout(Edges())
     
     fromViewController.view?.tintAdjustmentMode     = .dimmed
     fromViewController.view?.isUserInteractionEnabled = false

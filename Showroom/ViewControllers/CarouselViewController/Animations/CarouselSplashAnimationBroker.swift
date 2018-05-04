@@ -61,7 +61,7 @@ private extension CarouselSplashAnimationBroker {
     let rLogoStartPosition = titleContainer.rLogo.layer.position
     titleContainer.rLogo.animate(duration: 0.001, [.layerPositionXY(from: Showroom.screenCenter, to: Showroom.screenCenter), .alpha(to: 1)])
     
-    titleContainer.rLogo.animationImages = (0...36).flatMap { UIImage(named: ($0 < 9) ? "logo0000\($0)" : "logo000\($0)") }
+    titleContainer.rLogo.animationImages = (0...36).compactMap { UIImage(named: ($0 < 9) ? "logo0000\($0)" : "logo000\($0)") }
     titleContainer.rLogo.animationDuration = 1.2
     titleContainer.rLogo.animationRepeatCount = 1
     titleContainer.rLogo.startAnimating()
@@ -120,7 +120,7 @@ private extension CarouselSplashAnimationBroker {
     collectionView.animate(duration: 0.5,
                             delay: 2.5,
                             [.layerPositionX(from: hidePosition, to: startPositionX)],
-                            timing: .easyInEasyOut) { _ in
+                            timing: .easyInEasyOut) {
                               self.collectionView.layer.shouldRasterize = false
                             }
   }

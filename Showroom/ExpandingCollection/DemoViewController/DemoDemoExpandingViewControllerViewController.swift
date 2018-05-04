@@ -81,7 +81,7 @@ extension DemoExpandingViewController {
     toView.addGestureRecognizer(gestureDown)
   }
 
-  func swipeHandler(_ sender: UISwipeGestureRecognizer) {
+    @objc func swipeHandler(_ sender: UISwipeGestureRecognizer) {
     let indexPath = IndexPath(row: currentIndex, section: 0)
     guard let cell  = collectionView?.cellForItem(at: indexPath) as? DemoCollectionViewCell else { return }
     // double swipe Up transition

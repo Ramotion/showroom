@@ -1,38 +1,44 @@
 PODS:
-  - CircleMenu (2.0.5)
-  - Device (3.0.1)
-  - EasyPeasy (1.4.2)
-  - ElongationPreview (1.0.4)
-  - expanding-collection (1.1.0)
-  - Firebase/Core (4.0.0):
-    - FirebaseAnalytics (= 4.0.0)
-    - FirebaseCore (= 4.0.0)
-  - FirebaseAnalytics (4.0.0):
+  - CircleMenu (3.0.6)
+  - Device (3.1.0)
+  - EasyPeasy (1.7.0)
+  - ElongationPreview (1.1.2)
+  - expanding-collection (2.0.1)
+  - Firebase/Core (4.13.0):
+    - FirebaseAnalytics (= 4.2.0)
+    - FirebaseCore (= 4.0.20)
+  - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseCore (4.0.0):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseInstanceID (2.0.0):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.20):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
-  - FoldingCell (2.0.5)
-  - GlidingCollection (1.0.1)
-  - GoogleToolboxForMac/Defines (2.1.1)
-  - GoogleToolboxForMac/NSData+zlib (2.1.1):
-    - GoogleToolboxForMac/Defines (= 2.1.1)
-  - Navigation-stack (1.0.0)
-  - NSObject+Rx (2.3.0):
-    - RxSwift (~> 3.0)
-  - paper-onboarding (2.1.0)
-  - pop (1.0.9)
-  - PreviewTransition (2.0.1)
-  - RAMAnimatedTabBarController (2.2.0)
-  - RAMPaperSwitch (2.0.5)
-  - RAMReel (2.1.0)
-  - RxCocoa (3.4.1):
-    - RxSwift (~> 3.4)
-  - RxSwift (3.4.1)
-  - SwiftyAttributes (3.1.0)
+  - FoldingCell (3.1.1)
+  - GlidingCollection (1.1.0)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - Navigation-stack (2.0.2)
+  - "NSObject+Rx (4.3.0)":
+    - RxSwift (~> 4.0)
+  - paper-onboarding (4.1.0)
+  - pop (1.0.10)
+  - PreviewTransition (3.0.1)
+  - RAMAnimatedTabBarController (3.2.0)
+  - RAMPaperSwitch (2.1.0)
+  - RAMReel (3.0.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SwiftyAttributes (4.2.0)
 
 DEPENDENCIES:
   - CircleMenu
@@ -44,7 +50,7 @@ DEPENDENCIES:
   - FoldingCell
   - GlidingCollection
   - Navigation-stack
-  - NSObject+Rx
+  - "NSObject+Rx"
   - paper-onboarding
   - pop
   - PreviewTransition
@@ -55,31 +61,59 @@ DEPENDENCIES:
   - RxSwift
   - SwiftyAttributes
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CircleMenu
+    - Device
+    - EasyPeasy
+    - ElongationPreview
+    - expanding-collection
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - FoldingCell
+    - GlidingCollection
+    - GoogleToolboxForMac
+    - nanopb
+    - Navigation-stack
+    - "NSObject+Rx"
+    - paper-onboarding
+    - pop
+    - PreviewTransition
+    - RAMAnimatedTabBarController
+    - RAMPaperSwitch
+    - RAMReel
+    - RxCocoa
+    - RxSwift
+    - SwiftyAttributes
+
 SPEC CHECKSUMS:
-  CircleMenu: 7cef16b4401de5b545e5f06d720cb202ec64800d
-  Device: c793851589633bc515b65e08a2b5a223bc87c45a
-  EasyPeasy: 50e7130b61f495ce105796e438d4136e2c8d2cc0
-  ElongationPreview: ed0f4f744b266cba85f1cd103df183ce3424adf2
-  expanding-collection: c923d3806abbd5a5cdb58a2c036defa16c9e1e07
-  Firebase: 284eea779b73fdff309791817da7c68bff8dd572
-  FirebaseAnalytics: 6f08e746f7d66f5452931bc2e822b5df9c66b64a
-  FirebaseCore: 85ad466044c2f013cdb167f85d426d15b128114a
-  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
-  FoldingCell: fb189fc746e95b722a1debf8ef455006b70cae2e
-  GlidingCollection: 2469c90a15cf43b61290a5418da3faec26cc96e9
-  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  Navigation-stack: 85ac0a7bd4002e7888c528d8817f10ffe2c225da
-  NSObject+Rx: 38170f84b948152c05c57260cb853e387a5519d1
-  paper-onboarding: b694e7c8d74b48309cc7485143386857be24897a
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  PreviewTransition: 2f612e341ccae573a1c08b8521fe19a28fe5d763
-  RAMAnimatedTabBarController: 4904a0ec08f2a4e935d0d3a5824551a77390b965
-  RAMPaperSwitch: 8e547186be122e858aa060596708f0dcbfe7593f
-  RAMReel: 73bcef3d46a8b924ffef1b11e73a9671a6e2b88b
-  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
-  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
-  SwiftyAttributes: f337a324cd21f1b18782ab85d3478ccae73f7593
+  CircleMenu: 743ac815475e8e40e8848d2954fa7f7263d9f78d
+  Device: 8a21a61f5f938a12dadd44d82287996081b6919b
+  EasyPeasy: 2f2785ed78c6f9e9045221f2ff317730e7321bff
+  ElongationPreview: a1b53f61d2086c0ce5c2061e5233bff25b93917d
+  expanding-collection: 8a911969a80f349b73e7100ec58f0c50dd5f220a
+  Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
+  FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
+  FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
+  FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
+  GlidingCollection: 2194165075fa7230027049238c9ed724453557e6
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Navigation-stack: fb9d7189f6c8b8d4a58f1cad129e4dbcc51aa2d0
+  "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
+  paper-onboarding: 344780cbb0bfc229cd1862f5b9bba446b23c5185
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  PreviewTransition: 626eb437009d04e24d177d2d1e65de2a705829ed
+  RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
+  RAMPaperSwitch: ef08af0400a040c9850e09253280deb77510becb
+  RAMReel: a123d736773901a9a3d2ef559c176a50c338b5de
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SwiftyAttributes: da052e36f8950382016145969d95481c14d2d328
 
-PODFILE CHECKSUM: 742d6f2c785edd7221d23ad0ed4dbf3dc0b11c95
+PODFILE CHECKSUM: 7fdd3aa440449287300af696898c431ebffa987b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0

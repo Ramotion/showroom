@@ -9,7 +9,7 @@ class SearchViewController: UIViewController {
   let viewModel: ReelSearchViewModel
   var bag = DisposeBag()
   
-  private var ramReel: RAMReel<RAMCell, RAMTextField, SimplePrefixQueryDataSource>!
+  private var ramReel: RAMReel<RAMCell, UITextField, SimplePrefixQueryDataSource>!
   private let loadingOverlay = UIView()
   private let loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
   
@@ -49,12 +49,12 @@ class SearchViewController: UIViewController {
       .skip(1) // skip initial empty value
       .observeOn(MainScheduler.instance)
       .subscribe(onNext: { dataSource in
-        self.ramReel = RAMReel(frame: self.view.bounds, dataSource: dataSource, placeholder: "Start by typing…") {
+        self.ramReel = RAMReel<RAMCell, UITextField, SimplePrefixQueryDataSource>(frame: self.view.bounds, dataSource: dataSource, placeholder: "Start by typing…", attemptToDodgeKeyboard: true) {
           print("Plain:", $0)
         }
         
         self.ramReel.hooks.append {
-          let r = Array($0.characters.reversed())
+          let r = Array($0.reversed())
           let j = String(r)
           print("Reversed:", j)
         }
@@ -64,7 +64,7 @@ class SearchViewController: UIViewController {
         
         self.hideOverlay(true)
       })
-      .addDisposableTo(bag)
+        .disposed(by: bag)
   }
   
   private func setupLoadingIndicator() {

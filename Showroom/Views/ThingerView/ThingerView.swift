@@ -45,13 +45,13 @@ extension ThingerTapView {
     
     let timer = Observable<NSInteger>.interval(0.8, scheduler: MainScheduler.instance)
       .startWith(0)
-      .shareReplayLatestWhileConnected()
+      .share(replay: 1)
     
     _ = timer.subscribe { [weak thinger] _ in
       guard let thinger = thinger else { return }
       
       type.animate(view: thinger)
-      }.addDisposableTo(thinger.rx_disposeBag)
+      }.disposed(by: thinger.rx.disposeBag)
     
     return thinger
   }

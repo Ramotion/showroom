@@ -61,9 +61,9 @@ extension AppDelegate {
     
     if let font = UIFont(name: "Avenir-medium" , size: 18) {
       UINavigationBar.appearance().titleTextAttributes = [
-        NSForegroundColorAttributeName : UIColor.white,
-        NSFontAttributeName : font
-      ]
+        kCTForegroundColorAttributeName : UIColor.white,
+        kCTFontAttributeName : font
+        ] as [NSAttributedStringKey : Any]
     }
   }
   
@@ -79,7 +79,7 @@ extension AppDelegate {
     config.separatorColor = UIColor.white
     
     // Durations for presenting/dismissing detail screen
-    config.detailPresetingDuration = 0.4
+    config.detailPresentingDuration = 0.4
     config.detailDismissingDuration = 0.4
     
     // Customize behaviour

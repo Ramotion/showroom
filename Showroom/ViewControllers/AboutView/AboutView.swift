@@ -90,7 +90,7 @@ extension AboutView {
     scrollView.contentOffset.y = 0
     
     view.addSubview(self)
-    self <- Edges(0)
+    self.easy.layout(Edges())
     
     view.layoutIfNeeded()
     view.bringSubview(toFront: titleView)
@@ -100,7 +100,7 @@ extension AboutView {
     titleLabelTopConstraint.constant =  titleView.bounds.size.height + 20
     
     superview?.insertSubview(transperentView, belowSubview: self)
-    transperentView <- Edges(0)
+    transperentView.easy.layout(Edges())
     transperentView.alpha = 0
     transperentView.animate(duration: 0.4, [.alphaFrom(0, to: 0.4, removed: false)])
 
@@ -165,7 +165,7 @@ private extension AboutView {
           topView.animateSeparator(isShow: isShow)
         }
       }
-      .addDisposableTo(rx_disposeBag)
+      .disposed(by: rx.disposeBag)
   }
 }
 

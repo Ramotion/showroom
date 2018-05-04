@@ -3,7 +3,35 @@ import paper_onboarding
 
 class OnboardingViewController: UIViewController {
   
+  private enum Theme {
+    static let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
+    static let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
+  }
+  
   @IBOutlet weak var onboarding: PaperOnboarding!
+  
+  fileprivate let items = [
+    OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "Hotels"),
+                       title: "Hotels",
+                       description: "All hotels and hostels are sorted by hospitality rating",
+                       pageIcon: #imageLiteral(resourceName: "Key"),
+                       color: UIColor(red: 0.40, green: 0.56, blue: 0.71, alpha: 1.00),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: Theme.titleFont, descriptionFont: Theme.descriptionFont),
+    
+    OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "Banks"),
+                       title: "Banks",
+                       description: "We carefully verify all banks before add them into the app",
+                       pageIcon: #imageLiteral(resourceName: "Wallet"),
+                       color: UIColor(red: 0.40, green: 0.69, blue: 0.71, alpha: 1.00),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: Theme.titleFont, descriptionFont: Theme.descriptionFont),
+    
+    OnboardingItemInfo(informationImage: #imageLiteral(resourceName: "Stores"),
+                       title: "Stores",
+                       description: "All local stores are categorized for your convenience",
+                       pageIcon: #imageLiteral(resourceName: "Shopping-cart"),
+                       color: UIColor(red: 0.61, green: 0.56, blue: 0.74, alpha: 1.00),
+                       titleColor: UIColor.white, descriptionColor: UIColor.white, titleFont: Theme.titleFont, descriptionFont: Theme.descriptionFont),
+    ]
   
 }
 
@@ -40,55 +68,19 @@ extension OnboardingViewController: PaperOnboardingDelegate {
   }
   
   func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) {
-
+    
   }
 }
 
 // MARK: PaperOnboardingDataSource
 extension OnboardingViewController: PaperOnboardingDataSource {
   
-  func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
-    let titleFont = UIFont(name: "Nunito-Bold", size: 36.0) ?? UIFont.boldSystemFont(ofSize: 36.0)
-    let descriptionFont = UIFont(name: "OpenSans-Regular", size: 14.0) ?? UIFont.systemFont(ofSize: 14.0)
-    
-    return [
-      (
-        UIImage(named: "Hotels")!,
-        "Hotels",
-        "All hotels and hostels are sorted by hospitality rating",
-        UIImage(named: "Key")!,
-        UIColor(red:0.40, green:0.56, blue:0.71, alpha:1.00),
-        UIColor.white,
-        UIColor.white,
-        titleFont,
-        descriptionFont
-      ),
-      (
-        UIImage(named: "Banks")!,
-        "Banks",
-        "We carefully verify all banks before add them into the app",
-        UIImage(named: "Wallet")!,
-        UIColor(red:0.40, green:0.69, blue:0.71, alpha:1.00),
-        UIColor.white,
-        UIColor.white,
-        titleFont,descriptionFont
-      ),
-      (
-        UIImage(named: "Stores")!,
-        "Stores",
-        "All local stores are categorized for your convenience",
-        UIImage(named: "Shopping-cart")!,
-        UIColor(red:0.61, green:0.56, blue:0.74, alpha:1.00),
-        UIColor.white,
-        UIColor.white,
-        titleFont,
-        descriptionFont
-      )
-      ][index]
+  func onboardingItem(at index: Int) -> OnboardingItemInfo {
+   return items[index]
   }
   
   func onboardingItemsCount() -> Int {
-    return 3
+    return items.count
   }
 }
 
