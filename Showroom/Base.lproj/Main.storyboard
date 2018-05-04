@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -124,8 +124,10 @@
                                                         <constraint firstItem="ygl-98-Rev" firstAttribute="leading" secondItem="MYu-5i-6jK" secondAttribute="leading" constant="18" id="Ltu-zh-ucK"/>
                                                         <constraint firstAttribute="bottom" secondItem="bWZ-T3-b4J" secondAttribute="bottom" constant="28" id="MfW-cp-pKo"/>
                                                         <constraint firstAttribute="width" constant="88" id="WyI-PV-XYV"/>
-                                                        <constraint firstItem="bWZ-T3-b4J" firstAttribute="leading" secondItem="MYu-5i-6jK" secondAttribute="leading" constant="18" id="gec-9h-0Vb"/>
+                                                        <constraint firstAttribute="trailing" secondItem="bWZ-T3-b4J" secondAttribute="trailing" constant="14" id="YcP-Cs-lQV"/>
+                                                        <constraint firstItem="bWZ-T3-b4J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MYu-5i-6jK" secondAttribute="leading" id="gec-9h-0Vb"/>
                                                         <constraint firstItem="9WP-Af-gZM" firstAttribute="centerY" secondItem="MYu-5i-6jK" secondAttribute="centerY" constant="-35" id="iCK-at-fFL"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ygl-98-Rev" secondAttribute="trailing" constant="20" symbolic="YES" id="tEi-zL-nOX"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots" translatesAutoresizingMaskIntoConstraints="NO" id="0TT-3L-lA9">
@@ -143,13 +145,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W 85th St, New York, 10024 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-WS-rJz" userLabel="W 85th St, New York, 10024">
-                                                    <rect key="frame" x="124" y="28" width="201" height="17"/>
+                                                    <rect key="frame" x="145" y="28" width="180" height="17"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E 30th St, New York, 10016" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="gvo-dq-hij" userLabel="W 85th St, New York, 10024">
-                                                    <rect key="frame" x="124" y="57" width="201" height="17"/>
+                                                    <rect key="frame" x="153" y="57" width="172" height="17"/>
                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="14"/>
                                                     <color key="textColor" red="0.20000000000000001" green="0.23921568630000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -172,6 +174,8 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="692-5Q-04F" secondAttribute="trailing" constant="20" symbolic="YES" id="Mxm-x0-yLK"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mGt-uK-kkY" secondAttribute="trailing" constant="20" symbolic="YES" id="RVi-OJ-CG3"/>
                                                         <constraint firstAttribute="bottom" secondItem="692-5Q-04F" secondAttribute="bottom" id="ado-E1-DGm"/>
                                                         <constraint firstItem="mGt-uK-kkY" firstAttribute="top" secondItem="JKt-eq-2dx" secondAttribute="top" id="fJA-rT-Q0z"/>
                                                         <constraint firstItem="692-5Q-04F" firstAttribute="leading" secondItem="JKt-eq-2dx" secondAttribute="leading" id="qfz-SY-EWM"/>
@@ -196,9 +200,11 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xSN-WS-wEC" secondAttribute="trailing" constant="20" symbolic="YES" id="CuZ-PG-Fc9"/>
                                                         <constraint firstAttribute="bottom" secondItem="P2H-25-LT6" secondAttribute="bottom" id="Pqq-8U-JNK"/>
                                                         <constraint firstItem="xSN-WS-wEC" firstAttribute="leading" secondItem="vXx-Lk-dFS" secondAttribute="leading" id="dSM-Gs-RbA"/>
                                                         <constraint firstItem="P2H-25-LT6" firstAttribute="leading" secondItem="vXx-Lk-dFS" secondAttribute="leading" id="dd0-wH-BOo"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P2H-25-LT6" secondAttribute="trailing" constant="20" symbolic="YES" id="f1I-JK-7L4"/>
                                                         <constraint firstItem="xSN-WS-wEC" firstAttribute="top" secondItem="vXx-Lk-dFS" secondAttribute="top" id="qab-B1-34v"/>
                                                     </constraints>
                                                 </view>
@@ -221,10 +227,12 @@
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="TkH-Dn-5FR" firstAttribute="leading" secondItem="zsL-5o-Hgn" secondAttribute="leading" id="0dA-Yc-9T2"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TkH-Dn-5FR" secondAttribute="trailing" constant="20" symbolic="YES" id="1zP-sI-t2U"/>
                                                         <constraint firstItem="TkH-Dn-5FR" firstAttribute="top" secondItem="zsL-5o-Hgn" secondAttribute="top" id="7sG-Fg-Clv"/>
                                                         <constraint firstAttribute="bottom" secondItem="AsK-KR-NBW" secondAttribute="bottom" id="N3F-al-oi0"/>
                                                         <constraint firstItem="AsK-KR-NBW" firstAttribute="leading" secondItem="zsL-5o-Hgn" secondAttribute="leading" id="VCv-vb-ZDd"/>
                                                         <constraint firstAttribute="height" constant="40" id="cbZ-bU-0NT"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="AsK-KR-NBW" secondAttribute="trailing" constant="20" symbolic="YES" id="zgZ-sA-XIz"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -235,11 +243,11 @@
                                                 <constraint firstItem="lZr-4w-hs4" firstAttribute="top" secondItem="4kw-r2-IKA" secondAttribute="top" constant="52" id="4fa-d8-Tjg"/>
                                                 <constraint firstItem="JKt-eq-2dx" firstAttribute="leading" secondItem="vXx-Lk-dFS" secondAttribute="trailing" constant="1" id="6Ii-v1-r9n"/>
                                                 <constraint firstItem="zsL-5o-Hgn" firstAttribute="width" secondItem="vXx-Lk-dFS" secondAttribute="width" id="DTn-p1-27u"/>
-                                                <constraint firstItem="ET4-WS-rJz" firstAttribute="leading" secondItem="4kw-r2-IKA" secondAttribute="leading" constant="124" id="EmE-TB-DeE"/>
+                                                <constraint firstItem="ET4-WS-rJz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4kw-r2-IKA" secondAttribute="leading" id="EmE-TB-DeE"/>
                                                 <constraint firstItem="0TT-3L-lA9" firstAttribute="leading" secondItem="MYu-5i-6jK" secondAttribute="trailing" constant="20" id="FLt-cu-vcx"/>
                                                 <constraint firstItem="zsL-5o-Hgn" firstAttribute="leading" secondItem="MYu-5i-6jK" secondAttribute="trailing" constant="20" id="GMl-4a-beM"/>
                                                 <constraint firstItem="0TT-3L-lA9" firstAttribute="top" secondItem="4kw-r2-IKA" secondAttribute="top" constant="32" id="GTo-GP-bcI"/>
-                                                <constraint firstItem="gvo-dq-hij" firstAttribute="leading" secondItem="4kw-r2-IKA" secondAttribute="leading" constant="124" id="JMi-yf-ifs"/>
+                                                <constraint firstItem="gvo-dq-hij" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4kw-r2-IKA" secondAttribute="leading" id="JMi-yf-ifs"/>
                                                 <constraint firstItem="vXx-Lk-dFS" firstAttribute="width" secondItem="JKt-eq-2dx" secondAttribute="width" id="K5R-FJ-aeZ"/>
                                                 <constraint firstAttribute="trailing" secondItem="gvo-dq-hij" secondAttribute="trailing" constant="10" id="Log-NC-hK6"/>
                                                 <constraint firstItem="MYu-5i-6jK" firstAttribute="leading" secondItem="4kw-r2-IKA" secondAttribute="leading" id="OyJ-ES-gov"/>
@@ -293,6 +301,7 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.36470588240000001" green="0.29411764709999999" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
+                                                                <constraint firstItem="YV6-Xv-q6S" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IsV-Mc-VfP" secondAttribute="leading" constant="20" symbolic="YES" id="0Bz-nk-UOT"/>
                                                                 <constraint firstAttribute="trailing" secondItem="YV6-Xv-q6S" secondAttribute="trailing" constant="12" id="3KR-IQ-OeD"/>
                                                                 <constraint firstAttribute="height" constant="49" id="5I4-Eb-H2Z"/>
                                                                 <constraint firstItem="GXZ-bl-JtK" firstAttribute="leading" secondItem="IsV-Mc-VfP" secondAttribute="leading" constant="14" id="5lZ-L1-Mcn"/>
@@ -327,7 +336,9 @@
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstItem="D32-Wf-NvP" firstAttribute="top" secondItem="dPW-CC-vFS" secondAttribute="top" id="1Id-EE-JPP"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="D32-Wf-NvP" secondAttribute="trailing" constant="20" symbolic="YES" id="BVR-Ap-FF1"/>
                                                                 <constraint firstItem="ynA-OM-Bwv" firstAttribute="leading" secondItem="dPW-CC-vFS" secondAttribute="leading" id="Hc1-bq-Hrd"/>
+                                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ynA-OM-Bwv" secondAttribute="trailing" constant="20" symbolic="YES" id="ISY-cs-U13"/>
                                                                 <constraint firstAttribute="bottom" secondItem="ynA-OM-Bwv" secondAttribute="bottom" id="byB-iH-ZE4"/>
                                                                 <constraint firstAttribute="height" constant="40" id="pPn-rx-ukw"/>
                                                                 <constraint firstItem="D32-Wf-NvP" firstAttribute="leading" secondItem="dPW-CC-vFS" secondAttribute="leading" id="uS8-DF-ZJ5"/>
@@ -376,6 +387,8 @@
                                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="nku-B0-byK" secondAttribute="bottom" id="0Ck-3n-FxG"/>
+                                                                <constraint firstItem="nku-B0-byK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AhZ-2X-8kw" secondAttribute="leading" constant="20" symbolic="YES" id="7hW-X9-R6I"/>
+                                                                <constraint firstItem="JJR-sm-M9P" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AhZ-2X-8kw" secondAttribute="leading" constant="20" symbolic="YES" id="BBw-up-84D"/>
                                                                 <constraint firstAttribute="trailing" secondItem="nku-B0-byK" secondAttribute="trailing" id="cG9-aN-Skh"/>
                                                                 <constraint firstAttribute="trailing" secondItem="JJR-sm-M9P" secondAttribute="trailing" id="qMJ-7I-3tO"/>
                                                                 <constraint firstItem="JJR-sm-M9P" firstAttribute="top" secondItem="AhZ-2X-8kw" secondAttribute="top" id="vnc-hx-5IX"/>
@@ -546,6 +559,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="iZ9-h7-vEw" secondAttribute="bottom" id="lwC-25-pDR"/>
                                                         <constraint firstItem="HaD-G7-ahE" firstAttribute="trailing" secondItem="bSf-vX-GIh" secondAttribute="trailing" id="m0g-CM-e8G"/>
                                                         <constraint firstAttribute="bottom" secondItem="HaD-G7-ahE" secondAttribute="bottom" id="oYy-Ft-Htw"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4qg-PO-jmg" secondAttribute="trailing" constant="20" symbolic="YES" id="sga-K9-38t"/>
                                                         <constraint firstItem="iZ9-h7-vEw" firstAttribute="top" secondItem="bSf-vX-GIh" secondAttribute="bottom" constant="-1" id="tVR-nK-X2i"/>
                                                         <constraint firstItem="HaD-G7-ahE" firstAttribute="top" secondItem="bSf-vX-GIh" secondAttribute="bottom" constant="-1" id="zn0-lE-8Sh"/>
                                                         <constraint firstItem="bSf-vX-GIh" firstAttribute="leading" secondItem="APy-aW-XIC" secondAttribute="leading" constant="22" id="zt1-n1-kYM"/>
@@ -778,7 +792,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHb-vi-gEU" userLabel="CenterView">
-                                                <rect key="frame" x="8" y="45" width="359" height="162"/>
+                                                <rect key="frame" x="8" y="45.5" width="359" height="161.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-0C-6Jf">
                                                         <rect key="frame" x="104" y="0.0" width="150" height="23"/>
@@ -787,7 +801,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m7-Ec-ZOh" userLabel="Description">
-                                                        <rect key="frame" x="62" y="33" width="234" height="29"/>
+                                                        <rect key="frame" x="62.5" y="33" width="233.5" height="28.5"/>
                                                         <string key="text">All your phone Contacts will be automatically 
 added to your friends list.</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
@@ -795,13 +809,13 @@ added to your friends list.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-Xj-Znk">
-                                                        <rect key="frame" x="134" y="109" width="22" height="35"/>
+                                                        <rect key="frame" x="134" y="108.5" width="22" height="35"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_users1" translatesAutoresizingMaskIntoConstraints="NO" id="V00-Rl-vy6">
-                                                        <rect key="frame" x="90" y="97" width="38" height="55"/>
+                                                        <rect key="frame" x="90" y="96.5" width="38" height="55"/>
                                                     </imageView>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ubf-zP-9Pb" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
-                                                        <rect key="frame" x="213" y="111" width="51" height="31"/>
+                                                        <rect key="frame" x="213" y="110.5" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="parentView" destination="leS-yF-yKr" id="a3M-zw-0K0"/>
@@ -837,10 +851,10 @@ added to your friends list.</string>
                                         <rect key="frame" x="0.0" y="252" width="375" height="252"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLq-xb-a9U" userLabel="CenterView">
-                                                <rect key="frame" x="0.0" y="49" width="375" height="155"/>
+                                                <rect key="frame" x="0.0" y="49.5" width="375" height="154.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_users2" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-9j-O6q">
-                                                        <rect key="frame" x="139" y="100" width="38" height="55"/>
+                                                        <rect key="frame" x="139" y="99.5" width="38" height="55"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Discovery" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Tc-4V-jXV">
                                                         <rect key="frame" x="123" y="0.0" width="129" height="23"/>
@@ -849,16 +863,16 @@ added to your friends list.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on to allow your phone number to be dis-played in your friends’ Contacts." textAlignment="center" lineBreakMode="characterWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5P1-nV-F9j" userLabel="Description">
-                                                        <rect key="frame" x="79" y="33" width="217" height="29"/>
+                                                        <rect key="frame" x="79" y="33" width="217" height="28.5"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                         <color key="textColor" red="0.18039215689999999" green="0.18039215689999999" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-hx-KBq">
-                                                        <rect key="frame" x="109" y="110" width="22" height="35"/>
+                                                        <rect key="frame" x="109" y="109.5" width="22" height="35"/>
                                                     </imageView>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-cI-mYM" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
-                                                        <rect key="frame" x="224" y="112" width="51" height="31"/>
+                                                        <rect key="frame" x="224" y="111.5" width="51" height="31"/>
                                                         <color key="onTintColor" red="0.5568627451" green="0.77647058820000003" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <outlet property="parentView" destination="0uP-cI-jhA" id="QBd-Ih-Nro"/>
@@ -1044,6 +1058,7 @@ added to your friends list.</string>
                                 <color key="backgroundColor" red="0.24185714129999999" green="0.17698898909999999" blue="0.123051472" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="1Dh-6x-rKf" firstAttribute="centerY" secondItem="7Mc-1f-8Sj" secondAttribute="centerY" id="5Jm-4J-UBw"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mad-kc-OX4" secondAttribute="trailing" constant="20" symbolic="YES" id="N5B-Tj-p9b"/>
                                     <constraint firstItem="PFM-5i-C3P" firstAttribute="centerY" secondItem="7Mc-1f-8Sj" secondAttribute="centerY" id="PJh-x0-okd"/>
                                     <constraint firstItem="1Dh-6x-rKf" firstAttribute="leading" secondItem="2hZ-3d-vPc" secondAttribute="trailing" constant="31" id="Sf2-NX-pU0"/>
                                     <constraint firstAttribute="height" constant="75" id="Y3s-jB-WLh"/>
@@ -1143,7 +1158,7 @@ added to your friends list.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="3Mh-2r-IxN">
-                                <rect key="frame" x="0.0" y="-24" width="375" height="691"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/15" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV7-ry-Zec">
                                 <rect key="frame" x="172" y="626" width="31" height="21"/>
@@ -1156,7 +1171,7 @@ added to your friends list.</string>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="3Mh-2r-IxN" secondAttribute="trailing" id="FPB-ea-e54"/>
                             <constraint firstItem="jV7-ry-Zec" firstAttribute="centerX" secondItem="awf-U3-1p3" secondAttribute="centerX" id="SZb-iQ-a9Z"/>
-                            <constraint firstItem="3Mh-2r-IxN" firstAttribute="top" secondItem="gEt-fH-3hQ" secondAttribute="bottom" constant="-44" id="VeJ-b2-wdD"/>
+                            <constraint firstItem="3Mh-2r-IxN" firstAttribute="top" secondItem="gEt-fH-3hQ" secondAttribute="bottom" id="VeJ-b2-wdD"/>
                             <constraint firstItem="jRo-UZ-JsN" firstAttribute="top" secondItem="jV7-ry-Zec" secondAttribute="bottom" constant="20" id="YnH-Cb-PUV"/>
                             <constraint firstItem="jRo-UZ-JsN" firstAttribute="top" secondItem="3Mh-2r-IxN" secondAttribute="bottom" id="b4G-yC-9p1"/>
                             <constraint firstItem="3Mh-2r-IxN" firstAttribute="leading" secondItem="awf-U3-1p3" secondAttribute="leading" id="gZ1-Qs-tIl"/>
@@ -1195,9 +1210,7 @@ added to your friends list.</string>
                     </navigationItem>
                     <connections>
                         <outlet property="pageLabel" destination="jV7-ry-Zec" id="xjQ-iF-CKM"/>
-                        <segue destination="MgO-fN-hnF" kind="show" identifier="NoName" id="CKM-qL-21F">
-                            <nil key="action"/>
-                        </segue>
+                        <segue destination="MgO-fN-hnF" kind="show" identifier="NoName" id="CKM-qL-21F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKC-ne-lgg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1233,7 +1246,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Crescenta-Montrose, CA91020 Glendale NO. 7911847" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyB-BY-IWb">
-                                                    <rect key="frame" x="40" y="49" width="327" height="27"/>
+                                                    <rect key="frame" x="131" y="49.5" width="228" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1245,7 +1258,7 @@ added to your friends list.</string>
                                                 <constraint firstAttribute="trailing" secondItem="EL1-gK-EIp" secondAttribute="trailing" id="Jbe-rr-hYm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="CyB-BY-IWb" secondAttribute="trailing" id="LLF-3N-aCz"/>
                                                 <constraint firstAttribute="bottom" secondItem="EL1-gK-EIp" secondAttribute="bottom" id="MdY-nw-vO2"/>
-                                                <constraint firstItem="CyB-BY-IWb" firstAttribute="leading" secondItem="Hst-a9-deT" secondAttribute="leading" constant="40" id="Wgm-i0-D4d"/>
+                                                <constraint firstItem="CyB-BY-IWb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hst-a9-deT" secondAttribute="leading" id="Wgm-i0-D4d"/>
                                                 <constraint firstItem="EL1-gK-EIp" firstAttribute="leading" secondItem="Hst-a9-deT" secondAttribute="leading" id="Wzk-De-Fyh"/>
                                                 <constraint firstItem="EL1-gK-EIp" firstAttribute="top" secondItem="Hst-a9-deT" secondAttribute="top" id="Xfo-Ox-IUK"/>
                                                 <constraint firstItem="rkv-ze-Q3y" firstAttribute="leading" secondItem="Hst-a9-deT" secondAttribute="leading" constant="40" id="eeh-3w-idQ"/>
@@ -1282,7 +1295,7 @@ added to your friends list.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfi-m1-1Ti">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="335" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="ccB-y1-Lfa"/>
                                                     </constraints>
@@ -1295,13 +1308,14 @@ added to your friends list.</string>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="gol-OU-NDO" secondAttribute="trailing" constant="62" id="4nW-IN-wlx"/>
                                                 <constraint firstItem="jQn-SJ-qMr" firstAttribute="centerY" secondItem="E5d-gl-31b" secondAttribute="centerY" id="5kt-gP-wKT"/>
-                                                <constraint firstAttribute="trailing" secondItem="xfi-m1-1Ti" secondAttribute="trailing" constant="62" id="949-lt-IHo"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xfi-m1-1Ti" secondAttribute="trailing" id="949-lt-IHo"/>
                                                 <constraint firstItem="E5d-gl-31b" firstAttribute="leading" secondItem="uJq-04-0xM" secondAttribute="trailing" constant="28" id="9Tv-rB-QJL"/>
                                                 <constraint firstItem="gol-OU-NDO" firstAttribute="centerY" secondItem="uJq-04-0xM" secondAttribute="centerY" id="9rS-Jw-EwM"/>
                                                 <constraint firstItem="uJq-04-0xM" firstAttribute="top" secondItem="bwc-mD-UO8" secondAttribute="top" constant="20" id="Miq-nV-wnH"/>
+                                                <constraint firstAttribute="trailing" secondItem="jQn-SJ-qMr" secondAttribute="trailing" constant="113" id="PRj-w8-tIe"/>
                                                 <constraint firstItem="uJq-04-0xM" firstAttribute="leading" secondItem="bwc-mD-UO8" secondAttribute="leading" constant="40" id="XsA-93-7tl"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="xfi-m1-1Ti" secondAttribute="bottom" id="a8q-vU-zH4"/>
-                                                <constraint firstItem="jQn-SJ-qMr" firstAttribute="leading" secondItem="E5d-gl-31b" secondAttribute="trailing" constant="37" id="bb1-wZ-e0j"/>
+                                                <constraint firstItem="jQn-SJ-qMr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E5d-gl-31b" secondAttribute="trailing" symbolic="YES" id="bb1-wZ-e0j"/>
                                                 <constraint firstItem="xfi-m1-1Ti" firstAttribute="leading" secondItem="bwc-mD-UO8" secondAttribute="leading" constant="40" id="hhf-JZ-573"/>
                                                 <constraint firstItem="E5d-gl-31b" firstAttribute="centerY" secondItem="uJq-04-0xM" secondAttribute="centerY" id="tJg-ye-MkI"/>
                                             </constraints>
@@ -1337,7 +1351,7 @@ added to your friends list.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mee-eV-LZ7">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="335" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="dZ3-AR-Gqy"/>
                                                     </constraints>
@@ -1355,10 +1369,11 @@ added to your friends list.</string>
                                                 <constraint firstAttribute="trailing" secondItem="Zpz-JZ-hq8" secondAttribute="trailing" constant="62" id="Uyt-VW-l2n"/>
                                                 <constraint firstItem="Zpz-JZ-hq8" firstAttribute="centerY" secondItem="huc-rt-flg" secondAttribute="centerY" id="YTQ-xX-UJ4"/>
                                                 <constraint firstItem="huc-rt-flg" firstAttribute="top" secondItem="RNx-A1-bwI" secondAttribute="top" constant="20" id="cCH-dX-1oG"/>
-                                                <constraint firstAttribute="trailing" secondItem="Mee-eV-LZ7" secondAttribute="trailing" constant="62" id="gTU-XU-7kN"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mee-eV-LZ7" secondAttribute="trailing" id="gTU-XU-7kN"/>
                                                 <constraint firstItem="Mee-eV-LZ7" firstAttribute="leading" secondItem="RNx-A1-bwI" secondAttribute="leading" constant="40" id="gVM-aH-qSF"/>
                                                 <constraint firstItem="ksy-Mj-dlV" firstAttribute="centerY" secondItem="s1T-tM-npo" secondAttribute="centerY" id="n4J-5r-gEm"/>
-                                                <constraint firstItem="ksy-Mj-dlV" firstAttribute="leading" secondItem="s1T-tM-npo" secondAttribute="trailing" constant="37" id="xZw-Iu-CaQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="ksy-Mj-dlV" secondAttribute="trailing" constant="119" id="sbp-fp-8Ut"/>
+                                                <constraint firstItem="ksy-Mj-dlV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="s1T-tM-npo" secondAttribute="trailing" symbolic="YES" id="xZw-Iu-CaQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1392,7 +1407,7 @@ added to your friends list.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRn-u7-Voe">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="335" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="hU0-Qk-F2b"/>
                                                     </constraints>
@@ -1407,11 +1422,12 @@ added to your friends list.</string>
                                                 <constraint firstItem="UyM-Wd-FmX" firstAttribute="top" secondItem="wwd-81-Jpr" secondAttribute="top" constant="20" id="6Du-Rq-vtC"/>
                                                 <constraint firstItem="VRn-u7-Voe" firstAttribute="leading" secondItem="wwd-81-Jpr" secondAttribute="leading" constant="40" id="FFt-xO-dCr"/>
                                                 <constraint firstAttribute="trailing" secondItem="v95-sM-Y5E" secondAttribute="trailing" constant="62" id="GOb-eE-GdV"/>
-                                                <constraint firstItem="wm7-jG-kaS" firstAttribute="leading" secondItem="Abr-9p-r5A" secondAttribute="trailing" constant="37" id="TJq-7C-LEQ"/>
+                                                <constraint firstItem="wm7-jG-kaS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Abr-9p-r5A" secondAttribute="trailing" symbolic="YES" id="TJq-7C-LEQ"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="VRn-u7-Voe" secondAttribute="bottom" id="UDK-cE-QBQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="wm7-jG-kaS" secondAttribute="trailing" constant="113" id="gm8-aT-V5E"/>
                                                 <constraint firstItem="v95-sM-Y5E" firstAttribute="centerY" secondItem="UyM-Wd-FmX" secondAttribute="centerY" id="khj-5y-vge"/>
                                                 <constraint firstItem="wm7-jG-kaS" firstAttribute="centerY" secondItem="Abr-9p-r5A" secondAttribute="centerY" id="lvD-Qs-zOp"/>
-                                                <constraint firstAttribute="trailing" secondItem="VRn-u7-Voe" secondAttribute="trailing" constant="62" id="ryI-gP-3el"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VRn-u7-Voe" secondAttribute="trailing" id="ryI-gP-3el"/>
                                                 <constraint firstItem="Abr-9p-r5A" firstAttribute="centerY" secondItem="UyM-Wd-FmX" secondAttribute="centerY" id="ukD-Hf-kAi"/>
                                                 <constraint firstItem="Abr-9p-r5A" firstAttribute="leading" secondItem="UyM-Wd-FmX" secondAttribute="trailing" constant="28" id="vVS-8f-Wtv"/>
                                             </constraints>
@@ -1447,7 +1463,7 @@ added to your friends list.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-Et-U6N">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="335" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="wDc-vt-J3h"/>
                                                     </constraints>
@@ -1459,13 +1475,14 @@ added to your friends list.</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="U2a-Et-U6N" secondAttribute="bottom" id="1NU-Zm-LA3"/>
+                                                <constraint firstAttribute="trailing" secondItem="DzC-3Y-V9t" secondAttribute="trailing" constant="119" id="2X9-hi-Brb"/>
                                                 <constraint firstItem="5gb-2Z-dKJ" firstAttribute="centerY" secondItem="f0Y-eG-ReY" secondAttribute="centerY" id="5Sc-8P-oJS"/>
-                                                <constraint firstItem="DzC-3Y-V9t" firstAttribute="leading" secondItem="5gb-2Z-dKJ" secondAttribute="trailing" constant="37" id="827-aH-Grq"/>
+                                                <constraint firstItem="DzC-3Y-V9t" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5gb-2Z-dKJ" secondAttribute="trailing" symbolic="YES" id="827-aH-Grq"/>
                                                 <constraint firstItem="DzC-3Y-V9t" firstAttribute="centerY" secondItem="5gb-2Z-dKJ" secondAttribute="centerY" id="8AJ-zn-SoG"/>
                                                 <constraint firstAttribute="trailing" secondItem="v9B-GL-alo" secondAttribute="trailing" constant="62" id="8Ta-BT-pDe"/>
                                                 <constraint firstItem="v9B-GL-alo" firstAttribute="centerY" secondItem="f0Y-eG-ReY" secondAttribute="centerY" id="R25-xb-e3t"/>
                                                 <constraint firstItem="5gb-2Z-dKJ" firstAttribute="leading" secondItem="f0Y-eG-ReY" secondAttribute="trailing" constant="28" id="cKe-tF-R0g"/>
-                                                <constraint firstAttribute="trailing" secondItem="U2a-Et-U6N" secondAttribute="trailing" constant="62" id="eH6-Qc-3Rk"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="U2a-Et-U6N" secondAttribute="trailing" id="eH6-Qc-3Rk"/>
                                                 <constraint firstItem="f0Y-eG-ReY" firstAttribute="top" secondItem="ch8-oj-u1G" secondAttribute="top" constant="20" id="emM-5k-KrI"/>
                                                 <constraint firstItem="f0Y-eG-ReY" firstAttribute="leading" secondItem="ch8-oj-u1G" secondAttribute="leading" constant="40" id="jAl-pK-mYq"/>
                                                 <constraint firstItem="U2a-Et-U6N" firstAttribute="leading" secondItem="ch8-oj-u1G" secondAttribute="leading" constant="40" id="s61-5r-aiQ"/>
@@ -1502,7 +1519,7 @@ added to your friends list.</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUr-nX-pcU">
-                                                    <rect key="frame" x="40" y="57" width="273" height="59"/>
+                                                    <rect key="frame" x="40" y="54" width="335" height="59"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="59" id="31u-rp-DH9"/>
                                                     </constraints>
@@ -1514,9 +1531,10 @@ added to your friends list.</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="gA5-XF-sxu" secondAttribute="trailing" constant="62" id="6bY-Ks-gO6"/>
-                                                <constraint firstAttribute="trailing" secondItem="lUr-nX-pcU" secondAttribute="trailing" constant="62" id="Hvm-Xp-QBI"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lUr-nX-pcU" secondAttribute="trailing" id="Hvm-Xp-QBI"/>
                                                 <constraint firstItem="RkK-2L-Fzx" firstAttribute="centerY" secondItem="8kO-ff-IvR" secondAttribute="centerY" id="JCV-GX-1ua"/>
-                                                <constraint firstItem="RkK-2L-Fzx" firstAttribute="leading" secondItem="8kO-ff-IvR" secondAttribute="trailing" constant="37" id="OQ6-WZ-R8B"/>
+                                                <constraint firstAttribute="trailing" secondItem="RkK-2L-Fzx" secondAttribute="trailing" constant="113" id="KR0-C8-fvY"/>
+                                                <constraint firstItem="RkK-2L-Fzx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8kO-ff-IvR" secondAttribute="trailing" symbolic="YES" id="OQ6-WZ-R8B"/>
                                                 <constraint firstItem="lUr-nX-pcU" firstAttribute="leading" secondItem="5Tb-HP-0zY" secondAttribute="leading" constant="40" id="PCq-lz-xgP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="lUr-nX-pcU" secondAttribute="bottom" id="QRp-2s-1ap"/>
                                                 <constraint firstItem="8kO-ff-IvR" firstAttribute="centerY" secondItem="Wyc-6g-r08" secondAttribute="centerY" id="Teg-N1-ri9"/>
