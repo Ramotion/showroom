@@ -60,20 +60,23 @@ class FoldingTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    guard let cell = tableView.cellForRow(at: indexPath) as? DemoFoldginCell else {
+    
+    let cell = tableView.cellForRow(at: indexPath) as! DemoFoldginCell
+    
+    if cell.isAnimating() {
       return
     }
     
     var duration = 0.0
-    if cellHeight[indexPath.row] == C.CellHeight.close { // open cell
+    let cellIsCollapsed = cellHeight[indexPath.row] == C.CellHeight.close
+    if cellIsCollapsed {
       cellHeight[indexPath.row] = C.CellHeight.open
-      cell.setSelected(true, animated: true)
+      cell.unfold(true, animated: true, completion: nil)
       duration = 0.5
-    } else {// close cell
+    } else {
       cellHeight[indexPath.row] = C.CellHeight.close
-      cell.setSelected(false, animated: true)
-      
-      duration = 1.1
+      cell.unfold(false, animated: true, completion: nil)
+      duration = 0.8
     }
     
     UIView.animate(withDuration: duration, delay: 0, options: .curveEaseOut, animations: { () -> Void in
