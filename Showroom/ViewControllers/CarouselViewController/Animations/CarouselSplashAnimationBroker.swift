@@ -98,8 +98,15 @@ private extension CarouselSplashAnimationBroker {
   }
   
   func contactUsButtonAnimation() {
+    let safeArea: CGFloat
+    if #available(iOS 11.0, *) {
+        safeArea = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
+    } else {
+        safeArea = 0
+    }
+    
     let startPosition = contactUsButton.layer.position
-    let hidePosition = bottomContainer.bounds.size.height + contactUsButton.bounds.height / 2
+    let hidePosition = bottomContainer.bounds.size.height + contactUsButton.bounds.height / 2 + safeArea
     contactUsButton.animate(duration: 0.001, [
       .layerPositionY(from: hidePosition , to: hidePosition),
       .alpha(to: 1)

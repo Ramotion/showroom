@@ -30,11 +30,25 @@
                         <viewControllerLayoutGuide type="top" id="gch-2o-RtA"/>
                         <viewControllerLayoutGuide type="bottom" id="oJR-n0-yoV"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cRE-bC-REc">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cRE-bC-REc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="bKl-Nw-e4S" userLabel="topRectangle">
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgm-Sb-FSn" userLabel="topView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hs2-4b-o87"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DW-Sc-2Cw" userLabel="BottomView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CQ6-3z-9Ij"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="topRectangle" translatesAutoresizingMaskIntoConstraints="NO" id="bKl-Nw-e4S" userLabel="topRectangle">
                                 <rect key="frame" x="0.0" y="20" width="375" height="151"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bKl-Nw-e4S" secondAttribute="height" multiplier="375:151" id="ont-8T-8I3"/>
@@ -263,22 +277,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="p5N-fz-01k" secondAttribute="trailing" id="8J6-MJ-z2w"/>
+                            <constraint firstItem="6DW-Sc-2Cw" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="GMu-fm-dKQ"/>
                             <constraint firstItem="f7B-aG-u5A" firstAttribute="top" secondItem="cRE-bC-REc" secondAttribute="top" id="Jxt-pD-d1D"/>
-                            <constraint firstItem="bKl-Nw-e4S" firstAttribute="top" secondItem="gch-2o-RtA" secondAttribute="bottom" id="KKR-9b-clf"/>
                             <constraint firstItem="oJR-n0-yoV" firstAttribute="top" secondItem="p5N-fz-01k" secondAttribute="bottom" id="Kwb-Xm-aff"/>
+                            <constraint firstAttribute="trailing" secondItem="6DW-Sc-2Cw" secondAttribute="trailing" id="L3E-1M-rzn"/>
+                            <constraint firstItem="tgm-Sb-FSn" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="NiB-zx-7Mt"/>
                             <constraint firstItem="bKl-Nw-e4S" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="PKX-RL-aHQ"/>
                             <constraint firstItem="p5N-fz-01k" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="Qhl-eb-Q0H"/>
                             <constraint firstItem="fdU-G7-sCd" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="Sy1-ns-cz2"/>
                             <constraint firstItem="oJR-n0-yoV" firstAttribute="top" secondItem="BPR-1N-7Fa" secondAttribute="bottom" id="Ucc-I7-cEg"/>
                             <constraint firstAttribute="trailing" secondItem="bKl-Nw-e4S" secondAttribute="trailing" id="VMh-hf-w8O"/>
                             <constraint firstItem="p5N-fz-01k" firstAttribute="top" secondItem="fdU-G7-sCd" secondAttribute="bottom" id="Wub-dd-Dun"/>
+                            <constraint firstItem="bKl-Nw-e4S" firstAttribute="top" secondItem="gch-2o-RtA" secondAttribute="bottom" id="aaq-8u-x5G"/>
                             <constraint firstAttribute="trailing" secondItem="fdU-G7-sCd" secondAttribute="trailing" id="e1L-dt-i8n"/>
                             <constraint firstItem="fdU-G7-sCd" firstAttribute="centerY" secondItem="cRE-bC-REc" secondAttribute="centerY" constant="-28" id="gdH-n7-NmN"/>
                             <constraint firstItem="fdU-G7-sCd" firstAttribute="top" secondItem="f7B-aG-u5A" secondAttribute="bottom" id="hSf-0d-ytv"/>
+                            <constraint firstAttribute="trailing" secondItem="tgm-Sb-FSn" secondAttribute="trailing" id="iwY-UE-zwN"/>
+                            <constraint firstAttribute="bottom" secondItem="6DW-Sc-2Cw" secondAttribute="bottom" id="kIZ-RQ-naC"/>
                             <constraint firstAttribute="trailing" secondItem="f7B-aG-u5A" secondAttribute="trailing" id="r6S-TY-clP"/>
                             <constraint firstItem="BPR-1N-7Fa" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="tkm-OP-9rM"/>
                             <constraint firstItem="f7B-aG-u5A" firstAttribute="leading" secondItem="cRE-bC-REc" secondAttribute="leading" id="umn-mi-YMN"/>
                             <constraint firstAttribute="trailing" secondItem="BPR-1N-7Fa" secondAttribute="trailing" id="vFJ-q5-bxX"/>
+                            <constraint firstItem="tgm-Sb-FSn" firstAttribute="top" secondItem="cRE-bC-REc" secondAttribute="topMargin" id="y6n-yx-cml"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QiQ-Hi-w2G"/>
@@ -515,7 +535,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                     </connections>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1166" y="148"/>
+            <point key="canvasLocation" x="1165.5999999999999" y="147.97601199400302"/>
         </scene>
         <!--Thingers Tap View Controller-->
         <scene sceneID="pl6-Nz-v9V">
