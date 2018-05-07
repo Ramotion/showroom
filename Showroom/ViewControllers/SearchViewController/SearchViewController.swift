@@ -45,26 +45,26 @@ class SearchViewController: UIViewController {
   }
   
   private func setupReelSearch() {
-    viewModel.dataSource.asObservable()
-      .skip(1) // skip initial empty value
-      .observeOn(MainScheduler.instance)
-      .subscribe(onNext: { dataSource in
-        self.ramReel = RAMReel<RAMCell, UITextField, SimplePrefixQueryDataSource>(frame: self.view.bounds, dataSource: dataSource, placeholder: "Start by typing…", attemptToDodgeKeyboard: true) {
-          print("Plain:", $0)
-        }
-        
-        self.ramReel.hooks.append {
-          let r = Array($0.reversed())
-          let j = String(r)
-          print("Reversed:", j)
-        }
-        
-        self.view.addSubview(self.ramReel.view)
-        self.ramReel.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        self.hideOverlay(true)
-      })
-        .disposed(by: bag)
+//    viewModel.dataSource.asObservable()
+//      .skip(1) // skip initial empty value
+//      .observeOn(MainScheduler.instance)
+//      .subscribe(onNext: { dataSource in
+//        self.ramReel = RAMReel<RAMCell, UITextField, SimplePrefixQueryDataSource>(frame: self.view.bounds, dataSource: dataSource, placeholder: "Start by typing…", attemptToDodgeKeyboard: true) {
+//          print("Plain:", $0)
+//        }
+//
+//        self.ramReel.hooks.append {
+//          let r = Array($0.reversed())
+//          let j = String(r)
+//          print("Reversed:", j)
+//        }
+//
+//        self.view.addSubview(self.ramReel.view)
+//        self.ramReel.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//
+//        self.hideOverlay(true)
+//      })
+//        .disposed(by: bag)
   }
   
   private func setupLoadingIndicator() {

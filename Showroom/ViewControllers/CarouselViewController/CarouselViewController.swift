@@ -120,6 +120,12 @@ extension CarouselViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+//    AppAnalytics.screen(event: .google(name: "CarouselViewController", vc: self))
+  }
+    
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    
     AppAnalytics.screen(event: .google(name: "CarouselViewController", vc: self))
   }
   
@@ -166,6 +172,7 @@ extension CarouselViewController {
 extension CarouselViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return items.count
     return items.count
   }
   

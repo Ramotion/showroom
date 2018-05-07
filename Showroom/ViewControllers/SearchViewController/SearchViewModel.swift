@@ -15,18 +15,16 @@ class ReelSearchViewModel {
   static var shared = ReelSearchViewModel()
   private init() {}
   
-  var dataSource = Variable<SimplePrefixQueryDataSource>(SimplePrefixQueryDataSource([]))
+//  var dataSource = Variable<SimplePrefixQueryDataSource>(SimplePrefixQueryDataSource([]))
 
   func initializeDatabase() {
-    DispatchQueue.global(qos: .background).async {
-      guard
-        let dataPath = Bundle.main.path(forResource: "data", ofType: "txt"),
-        let reader = try? WordReader(filepath: dataPath) else {
-          return
-      }
-      
-      self.dataSource.value = SimplePrefixQueryDataSource(reader.words)
+//    DispatchQueue.global(qos: .background).async {
+//      guard
+//        let dataPath = Bundle.main.path(forResource: "data", ofType: "txt"),
+//        let reader = try? WordReader(filepath: dataPath) else {
+//          return
+//      }
+    
+//      self.dataSource.value = SimplePrefixQueryDataSource(reader.words)
     }
-  }
-  
 }
