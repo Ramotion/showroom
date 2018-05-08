@@ -23,5 +23,7 @@ pod 'Device'
 pod 'Firebase/Core'
 pod 'ElongationPreview'
 pod 'GlidingCollection'
+pod 'OAuthSwift'
+pod 'RxAlamofire'
 
 end

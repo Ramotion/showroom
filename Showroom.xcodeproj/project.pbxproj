@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5A74E6FC1EA112640092A57C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */; };
+		5A9C4DD020A1BE3E00CB629D /* OauthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C4DCF20A1BE3E00CB629D /* OauthManager.swift */; };
+		5A9C4DF520A1CD0600CB629D /* OauthSwift+RxSwfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C4DF420A1CD0600CB629D /* OauthSwift+RxSwfit.swift */; };
+		5A9C4E1C20A1E8B400CB629D /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C4E1B20A1E8B400CB629D /* Shot.swift */; };
 		841C95101DDEEE0000B997F5 /* Navigation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841C950F1DDEEE0000B997F5 /* Navigation.storyboard */; };
 		841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95121DDEEED400B997F5 /* CarouselViewController.swift */; };
 		841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C95161DDEF39100B997F5 /* EasyCollectionView.swift */; };
@@ -139,6 +142,10 @@
 /* Begin PBXFileReference section */
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
 		5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5A9C4DCF20A1BE3E00CB629D /* OauthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthManager.swift; sourceTree = "<group>"; };
+		5A9C4DF420A1CD0600CB629D /* OauthSwift+RxSwfit.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "OauthSwift+RxSwfit.swift"; sourceTree = "<group>"; tabWidth = 2; };
+		5A9C4E1B20A1E8B400CB629D /* Shot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
+		5ABFAC8420A1884600088C0B /* Showroom.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Showroom.entitlements; sourceTree = "<group>"; };
 		841C950F1DDEEE0000B997F5 /* Navigation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Navigation.storyboard; sourceTree = "<group>"; };
 		841C95121DDEEED400B997F5 /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; tabWidth = 2; };
 		841C95161DDEF39100B997F5 /* EasyCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyCollectionView.swift; sourceTree = "<group>"; };
@@ -271,6 +278,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A9C4DCE20A1BE2A00CB629D /* OauthManager */ = {
+			isa = PBXGroup;
+			children = (
+				5A9C4DCF20A1BE3E00CB629D /* OauthManager.swift */,
+				5A9C4DF420A1CD0600CB629D /* OauthSwift+RxSwfit.swift */,
+			);
+			path = OauthManager;
+			sourceTree = "<group>";
+		};
+		5A9C4E1920A1E87300CB629D /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				5A9C4E1A20A1E88000CB629D /* Models */,
+				5A9C4DCE20A1BE2A00CB629D /* OauthManager */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		5A9C4E1A20A1E88000CB629D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A9C4E1B20A1E8B400CB629D /* Shot.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		841C950E1DDEED1300B997F5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +332,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5A9C4E1920A1E87300CB629D /* Networks */,
 				84D1A73E1E017A5A00120164 /* Analitycs */,
 				84ADF2941DFE852F0097F7C6 /* ThreeThingersTouch */,
 				846E6FAA1DF1907600A7F02E /* Transitions */,
@@ -557,6 +591,7 @@
 		84C180CB1DAE155300C056F8 /* Showroom */ = {
 			isa = PBXGroup;
 			children = (
+				5ABFAC8420A1884600088C0B /* Showroom.entitlements */,
 				5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */,
 				84F0A97C1DE834A900C02332 /* Views */,
 				841C951E1DDF035400B997F5 /* Fonts */,
@@ -931,6 +966,11 @@
 						DevelopmentTeam = 34MUF9YXTA;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -1031,6 +1071,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showroom/Pods-Showroom-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework",
@@ -1040,10 +1081,12 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/Navigation-stack/Navigation_stack.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PreviewTransition/PreviewTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMPaperSwitch/RAMPaperSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMReel/RAMReel.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework",
@@ -1054,6 +1097,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyPeasy.framework",
@@ -1063,10 +1107,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Navigation_stack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PreviewTransition.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMPaperSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMReel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAttributes.framework",
@@ -1126,6 +1172,7 @@
 				84B743EA1DFC077200504C7A /* OpenControllerTransition.swift in Sources */,
 				84760B271DE07A1B00AF36FE /* Deley.swift in Sources */,
 				84B46EF41DAFCF4E0033CB15 /* ConstraintsHalper.swift in Sources */,
+				5A9C4DD020A1BE3E00CB629D /* OauthManager.swift in Sources */,
 				84D4B78F1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift in Sources */,
 				84760B231DE0796800AF36FE /* NodeAnimatable.swift in Sources */,
 				9D6F54D31E97B7750059B49A /* FileManager.swift in Sources */,
@@ -1137,8 +1184,10 @@
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				9D6F550F1E97B8D80059B49A /* UICollectionView.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift in Sources */,
+				5A9C4E1C20A1E8B400CB629D /* Shot.swift in Sources */,
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,
 				844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */,
+				5A9C4DF520A1CD0600CB629D /* OauthSwift+RxSwfit.swift in Sources */,
 				84D4B7971DB0C94700EE38C6 /* Rotatable.swift in Sources */,
 				9D6F55111E97B8D80059B49A /* UITableView.swift in Sources */,
 				844AE73D1DB4D9870029FBD4 /* ThirdViewController.swift in Sources */,

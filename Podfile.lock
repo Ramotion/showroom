@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.2)
   - CircleMenu (3.0.6)
   - Device (3.1.0)
   - EasyPeasy (1.7.0)
@@ -29,12 +30,18 @@ PODS:
   - Navigation-stack (2.0.2)
   - "NSObject+Rx (4.3.0)":
     - RxSwift (~> 4.0)
+  - OAuthSwift (1.2.0)
   - paper-onboarding (4.1.0)
   - pop (1.0.10)
   - PreviewTransition (3.0.1)
   - RAMAnimatedTabBarController (3.2.0)
   - RAMPaperSwitch (2.1.0)
   - RAMReel (3.0.0)
+  - RxAlamofire (4.2.0):
+    - RxAlamofire/Core (= 4.2.0)
+  - RxAlamofire/Core (4.2.0):
+    - Alamofire (~> 4.5)
+    - RxSwift (~> 4)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
@@ -51,18 +58,21 @@ DEPENDENCIES:
   - GlidingCollection
   - Navigation-stack
   - "NSObject+Rx"
+  - OAuthSwift
   - paper-onboarding
   - pop
   - PreviewTransition
   - RAMAnimatedTabBarController
   - RAMPaperSwitch
   - RAMReel
+  - RxAlamofire
   - RxCocoa
   - RxSwift
   - SwiftyAttributes
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - CircleMenu
     - Device
     - EasyPeasy
@@ -78,17 +88,20 @@ SPEC REPOS:
     - nanopb
     - Navigation-stack
     - "NSObject+Rx"
+    - OAuthSwift
     - paper-onboarding
     - pop
     - PreviewTransition
     - RAMAnimatedTabBarController
     - RAMPaperSwitch
     - RAMReel
+    - RxAlamofire
     - RxCocoa
     - RxSwift
     - SwiftyAttributes
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   CircleMenu: 743ac815475e8e40e8848d2954fa7f7263d9f78d
   Device: 8a21a61f5f938a12dadd44d82287996081b6919b
   EasyPeasy: 2f2785ed78c6f9e9045221f2ff317730e7321bff
@@ -104,16 +117,18 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Navigation-stack: fb9d7189f6c8b8d4a58f1cad129e4dbcc51aa2d0
   "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
+  OAuthSwift: 7fd6855b8e4d58eb5a30d156ea9bed7a8aecd1ca
   paper-onboarding: 344780cbb0bfc229cd1862f5b9bba446b23c5185
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PreviewTransition: 626eb437009d04e24d177d2d1e65de2a705829ed
   RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
   RAMPaperSwitch: ef08af0400a040c9850e09253280deb77510becb
   RAMReel: a123d736773901a9a3d2ef559c176a50c338b5de
+  RxAlamofire: 87a9c588541210cc3e4a1f843ccc3ecf3eb98b31
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyAttributes: da052e36f8950382016145969d95481c14d2d328
 
-PODFILE CHECKSUM: 7fdd3aa440449287300af696898c431ebffa987b
+PODFILE CHECKSUM: 1a20ffb3d0714c4788e266f0fd14745031ff25f9
 
 COCOAPODS: 1.5.0
