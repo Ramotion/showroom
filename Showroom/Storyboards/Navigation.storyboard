@@ -545,6 +545,81 @@ To help you evaluate the quality of development, we have created a mobile applic
             </objects>
             <point key="canvasLocation" x="1165.5999999999999" y="147.97601199400302"/>
         </scene>
+        <!--Dribbble Shots-->
+        <scene sceneID="AzU-KP-MBz">
+            <objects>
+                <viewController storyboardIdentifier="DribbbleShotsViewController" id="4fR-cZ-Kjw" customClass="DribbbleShotsViewController" customModule="Showroom" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ByN-Nh-hwY"/>
+                        <viewControllerLayoutGuide type="bottom" id="TMx-bO-tvE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z9x-WS-7mR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dfj-4v-HdB">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="gfW-K5-rn2">
+                                    <size key="itemSize" width="178" height="264"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Shot" id="T1w-4f-xQr" customClass="DribbbleShotCell" customModule="Showroom" customModuleProvider="target">
+                                        <rect key="frame" x="82.5" y="0.0" width="178" height="264"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="178" height="264"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-pJ-of2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="178" height="234"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-Hd-UNa" userLabel="NameLabel">
+                                                    <rect key="frame" x="0.0" y="234" width="178" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="top" secondItem="T1w-4f-xQr" secondAttribute="top" id="8JL-V6-Qsc"/>
+                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" id="HAW-H7-XsW"/>
+                                            <constraint firstAttribute="bottom" secondItem="cdE-pJ-of2" secondAttribute="bottom" constant="30" id="PMM-iS-cBw"/>
+                                            <constraint firstAttribute="trailing" secondItem="IdP-Hd-UNa" secondAttribute="trailing" id="htK-O1-fj9"/>
+                                            <constraint firstItem="IdP-Hd-UNa" firstAttribute="top" secondItem="cdE-pJ-of2" secondAttribute="bottom" id="jE7-iF-eFA"/>
+                                            <constraint firstAttribute="bottom" secondItem="IdP-Hd-UNa" secondAttribute="bottom" id="jXH-Lx-cbr"/>
+                                            <constraint firstAttribute="trailing" secondItem="cdE-pJ-of2" secondAttribute="trailing" id="nQ4-XC-Jw0"/>
+                                            <constraint firstItem="IdP-Hd-UNa" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" id="vWB-dS-W6T"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="cdE-pJ-of2" id="cpz-F0-bgd"/>
+                                            <outlet property="nameLabel" destination="IdP-Hd-UNa" id="0pg-8u-eVH"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dfj-4v-HdB" firstAttribute="top" secondItem="ByN-Nh-hwY" secondAttribute="bottom" id="4VC-3R-E8f"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dfj-4v-HdB" secondAttribute="trailing" id="oLN-MN-j7h"/>
+                            <constraint firstItem="Dfj-4v-HdB" firstAttribute="leading" secondItem="Z9x-WS-7mR" secondAttribute="leadingMargin" id="ozS-kr-3CY"/>
+                            <constraint firstItem="TMx-bO-tvE" firstAttribute="top" secondItem="Dfj-4v-HdB" secondAttribute="bottom" id="q7F-Nh-dmC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dribbble Shots" id="gi3-gu-DDv"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Dfj-4v-HdB" id="BbW-Df-ayf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="61l-Ib-Mma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2852" y="-525.78710644677665"/>
+        </scene>
         <!--Thingers Tap View Controller-->
         <scene sceneID="pl6-Nz-v9V">
             <objects>

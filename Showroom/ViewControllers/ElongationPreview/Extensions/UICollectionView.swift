@@ -25,7 +25,7 @@ public extension UICollectionView {
   }
   
   /// Dequeue cell of given class from tableView.
-  public func dequeue<T: UICollectionViewCell>(_: T.Type, indexPath: IndexPath) -> T {
+  public func dequeue<T: UICollectionViewCell>(indexPath: IndexPath) -> T {
     return dequeueReusableCell(withReuseIdentifier: String(describing: T.self), for: indexPath) as! T
   }
   

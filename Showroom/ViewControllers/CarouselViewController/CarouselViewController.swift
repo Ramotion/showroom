@@ -51,8 +51,7 @@ class CarouselViewController: UIViewController {
   fileprivate var foldingCellVC: UIViewController!
 
   //  fileprivate var searchVC: SearchViewController = UIStoryboard(storyboard: .Main).instantiateViewController()
-  fileprivate let oauthManager = OauthManager()
-  
+
   // Index of current cell
   fileprivate var currentIndex: Int {
     guard let collectionView = self.collectionView else { return 0 }
@@ -249,7 +248,9 @@ extension CarouselViewController {
   }
   
   @IBAction func dribbleLogInHandler(_ sender: Any) {
-    oauthManager.doOAuthDribbble(on: self)
+    let storyboard = UIStoryboard.storyboard(storyboard: .Navigation)
+    let dribbbleShotsVC: DribbbleShotsViewController = storyboard.instantiateViewController()
+    self.present(UINavigationController(rootViewController: dribbbleShotsVC), animated: true, completion: nil)
   }
 }
 

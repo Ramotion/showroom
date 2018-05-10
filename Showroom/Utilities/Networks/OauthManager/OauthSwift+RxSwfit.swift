@@ -4,7 +4,9 @@ import OAuthSwift
 
 extension OAuth2Swift {
   
-  func rx_dribble_authorize() -> Observable<String> {
+  typealias DribbbleToken = String
+
+  func rx_dribble_authorize() -> Observable<DribbbleToken> {
     return Observable.create { [weak self] observable in
       let task = self?.authorize(
         withCallbackURL: URL(string: "showroom://oauth")!,

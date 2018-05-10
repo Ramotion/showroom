@@ -25,5 +25,7 @@ pod 'ElongationPreview'
 pod 'GlidingCollection'
 pod 'OAuthSwift'
 pod 'RxAlamofire'
+pod 'Nuke'
+pod 'KeychainAccess'
 
 end
