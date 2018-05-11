@@ -28,6 +28,7 @@ extension DribbbleShotsViewController {
 
         // fetch items
         networkingManager.fetchDribbbleShots()
+            .map { $0.filter { shot in shot.animated } }
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
                 cell.nameLabel.text = element.title
                 if let url = element.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
@@ -35,11 +36,15 @@ extension DribbbleShotsViewController {
             .disposed(by: rx.disposeBag)
         
         // selected item
-        
         collectionView.rx
-            .itemSelected
-            .subscribe(onNext: { indexPath in
-                print(indexPath)
+            .modelSelected(Shot.self)
+            .subscribe(onNext: { shot in
+                print(shot)
+                
+                let alertView = UIAlertController(title: "Do you want send this Shot", message: nil, preferredStyle: .alert)
+                alertView.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in
+                })
+                UIViewController.current?.present(alertView, animated: true, completion: nil)
             })
             .disposed(by: rx.disposeBag)
     }

@@ -23,4 +23,9 @@ extension KeychainManager {
         let keychain = Keychain(server: Key.server, protocolType: .https, authenticationType: .htmlForm)
         return keychain[Key.token]
     }
+    
+    static func removeKeychain() {
+        let keychain = Keychain(server: Key.server, protocolType: .https, authenticationType: .htmlForm)
+        try? keychain.remove(Key.token)
+    }
 }
