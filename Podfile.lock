@@ -5,24 +5,47 @@ PODS:
   - EasyPeasy (1.7.0)
   - ElongationPreview (1.1.2)
   - expanding-collection (2.0.1)
+  - Firebase/Auth (4.13.0):
+    - Firebase/Core
+    - FirebaseAuth (= 4.6.1)
   - Firebase/Core (4.13.0):
     - FirebaseAnalytics (= 4.2.0)
     - FirebaseCore (= 4.0.20)
+  - Firebase/Database (4.13.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.5)
   - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
     - nanopb (~> 0.3)
+  - FirebaseAuth (4.6.1):
+    - FirebaseAnalytics (~> 4.2)
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.20):
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseDatabase (4.1.5):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
   - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
   - FoldingCell (3.1.1)
   - GlidingCollection (1.1.0)
+  - GoogleToolboxForMac/DebugUtils (2.1.4):
+    - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
   - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
     - GoogleToolboxForMac/Defines (= 2.1.4)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.1.4)":
+    - GoogleToolboxForMac/DebugUtils (= 2.1.4)
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - GTMSessionFetcher/Core (1.1.15)
   - KeychainAccess (3.1.1)
+  - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -55,7 +78,9 @@ DEPENDENCIES:
   - EasyPeasy
   - ElongationPreview
   - expanding-collection
+  - Firebase/Auth
   - Firebase/Core
+  - Firebase/Database
   - FoldingCell
   - GlidingCollection
   - KeychainAccess
@@ -84,12 +109,16 @@ SPEC REPOS:
     - expanding-collection
     - Firebase
     - FirebaseAnalytics
+    - FirebaseAuth
     - FirebaseCore
+    - FirebaseDatabase
     - FirebaseInstanceID
     - FoldingCell
     - GlidingCollection
     - GoogleToolboxForMac
+    - GTMSessionFetcher
     - KeychainAccess
+    - leveldb-library
     - nanopb
     - Navigation-stack
     - "NSObject+Rx"
@@ -115,12 +144,16 @@ SPEC CHECKSUMS:
   expanding-collection: 8a911969a80f349b73e7100ec58f0c50dd5f220a
   Firebase: 5ec5e863d269d82d66b4bf56856726f8fb8f0fb3
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
+  FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
+  FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
   GlidingCollection: 2194165075fa7230027049238c9ed724453557e6
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Navigation-stack: fb9d7189f6c8b8d4a58f1cad129e4dbcc51aa2d0
   "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
@@ -137,6 +170,6 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyAttributes: da052e36f8950382016145969d95481c14d2d328
 
-PODFILE CHECKSUM: 52f0d9d21c517f693af6158560cb7a6494d868fb
+PODFILE CHECKSUM: e0aa05eb8206c3c3e00126800f07b80d6af50344
 
 COCOAPODS: 1.5.0

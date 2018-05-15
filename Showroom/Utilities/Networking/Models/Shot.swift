@@ -16,3 +16,15 @@ struct Shot: Codable {
         return URL(string: images.normal)
     }
 }
+
+// MARK: Methods
+extension Shot {
+    
+    var toDictionary: [String: Any] {
+        return [
+            "id": "\(id)",
+            "title": title,
+            "html": html_url,
+        ]
+    }
+}
