@@ -81,14 +81,21 @@ private extension DribbbleShotsViewController {
         
         // fetch user
         networkingManager.fetchDribbbleUser()
-            .flatMap { user -> Observable<DatabaseReference> in
+            .flatMap { user -> Observable<(DatabaseReference, User)> in
                 self.user = user
-                return Database.database().rx.fetchReference(user: user)
+                return Observable.zip(Database.database().rx.fetchReference(user: user), Observable.just(user), resultSelector: {
+                    return ($0, $1)
+                })
+            }
+            .flatMap { (userRef, user) -> Observable<[FirebaseModel.Shot]> in
+                self.userRef = userRef
+                return Database.database().rx.fetchShots(user: user)
             }
             .subscribe {
                 switch $0 {
                 case .completed, .error: break // do nothing
-                case .next(let userRef): self.userRef = userRef
+                case .next(let shots):
+                    print(shots)
                 }
             }
             .disposed(by: rx.disposeBag)

@@ -24,7 +24,7 @@ extension Shot {
         return [
             "id": "\(id)",
             "title": title,
-            "html": html_url,
+            "html_url": html_url,
         ]
     }
 }

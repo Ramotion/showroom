@@ -3,7 +3,7 @@ import FirebaseDatabase
 import RxSwift
 
 private enum FirebaseKey {
-    static let users = "shots"
+    static let shots = "shots"
     // TODO: Remove it before github
     static let secretKey = "Ldfkjtlsdf1235-45lj2DfdfCP-sf"
     
@@ -15,27 +15,29 @@ private enum FirebaseKey {
 
 extension Reactive where Base: Database {
     
-    func fetchShots() -> Observable<[FirebaseModel.Shot]> {
-        return fetch(path: "shots")
+    func fetchShots(user: User) -> Observable<[FirebaseModel.Shot]> {
+        let shotsRef = Database.database().reference().child("\(user.id)").child(FirebaseKey.shots)
+        return fetch(reference: shotsRef)
     }
     
-    private func fetch<T>(path: String) -> Observable<T> where T: Codable {
+    private func fetch<T>(reference: DatabaseReference) -> Observable<T> where T: Codable {
         return Observable.create { (observer) -> Disposable in
-            Database.database().secureReference(withPath: path)
+            reference
                 .observeSingleEvent(of: .value, with: { snapshot in
                     print(snapshot)
-                    guard let data = snapshot.value as? [[String: String]],
-                        let json = try? JSONEncoder().encode(data) else {
+                    guard let dict = snapshot.value as? [String: [String: String]] else {
                         observer.onError(FirebaseKey.FirebaseError.emptyData)
                         return
                     }
-                    
+
                     #if DEBUG
-                    print(json)
+                    print(dict)
                     #endif
-                    
+
                     do {
-                        let item = try JSONDecoder().decode(T.self, from: json)
+                        let array = dict.compactMap { return $1 }
+                        let json: Data? = try? JSONEncoder().encode(array)
+                        let item = try JSONDecoder().decode(T.self, from: json!)
                         observer.onNext(item)
                         observer.onCompleted()
                     } catch {
@@ -57,7 +59,6 @@ extension Reactive where Base: Database {
             let newUser = Database.database().reference().child("\(user.id)")
             newUser.observeSingleEvent(of: .value, with: { snapshot in
                 if snapshot.exists() {
-                   print(snapshot.value)
                     observer.onNext(newUser)
                     observer.onCompleted()
                 } else {
@@ -89,7 +90,7 @@ extension Reactive where Base: Database {
     
     func save(shot: Shot, userRef: DatabaseReference) -> Observable<DatabaseReference> {
         return Observable.create { (observer) -> Disposable in
-            let shotsRef = userRef.child("shots").child("\(shot.id)")
+            let shotsRef = userRef.child(FirebaseKey.shots).child("\(shot.id)")
             shotsRef.setValue(shot.toDictionary) { (error, database) in
                 if let error = error {
                     observer.onError(error)
