@@ -74,10 +74,21 @@ private extension DribbbleShotsViewController {
     func fetchData() -> Observable<User> {
         
         let userSignal = networkingManager.fetchDribbbleUser()
+        
+        userSignal
+            .flatMap { return Firestore.firestore().rx.fetchShots(from: $0) }
+            .subscribe {
+                switch $0 {
+                case .completed: break
+                case .error(let error): print(error)
+                case .next(let shots): print(shots)
+                }
+            }
+            .disposed(by: rx.disposeBag)
 
         networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
-            .map { $0.filter { shot in shot.animated } }
+//            .map { $0.filter { shot in shot.animated } }
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
                 cell.nameLabel.text = element.title
                 if let url = element.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
