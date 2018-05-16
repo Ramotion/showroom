@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
+		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
 		5A3C741D20A4312C006EEE3C /* DribbbleShotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741C20A4312C006EEE3C /* DribbbleShotCell.swift */; };
 		5A3C741F20A43E2E006EEE3C /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741E20A43E2E006EEE3C /* NetworkingManager.swift */; };
@@ -148,6 +150,8 @@
 
 /* Begin PBXFileReference section */
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
+		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
+		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
 		5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsViewController.swift; sourceTree = "<group>"; };
 		5A3C741C20A4312C006EEE3C /* DribbbleShotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotCell.swift; sourceTree = "<group>"; };
 		5A3C741E20A43E2E006EEE3C /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
@@ -292,6 +296,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A08989620AC36D300FCAE54 /* UIAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */,
+			);
+			path = UIAlertController;
+			sourceTree = "<group>";
+		};
 		5A3C741820A42EC4006EEE3C /* DribbbleShots */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +334,7 @@
 			children = (
 				5A79F82F20A9C5FE0049E3C4 /* Model */,
 				5A79F82D20A98F4A0049E3C4 /* Database+RxSwift.swift */,
+				5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -389,6 +402,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5A08989620AC36D300FCAE54 /* UIAlertController */,
 				5A79F82C20A98F2E0049E3C4 /* Database */,
 				5A3C742220A47EF8006EEE3C /* Keychain */,
 				5A9C4E1920A1E87300CB629D /* Networking */,
@@ -1136,6 +1150,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Showroom/Pods-Showroom-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Device/Device.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyPeasy/EasyPeasy.framework",
@@ -1150,6 +1165,7 @@
 				"${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PreviewTransition/PreviewTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMPaperSwitch/RAMPaperSwitch.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMReel/RAMReel.framework",
@@ -1158,6 +1174,10 @@
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyAttributes/SwiftyAttributes.framework",
 				"${BUILT_PRODUCTS_DIR}/expanding-collection/expanding_collection.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
@@ -1166,6 +1186,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Device.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyPeasy.framework",
@@ -1180,6 +1201,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nuke.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PreviewTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMPaperSwitch.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMReel.framework",
@@ -1188,6 +1210,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyAttributes.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/expanding_collection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
@@ -1205,6 +1231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */,
 				84760B1A1DE05E3500AF36FE /* AboutView.swift in Sources */,
 				841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */,
 				5A79F82E20A98F4A0049E3C4 /* Database+RxSwift.swift in Sources */,
@@ -1228,6 +1255,7 @@
 				5A3C741F20A43E2E006EEE3C /* NetworkingManager.swift in Sources */,
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
 				9D6F55071E97B8650059B49A /* DemoElongationCell.swift in Sources */,
+				5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */,
 				84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
 				5A3C742420A47F07006EEE3C /* KeychainManager.swift in Sources */,

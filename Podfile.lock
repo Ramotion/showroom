@@ -1,5 +1,11 @@
 PODS:
   - Alamofire (4.7.2)
+  - BoringSSL (10.0.2):
+    - BoringSSL/Implementation (= 10.0.2)
+    - BoringSSL/Interface (= 10.0.2)
+  - BoringSSL/Implementation (10.0.2):
+    - BoringSSL/Interface (= 10.0.2)
+  - BoringSSL/Interface (10.0.2)
   - CircleMenu (3.0.6)
   - Device (3.1.0)
   - EasyPeasy (1.7.0)
@@ -14,6 +20,9 @@ PODS:
   - Firebase/Database (4.13.0):
     - Firebase/Core
     - FirebaseDatabase (= 4.1.5)
+  - Firebase/Firestore (4.13.0):
+    - Firebase/Core
+    - FirebaseFirestore (= 0.11.0)
   - FirebaseAnalytics (4.2.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
@@ -29,6 +38,12 @@ PODS:
     - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
+  - FirebaseFirestore (0.11.0):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - gRPC-ProtoRPC (~> 1.0)
+    - leveldb-library (~> 1.18)
+    - Protobuf (~> 3.5)
   - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
   - FoldingCell (3.1.1)
@@ -43,6 +58,25 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.4)
     - "GoogleToolboxForMac/NSString+URLArguments (= 2.1.4)"
   - "GoogleToolboxForMac/NSString+URLArguments (2.1.4)"
+  - gRPC (1.11.0):
+    - gRPC-RxLibrary (= 1.11.0)
+    - gRPC/Main (= 1.11.0)
+  - gRPC-Core (1.11.0):
+    - gRPC-Core/Implementation (= 1.11.0)
+    - gRPC-Core/Interface (= 1.11.0)
+  - gRPC-Core/Implementation (1.11.0):
+    - BoringSSL (~> 10.0)
+    - gRPC-Core/Interface (= 1.11.0)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.11.0)
+  - gRPC-ProtoRPC (1.11.0):
+    - gRPC (= 1.11.0)
+    - gRPC-RxLibrary (= 1.11.0)
+    - Protobuf (~> 3.0)
+  - gRPC-RxLibrary (1.11.0)
+  - gRPC/Main (1.11.0):
+    - gRPC-Core (= 1.11.0)
+    - gRPC-RxLibrary (= 1.11.0)
   - GTMSessionFetcher/Core (1.1.15)
   - KeychainAccess (3.1.1)
   - leveldb-library (1.20)
@@ -59,6 +93,7 @@ PODS:
   - paper-onboarding (4.1.0)
   - pop (1.0.10)
   - PreviewTransition (3.0.1)
+  - Protobuf (3.5.0)
   - RAMAnimatedTabBarController (3.2.0)
   - RAMPaperSwitch (2.1.0)
   - RAMReel (3.0.0)
@@ -81,6 +116,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
+  - Firebase/Firestore
   - FoldingCell
   - GlidingCollection
   - KeychainAccess
@@ -102,6 +138,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - BoringSSL
     - CircleMenu
     - Device
     - EasyPeasy
@@ -112,10 +149,15 @@ SPEC REPOS:
     - FirebaseAuth
     - FirebaseCore
     - FirebaseDatabase
+    - FirebaseFirestore
     - FirebaseInstanceID
     - FoldingCell
     - GlidingCollection
     - GoogleToolboxForMac
+    - gRPC
+    - gRPC-Core
+    - gRPC-ProtoRPC
+    - gRPC-RxLibrary
     - GTMSessionFetcher
     - KeychainAccess
     - leveldb-library
@@ -127,6 +169,7 @@ SPEC REPOS:
     - paper-onboarding
     - pop
     - PreviewTransition
+    - Protobuf
     - RAMAnimatedTabBarController
     - RAMPaperSwitch
     - RAMReel
@@ -137,6 +180,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  BoringSSL: 60dd24df4af296bf41d78e5841dbb95d75f88c0d
   CircleMenu: 743ac815475e8e40e8848d2954fa7f7263d9f78d
   Device: 8a21a61f5f938a12dadd44d82287996081b6919b
   EasyPeasy: 2f2785ed78c6f9e9045221f2ff317730e7321bff
@@ -147,10 +191,15 @@ SPEC CHECKSUMS:
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
   FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
+  FirebaseFirestore: e92a096ce80c7b4b905d4e9d41dbd944adc9d2a5
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FoldingCell: 238c33ae8d9cd655090c9c4c5ff32596cfd18c6e
   GlidingCollection: 2194165075fa7230027049238c9ed724453557e6
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  gRPC: 70703dc9ba31c72341fc7f37745cc1c379edee96
+  gRPC-Core: 164639cd8ae18ca8b65477fafb2efbaecf4f181a
+  gRPC-ProtoRPC: bb5fddf3424aa4fad74d76736578a79fe40e244e
+  gRPC-RxLibrary: 26d53d1b1f306befd4ad4e15bd6de27839a82481
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
@@ -162,6 +211,7 @@ SPEC CHECKSUMS:
   paper-onboarding: 344780cbb0bfc229cd1862f5b9bba446b23c5185
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   PreviewTransition: 626eb437009d04e24d177d2d1e65de2a705829ed
+  Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   RAMAnimatedTabBarController: 0499157f67053a21bcccb52a25dd3c6ecdbfb4f6
   RAMPaperSwitch: ef08af0400a040c9850e09253280deb77510becb
   RAMReel: a123d736773901a9a3d2ef559c176a50c338b5de
@@ -170,6 +220,6 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyAttributes: da052e36f8950382016145969d95481c14d2d328
 
-PODFILE CHECKSUM: e0aa05eb8206c3c3e00126800f07b80d6af50344
+PODFILE CHECKSUM: e1f06b3a7e075c93a7004d5c2f9942368c50fc86
 
 COCOAPODS: 1.5.0

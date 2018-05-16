@@ -4,9 +4,7 @@ import RxSwift
 
 private enum FirebaseKey {
     static let shots = "shots"
-    // TODO: Remove it before github
-    static let secretKey = "Ldfkjtlsdf1235-45lj2DfdfCP-sf"
-    
+
     enum FirebaseError: Error {
         case emptyData
         case wrongParse
@@ -101,15 +99,5 @@ extension Reactive where Base: Database {
             }
             return Disposables.create()
         }
-    }
-}
-
-
-private extension Database {
-    
-    func secureReference(withPath: String) -> DatabaseQuery  {
-//        return reference(withPath: withPath)
-        return reference()
-            .queryEqual(toValue: FirebaseKey.secretKey)
     }
 }

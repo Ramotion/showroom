@@ -20,9 +20,12 @@ pod 'RxSwift'
 pod 'RxCocoa'
 pod 'NSObject+Rx'
 pod 'Device'
+
 pod 'Firebase/Core'
 pod 'Firebase/Database'
 pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
+
 pod 'ElongationPreview'
 pod 'GlidingCollection'
 pod 'OAuthSwift'

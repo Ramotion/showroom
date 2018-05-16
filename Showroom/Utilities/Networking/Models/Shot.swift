@@ -22,9 +22,10 @@ extension Shot {
     
     var toDictionary: [String: Any] {
         return [
-            "id": "\(id)",
+            "id": id,
             "title": title,
             "html_url": html_url,
+            "date": Date().timeIntervalSince1970,
         ]
     }
 }

@@ -2,13 +2,11 @@ import UIKit
 import OAuthSwift
 import Nuke
 import RxSwift
-import FirebaseDatabase
+import Firebase
 
 final class DribbbleShotsViewController: UIViewController {
     
     fileprivate var networkingManager = NetworkingManager()
-    fileprivate var user: User?
-    fileprivate var userRef: DatabaseReference?
     
     @IBOutlet weak var collectionView: UICollectionView!
 }
@@ -30,21 +28,26 @@ extension DribbbleShotsViewController {
         let itemWidth = (UIScreen.main.bounds.size.width - margins) / 2 - 14
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemWidth)
 
-        fetchData()
+        let userSignal = fetchData()
         
         collectionView.rx
             .modelSelected(Shot.self)
-            .subscribe(onNext: { shot in
-                print(shot)
-                
-                let alertView = UIAlertController(title: "Do you want send this Shot", message: nil, preferredStyle: .alert)
-                alertView.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in
-                    if let user = self.user {
-                        self.save(shot: shot, from: user, userRef: self.userRef)
-                    }
-                })
-                UIViewController.current?.present(alertView, animated: true, completion: nil)
-            })
+            .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
+            .flatMap { param -> Observable<(Shot, User)> in
+                return UIAlertController(title: nil, message: "Do you want send this Shot", preferredStyle: .alert)
+                    .confirmation()
+                    .withLatestFrom(Observable.just(param))
+            }
+            .flatMap { (shot, user) -> Observable<Void> in
+                return Firestore.firestore().rx.save(shot: shot, user: user)
+            }
+            .subscribe {
+                switch $0 {
+                case .completed: break
+                case .error(let error): print("save error: \(error)")
+                default: break // do nothing
+                }
+            }
             .disposed(by: rx.disposeBag)
     }
     
@@ -53,52 +56,24 @@ extension DribbbleShotsViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func save(shot: Shot, from user: User, userRef: DatabaseReference?) {
-        if let userRef = userRef {
-            Database.database().rx.save(shot: shot, userRef: userRef)
-                .subscribe {
-                    print($0)
+    func save(shot: Shot, user: User) {
+        Firestore.firestore().rx.save(shot: shot, user: user)
+            .subscribe {
+                switch $0 {
+                case .completed: print("success")
+                case .error(let error): print(error)
+                default: break // do nothing
                 }
-                .disposed(by: rx.disposeBag)
-        } else {
-            Database.database().rx.save(user: user)
-                .flatMap({ userRef -> Observable<DatabaseReference> in
-                    self.userRef = userRef
-                    return Database.database().rx.save(shot: shot, userRef: userRef)
-                })
-                .subscribe {
-                    print($0)
-                }
-                .disposed(by: rx.disposeBag)
-        }
+            }.disposed(by: rx.disposeBag)
     }
 }
 
 // MARK: Helpers
 private extension DribbbleShotsViewController {
     
-    func fetchData() {
+    func fetchData() -> Observable<User> {
         
-        // fetch user
-        networkingManager.fetchDribbbleUser()
-            .flatMap { user -> Observable<(DatabaseReference, User)> in
-                self.user = user
-                return Observable.zip(Database.database().rx.fetchReference(user: user), Observable.just(user), resultSelector: {
-                    return ($0, $1)
-                })
-            }
-            .flatMap { (userRef, user) -> Observable<[FirebaseModel.Shot]> in
-                self.userRef = userRef
-                return Database.database().rx.fetchShots(user: user)
-            }
-            .subscribe {
-                switch $0 {
-                case .completed, .error: break // do nothing
-                case .next(let shots):
-                    print(shots)
-                }
-            }
-            .disposed(by: rx.disposeBag)
+        let userSignal = networkingManager.fetchDribbbleUser()
 
         networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
@@ -108,5 +83,7 @@ private extension DribbbleShotsViewController {
                 if let url = element.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
             }
             .disposed(by: rx.disposeBag)
+        
+        return userSignal
     }
 }
