@@ -72,7 +72,8 @@ extension DribbbleShotsViewController {
             .flatMap { (shot, user) -> Observable<Void> in
                 return Firestore.firestore().rx.save(shot: shot, user: user)
             }
-            .subscribe {
+            .subscribe { [weak self] in
+                guard let `self` = self else { return }
                 switch $0 {
                 case .completed: break
                 case .error(let error): print("save error: \(error)")
@@ -112,9 +113,9 @@ private extension DribbbleShotsViewController {
                 let sendedShotIds = sendedShots.map { $0.id }
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
-            .subscribe({
+            .subscribe({ [weak self] in
                 if let items = $0.element {
-                    self.reloadData.value = items
+                    self?.reloadData.value = items
                 }
             })
             .disposed(by: rx.disposeBag)
