@@ -4,7 +4,7 @@ import RxSwift
 extension UIAlertController {
     
     func confirmation() -> Observable<()> {
-        return  Observable.create { (observer) -> Disposable in
+        return  Observable.create { [weak self] (observer) -> Disposable in
             let actionOk = UIAlertAction(title: "Ok", style: .default, handler: { _ in
                observer.onNext(())
                observer.onCompleted()
@@ -13,10 +13,15 @@ extension UIAlertController {
             let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
                 observer.onCompleted()
             })
-            self.addAction(actionOk)
-            self.addAction(actionCancel)
+            if let `self` = self {
+                self.addAction(actionOk)
+                self.addAction(actionCancel)
+                
+                UIViewController.current?.present(self, animated: true, completion: nil)
+            } else {
+                observer.onCompleted()
+            }
             
-            UIViewController.current?.present(self, animated: true, completion: nil)
             return Disposables.create()
         }
     }
