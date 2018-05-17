@@ -20,11 +20,11 @@ extension NetworkingManager {
     }
     
     func fetchDribbbleShots() -> Observable<[Shot]> {
-        return fetch(getUrl: URLString.shots)
+        return fetch(getUrl: URLString.shots, parametrs: ["per_page=200"])
     }
     
-    private func fetch<T>(getUrl: String) -> Observable<T> where T: Codable {
-        return URLSession.shared.rx.dataWithRecallToken(getURL: getUrl)
+    private func fetch<T>(getUrl: String, parametrs: [String]? = nil) -> Observable<T> where T: Codable {
+        return URLSession.shared.rx.dataWithRecallToken(getURL: getUrl, parametrs: parametrs)
             .flatMap { data -> Observable<T> in
                 #if DEBUG
                 if let json = try? JSONSerialization.jsonObject(with: data) { print(json) }

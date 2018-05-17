@@ -67,10 +67,11 @@ extension OAuth2Swift {
 
 extension Reactive where Base: URLSession {
   
-  func dataWithRecallToken(getURL: String) -> Observable<Data> {
+  func dataWithRecallToken(getURL: String, parametrs: [String]?) -> Observable<Data> {
+    let parametrString = parametrs?.reduce("") { $0 + "&" + $1 } ?? ""
     return API.tokenObservable
       .flatMap { token -> Observable<URLRequest> in
-        guard let url = URL(string: getURL + API.token(token)) else { return Observable.empty() }
+        guard let url = URL(string: getURL + API.token(token) + parametrString) else { return Observable.empty() }
         return Observable.just(URLRequest(url: url))
       }
       .flatMap { urlRequest -> Observable<Data> in
@@ -83,7 +84,7 @@ extension Reactive where Base: URLSession {
             KeychainManager.removeKeychain()
             return API.tokenObservable
               .flatMap { token -> Observable<URLRequest> in
-                guard let url = URL(string: getURL + API.token(token)) else { return Observable.empty() }
+                guard let url = URL(string: getURL + API.token(token) + parametrString) else { return Observable.empty() }
                 return Observable.just(URLRequest(url: url))
               }
               .flatMap { urlRequest -> Observable<Data> in

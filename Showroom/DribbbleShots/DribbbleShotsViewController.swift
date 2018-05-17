@@ -88,7 +88,7 @@ private extension DribbbleShotsViewController {
 
         networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
-//            .map { $0.filter { shot in shot.animated } }
+            .map { $0.filter { shot in shot.animated } }
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
                 cell.nameLabel.text = element.title
                 if let url = element.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
