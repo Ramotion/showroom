@@ -75,23 +75,24 @@ private extension DribbbleShotsViewController {
         
         let userSignal = networkingManager.fetchDribbbleUser()
         
-        userSignal
-            .flatMap { return Firestore.firestore().rx.fetchShots(from: $0) }
-            .subscribe {
-                switch $0 {
-                case .completed: break
-                case .error(let error): print(error)
-                case .next(let shots): print(shots)
-                }
-            }
-            .disposed(by: rx.disposeBag)
-
-        networkingManager.fetchDribbbleShots()
+        let sendedShotsSignal = userSignal.flatMap { return Firestore.firestore().rx.fetchShots(from: $0) }
+            .catchErrorJustReturn([])
+        
+        let dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
             .map { $0.filter { shot in shot.animated } }
+        
+        Observable.zip(dribbbleShotsSignal, sendedShotsSignal) { return ($0, $1) }
+            .map { (dribbbleShots, sendedShots) -> [(Shot, Bool)] in // shot, selected
+                let sendedShotIds = sendedShots.map { $0.id }
+                return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
+            }
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
-                cell.nameLabel.text = element.title
-                if let url = element.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
+                let (shot, selected) = element
+                cell.nameLabel.text = shot.title
+                if let url = shot.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
+                
+                cell.imageView.alpha = selected ? 0.3 : 1
             }
             .disposed(by: rx.disposeBag)
         
