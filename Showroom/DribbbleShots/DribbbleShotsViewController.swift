@@ -6,15 +6,21 @@ import Firebase
 
 final class DribbbleShotsViewController: UIViewController {
     
-    typealias Item = (user: Shot, sended: Bool)
+    typealias ShotAndSended = (user: Shot, sended: Bool)
+    
+    enum Item {
+        case shot(ShotAndSended)
+        case wireframe
+    }
     
     fileprivate let networkingManager: NetworkingManager
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
-    fileprivate let reloadData = Variable<[Item]>([])
+    fileprivate let reloadData = Variable<[Item]>([.wireframe, .wireframe, .wireframe, .wireframe])
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet var backgroundView: UIView!
     
     required init?(coder aDecoder: NSCoder) {
         let network = NetworkingManager()
@@ -45,18 +51,32 @@ extension DribbbleShotsViewController {
         let margins = collectionView.layoutMargins.left + collectionView.layoutMargins.right
         let itemWidth = (UIScreen.main.bounds.size.width - margins) / 2 - 14
         (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        collectionView.backgroundView = backgroundView
+        collectionView.backgroundView?.isHidden = true
 
         fetchData(userSignal: userSignal, dribbbleShotsSignal: dribbbleShotsSignal)
         
-        reloadData.asObservable()
+        let reloadDataSignal = reloadData.asObservable()
+        reloadDataSignal
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
-                let (shot, selected) = element
-                cell.nameLabel.text = shot.title
-                if let url = shot.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
-                
-                cell.imageView.alpha = selected ? 0.3 : 1
+                switch element {
+                case .shot(let shot, let sended):
+                    cell.nameLabel.isHidden = false
+                    cell.backgroundColor = UIColor.white
+                    cell.nameLabel.text = shot.title
+                    if let url = shot.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
+                    cell.imageView.alpha = sended ? 0.3 : 1
+                case .wireframe:
+                    cell.backgroundColor = UIColor.gray
+                    cell.nameLabel.isHidden = true
+                }
             }
             .disposed(by: rx.disposeBag)
+        
+        reloadDataSignal.subscribe { [weak self] in
+            self?.collectionView.backgroundView?.isHidden = ($0.element?.count ?? 0) != 0
+        }
+        .disposed(by: rx.disposeBag)
         
         collectionView.rx
             .modelSelected((Shot, Bool).self)
@@ -115,7 +135,7 @@ private extension DribbbleShotsViewController {
             }
             .subscribe({ [weak self] in
                 if let items = $0.element {
-                    self?.reloadData.value = items
+                    self?.reloadData.value = items.map { Item.shot((user: $0.0, sended: $0.1)) }
                 }
             })
             .disposed(by: rx.disposeBag)

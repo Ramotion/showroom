@@ -613,10 +613,29 @@ To help you evaluate the quality of development, we have created a mobile applic
                     </view>
                     <navigationItem key="navigationItem" title="Dribbble Shots" id="gi3-gu-DDv"/>
                     <connections>
+                        <outlet property="backgroundView" destination="qzb-hP-hO7" id="qHo-Th-iwi"/>
                         <outlet property="collectionView" destination="Dfj-4v-HdB" id="BbW-Df-ayf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61l-Ib-Mma" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="qzb-hP-hO7" userLabel="BackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-LY-jee">
+                            <rect key="frame" x="0.0" y="54" width="240" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Oer-LY-jee" firstAttribute="leading" secondItem="qzb-hP-hO7" secondAttribute="leading" id="N9w-98-G0y"/>
+                        <constraint firstItem="Oer-LY-jee" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" id="oeA-eA-Nje"/>
+                        <constraint firstAttribute="trailing" secondItem="Oer-LY-jee" secondAttribute="trailing" id="r25-sJ-6en"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2852" y="-525.78710644677665"/>
         </scene>
