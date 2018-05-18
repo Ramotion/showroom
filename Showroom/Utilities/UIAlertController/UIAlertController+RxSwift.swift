@@ -25,4 +25,11 @@ extension UIAlertController {
             return Disposables.create()
         }
     }
+    
+    static func show(message: String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let actionOk = UIAlertAction(title: "Ok", style: .cancel, handler: { _ in })
+        alert.addAction(actionOk)
+        UIViewController.current?.present(alert, animated: true, completion: nil)
+    }
 }

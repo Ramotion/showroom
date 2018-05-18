@@ -103,7 +103,7 @@ extension DribbbleShotsViewController {
                 MBProgressHUD.hide(for: self.view, animated: true)
                 switch $0 {
                 case .completed: break
-                case .error(let error): print("save error: \(error)")
+                case .error: UIAlertController.show(message: "Can't send shot!")
                 case .next: self.fetchData(userSignal: self.userSignal, dribbbleShotsSignal: self.dribbbleShotsSignal)
                 }
             }

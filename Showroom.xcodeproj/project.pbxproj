@@ -15,7 +15,6 @@
 		5A3C742420A47F07006EEE3C /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C742320A47F07006EEE3C /* KeychainManager.swift */; };
 		5A3C742620A48C83006EEE3C /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C742520A48C83006EEE3C /* UIViewController+Extensions.swift */; };
 		5A74E6FC1EA112640092A57C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */; };
-		5A79F82E20A98F4A0049E3C4 /* Database+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79F82D20A98F4A0049E3C4 /* Database+RxSwift.swift */; };
 		5A79F83120A9C68C0049E3C4 /* FirebaseShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A79F83020A9C68C0049E3C4 /* FirebaseShot.swift */; };
 		5A9C4DF520A1CD0600CB629D /* OauthSwift+RxSwfit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C4DF420A1CD0600CB629D /* OauthSwift+RxSwfit.swift */; };
 		5A9C4E1C20A1E8B400CB629D /* Shot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A9C4E1B20A1E8B400CB629D /* Shot.swift */; };
@@ -158,7 +157,6 @@
 		5A3C742320A47F07006EEE3C /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		5A3C742520A48C83006EEE3C /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		5A74E6FB1EA112640092A57C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5A79F82D20A98F4A0049E3C4 /* Database+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+RxSwift.swift"; sourceTree = "<group>"; };
 		5A79F83020A9C68C0049E3C4 /* FirebaseShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseShot.swift; sourceTree = "<group>"; };
 		5A9C4DF420A1CD0600CB629D /* OauthSwift+RxSwfit.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = "OauthSwift+RxSwfit.swift"; sourceTree = "<group>"; tabWidth = 2; };
 		5A9C4E1B20A1E8B400CB629D /* Shot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shot.swift; sourceTree = "<group>"; };
@@ -333,7 +331,6 @@
 			isa = PBXGroup;
 			children = (
 				5A79F82F20A9C5FE0049E3C4 /* Model */,
-				5A79F82D20A98F4A0049E3C4 /* Database+RxSwift.swift */,
 				5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */,
 			);
 			path = Database;
@@ -1236,7 +1233,6 @@
 				5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */,
 				84760B1A1DE05E3500AF36FE /* AboutView.swift in Sources */,
 				841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */,
-				5A79F82E20A98F4A0049E3C4 /* Database+RxSwift.swift in Sources */,
 				5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */,
 				84B46EED1DAFCC8C0033CB15 /* DemoDetailViewController.swift in Sources */,
 				9D7F045D1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift in Sources */,
