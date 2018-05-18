@@ -32,5 +32,6 @@ pod 'OAuthSwift'
 pod 'RxAlamofire'
 pod 'Nuke'
 pod 'KeychainAccess'
+pod 'MBProgressHUD'
 
 end

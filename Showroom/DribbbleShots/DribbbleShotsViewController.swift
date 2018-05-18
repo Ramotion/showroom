@@ -3,6 +3,7 @@ import OAuthSwift
 import Nuke
 import RxSwift
 import Firebase
+import MBProgressHUD
 
 final class DribbbleShotsViewController: UIViewController {
     
@@ -18,7 +19,7 @@ final class DribbbleShotsViewController: UIViewController {
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
     fileprivate let reloadData = Variable<[Item]>([.wireframe, .wireframe, .wireframe, .wireframe])
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var backgroundView: UIView!
     
@@ -93,11 +94,13 @@ extension DribbbleShotsViewController {
                 return UIAlertController.confirmation(message: "Do you want send this shot?")
                     .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
             }
-            .flatMap { (shot, user, message) -> Observable<Void> in
+            .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
+                if let `self` = self { MBProgressHUD.showAdded(to: self.view, animated: true) }
                 return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
             }
             .subscribe { [weak self] in
                 guard let `self` = self else { return }
+                MBProgressHUD.hide(for: self.view, animated: true)
                 switch $0 {
                 case .completed: break
                 case .error(let error): print("save error: \(error)")

@@ -80,6 +80,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - KeychainAccess (3.1.1)
   - leveldb-library (1.20)
+  - MBProgressHUD (1.1.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -120,6 +121,7 @@ DEPENDENCIES:
   - FoldingCell
   - GlidingCollection
   - KeychainAccess
+  - MBProgressHUD
   - Navigation-stack
   - "NSObject+Rx"
   - Nuke
@@ -161,6 +163,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - KeychainAccess
     - leveldb-library
+    - MBProgressHUD
     - nanopb
     - Navigation-stack
     - "NSObject+Rx"
@@ -203,6 +206,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Navigation-stack: fb9d7189f6c8b8d4a58f1cad129e4dbcc51aa2d0
   "NSObject+Rx": 9a5eeff5e08156f849fa973514456f28eef08742
@@ -220,6 +224,6 @@ SPEC CHECKSUMS:
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SwiftyAttributes: da052e36f8950382016145969d95481c14d2d328
 
-PODFILE CHECKSUM: e1f06b3a7e075c93a7004d5c2f9942368c50fc86
+PODFILE CHECKSUM: e81c736183f5afdf6ba08eac8a2aab592e9b5434
 
 COCOAPODS: 1.5.0
