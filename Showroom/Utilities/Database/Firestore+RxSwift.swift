@@ -5,6 +5,7 @@ import RxSwift
 private enum FirebaseConstant {
     static let shots = "shots"
     static let userId = "userId"
+    static let message = "message"
 
     enum FirebaseError: Error {
         case emptyData
@@ -14,11 +15,12 @@ private enum FirebaseConstant {
 
 extension Reactive where Base: Firestore {
     
-    func save(shot: Shot, user: User) -> Observable<()> {
+    func save(shot: Shot, user: User, message: String) -> Observable<()> {
         return Observable.create { (observer) -> Disposable in
             
             var shotDict = shot.toDictionary
             shotDict[FirebaseConstant.userId] = user.id
+            if !message.isEmpty { shotDict[FirebaseConstant.message] = message }
             Firestore.dbWithTimestamp
                 .collection(FirebaseConstant.shots)
                 .addDocument(data: shotDict) {

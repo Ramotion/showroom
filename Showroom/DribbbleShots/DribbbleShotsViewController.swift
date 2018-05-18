@@ -6,7 +6,7 @@ import Firebase
 
 final class DribbbleShotsViewController: UIViewController {
     
-    typealias ShotAndSended = (user: Shot, sended: Bool)
+    typealias ShotAndSended = (shot: Shot, sended: Bool)
     
     enum Item {
         case shot(ShotAndSended)
@@ -78,19 +78,23 @@ extension DribbbleShotsViewController {
         }
         .disposed(by: rx.disposeBag)
         
+        // MARK: Item did select
         collectionView.rx
-            .modelSelected((Shot, Bool).self)
-            .flatMap({ (shot, selected) -> Observable<Shot> in
-                return selected ? Observable.empty() : Observable.just(shot)
+            .modelSelected(Item.self)
+            .flatMap({ item -> Observable<Shot> in
+                switch item {
+                case .shot(let shot, let sended): return sended ? Observable.empty() : Observable.just(shot)
+                case .wireframe: return Observable.empty()
+                }
+                
             })
             .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
-            .flatMap { param -> Observable<(Shot, User)> in
-                return UIAlertController(title: nil, message: "Do you want send this Shot", preferredStyle: .alert)
-                    .confirmation()
-                    .withLatestFrom(Observable.just(param))
+            .flatMap { param -> Observable<(Shot, User, String)> in
+                return UIAlertController.confirmation(message: "Do you want send this shot?")
+                    .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
             }
-            .flatMap { (shot, user) -> Observable<Void> in
-                return Firestore.firestore().rx.save(shot: shot, user: user)
+            .flatMap { (shot, user, message) -> Observable<Void> in
+                return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
             }
             .subscribe { [weak self] in
                 guard let `self` = self else { return }
@@ -106,17 +110,6 @@ extension DribbbleShotsViewController {
     // MARK: Actions
     @objc func doneHandler() {
         dismiss(animated: true, completion: nil)
-    }
-    
-    func save(shot: Shot, user: User) {
-        Firestore.firestore().rx.save(shot: shot, user: user)
-            .subscribe {
-                switch $0 {
-                case .completed: print("success")
-                case .error(let error): print(error)
-                default: break // do nothing
-                }
-            }.disposed(by: rx.disposeBag)
     }
 }
 
@@ -135,7 +128,7 @@ private extension DribbbleShotsViewController {
             }
             .subscribe({ [weak self] in
                 if let items = $0.element {
-                    self?.reloadData.value = items.map { Item.shot((user: $0.0, sended: $0.1)) }
+                    self?.reloadData.value = items.map { Item.shot((shot: $0.0, sended: $0.1)) }
                 }
             })
             .disposed(by: rx.disposeBag)
