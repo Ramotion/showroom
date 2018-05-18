@@ -240,10 +240,13 @@
                                                 <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RV-sy-Q8y">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RV-sy-Q8y">
                                                 <rect key="frame" x="267" y="5" width="100" height="43"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Log in"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="1Lu-tG-opX"/>
+                                                    <constraint firstAttribute="width" constant="100" id="PVc-ch-Z78"/>
+                                                </constraints>
+                                                <state key="normal" title="Send Shot"/>
                                                 <connections>
                                                     <action selector="dribbleLogInHandler:" destination="Nd2-td-3Qt" eventType="touchUpInside" id="MWc-d2-PzO"/>
                                                 </connections>
@@ -251,7 +254,9 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="2RV-sy-Q8y" secondAttribute="bottom" constant="6" id="9ZT-Ml-Uwa"/>
                                             <constraint firstItem="i5Z-xj-2kp" firstAttribute="centerX" secondItem="gz0-k6-5sb" secondAttribute="centerX" id="Uom-39-lOe"/>
+                                            <constraint firstAttribute="trailing" secondItem="2RV-sy-Q8y" secondAttribute="trailing" constant="8" id="goD-4a-A7x"/>
                                             <constraint firstItem="i5Z-xj-2kp" firstAttribute="centerY" secondItem="gz0-k6-5sb" secondAttribute="centerY" id="xkX-Ih-f21"/>
                                         </constraints>
                                     </view>
