@@ -42,21 +42,21 @@ extension AppDelegate {
 
 extension AppDelegate {
   
-  fileprivate func configureNavigationBar() {
-    //transparent background
-    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-    UINavigationBar.appearance().shadowImage = UIImage()
-    UINavigationBar.appearance().isTranslucent = true
-    
-    
-    if let font = UIFont(name: "Avenir-medium" , size: 18) {
-      UINavigationBar.appearance().titleTextAttributes = [
-        kCTForegroundColorAttributeName : UIColor.white,
-        kCTFontAttributeName : font
-        ] as [NSAttributedStringKey : Any]
+    fileprivate func configureNavigationBar() {
+        //transparent background
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+        
+        
+        if let font = UIFont(name: "Avenir-medium", size: 18) {
+            UINavigationBar.appearance().titleTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.font: font,
+            ]
+        }
     }
-  }
-  
+    
   fileprivate func configureElongationPreviewControl() {
     // Customize ElongationConfig
     var config = ElongationConfig()
