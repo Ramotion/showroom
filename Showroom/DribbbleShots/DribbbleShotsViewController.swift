@@ -33,6 +33,8 @@ final class DribbbleShotsViewController: UIViewController {
             .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
+        
+        self.title = "Dribbble shots"
     }
 }
 
