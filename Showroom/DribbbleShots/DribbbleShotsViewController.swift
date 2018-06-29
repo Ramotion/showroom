@@ -49,9 +49,7 @@ extension DribbbleShotsViewController {
 
         // customze collection
         collectionView.register(DribbbleShotCell.self)
-        let margins = collectionView.layoutMargins.left + collectionView.layoutMargins.right
-        let itemWidth = (UIScreen.main.bounds.size.width - margins) / 2 - 14
-        (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        collectionView.collectionViewLayout = DribbbleShotsCollectionViewLayout()
         collectionView.backgroundView = backgroundView
         collectionView.backgroundView?.isHidden = true
 

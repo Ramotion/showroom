@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110E7C7F20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
 		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
@@ -148,6 +149,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
 		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
 		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 			children = (
 				5A3C741B20A4311B006EEE3C /* Cells */,
 				5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */,
+				110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */,
 			);
 			path = DribbbleShots;
 			sourceTree = "<group>";
@@ -1266,6 +1269,7 @@
 				84FC43071E165B5B008D4BC4 /* PageCollectionLayout.swift in Sources */,
 				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,
 				84760B241DE0796800AF36FE /* NodeAnimations.swift in Sources */,
+				110E7C7F20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift in Sources */,
 				84ADF2961DFE85E60097F7C6 /* ThreeThingersTouch.swift in Sources */,
 				841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */,
 				84F0A97F1DE834F900C02332 /* CircleView.swift in Sources */,
