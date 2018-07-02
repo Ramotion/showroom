@@ -252,7 +252,7 @@ extension CarouselViewController {
     let storyboard = UIStoryboard.storyboard(storyboard: .Navigation)
     let dribbbleShotsVC: DribbbleShotsViewController = storyboard.instantiateViewController()
     
-    let navigationController = DribbleShotsNavigationController()
+    let navigationController = DribbbleShotsNavigationController()
     navigationController.viewControllers = [dribbbleShotsVC]
     navigationController.transitioningDelegate = self
     navigationController.modalPresentationStyle = .custom

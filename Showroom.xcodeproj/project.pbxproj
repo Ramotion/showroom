@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		110E7C7F20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */; };
 		113C9D5020EA2C0000031DD1 /* DribbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbleShotsTransition.swift */; };
-		113C9D5420EA2EE800031DD1 /* DribbleShotsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5320EA2EE800031DD1 /* DribbleShotsNavigationController.swift */; };
+		113C9D5420EA2EE800031DD1 /* DribbbleShotsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
 		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
@@ -153,7 +153,7 @@
 /* Begin PBXFileReference section */
 		110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		113C9D4F20EA2C0000031DD1 /* DribbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleShotsTransition.swift; sourceTree = "<group>"; };
-		113C9D5320EA2EE800031DD1 /* DribbleShotsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleShotsNavigationController.swift; sourceTree = "<group>"; };
+		113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsNavigationController.swift; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
 		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
 		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
@@ -313,8 +313,8 @@
 			children = (
 				5A3C741B20A4311B006EEE3C /* Cells */,
 				110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */,
+				113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */,
 				5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */,
-				113C9D5320EA2EE800031DD1 /* DribbleShotsNavigationController.swift */,
 				113C9D4F20EA2C0000031DD1 /* DribbleShotsTransition.swift */,
 			);
 			path = DribbbleShots;
@@ -1298,7 +1298,7 @@
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
 				9D6F550F1E97B8D80059B49A /* UICollectionView.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift in Sources */,
-				113C9D5420EA2EE800031DD1 /* DribbleShotsNavigationController.swift in Sources */,
+				113C9D5420EA2EE800031DD1 /* DribbbleShotsNavigationController.swift in Sources */,
 				5A9C4E1C20A1E8B400CB629D /* Shot.swift in Sources */,
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,
 				844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */,
