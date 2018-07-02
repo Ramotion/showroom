@@ -9,6 +9,7 @@ final class NetworkingManager {
         static let base = "https://api.dribbble.com/v2/"
         static let user = base + "user"
         static let shots = base + "user/shots"
+        static let popularShots = base + "popular_shots"
     }
 }
 
@@ -17,6 +18,13 @@ extension NetworkingManager {
     
     func fetchDribbbleUser() -> Observable<User> {
         return fetch(getUrl: URLString.user)
+    }
+
+    func fetchDribbblePopularShots() -> Observable<[Shot]> {
+        let request = URLRequest(url: URL(string: URLString.popularShots)!)
+        return URLSession.shared.rx
+            .data(request: request)
+            .map { try JSONDecoder().decode([Shot].self, from: $0) }
     }
     
     func fetchDribbbleShots() -> Observable<[Shot]> {
