@@ -13,7 +13,8 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     override init() {
         super.init()
         
-        sectionInset = UIEdgeInsets(top: 34, left: 34, bottom: 34, right: 35)
+        minimumInteritemSpacing = 0
+        minimumLineSpacing = 0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,10 +25,12 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     
     override func prepare() {
         let collectionViewWidth = collectionView?.bounds.width ?? 0
-        let width = max(floor((collectionViewWidth - sectionInset.left - sectionInset.right) / 2 - 12), 0)
+        let proposedSectionInset: CGFloat = 21
+        let width = max(round((collectionViewWidth - proposedSectionInset * 2) / 2), 0)
         itemSize = CGSize(width: width, height: width)
-        minimumInteritemSpacing = collectionViewWidth - sectionInset.left - sectionInset.right - width * 2
-        minimumLineSpacing = minimumInteritemSpacing
+        let sectionInsetLeft = floor((collectionViewWidth - itemSize.width * 2) / 2)
+        let sectionInsetRight = collectionViewWidth - itemSize.width * 2 - sectionInsetLeft
+        sectionInset = UIEdgeInsets(top: proposedSectionInset, left: sectionInsetLeft, bottom: proposedSectionInset, right: sectionInsetRight)
         
         super.prepare()
     }

@@ -1,6 +1,5 @@
 import UIKit
 import OAuthSwift
-import Nuke
 import RxSwift
 import Firebase
 import MBProgressHUD
@@ -59,14 +58,10 @@ extension DribbbleShotsViewController {
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
                 switch element {
                 case .shot(let shot, let sended):
-                    cell.nameLabel.isHidden = false
-                    cell.backgroundColor = UIColor.white
-                    cell.nameLabel.text = shot.title
-                    if let url = shot.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
-                    cell.imageView.alpha = sended ? 0.3 : 1
+                    cell.imageUrl = shot.imageUrl
+                    cell.sended = sended
                 case .wireframe:
-                    cell.backgroundColor = UIColor.gray
-                    cell.nameLabel.isHidden = true
+                    ()
                 }
             }
             .disposed(by: rx.disposeBag)

@@ -581,29 +581,19 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-pJ-of2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="178" height="234"/>
+                                                    <rect key="frame" x="13" y="13" width="152" height="238"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdP-Hd-UNa" userLabel="NameLabel">
-                                                    <rect key="frame" x="0.0" y="234" width="178" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="top" secondItem="T1w-4f-xQr" secondAttribute="top" id="8JL-V6-Qsc"/>
-                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" id="HAW-H7-XsW"/>
-                                            <constraint firstAttribute="bottom" secondItem="cdE-pJ-of2" secondAttribute="bottom" constant="30" id="PMM-iS-cBw"/>
-                                            <constraint firstAttribute="trailing" secondItem="IdP-Hd-UNa" secondAttribute="trailing" id="htK-O1-fj9"/>
-                                            <constraint firstItem="IdP-Hd-UNa" firstAttribute="top" secondItem="cdE-pJ-of2" secondAttribute="bottom" id="jE7-iF-eFA"/>
-                                            <constraint firstAttribute="bottom" secondItem="IdP-Hd-UNa" secondAttribute="bottom" id="jXH-Lx-cbr"/>
-                                            <constraint firstAttribute="trailing" secondItem="cdE-pJ-of2" secondAttribute="trailing" id="nQ4-XC-Jw0"/>
-                                            <constraint firstItem="IdP-Hd-UNa" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" id="vWB-dS-W6T"/>
+                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="top" secondItem="T1w-4f-xQr" secondAttribute="top" constant="13" id="8JL-V6-Qsc"/>
+                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" constant="13" id="HAW-H7-XsW"/>
+                                            <constraint firstAttribute="bottom" secondItem="cdE-pJ-of2" secondAttribute="bottom" constant="13" id="PMM-iS-cBw"/>
+                                            <constraint firstAttribute="trailing" secondItem="cdE-pJ-of2" secondAttribute="trailing" constant="13" id="nQ4-XC-Jw0"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="cdE-pJ-of2" id="cpz-F0-bgd"/>
-                                            <outlet property="nameLabel" destination="IdP-Hd-UNa" id="0pg-8u-eVH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -643,7 +633,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2852" y="-525.78710644677665"/>
+            <point key="canvasLocation" x="2851.5" y="-526.5"/>
         </scene>
         <!--Thingers Tap View Controller-->
         <scene sceneID="pl6-Nz-v9V">
