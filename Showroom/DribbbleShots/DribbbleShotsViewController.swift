@@ -34,7 +34,9 @@ final class DribbbleShotsViewController: UIViewController {
         
         super.init(coder: aDecoder)
         
-        self.title = "Dribbble shots"
+        // customize nav bar
+        title = "Dribbble shots"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
     }
 }
 
@@ -43,11 +45,6 @@ extension DribbbleShotsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // customize nav bar
-        title = "Dribbble Shots"
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
-        navigationItem.leftBarButtonItem = doneButton
 
         // customze collection
         collectionView.register(DribbbleShotCell.self)
@@ -114,6 +111,7 @@ extension DribbbleShotsViewController {
     @objc func doneHandler() {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 
 // MARK: Helpers
