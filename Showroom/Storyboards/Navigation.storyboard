@@ -327,6 +327,7 @@
                         <outlet property="contactUsButton" destination="iHb-Ay-YzI" id="m97-pk-zSy"/>
                         <outlet property="infoButton" destination="kOG-ol-Mae" id="2Pn-hF-n14"/>
                         <outlet property="pageLabel" destination="i5Z-xj-2kp" id="7aa-zN-Mp7"/>
+                        <outlet property="sendShotButton" destination="2RV-sy-Q8y" id="h8o-vG-yhQ"/>
                         <outlet property="topContainer" destination="f7B-aG-u5A" id="xMN-b5-taO"/>
                         <outlet property="topRectangle" destination="bKl-Nw-e4S" id="5do-Vb-NdP"/>
                     </connections>
