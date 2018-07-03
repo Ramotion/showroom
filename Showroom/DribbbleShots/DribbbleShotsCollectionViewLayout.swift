@@ -10,9 +10,18 @@ import UIKit
 
 final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     
+    private enum AnimationState {
+        case prepared
+        case animating
+        case finished
+    }
+    
+    private var animator: UIDynamicAnimator!
+    
     override init() {
         super.init()
         
+        animator = UIDynamicAnimator(collectionViewLayout: self)
         minimumInteritemSpacing = 0
         minimumLineSpacing = 0
     }
@@ -21,9 +30,12 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Providing Layout Information
+    private var animationState = AnimationState.prepared
+    
+    // MARK: - Providing Layout Attributes
     
     override func prepare() {
+        // calculate item size and insets
         let collectionViewWidth = collectionView?.bounds.width ?? 0
         let proposedSectionInset: CGFloat = 21
         let width = max(round((collectionViewWidth - proposedSectionInset * 2) / 2), 0)
@@ -33,6 +45,82 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         sectionInset = UIEdgeInsets(top: proposedSectionInset, left: sectionInsetLeft, bottom: proposedSectionInset, right: sectionInsetRight)
         
         super.prepare()
+        
+        switch animationState {
+        case .prepared:
+            ()
+        case .animating:
+            if animator.behaviors.count == 0 {
+                let rectSize = collectionView.flatMap { CGSize(width: max($0.contentSize.width, $0.bounds.width), height: max($0.contentSize.height, $0.bounds.height)) } ?? .zero
+                let layoutAttributes = super.layoutAttributesForElements(in: CGRect(origin: .zero, size: rectSize)) ?? []
+
+                // add behaviors to layout attributes
+                // chain items one to another vertically
+                for layoutAttribute in layoutAttributes {
+                    let layoutAttributeRowIndex = layoutAttribute.indexPath.row
+                    
+                    let behaviour: UIAttachmentBehavior
+                    if (0...1).contains(layoutAttributeRowIndex) {
+                        behaviour = UIAttachmentBehavior(item: layoutAttribute, attachedToAnchor: layoutAttribute.center)
+                    } else {
+                        let targetAttributes = layoutAttributes[layoutAttributeRowIndex - 2]
+                        behaviour = UIAttachmentBehavior(item: layoutAttribute, offsetFromCenter: .zero, attachedTo: targetAttributes, offsetFromCenter: UIOffset(horizontal: 0, vertical: layoutAttribute.center.y - targetAttributes.center.y))
+                    }
+                    behaviour.length = 0
+                    behaviour.damping = 3
+                    behaviour.frequency = 9
+                    animator.addBehavior(behaviour)
+                }
+                
+                // move items to initial position
+                for layoutAttribute in layoutAttributes {
+                    animator.updateItem(usingCurrentState: layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState(layoutAttribute))
+                }
+            }
+        case .finished:
+            ()
+        }
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        switch animationState {
+        case .prepared:
+            return super.layoutAttributesForElements(in: rect)?.map { layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState($0) }
+        case .animating:
+            return animator.items(in: rect) as? [UICollectionViewLayoutAttributes]
+        case .finished:
+            return super.layoutAttributesForElements(in: rect)
+        }
+    }
+
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        switch animationState {
+        case .prepared:
+            return super.layoutAttributesForItem(at: indexPath).flatMap { layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState($0) }
+        case .animating:
+            return animator.layoutAttributesForCell(at: indexPath)
+        case .finished:
+            return super.layoutAttributesForItem(at: indexPath)
+        }
+    }
+    
+    private func layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
+        layoutAttributes.center.y += 20
+        let isInSecondColumn = layoutAttributes.indexPath.row % 2 == 1
+        if isInSecondColumn {
+            layoutAttributes.center.y += 10
+        }
+        return layoutAttributes
+    }
+    
+    func animateItemsInPlace() {
+        guard animationState == .prepared else { return }
+        animationState = .animating
+        invalidateLayout()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(330)) {
+            self.animationState = .finished
+            self.invalidateLayout()
+        }
     }
     
 }

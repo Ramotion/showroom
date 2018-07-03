@@ -41,54 +41,22 @@ extension NetworkingManager {
     
     func fetchDribbbleShots() -> Observable<[Shot]> {
         let data = """
-[
-  {
+{
     "id": 0,
     "description": "description",
     "html_url": "https://cdn.dribbble.com/users/824641/screenshots/4773637",
     "title": "title",
     "images": {
-      "normal": "https://cdn.dribbble.com/users/824641/screenshots/4773637/3dflip_teaser.gif"
+        "normal": "https://cdn.dribbble.com/users/824641/screenshots/4773637/3dflip_teaser.gif"
     },
     "animated": true
-  },
-  {
-    "id": 0,
-    "description": "description",
-    "html_url": "https://cdn.dribbble.com/users/824641/screenshots/4773637",
-    "title": "title",
-    "images": {
-      "normal": "https://cdn.dribbble.com/users/824641/screenshots/4773637/3dflip_teaser.gif"
-    },
-    "animated": true
-  },
-  {
-    "id": 0,
-    "description": "description",
-    "html_url": "https://cdn.dribbble.com/users/824641/screenshots/4773637",
-    "title": "title",
-    "images": {
-      "normal": "https://cdn.dribbble.com/users/824641/screenshots/4773637/3dflip_teaser.gif"
-    },
-    "animated": true
-  },
-  {
-    "id": 0,
-    "description": "description",
-    "html_url": "https://cdn.dribbble.com/users/824641/screenshots/4773637",
-    "title": "title",
-    "images": {
-      "normal": "https://cdn.dribbble.com/users/824641/screenshots/4773637/3dflip_teaser.gif"
-    },
-    "animated": true
-  }
-]
+}
 """.data(using: .utf8)!
         
         return Observable<[Shot]>.create { subscribtion in
             do {
-                let object = try JSONDecoder().decode([Shot].self, from: data)
-                subscribtion.onNext(object)
+                let object = try JSONDecoder().decode(Shot.self, from: data)
+                subscribtion.onNext((0..<10).map { _ in object })
                 subscribtion.onCompleted()
             } catch {
                 subscribtion.onError(error)

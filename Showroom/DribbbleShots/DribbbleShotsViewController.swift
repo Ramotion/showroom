@@ -17,8 +17,9 @@ final class DribbbleShotsViewController: UIViewController {
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
-    fileprivate let reloadData = Variable<[Item]>([.wireframe, .wireframe, .wireframe, .wireframe])
-
+    fileprivate let reloadData = Variable<[Item]>([.wireframe, .wireframe, .wireframe, .wireframe, .wireframe, .wireframe])
+    private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet var backgroundView: UIView!
     
@@ -37,6 +38,15 @@ final class DribbbleShotsViewController: UIViewController {
         title = "Dribbble shots"
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
     }
+    
+    // MARK: - Responding to View Events
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        collectionViewLayout.animateItemsInPlace()
+    }
+    
 }
 
 // MARK: Life Cycle
@@ -45,12 +55,16 @@ extension DribbbleShotsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // customze collection
+        // customize collection
         collectionView.register(DribbbleShotCell.self)
-        collectionView.collectionViewLayout = DribbbleShotsCollectionViewLayout()
         collectionView.backgroundView = backgroundView
         collectionView.backgroundView?.isHidden = true
-
+        
+        // customize layout
+        let layout = DribbbleShotsCollectionViewLayout()
+        collectionView.collectionViewLayout = layout
+        collectionViewLayout = layout
+            
         fetchData(userSignal: userSignal, dribbbleShotsSignal: dribbbleShotsSignal)
         
         let reloadDataSignal = reloadData.asObservable()
