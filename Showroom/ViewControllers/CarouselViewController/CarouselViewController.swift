@@ -253,6 +253,7 @@ extension CarouselViewController {
     let dribbbleShotsVC: DribbbleShotsViewController = storyboard.instantiateViewController()
     
     let navigationController = DribbbleShotsNavigationController()
+    navigationController.navigationBar.tintColor = .white
     navigationController.viewControllers = [dribbbleShotsVC]
     navigationController.transitioningDelegate = self
     navigationController.modalPresentationStyle = .custom
