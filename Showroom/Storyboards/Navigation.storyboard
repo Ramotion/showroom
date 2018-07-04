@@ -615,22 +615,32 @@ To help you evaluate the quality of development, we have created a mobile applic
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61l-Ib-Mma" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="qzb-hP-hO7" userLabel="BackgroundView">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                <view contentMode="scaleToFill" id="qzb-hP-hO7" userLabel="BackgroundView" customClass="DribbbleShotsBackgroundView" customModule="Showroom" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-LY-jee">
-                            <rect key="frame" x="0.0" y="54" width="240" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1P-hk-vhw">
+                            <rect key="frame" x="99" y="121" width="122" height="239"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-LY-jee">
+                            <rect key="frame" x="0.0" y="196.5" width="320" height="48"/>
+                            <string key="text">You do not have an 
+animated shot</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.082352941176470587" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Oer-LY-jee" firstAttribute="leading" secondItem="qzb-hP-hO7" secondAttribute="leading" id="N9w-98-G0y"/>
-                        <constraint firstItem="Oer-LY-jee" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" id="oeA-eA-Nje"/>
+                        <constraint firstItem="l1P-hk-vhw" firstAttribute="centerX" secondItem="qzb-hP-hO7" secondAttribute="centerX" id="Xe5-CP-eL4"/>
+                        <constraint firstItem="Oer-LY-jee" firstAttribute="centerY" secondItem="l1P-hk-vhw" secondAttribute="centerY" constant="-20" id="hMt-k7-1qb"/>
                         <constraint firstAttribute="trailing" secondItem="Oer-LY-jee" secondAttribute="trailing" id="r25-sJ-6en"/>
+                        <constraint firstItem="l1P-hk-vhw" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" id="u3h-GD-ptA"/>
                     </constraints>
                 </view>
             </objects>
