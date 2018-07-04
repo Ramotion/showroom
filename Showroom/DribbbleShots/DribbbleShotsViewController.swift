@@ -36,7 +36,7 @@ final class DribbbleShotsViewController: UIViewController {
         
         // customize nav bar
         title = "Dribbble shots"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ico_back"), style: .done, target: self, action: #selector(doneHandler))
     }
     
     // MARK: - Responding to View Events
