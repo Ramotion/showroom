@@ -582,6 +582,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-pJ-of2">
                                                     <rect key="frame" x="13" y="13" width="152" height="238"/>
+                                                    <color key="backgroundColor" red="0.82352941176470584" green="0.36862745098039218" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
