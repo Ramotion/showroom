@@ -74,8 +74,9 @@ extension DribbbleShotsViewController {
                 case .shot(let shot, let sended):
                     cell.imageUrl = shot.imageUrl
                     cell.sended = sended
+                    cell.isWireframe = false
                 case .wireframe:
-                    ()
+                    cell.isWireframe = true
                 }
             }
             .disposed(by: rx.disposeBag)

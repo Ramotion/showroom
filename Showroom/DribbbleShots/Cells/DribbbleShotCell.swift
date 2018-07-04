@@ -21,6 +21,16 @@ final class DribbbleShotCell: UICollectionViewCell {
         }
     }
     
+    var isWireframe: Bool = false {
+        didSet {
+            if isWireframe {
+                imageView.backgroundColor = UIColor(red: 210 / 255.0, green: 94 / 255.0, blue: 141 / 255.0, alpha: 1)
+            } else {
+                imageView.backgroundColor = nil
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
