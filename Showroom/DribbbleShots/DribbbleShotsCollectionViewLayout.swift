@@ -57,18 +57,10 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
                 // add behaviors to layout attributes
                 // chain items one to another vertically
                 for layoutAttribute in layoutAttributes {
-                    let layoutAttributeRowIndex = layoutAttribute.indexPath.row
-                    
-                    let behaviour: UIAttachmentBehavior
-                    if (0...1).contains(layoutAttributeRowIndex) {
-                        behaviour = UIAttachmentBehavior(item: layoutAttribute, attachedToAnchor: layoutAttribute.center)
-                    } else {
-                        let targetAttributes = layoutAttributes[layoutAttributeRowIndex - 2]
-                        behaviour = UIAttachmentBehavior(item: layoutAttribute, offsetFromCenter: .zero, attachedTo: targetAttributes, offsetFromCenter: UIOffset(horizontal: 0, vertical: layoutAttribute.center.y - targetAttributes.center.y))
-                    }
+                    let behaviour = UIAttachmentBehavior(item: layoutAttribute, attachedToAnchor: layoutAttribute.center)
                     behaviour.length = 0
-                    behaviour.damping = 3
-                    behaviour.frequency = 9
+                    behaviour.damping = 0.8
+                    behaviour.frequency = 1
                     animator.addBehavior(behaviour)
                 }
                 
@@ -113,13 +105,16 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         return layoutAttributes
     }
     
-    func animateItemsInPlace() {
+    func animateItemsInPlace(completion: (() -> ())? = nil) {
         guard animationState == .prepared else { return }
+        
         animationState = .animating
         invalidateLayout()
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(330)) {
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(1.3)) {
             self.animationState = .finished
             self.invalidateLayout()
+            completion?()
         }
     }
     
