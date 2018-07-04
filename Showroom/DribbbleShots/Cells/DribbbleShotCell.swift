@@ -25,12 +25,15 @@ final class DribbbleShotCell: UICollectionViewCell {
         super.awakeFromNib()
         
         backgroundColor = nil
-
+        
         imageView.layer.cornerRadius = kImageViewCornerRadius
+        
         imageView.layer.shadowColor = UIColor(white: 0, alpha: 1).cgColor
         imageView.layer.shadowOffset = CGSize(width: 0, height: 3)
         imageView.layer.shadowRadius = 8
         imageView.layer.shadowOpacity = 0.1
+        
+        layoutImageViewShadow()
     }
     
     override func prepareForReuse() {
@@ -44,12 +47,17 @@ final class DribbbleShotCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageView.layer.shadowPath = UIBezierPath(roundedRect: imageView.bounds, cornerRadius: kImageViewCornerRadius).cgPath
+        contentView.layoutIfNeeded()
+        layoutImageViewShadow()
 
         if let url = imageUrl {
-            let request = Nuke.Request(url: url, targetSize: imageView.bounds.size, contentMode: .aspectFill).processed(key: "round") { RoundedCornersImageProcessor(radius: 5).process($0) }
+            let request = Nuke.Request(url: url, targetSize: imageView.bounds.size, contentMode: .aspectFill).processed(key: "round") { RoundedCornersImageProcessor(radius: kImageViewCornerRadius).process($0) }
             manager.loadImage(with: request, into: imageView)
         }
+    }
+    
+    private func layoutImageViewShadow() {
+        imageView.layer.shadowPath = UIBezierPath(roundedRect: imageView.bounds, cornerRadius: kImageViewCornerRadius).cgPath
     }
     
 }
