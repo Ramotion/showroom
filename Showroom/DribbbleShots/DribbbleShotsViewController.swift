@@ -6,18 +6,11 @@ import MBProgressHUD
 
 final class DribbbleShotsViewController: UIViewController {
     
-    typealias ShotAndSended = (shot: Shot, sended: Bool)
-    
-    enum Item {
-        case shot(ShotAndSended)
-        case wireframe
-    }
-    
     fileprivate let networkingManager: NetworkingManager
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
-    fileprivate let reloadData = Variable<[Item]>([.wireframe, .wireframe, .wireframe, .wireframe, .wireframe, .wireframe])
+    fileprivate let reloadData = Variable<[DribbbleShotState]>([.wireframe, .wireframe, .wireframe, .wireframe, .wireframe, .wireframe])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -70,14 +63,7 @@ extension DribbbleShotsViewController {
         let reloadDataSignal = reloadData.asObservable()
         reloadDataSignal
             .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
-                switch element {
-                case .shot(let shot, let sended):
-                    cell.imageUrl = shot.imageUrl
-                    cell.sended = sended
-                    cell.isWireframe = false
-                case .wireframe:
-                    cell.isWireframe = true
-                }
+                cell.state = element
             }
             .disposed(by: rx.disposeBag)
         
@@ -88,10 +74,11 @@ extension DribbbleShotsViewController {
         
         // MARK: Item did select
         collectionView.rx
-            .modelSelected(Item.self)
+            .modelSelected(DribbbleShotState.self)
             .flatMap({ item -> Observable<Shot> in
                 switch item {
-                case .shot(let shot, let sended): return sended ? Observable.empty() : Observable.just(shot)
+                case .default(let shot): return Observable.just(shot)
+                case .sent: return Observable.empty()
                 case .wireframe: return Observable.empty()
                 }
                 
@@ -139,7 +126,8 @@ private extension DribbbleShotsViewController {
             }
             .subscribe({ [weak self] in
                 if let items = $0.element {
-                    self?.reloadData.value = items.map { Item.shot((shot: $0.0, sended: $0.1)) }
+                    self?.reloadData.value = items.map { DribbbleShotState(shot: $0.0, sent: $0.1) }
+//                    self?.reloadData.value = []
                 }
             })
             .disposed(by: rx.disposeBag)

@@ -1,5 +1,4 @@
 import UIKit
-import Nuke
 
 private let kImageViewCornerRadius: CGFloat = 5
 
@@ -7,26 +6,18 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     @IBOutlet weak private var imageView: UIImageView!
     
-    var manager = Manager.shared
-    
-    var imageUrl: URL? {
+    var state: DribbbleShotState = .wireframe {
         didSet {
-            setNeedsLayout()
-        }
-    }
-    
-    var sended: Bool = false {
-        didSet {
-            imageView.alpha = sended ? 0.3 : 1
-        }
-    }
-    
-    var isWireframe: Bool = false {
-        didSet {
-            if isWireframe {
-                imageView.backgroundColor = UIColor(red: 210 / 255.0, green: 94 / 255.0, blue: 141 / 255.0, alpha: 1)
-            } else {
+            switch state {
+            case .default:
+                setNeedsLayout()
                 imageView.backgroundColor = nil
+            case .sent:
+                setNeedsLayout()
+                imageView.backgroundColor = nil
+            case .wireframe:
+                imageView.cancelImageRequest()
+                imageView.backgroundColor = UIColor(red: 210 / 255.0, green: 94 / 255.0, blue: 141 / 255.0, alpha: 1)
             }
         }
     }
@@ -50,6 +41,7 @@ final class DribbbleShotCell: UICollectionViewCell {
         super.prepareForReuse()
         
         imageView.image = nil
+        imageView.cancelImageRequest()
     }
     
     // MARK: - Laying out Subviews
@@ -60,9 +52,10 @@ final class DribbbleShotCell: UICollectionViewCell {
         contentView.layoutIfNeeded()
         layoutImageViewShadow()
 
-        if let url = imageUrl {
-            let request = Nuke.Request(url: url, targetSize: imageView.bounds.size, contentMode: .aspectFill).processed(key: "round") { RoundedCornersImageProcessor(radius: kImageViewCornerRadius).process($0) }
-            manager.loadImage(with: request, into: imageView)
+        if let imageUrl = state.imageUrl {
+            imageView.setImage(url: imageUrl, targetSize: imageView.bounds.size, contentMode: .aspectFill, processor: ("round", {
+                return RoundedCornersImageProcessor(radius: kImageViewCornerRadius).process($0)
+            }))
         }
     }
     

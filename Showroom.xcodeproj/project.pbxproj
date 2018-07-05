@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		110D486320EE49A100554011 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D486220EE49A100554011 /* UIImageView+Extension.swift */; };
+		110D486920EE556400554011 /* DribbbleShotState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D486820EE556400554011 /* DribbbleShotState.swift */; };
 		110E7C7F20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */; };
 		1134CEAF20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */; };
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */; };
@@ -155,6 +156,7 @@
 
 /* Begin PBXFileReference section */
 		110D486220EE49A100554011 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		110D486820EE556400554011 /* DribbbleShotState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotState.swift; sourceTree = "<group>"; };
 		110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsBackgroundView.swift; sourceTree = "<group>"; };
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsTransition.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */,
 				5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */,
 				113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */,
+				110D486820EE556400554011 /* DribbbleShotState.swift */,
 			);
 			path = DribbbleShots;
 			sourceTree = "<group>";
@@ -1287,6 +1290,7 @@
 				84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */,
 				9D6F55101E97B8D80059B49A /* UIEdgeInsets.swift in Sources */,
 				9D6F54D41E97B7750059B49A /* GlidingCollectionDemoViewController.swift in Sources */,
+				110D486920EE556400554011 /* DribbbleShotState.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
 				84FC43071E165B5B008D4BC4 /* PageCollectionLayout.swift in Sources */,
