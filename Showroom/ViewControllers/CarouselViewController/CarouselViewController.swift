@@ -262,9 +262,9 @@ extension CarouselViewController {
   }
 }
 
-extension CarouselViewController : DribbleShotsTransitionSource {
+extension CarouselViewController : DribbbleShotsTransitionSource {
   
-  func dribbleShotsTransitionSourceView() -> UIView {
+  func dribbbleShotsTransitionSourceView() -> UIView {
     return sendShotButton
   }
   
@@ -274,9 +274,9 @@ extension CarouselViewController : DribbleShotsTransitionSource {
 extension CarouselViewController: UIViewControllerTransitioningDelegate {
   
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    if presented is DribbleShotsTransitionDestination {
-      let sourceView: UIView = (presenting as? DribbleShotsTransitionSource)?.dribbleShotsTransitionSourceView() ?? presenting.view
-      return DribbleShotsTransition(direction: .presenting(sourceView: sourceView))
+    if presented is DribbbleShotsTransitionDestination {
+      let sourceView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? presenting.view
+      return DribbbleShotsTransition(direction: .presenting(sourceView: sourceView))
     } else {
       return OpenControllerTransition(duration: 1)
     }
@@ -284,9 +284,9 @@ extension CarouselViewController: UIViewControllerTransitioningDelegate {
   
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let presenting = dismissed.presentingViewController
-    if presenting is DribbleShotsTransitionSource {
-      let destinationView: UIView = (presenting as? DribbleShotsTransitionSource)?.dribbleShotsTransitionSourceView() ?? view
-      return DribbleShotsTransition(direction: .dismissing(destinationView: destinationView))
+    if presenting is DribbbleShotsTransitionSource {
+      let destinationView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? view
+      return DribbbleShotsTransition(direction: .dismissing(destinationView: destinationView))
     } else {
       return HideControllerTransition(duration: 0.5)
     }

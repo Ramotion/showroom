@@ -8,6 +8,6 @@
 
 import UIKit
 
-final class DribbbleShotsNavigationController: UINavigationController, DribbleShotsTransitionDestination {
+final class DribbbleShotsNavigationController: UINavigationController, DribbbleShotsTransitionDestination {
 
 }

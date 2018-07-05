@@ -1,5 +1,5 @@
 //
-//  DribbleShotsTransition.swift
+//  DribbbleShotsTransition.swift
 //  Showroom
 //
 //  Created by Dmitry Nesterenko on 02/07/2018.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol DribbleShotsTransitionSource {
+protocol DribbbleShotsTransitionSource {
     
-    func dribbleShotsTransitionSourceView() -> UIView
-    
-}
-
-protocol DribbleShotsTransitionDestination {
+    func dribbbleShotsTransitionSourceView() -> UIView
     
 }
 
-final class DribbleShotsTransition : NSObject, UIViewControllerAnimatedTransitioning {
+protocol DribbbleShotsTransitionDestination {
+    
+}
+
+final class DribbbleShotsTransition : NSObject, UIViewControllerAnimatedTransitioning {
     
     enum Direction {
         case dismissing(destinationView: UIView)
