@@ -580,21 +580,41 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdE-pJ-of2">
-                                                    <rect key="frame" x="13" y="13" width="152" height="238"/>
-                                                    <color key="backgroundColor" red="0.82352941176470584" green="0.36862745098039218" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fPK-zc-tUC">
+                                                    <rect key="frame" x="0.0" y="0.0" width="178" height="264"/>
                                                 </imageView>
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLW-5Z-jAr">
+                                                    <rect key="frame" x="13" y="13" width="152" height="238"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VlK-uw-cji" customClass="DribbbleShotImageView" customModule="Showroom" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="152" height="238"/>
+                                                            <color key="backgroundColor" red="0.82352941180000006" green="0.36862745099999999" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="VlK-uw-cji" secondAttribute="bottom" id="0Vq-FY-rRB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="VlK-uw-cji" secondAttribute="trailing" id="GYc-JX-BwL"/>
+                                                        <constraint firstItem="VlK-uw-cji" firstAttribute="top" secondItem="PLW-5Z-jAr" secondAttribute="top" id="W3I-rO-ydB"/>
+                                                        <constraint firstItem="VlK-uw-cji" firstAttribute="leading" secondItem="PLW-5Z-jAr" secondAttribute="leading" id="gki-cg-Pgh"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="top" secondItem="T1w-4f-xQr" secondAttribute="top" constant="13" id="8JL-V6-Qsc"/>
-                                            <constraint firstItem="cdE-pJ-of2" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" constant="13" id="HAW-H7-XsW"/>
-                                            <constraint firstAttribute="bottom" secondItem="cdE-pJ-of2" secondAttribute="bottom" constant="13" id="PMM-iS-cBw"/>
-                                            <constraint firstAttribute="trailing" secondItem="cdE-pJ-of2" secondAttribute="trailing" constant="13" id="nQ4-XC-Jw0"/>
+                                            <constraint firstAttribute="bottom" secondItem="fPK-zc-tUC" secondAttribute="bottom" id="2lJ-ta-BOE"/>
+                                            <constraint firstItem="PLW-5Z-jAr" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" constant="13" id="C29-fn-c2m"/>
+                                            <constraint firstAttribute="trailing" secondItem="PLW-5Z-jAr" secondAttribute="trailing" constant="13" id="aoV-NK-Ku7"/>
+                                            <constraint firstItem="fPK-zc-tUC" firstAttribute="top" secondItem="T1w-4f-xQr" secondAttribute="top" id="gZ8-Cd-PD7"/>
+                                            <constraint firstItem="PLW-5Z-jAr" firstAttribute="top" secondItem="T1w-4f-xQr" secondAttribute="top" constant="13" id="hdr-c7-bW7"/>
+                                            <constraint firstAttribute="bottom" secondItem="PLW-5Z-jAr" secondAttribute="bottom" constant="13" id="mQe-Ty-L0Z"/>
+                                            <constraint firstItem="fPK-zc-tUC" firstAttribute="leading" secondItem="T1w-4f-xQr" secondAttribute="leading" id="xHq-TZ-ROJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="fPK-zc-tUC" secondAttribute="trailing" id="ypn-zm-HBO"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="cdE-pJ-of2" id="cpz-F0-bgd"/>
+                                            <outlet property="containerView" destination="PLW-5Z-jAr" id="wIj-ez-UkJ"/>
+                                            <outlet property="imageView" destination="VlK-uw-cji" id="tOY-Gz-aTo"/>
+                                            <outlet property="shadowImageView" destination="fPK-zc-tUC" id="Pod-0b-qb0"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
