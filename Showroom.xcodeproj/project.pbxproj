@@ -14,6 +14,7 @@
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */; };
 		113C9D5420EA2EE800031DD1 /* DribbbleShotsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
+		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
 		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
@@ -162,6 +163,7 @@
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsTransition.swift; sourceTree = "<group>"; };
 		113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsNavigationController.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
+		117163D520F611DF00D7F340 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
 		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
 		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */,
+				117163D520F611DF00D7F340 /* UIImage+Extension.swift */,
 				110D486220EE49A100554011 /* UIImageView+Extension.swift */,
 			);
 			path = Images;
@@ -1286,6 +1289,7 @@
 				84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
 				5A3C742420A47F07006EEE3C /* KeychainManager.swift in Sources */,
+				117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */,
 				84B743E81DFC00B500504C7A /* CarouselTransitionAnimationBroker.swift in Sources */,
 				84E1D09C1DF2B754006F620F /* MenuPopUpTransition.swift in Sources */,
 				9D6F55101E97B8D80059B49A /* UIEdgeInsets.swift in Sources */,
