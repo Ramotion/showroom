@@ -36,9 +36,15 @@ final class DribbbleShotsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        collectionViewLayout.animateItemsInPlace()
+
+        if !collectionViewItemsDidAnimate {
+            collectionViewLayout.animateItemsInPlace(completion: { [weak self] in
+                self?.collectionViewItemsDidAnimate = true
+            })
+        }
     }
+    
+    private var collectionViewItemsDidAnimate = false
     
 }
 
