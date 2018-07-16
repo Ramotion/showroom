@@ -10,7 +10,8 @@ import UIKit
 
 final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     
-    private enum AnimationState {
+    @objc
+    enum AnimationState : Int {
         case prepared
         case animating
         case finished
@@ -30,7 +31,8 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private var animationState = AnimationState.prepared
+    @objc
+    private(set) dynamic var animationState = AnimationState.prepared
     
     // MARK: - Providing Layout Attributes
     
