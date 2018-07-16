@@ -125,15 +125,17 @@ private extension DribbbleShotsViewController {
         let sendedShotsSignal = userSignal.flatMap { return Firestore.firestore().rx.fetchShots(from: $0) }
             .catchErrorJustReturn([])
         
-        Observable.zip(dribbbleShotsSignal, sendedShotsSignal) { return ($0, $1) }
-            .map { (dribbbleShots, sendedShots) -> [(Shot, Bool)] in // shot, selected
+        let collectionViewAnimationDidFinish = collectionViewLayout.rx.observe(DribbbleShotsCollectionViewLayout.AnimationState.self, "animationState")
+            .filter { $0 == .finished }
+
+        Observable.zip(dribbbleShotsSignal, sendedShotsSignal, collectionViewAnimationDidFinish)
+            .map { (dribbbleShots, sendedShots, animationDidFinish) -> [(Shot, Bool)] in // shot, selected
                 let sendedShotIds = sendedShots.map { $0.id }
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
             .subscribe({ [weak self] in
                 if let items = $0.element {
-                    self?.reloadData.value = items.map { DribbbleShotState(shot: $0.0, sent: $0.1) }
-//                    self?.reloadData.value = []
+                    self?.reloadData.value = items.map { DribbbleShotState(shot: $0.0, sent: true) }
                 }
             })
             .disposed(by: rx.disposeBag)
