@@ -7,24 +7,33 @@ final class DribbbleShotCell: UICollectionViewCell {
     @IBOutlet weak private var containerView: UIView!
     @IBOutlet weak private var shadowImageView: UIImageView!
     @IBOutlet weak private var imageView: DribbbleShotImageView!
+    @IBOutlet weak private var gifImageView: UIImageView!
 
     var state: DribbbleShotState = .wireframe {
         didSet {
             switch state {
-            case .default:
+            case .default(let shot):
                 setNeedsLayout()
                 containerView.backgroundColor = nil
                 imageView.isTransparentOverlayVisible = false
-            case .sent:
+                updateWithShot(shot)
+            case .sent(let shot):
                 setNeedsLayout()
                 containerView.backgroundColor = nil
                 imageView.isTransparentOverlayVisible = true
+                updateWithShot(shot)
             case .wireframe:
                 imageView.cancelImageRequest()
                 containerView.backgroundColor = UIColor(red: 210 / 255.0, green: 94 / 255.0, blue: 141 / 255.0, alpha: 1)
                 imageView.isTransparentOverlayVisible = false
+                updateWithShot(nil)
             }
         }
+    }
+    
+    private func updateWithShot(_ shot: Shot?) {
+        let isAnimated = shot?.animated ?? false
+        gifImageView.isHidden = !isAnimated
     }
     
     override func awakeFromNib() {
@@ -47,6 +56,7 @@ final class DribbbleShotCell: UICollectionViewCell {
         
         contentView.layoutIfNeeded()
 
+        // image url
         if let imageUrl = state.imageUrl {
             imageView.setImage(url: imageUrl, targetSize: imageView.bounds.size, contentMode: .aspectFill)
         } else {
