@@ -72,7 +72,7 @@ extension ElongationDemoViewController {
     
     let villa = datasource[indexPath.row]
     
-    let attributedLocality = NSMutableAttributedString(string: villa.locality.uppercased(), attributes: [
+    let attributedLocality = NSAttributedString(string: villa.locality.uppercased(), attributes: [
         kCTFontAttributeName: UIFont.robotoFont(ofSize: 22, weight: .medium),
         kCTKernAttributeName: 8.2,
         kCTForegroundColorAttributeName: UIColor.white
