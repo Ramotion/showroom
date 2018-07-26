@@ -14,6 +14,7 @@
 		1126AD2E2109B46C0002B6EB /* DribbleShotsNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */; };
 		1126AD302109B4B00002B6EB /* DribbleShotsNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */; };
 		1126AD382109C7E80002B6EB /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD372109C7E80002B6EB /* NibLoadable.swift */; };
+		1126AD3C2109CD440002B6EB /* DribbleSendShotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */; };
 		1134CEAF20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */; };
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
@@ -166,6 +167,7 @@
 		1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleShotsNavigationView.swift; sourceTree = "<group>"; };
 		1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbleShotsNavigationView.xib; sourceTree = "<group>"; };
 		1126AD372109C7E80002B6EB /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSendShotButton.swift; sourceTree = "<group>"; };
 		1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsBackgroundView.swift; sourceTree = "<group>"; };
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsTransition.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				110D486820EE556400554011 /* DribbbleShotState.swift */,
 				113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */,
 				5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */,
+				1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */,
 				1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */,
 				1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */,
 			);
@@ -1370,6 +1373,7 @@
 				846E6FAF1DF1BF2800A7F02E /* MenuPopUpViewController.swift in Sources */,
 				842E3F401DF004620071037A /* UIView+Build.swift in Sources */,
 				5AC3F0EF20A5BCF400F525EE /* User.swift in Sources */,
+				1126AD3C2109CD440002B6EB /* DribbleSendShotButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

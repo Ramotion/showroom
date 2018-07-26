@@ -24,10 +24,10 @@ class CarouselViewController: UIViewController {
   @IBOutlet var aboutView: AboutView!
   @IBOutlet weak var infoButton: UIButton!
   @IBOutlet weak var contactUsButton: UIButton!
+  @IBOutlet weak var sendShotButton: UIButton!
   @IBOutlet weak var pageLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bottomContainer: UIView!
-  @IBOutlet weak var sendShotButton: UIButton!
   
   fileprivate var isSplashAnimation = true
   
@@ -86,6 +86,7 @@ extension CarouselViewController {
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,
                                                           contactUsButton: contactUsButton,
+                                                          sendShotButton: sendShotButton,
                                                           pageLabel: pageLabel,
                                                           titleContainer: topContainer,
                                                           topRectangle: topRectangle,
@@ -96,6 +97,7 @@ extension CarouselViewController {
     transitionBrokerAnimation = CarouselTransitionAnimationBroker(collectionView: collectionView,
                                                                   infoButton: infoButton,
                                                                   contactUsButton: contactUsButton,
+                                                                  sendShotButton: sendShotButton,
                                                                   pageLabel: pageLabel,
                                                                   titleContainer: topContainer,
                                                                   bottomContainer: bottomContainer)
@@ -145,6 +147,12 @@ extension  CarouselViewController {
     contactUsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     contactUsButton.layer.shadowRadius = 4
     contactUsButton.layer.shadowOpacity = 0.3
+    
+    sendShotButton.layer.cornerRadius = C.radius
+    sendShotButton.layer.shadowColor = UIColor.black.cgColor
+    sendShotButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+    sendShotButton.layer.shadowRadius = 4
+    sendShotButton.layer.shadowOpacity = 0.3
   }
   
   func preloadfoldinCellVC() {
