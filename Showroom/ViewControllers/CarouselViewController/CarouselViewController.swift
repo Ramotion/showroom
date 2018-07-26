@@ -251,14 +251,9 @@ extension CarouselViewController {
   @IBAction func dribbleLogInHandler(_ sender: UIView) {
     let storyboard = UIStoryboard.storyboard(storyboard: .Navigation)
     let dribbbleShotsVC: DribbbleShotsViewController = storyboard.instantiateViewController()
-    
-    let navigationController = DribbbleShotsNavigationController()
-    navigationController.navigationBar.tintColor = .white
-    navigationController.viewControllers = [dribbbleShotsVC]
-    navigationController.transitioningDelegate = self
-    navigationController.modalPresentationStyle = .custom
-    
-    self.present(navigationController, animated: true, completion: nil)
+    dribbbleShotsVC.transitioningDelegate = self
+    dribbbleShotsVC.modalPresentationStyle = .custom
+    self.present(dribbbleShotsVC, animated: true, completion: nil)
   }
 }
 

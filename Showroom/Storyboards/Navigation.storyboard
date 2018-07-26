@@ -586,6 +586,10 @@ To help you evaluate the quality of development, we have created a mobile applic
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PLW-5Z-jAr">
                                                     <rect key="frame" x="13" y="13" width="152" height="238"/>
                                                     <subviews>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="10g-wZ-Mwf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="152" height="238"/>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </view>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VlK-uw-cji" customClass="DribbbleShotImageView" customModule="Showroom" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="152" height="238"/>
                                                             <color key="backgroundColor" red="0.82352941180000006" green="0.36862745099999999" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -596,11 +600,15 @@ To help you evaluate the quality of development, we have created a mobile applic
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="VlK-uw-cji" secondAttribute="bottom" id="0Vq-FY-rRB"/>
+                                                        <constraint firstItem="10g-wZ-Mwf" firstAttribute="top" secondItem="PLW-5Z-jAr" secondAttribute="top" id="5Jw-yJ-Pqs"/>
                                                         <constraint firstItem="mV1-e3-X0C" firstAttribute="top" secondItem="PLW-5Z-jAr" secondAttribute="top" constant="8" id="5Pd-ed-GyQ"/>
                                                         <constraint firstAttribute="trailing" secondItem="VlK-uw-cji" secondAttribute="trailing" id="GYc-JX-BwL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="10g-wZ-Mwf" secondAttribute="trailing" id="NHU-FO-cyv"/>
                                                         <constraint firstAttribute="trailing" secondItem="mV1-e3-X0C" secondAttribute="trailing" constant="8" id="RkY-wj-jbm"/>
                                                         <constraint firstItem="VlK-uw-cji" firstAttribute="top" secondItem="PLW-5Z-jAr" secondAttribute="top" id="W3I-rO-ydB"/>
                                                         <constraint firstItem="VlK-uw-cji" firstAttribute="leading" secondItem="PLW-5Z-jAr" secondAttribute="leading" id="gki-cg-Pgh"/>
+                                                        <constraint firstItem="10g-wZ-Mwf" firstAttribute="leading" secondItem="PLW-5Z-jAr" secondAttribute="leading" id="mox-vn-eX8"/>
+                                                        <constraint firstAttribute="bottom" secondItem="10g-wZ-Mwf" secondAttribute="bottom" id="nUP-p3-hoL"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -620,6 +628,7 @@ To help you evaluate the quality of development, we have created a mobile applic
                                             <outlet property="containerView" destination="PLW-5Z-jAr" id="wIj-ez-UkJ"/>
                                             <outlet property="gifImageView" destination="mV1-e3-X0C" id="DUZ-iQ-vu2"/>
                                             <outlet property="imageView" destination="VlK-uw-cji" id="tOY-Gz-aTo"/>
+                                            <outlet property="progressView" destination="10g-wZ-Mwf" id="Jdu-af-MkV"/>
                                             <outlet property="shadowImageView" destination="fPK-zc-tUC" id="Pod-0b-qb0"/>
                                         </connections>
                                     </collectionViewCell>
@@ -646,13 +655,13 @@ To help you evaluate the quality of development, we have created a mobile applic
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1P-hk-vhw">
-                            <rect key="frame" x="99" y="120.5" width="122" height="239"/>
+                            <rect key="frame" x="99" y="144.5" width="122" height="239"/>
                             <fontDescription key="fontDescription" type="system" pointSize="200"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-LY-jee">
-                            <rect key="frame" x="0.0" y="196" width="320" height="48"/>
+                            <rect key="frame" x="0.0" y="220" width="320" height="48"/>
                             <string key="text">You do not have an 
 animated shot</string>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -666,7 +675,7 @@ animated shot</string>
                         <constraint firstItem="l1P-hk-vhw" firstAttribute="centerX" secondItem="qzb-hP-hO7" secondAttribute="centerX" id="Xe5-CP-eL4"/>
                         <constraint firstItem="Oer-LY-jee" firstAttribute="centerY" secondItem="l1P-hk-vhw" secondAttribute="centerY" constant="-20" id="hMt-k7-1qb"/>
                         <constraint firstAttribute="trailing" secondItem="Oer-LY-jee" secondAttribute="trailing" id="r25-sJ-6en"/>
-                        <constraint firstItem="l1P-hk-vhw" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" id="u3h-GD-ptA"/>
+                        <constraint firstItem="l1P-hk-vhw" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" constant="24" id="u3h-GD-ptA"/>
                     </constraints>
                 </view>
             </objects>

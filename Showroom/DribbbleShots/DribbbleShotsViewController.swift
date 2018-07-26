@@ -4,7 +4,7 @@ import RxSwift
 import Firebase
 import MBProgressHUD
 
-final class DribbbleShotsViewController: UIViewController {
+final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransitionDestination {
     
     fileprivate let networkingManager: NetworkingManager
     fileprivate let userSignal: Observable<User>
@@ -14,7 +14,8 @@ final class DribbbleShotsViewController: UIViewController {
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet var backgroundView: UIView!
+    @IBOutlet private var backgroundView: UIView!
+    private let navigationView = DribbleShotsNavigationView.loadFromNib()!
     
     required init?(coder aDecoder: NSCoder) {
         let network = NetworkingManager()
@@ -26,10 +27,6 @@ final class DribbbleShotsViewController: UIViewController {
             .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
-        
-        // customize nav bar
-        title = "Dribbble shots"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ico_back"), style: .done, target: self, action: #selector(doneHandler))
     }
     
     // MARK: - Responding to View Events
@@ -54,6 +51,14 @@ extension DribbbleShotsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // navigation view
+        navigationView.autoresizingMask = .flexibleWidth
+        navigationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 0)
+        navigationView.sizeToFit()
+        navigationView.backButton.addTarget(self, action: #selector(doneHandler), for: .touchUpInside)
+        view.addSubview(navigationView)
+        updateNavigationView()
+        
         // customize collection
         collectionView.register(DribbbleShotCell.self)
         collectionView.backgroundView = backgroundView
@@ -73,8 +78,8 @@ extension DribbbleShotsViewController {
             }
             .disposed(by: rx.disposeBag)
         
-        reloadDataSignal.subscribe { [weak self] in
-            self?.collectionView.backgroundView?.isHidden = ($0.element?.count ?? 0) != 0
+        reloadDataSignal.subscribe { [weak self] _ in
+            self?.updateNavigationView()
         }
         .disposed(by: rx.disposeBag)
         
@@ -108,6 +113,17 @@ extension DribbbleShotsViewController {
                 }
             }
             .disposed(by: rx.disposeBag)
+    }
+    
+    private func updateNavigationView() {
+        let numberOfElements = reloadData.value.count
+        if numberOfElements == 0 {
+            collectionView.backgroundView?.isHidden = false
+            navigationView.backgroundColor = .clear
+        } else {
+            collectionView.backgroundView?.isHidden = true
+            navigationView.backgroundColor = collectionView.backgroundColor?.withAlphaComponent(0.8)
+        }
     }
     
     // MARK: Actions

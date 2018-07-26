@@ -11,9 +11,11 @@
 		110D486920EE556400554011 /* DribbbleShotState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D486820EE556400554011 /* DribbbleShotState.swift */; };
 		110D486B20EE572C00554011 /* DribbbleShotImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D486A20EE572C00554011 /* DribbbleShotImageView.swift */; };
 		110E7C7F20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */; };
+		1126AD2E2109B46C0002B6EB /* DribbleShotsNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */; };
+		1126AD302109B4B00002B6EB /* DribbleShotsNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */; };
+		1126AD382109C7E80002B6EB /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD372109C7E80002B6EB /* NibLoadable.swift */; };
 		1134CEAF20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */; };
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */; };
-		113C9D5420EA2EE800031DD1 /* DribbbleShotsNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
 		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
@@ -161,9 +163,11 @@
 		110D486820EE556400554011 /* DribbbleShotState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotState.swift; sourceTree = "<group>"; };
 		110D486A20EE572C00554011 /* DribbbleShotImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotImageView.swift; sourceTree = "<group>"; };
 		110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleShotsNavigationView.swift; sourceTree = "<group>"; };
+		1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbleShotsNavigationView.xib; sourceTree = "<group>"; };
+		1126AD372109C7E80002B6EB /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsBackgroundView.swift; sourceTree = "<group>"; };
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsTransition.swift; sourceTree = "<group>"; };
-		113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsNavigationController.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
 		117163D520F611DF00D7F340 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +316,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1126AD362109C7DE0002B6EB /* NibLoadable */ = {
+			isa = PBXGroup;
+			children = (
+				1126AD372109C7E80002B6EB /* NibLoadable.swift */,
+			);
+			path = NibLoadable;
+			sourceTree = "<group>";
+		};
 		113C9D5720EA6DCB00031DD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,10 +349,11 @@
 				110D486A20EE572C00554011 /* DribbbleShotImageView.swift */,
 				1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */,
 				110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */,
-				113C9D5320EA2EE800031DD1 /* DribbbleShotsNavigationController.swift */,
 				110D486820EE556400554011 /* DribbbleShotState.swift */,
 				113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */,
 				5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */,
+				1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */,
+				1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */,
 			);
 			path = DribbbleShots;
 			sourceTree = "<group>";
@@ -433,6 +446,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1126AD362109C7DE0002B6EB /* NibLoadable */,
 				84D1A73E1E017A5A00120164 /* Analitycs */,
 				84760B1E1DE0794D00AF36FE /* Animations */,
 				842E3F3E1DF004420071037A /* Creater */,
@@ -1126,6 +1140,7 @@
 				9D6F54D71E97B7750059B49A /* Bindings3.jpeg in Resources */,
 				9D6F55031E97B8650059B49A /* Roboto-Bold.ttf in Resources */,
 				8476E71C1DDF4C860043B32C /* Graphik-Semibold.otf in Resources */,
+				1126AD302109B4B00002B6EB /* DribbleShotsNavigationView.xib in Resources */,
 				9D6F55051E97B8650059B49A /* Roboto-Regular.ttf in Resources */,
 				9D6F54DC1E97B7750059B49A /* Boots3.jpeg in Resources */,
 				9D6F54DA1E97B7750059B49A /* Boots1.jpeg in Resources */,
@@ -1268,7 +1283,9 @@
 				5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */,
 				84760B1A1DE05E3500AF36FE /* AboutView.swift in Sources */,
 				841C951D1DDEFA5B00B997F5 /* CarouselFlow.swift in Sources */,
+				1126AD382109C7E80002B6EB /* NibLoadable.swift in Sources */,
 				5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */,
+				1126AD2E2109B46C0002B6EB /* DribbleShotsNavigationView.swift in Sources */,
 				84B46EED1DAFCC8C0033CB15 /* DemoDetailViewController.swift in Sources */,
 				9D7F045D1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift in Sources */,
 				9D6F55021E97B8650059B49A /* LoremSwiftum.swift in Sources */,
@@ -1329,7 +1346,6 @@
 				9D6F550F1E97B8D80059B49A /* UICollectionView.swift in Sources */,
 				110D486320EE49A100554011 /* UIImageView+Extension.swift in Sources */,
 				84D4B7911DB0C81B00EE38C6 /* DemoExpandingViewControllerViewController.swift in Sources */,
-				113C9D5420EA2EE800031DD1 /* DribbbleShotsNavigationController.swift in Sources */,
 				5A9C4E1C20A1E8B400CB629D /* Shot.swift in Sources */,
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,
 				844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */,
