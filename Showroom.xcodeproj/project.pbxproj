@@ -19,6 +19,7 @@
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
 		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
+		11850186210B6FEA004D6433 /* DribbbleShotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11850185210B6FEA004D6433 /* DribbbleShotCell.xib */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
 		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
@@ -172,6 +173,7 @@
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsTransition.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
 		117163D520F611DF00D7F340 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		11850185210B6FEA004D6433 /* DribbbleShotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbbleShotCell.xib; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
 		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
 		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				5A3C741C20A4312C006EEE3C /* DribbbleShotCell.swift */,
+				11850185210B6FEA004D6433 /* DribbbleShotCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1128,6 +1131,7 @@
 				9D6F54E41E97B7750059B49A /* Gloves4.jpeg in Resources */,
 				9D6F54D81E97B7750059B49A /* Bindings4.jpeg in Resources */,
 				9D6F54EC1E97B7750059B49A /* Hoodie6.jpeg in Resources */,
+				11850186210B6FEA004D6433 /* DribbbleShotCell.xib in Resources */,
 				9D6F54D51E97B7750059B49A /* Bindings1.jpeg in Resources */,
 				9D6F54EB1E97B7750059B49A /* Hoodie5.jpeg in Resources */,
 				9D6F54E11E97B7750059B49A /* Gloves1.jpeg in Resources */,

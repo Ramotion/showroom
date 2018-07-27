@@ -25,10 +25,6 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DsT-dE-XTG">
                         <rect key="frame" x="13" y="13" width="152" height="238"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osZ-pC-13f">
-                                <rect key="frame" x="0.0" y="0.0" width="152" height="238"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XUB-0H-2Zy" customClass="DribbbleShotImageView" customModule="Showroom" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="152" height="238"/>
                                 <color key="backgroundColor" red="0.82352941180000006" green="0.36862745099999999" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
@@ -39,14 +35,10 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="XUB-0H-2Zy" firstAttribute="leading" secondItem="DsT-dE-XTG" secondAttribute="leading" id="3fr-yo-Vdd"/>
-                            <constraint firstAttribute="trailing" secondItem="osZ-pC-13f" secondAttribute="trailing" id="4jb-lg-9M8"/>
                             <constraint firstAttribute="trailing" secondItem="lyH-5r-ALH" secondAttribute="trailing" constant="8" id="5Ib-Eb-8Gf"/>
-                            <constraint firstItem="osZ-pC-13f" firstAttribute="top" secondItem="DsT-dE-XTG" secondAttribute="top" id="78o-bk-tgh"/>
                             <constraint firstAttribute="bottom" secondItem="XUB-0H-2Zy" secondAttribute="bottom" id="7mo-dc-3yl"/>
                             <constraint firstAttribute="trailing" secondItem="XUB-0H-2Zy" secondAttribute="trailing" id="Bzq-1m-PGD"/>
                             <constraint firstItem="lyH-5r-ALH" firstAttribute="top" secondItem="DsT-dE-XTG" secondAttribute="top" constant="8" id="ONg-Vd-EBh"/>
-                            <constraint firstItem="osZ-pC-13f" firstAttribute="leading" secondItem="DsT-dE-XTG" secondAttribute="leading" id="TPO-y1-Ni5"/>
-                            <constraint firstAttribute="bottom" secondItem="osZ-pC-13f" secondAttribute="bottom" id="WPB-Vj-BDc"/>
                             <constraint firstItem="XUB-0H-2Zy" firstAttribute="top" secondItem="DsT-dE-XTG" secondAttribute="top" id="yAH-lI-JpP"/>
                         </constraints>
                     </view>
@@ -68,7 +60,6 @@
                 <outlet property="containerView" destination="DsT-dE-XTG" id="1ZJ-9v-Nc2"/>
                 <outlet property="gifImageView" destination="lyH-5r-ALH" id="Oyv-EZ-bgq"/>
                 <outlet property="imageView" destination="XUB-0H-2Zy" id="Et8-ZF-wMI"/>
-                <outlet property="progressView" destination="osZ-pC-13f" id="E3s-65-cLV"/>
                 <outlet property="shadowImageView" destination="Qqj-q8-fYI" id="nEI-bu-FFZ"/>
             </connections>
         </collectionViewCell>

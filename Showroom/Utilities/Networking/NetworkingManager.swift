@@ -35,7 +35,7 @@ extension NetworkingManager {
             
             return Disposables.create()
         }
-        // TODO: temporarily replace fetch call with mock object
+        // TODO: revert back temporarily replaced fetch call with mock object
 //        return fetch(getUrl: URLString.user)
     }
     
@@ -56,7 +56,7 @@ extension NetworkingManager {
         return Observable<[Shot]>.create { subscribtion in
             do {
                 let object = try JSONDecoder().decode(Shot.self, from: data)
-                subscribtion.onNext((0..<10).map { _ in object })
+                subscribtion.onNext((0..<4).map { _ in object })
                 subscribtion.onCompleted()
             } catch {
                 subscribtion.onError(error)
@@ -64,7 +64,7 @@ extension NetworkingManager {
             
             return Disposables.create()
         }
-        // TODO: temporarily replace fetch call with mock object
+        // TODO: revert back temporarily replaced fetch call with mock object
 //        return fetch(getUrl: URLString.shots, parametrs: ["per_page=200"])
     }
     

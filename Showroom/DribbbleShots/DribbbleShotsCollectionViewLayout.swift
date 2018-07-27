@@ -8,94 +8,34 @@
 
 import UIKit
 
+private let kProposedSectionInset: CGFloat = 21
+
 final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
-    
-    @objc
-    enum AnimationState : Int {
-        case prepared
-        case animating
-        case finished
-    }
-    
-    private var animator: UIDynamicAnimator!
     
     override init() {
         super.init()
         
-        animator = UIDynamicAnimator(collectionViewLayout: self)
         minimumInteritemSpacing = 0
         minimumLineSpacing = 0
+        sectionInset.top = 89
+        sectionInset.bottom = kProposedSectionInset
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc
-    private(set) dynamic var animationState = AnimationState.prepared
-    
     // MARK: - Providing Layout Attributes
     
     override func prepare() {
         // calculate item size and insets
         let collectionViewWidth = collectionView?.bounds.width ?? 0
-        let proposedSectionInset: CGFloat = 21
-        let width = max(round((collectionViewWidth - proposedSectionInset * 2) / 2), 0)
+        let width = max(round((collectionViewWidth - kProposedSectionInset * 2) / 2), 0)
         itemSize = CGSize(width: width, height: width)
-        let sectionInsetLeft = floor((collectionViewWidth - itemSize.width * 2) / 2)
-        let sectionInsetRight = collectionViewWidth - itemSize.width * 2 - sectionInsetLeft
-        sectionInset = UIEdgeInsets(top: proposedSectionInset, left: sectionInsetLeft, bottom: proposedSectionInset, right: sectionInsetRight)
+        sectionInset.left = floor((collectionViewWidth - itemSize.width * 2) / 2)
+        sectionInset.right = collectionViewWidth - itemSize.width * 2 - sectionInset.left
         
         super.prepare()
-        
-        switch animationState {
-        case .prepared:
-            ()
-        case .animating:
-            if animator.behaviors.count == 0 {
-                let rectSize = collectionView.flatMap { CGSize(width: max($0.contentSize.width, $0.bounds.width), height: max($0.contentSize.height, $0.bounds.height)) } ?? .zero
-                let layoutAttributes = super.layoutAttributesForElements(in: CGRect(origin: .zero, size: rectSize)) ?? []
-
-                // add behaviors to layout attributes
-                // chain items one to another vertically
-                for layoutAttribute in layoutAttributes {
-                    let behaviour = UIAttachmentBehavior(item: layoutAttribute, attachedToAnchor: layoutAttribute.center)
-                    behaviour.length = 0
-                    behaviour.damping = 0.8
-                    behaviour.frequency = 1
-                    animator.addBehavior(behaviour)
-                }
-                
-                // move items to initial position
-                for layoutAttribute in layoutAttributes {
-                    animator.updateItem(usingCurrentState: layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState(layoutAttribute))
-                }
-            }
-        case .finished:
-            ()
-        }
-    }
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        switch animationState {
-        case .prepared:
-            return super.layoutAttributesForElements(in: rect)?.map { layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState($0) }
-        case .animating:
-            return animator.items(in: rect) as? [UICollectionViewLayoutAttributes]
-        case .finished:
-            return super.layoutAttributesForElements(in: rect)
-        }
-    }
-
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        switch animationState {
-        case .prepared:
-            return super.layoutAttributesForItem(at: indexPath).flatMap { layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState($0) }
-        case .animating:
-            return animator.layoutAttributesForCell(at: indexPath)
-        case .finished:
-            return super.layoutAttributesForItem(at: indexPath)
-        }
     }
     
     private func layoutAttributesByTransformingLayoutAttributesForPreparedAnimationState(_ layoutAttributes: UICollectionViewLayoutAttributes) -> UICollectionViewLayoutAttributes {
@@ -108,16 +48,44 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     }
     
     func animateItemsInPlace(completion: (() -> ())? = nil) {
-        guard animationState == .prepared else { return }
+        guard let collectionView = collectionView else { return }
         
-        animationState = .animating
-        invalidateLayout()
+        let cells = collectionView.visibleCells.sorted(by: {
+            if $0.frame.minY == $1.frame.minY {
+                return $0.frame.minX < $1.frame.minX
+            }
+            return $0.frame.minY < $1.frame.minY
+        })
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(1.3)) {
-            self.animationState = .finished
-            self.invalidateLayout()
-            completion?()
+        let group = DispatchGroup()
+        group.enter()
+        
+        for i in 0..<cells.count {
+            let cell = cells[i]
+            
+            let cellOriginalFrame = cell.frame
+            var cellInitialFrame = cellOriginalFrame.offsetBy(dx: 0, dy: 40)
+            
+            let isInSecondColumn = i % 2 == 1
+            if isInSecondColumn {
+                cellInitialFrame.origin.y += 10
+            }
+            
+            cell.frame = cellInitialFrame
+            
+            group.enter()
+            UIView.animate(withDuration: 0.5, delay: Double(i) * 0.05, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+                cell.frame = cellOriginalFrame
+            }, completion: { _ in
+                group.leave()
+            })
         }
+        
+        group.notify(queue: .main) {
+          completion?()
+        }
+        
+        group.leave()
     }
     
 }
