@@ -122,7 +122,7 @@ extension DribbbleShotsViewController {
             navigationView.backgroundColor = .clear
         } else {
             collectionView.backgroundView?.isHidden = true
-            navigationView.backgroundColor = collectionView.backgroundColor?.withAlphaComponent(0.8)
+            navigationView.backgroundColor = collectionView.backgroundColor?.withAlphaComponent(0.95)
         }
     }
     

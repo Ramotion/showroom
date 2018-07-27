@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let kDribbleShotsNavigationViewHeight: CGFloat = 90
+private let kDribbleShotsNavigationViewHeight: CGFloat = 80
 
 final class DribbleShotsNavigationView : UIView, NibLoadable {
     
