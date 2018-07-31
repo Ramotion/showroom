@@ -8,9 +8,11 @@
 
 import UIKit
 
-private let kProposedSectionInset: CGFloat = 21
-
 final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
+    
+    private struct Const {
+        static let proposedSectionInset: CGFloat = 21
+    }
     
     override init() {
         super.init()
@@ -29,17 +31,17 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         let adjustedContentInsetTop: CGFloat = 89
         if #available(iOS 11.0, *) {
             let contentInsetTop = max(0, adjustedContentInsetTop - (collectionView?.safeAreaInsets.top ?? 0))
-            let contentInsetBottom = max(0, kProposedSectionInset - (collectionView?.safeAreaInsets.bottom ?? 0))
+            let contentInsetBottom = max(0, Const.proposedSectionInset - (collectionView?.safeAreaInsets.bottom ?? 0))
             collectionView?.contentInset.top = contentInsetTop
             collectionView?.contentInset.bottom = contentInsetBottom
         } else {
             collectionView?.contentInset.top = adjustedContentInsetTop
-            collectionView?.contentInset.bottom = kProposedSectionInset
+            collectionView?.contentInset.bottom = Const.proposedSectionInset
         }
         
         // calculate item size and insets
         let collectionViewWidth = collectionView?.bounds.width ?? 0
-        let width = max(round((collectionViewWidth - kProposedSectionInset * 2) / 2), 0)
+        let width = max(round((collectionViewWidth - Const.proposedSectionInset * 2) / 2), 0)
         itemSize = CGSize(width: width, height: width)
         sectionInset.left = floor((collectionViewWidth - itemSize.width * 2) / 2)
         sectionInset.right = collectionViewWidth - itemSize.width * 2 - sectionInset.left
