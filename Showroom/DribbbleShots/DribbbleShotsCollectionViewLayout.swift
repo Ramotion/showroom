@@ -17,8 +17,6 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         
         minimumInteritemSpacing = 0
         minimumLineSpacing = 0
-        sectionInset.top = 89
-        sectionInset.bottom = kProposedSectionInset
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,6 +26,17 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     // MARK: - Providing Layout Attributes
     
     override func prepare() {
+        let adjustedContentInsetTop: CGFloat = 89
+        if #available(iOS 11.0, *) {
+            let contentInsetTop = max(0, adjustedContentInsetTop - (collectionView?.safeAreaInsets.top ?? 0))
+            let contentInsetBottom = max(0, kProposedSectionInset - (collectionView?.safeAreaInsets.bottom ?? 0))
+            collectionView?.contentInset.top = contentInsetTop
+            collectionView?.contentInset.bottom = contentInsetBottom
+        } else {
+            collectionView?.contentInset.top = adjustedContentInsetTop
+            collectionView?.contentInset.bottom = kProposedSectionInset
+        }
+        
         // calculate item size and insets
         let collectionViewWidth = collectionView?.bounds.width ?? 0
         let width = max(round((collectionViewWidth - kProposedSectionInset * 2) / 2), 0)
