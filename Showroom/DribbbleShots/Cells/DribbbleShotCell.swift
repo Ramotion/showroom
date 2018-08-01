@@ -128,12 +128,12 @@ final class DribbbleShotCell: UICollectionViewCell {
         let initialFrame = containerView.bounds.offsetBy(dx: -containerView.bounds.width, dy: 0)
         loadingView.frame = initialFrame
         
-        UIView.animate(withDuration: 0.6, delay: 0, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
             self.loadingView.frame = initialFrame.offsetBy(dx: initialFrame.width, dy: 0)
         }, completion: { [weak self] finished in
             let shouldCompleteAnimation = self?.shouldCompleteAnimation ?? false
             
-            UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseInOut], animations: {
+            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut], animations: {
                 self?.loadingView.frame = initialFrame.offsetBy(dx: initialFrame.width * 2, dy: 0)
                 self?.imageView.alpha = 1
                 self?.loadingView.alpha = 0
