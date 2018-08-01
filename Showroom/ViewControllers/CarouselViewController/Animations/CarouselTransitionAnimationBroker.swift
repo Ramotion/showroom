@@ -5,6 +5,7 @@ class CarouselTransitionAnimationBroker {
   let collectionView: UICollectionView
   let infoButton: UIButton
   let contactUsButton: UIButton
+  let sendShotButton: UIButton
   let pageLabel: UILabel
   let titleContainer: CarouselTitleView
   let bottomContainer: UIView
@@ -14,12 +15,14 @@ class CarouselTransitionAnimationBroker {
   init(collectionView: UICollectionView,
        infoButton: UIButton,
        contactUsButton: UIButton,
+       sendShotButton: UIButton,
        pageLabel: UILabel,
        titleContainer: CarouselTitleView,
        bottomContainer: UIView) {
     self.collectionView = collectionView
     self.infoButton = infoButton
     self.contactUsButton = contactUsButton
+    self.sendShotButton = sendShotButton
     self.pageLabel = pageLabel
     self.titleContainer = titleContainer
     self.bottomContainer = bottomContainer
@@ -63,6 +66,11 @@ private extension CarouselTransitionAnimationBroker {
     }
     
     contactUsButton.animate(duration: 0.3, [
+      .layerPositionY(from: startPosition , to: hidePosition),
+      ],
+      timing: .easyIn)
+    
+    sendShotButton.animate(duration: 0.3, [
       .layerPositionY(from: startPosition , to: hidePosition),
       ],
       timing: .easyIn)

@@ -24,6 +24,7 @@ class CarouselViewController: UIViewController {
   @IBOutlet var aboutView: AboutView!
   @IBOutlet weak var infoButton: UIButton!
   @IBOutlet weak var contactUsButton: UIButton!
+  @IBOutlet weak var sendShotButton: UIButton!
   @IBOutlet weak var pageLabel: UILabel!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var bottomContainer: UIView!
@@ -85,6 +86,7 @@ extension CarouselViewController {
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,
                                                           contactUsButton: contactUsButton,
+                                                          sendShotButton: sendShotButton,
                                                           pageLabel: pageLabel,
                                                           titleContainer: topContainer,
                                                           topRectangle: topRectangle,
@@ -95,6 +97,7 @@ extension CarouselViewController {
     transitionBrokerAnimation = CarouselTransitionAnimationBroker(collectionView: collectionView,
                                                                   infoButton: infoButton,
                                                                   contactUsButton: contactUsButton,
+                                                                  sendShotButton: sendShotButton,
                                                                   pageLabel: pageLabel,
                                                                   titleContainer: topContainer,
                                                                   bottomContainer: bottomContainer)
@@ -144,6 +147,12 @@ extension  CarouselViewController {
     contactUsButton.layer.shadowOffset = CGSize(width: 0, height: 2)
     contactUsButton.layer.shadowRadius = 4
     contactUsButton.layer.shadowOpacity = 0.3
+    
+    sendShotButton.layer.cornerRadius = C.radius
+    sendShotButton.layer.shadowColor = UIColor.black.cgColor
+    sendShotButton.layer.shadowOffset = CGSize(width: 0, height: 2)
+    sendShotButton.layer.shadowRadius = 4
+    sendShotButton.layer.shadowOpacity = 0.3
   }
   
   func preloadfoldinCellVC() {
@@ -247,21 +256,42 @@ extension CarouselViewController {
     }
   }
   
-  @IBAction func dribbleLogInHandler(_ sender: Any) {
+  @IBAction func dribbleLogInHandler(_ sender: UIView) {
     let storyboard = UIStoryboard.storyboard(storyboard: .Navigation)
     let dribbbleShotsVC: DribbbleShotsViewController = storyboard.instantiateViewController()
-    self.present(UINavigationController(rootViewController: dribbbleShotsVC), animated: true, completion: nil)
+    dribbbleShotsVC.transitioningDelegate = self
+    dribbbleShotsVC.modalPresentationStyle = .custom
+    self.present(dribbbleShotsVC, animated: true, completion: nil)
   }
+}
+
+extension CarouselViewController : DribbbleShotsTransitionSource {
+  
+  func dribbbleShotsTransitionSourceView() -> UIView {
+    return sendShotButton
+  }
+  
 }
 
 // MARK: transtion delegate
 extension CarouselViewController: UIViewControllerTransitioningDelegate {
   
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    return OpenControllerTransition(duration: 1)
+    if presented is DribbbleShotsTransitionDestination {
+      let sourceView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? presenting.view
+      return DribbbleShotsTransition(direction: .presenting(sourceView: sourceView))
+    } else {
+      return OpenControllerTransition(duration: 1)
+    }
   }
   
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    return HideControllerTransition(duration: 0.5)
+    let presenting = dismissed.presentingViewController
+    if presenting is DribbbleShotsTransitionSource {
+      let destinationView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? view
+      return DribbbleShotsTransition(direction: .dismissing(destinationView: destinationView))
+    } else {
+      return HideControllerTransition(duration: 0.5)
+    }
   }
 }

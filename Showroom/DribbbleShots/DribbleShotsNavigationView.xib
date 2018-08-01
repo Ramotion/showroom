@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Semibold.otf">
+            <string>Graphik-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iRR-gq-30U" customClass="DribbleShotsNavigationView" customModule="Showroom" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQe-LG-R3c">
+                    <rect key="frame" x="0.0" y="29.5" width="66" height="48"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="contentEdgeInsets" minX="34" minY="15" maxX="10" maxY="15"/>
+                    <state key="normal" image="ico_back"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dribbble shots" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMZ-p0-Wqd">
+                    <rect key="frame" x="127.5" y="45" width="120" height="17"/>
+                    <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstItem="nQe-LG-R3c" firstAttribute="leading" secondItem="eBi-Uy-IFd" secondAttribute="leading" id="6n0-Yn-Uzk"/>
+                <constraint firstItem="nQe-LG-R3c" firstAttribute="centerY" secondItem="sMZ-p0-Wqd" secondAttribute="centerY" id="a7d-2U-8k4"/>
+                <constraint firstItem="sMZ-p0-Wqd" firstAttribute="top" secondItem="iRR-gq-30U" secondAttribute="top" constant="45" id="fBr-Nz-Q8c"/>
+                <constraint firstItem="sMZ-p0-Wqd" firstAttribute="centerX" secondItem="eBi-Uy-IFd" secondAttribute="centerX" id="sLs-mr-ZkY"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="eBi-Uy-IFd"/>
+            <connections>
+                <outlet property="backButton" destination="nQe-LG-R3c" id="5Ku-8n-Y98"/>
+                <outlet property="titleLabel" destination="sMZ-p0-Wqd" id="EKE-5V-9bO"/>
+            </connections>
+            <point key="canvasLocation" x="126" y="267"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ico_back" width="22" height="14"/>
+    </resources>
+</document>

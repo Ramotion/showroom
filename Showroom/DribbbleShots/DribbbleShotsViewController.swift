@@ -1,27 +1,23 @@
 import UIKit
 import OAuthSwift
-import Nuke
 import RxSwift
 import Firebase
 import MBProgressHUD
 
-final class DribbbleShotsViewController: UIViewController {
-    
-    typealias ShotAndSended = (shot: Shot, sended: Bool)
-    
-    enum Item {
-        case shot(ShotAndSended)
-        case wireframe
-    }
+final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransitionDestination {
     
     fileprivate let networkingManager: NetworkingManager
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
-    fileprivate let reloadData = Variable<[Item]>([.wireframe, .wireframe, .wireframe, .wireframe])
-
+    fileprivate let reloadData = Variable<[DribbbleShotState]>([])
+    private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
+    
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet var backgroundView: UIView!
+    @IBOutlet private var backgroundView: UIView!
+    private let navigationView = DribbleShotsNavigationView.loadFromNib()!
+    private let fakeCollectionViewData = Variable<[DribbbleShotState]>((0..<8).map { _ in .wireframe })
+    private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
         let network = NetworkingManager()
@@ -34,6 +30,59 @@ final class DribbbleShotsViewController: UIViewController {
         
         super.init(coder: aDecoder)
     }
+    
+    // MARK: - Responding to View Events
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if !collectionViewItemsDidAnimate {
+            animateCollectionViewItemsInPlace {
+                self.collectionViewItemsDidAnimate = true
+            }
+        }
+    }
+    
+    @objc
+    private dynamic var collectionViewItemsDidAnimate = false
+    
+    private func animateCollectionViewItemsInPlace(completion: @escaping () -> ()) {
+        // add fake collection view above real collection view to animate wireframes
+        // and then remove it from view hierarchy
+        fakeCollectionView.registerNib(DribbbleShotCell.self)
+        fakeCollectionView.isUserInteractionEnabled = false
+        fakeCollectionView.backgroundColor = view.backgroundColor
+        fakeCollectionView.frame = view.bounds
+        fakeCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        fakeCollectionViewData
+            .asObservable()
+            .bind(to: fakeCollectionView.rx.items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
+                cell.state = element
+            }
+            .disposed(by: rx.disposeBag)
+        view.insertSubview(fakeCollectionView, aboveSubview: collectionView)
+    
+        // force collection view cells to be inserted into the view hierarchy
+        view.layoutIfNeeded()
+    
+        // animate
+        (fakeCollectionView.collectionViewLayout as? DribbbleShotsCollectionViewLayout)?.animateItemsInPlace(completion: completion)
+    }
+    
+    private func animateTransitionFromFakeCollectionViewToRealCollectionView(completion: (() -> ())? = nil) {
+        guard fakeCollectionView.superview != nil else {
+            completion?()
+            return
+        }
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: { [weak self] in
+            self?.fakeCollectionView.alpha = 0
+        }, completion: { [weak self] _ in
+            self?.fakeCollectionView.removeFromSuperview()
+            completion?()
+        })
+    }
+    
 }
 
 // MARK: Life Cycle
@@ -41,50 +90,46 @@ extension DribbbleShotsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // customize nav bar
-        title = "Dribbble Shots"
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler))
-        navigationItem.leftBarButtonItem = doneButton
 
-        // customze collection
-        collectionView.register(DribbbleShotCell.self)
-        let margins = collectionView.layoutMargins.left + collectionView.layoutMargins.right
-        let itemWidth = (UIScreen.main.bounds.size.width - margins) / 2 - 14
-        (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize = CGSize(width: itemWidth, height: itemWidth)
+        // navigation view
+        navigationView.autoresizingMask = .flexibleWidth
+        navigationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 0)
+        navigationView.sizeToFit()
+        navigationView.backButton.addTarget(self, action: #selector(doneHandler), for: .touchUpInside)
+        view.addSubview(navigationView)
+        updateNavigationView()
+        
+        // customize collection
+        collectionView.registerNib(DribbbleShotCell.self)
         collectionView.backgroundView = backgroundView
         collectionView.backgroundView?.isHidden = true
-
+        
+        // customize layout
+        let layout = DribbbleShotsCollectionViewLayout()
+        collectionView.collectionViewLayout = layout
+        collectionViewLayout = layout
+        
         fetchData(userSignal: userSignal, dribbbleShotsSignal: dribbbleShotsSignal)
         
         let reloadDataSignal = reloadData.asObservable()
         reloadDataSignal
-            .bind(to: collectionView.rx.items(cellIdentifier: "Shot", cellType: DribbbleShotCell.self)) { row, element, cell in
-                switch element {
-                case .shot(let shot, let sended):
-                    cell.nameLabel.isHidden = false
-                    cell.backgroundColor = UIColor.white
-                    cell.nameLabel.text = shot.title
-                    if let url = shot.imageUrl { Manager.shared.loadImage(with: url, into: cell.imageView) }
-                    cell.imageView.alpha = sended ? 0.3 : 1
-                case .wireframe:
-                    cell.backgroundColor = UIColor.gray
-                    cell.nameLabel.isHidden = true
-                }
+            .bind(to: collectionView.rx.items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
+                cell.state = element
             }
             .disposed(by: rx.disposeBag)
         
-        reloadDataSignal.subscribe { [weak self] in
-            self?.collectionView.backgroundView?.isHidden = ($0.element?.count ?? 0) != 0
+        reloadDataSignal.subscribe { [weak self] _ in
+            self?.updateNavigationView()
         }
         .disposed(by: rx.disposeBag)
         
         // MARK: Item did select
         collectionView.rx
-            .modelSelected(Item.self)
+            .modelSelected(DribbbleShotState.self)
             .flatMap({ item -> Observable<Shot> in
                 switch item {
-                case .shot(let shot, let sended): return sended ? Observable.empty() : Observable.just(shot)
+                case .default(let shot): return Observable.just(shot)
+                case .sent: return Observable.empty()
                 case .wireframe: return Observable.empty()
                 }
                 
@@ -110,30 +155,44 @@ extension DribbbleShotsViewController {
             .disposed(by: rx.disposeBag)
     }
     
+    private func updateNavigationView() {
+        let numberOfElements = reloadData.value.count
+        if numberOfElements == 0 {
+            collectionView.backgroundView?.isHidden = false
+            navigationView.backgroundColor = .clear
+        } else {
+            collectionView.backgroundView?.isHidden = true
+            navigationView.backgroundColor = view.backgroundColor?.withAlphaComponent(0.90)
+        }
+    }
+    
     // MARK: Actions
     @objc func doneHandler() {
         dismiss(animated: true, completion: nil)
     }
+    
 }
 
 // MARK: Helpers
 private extension DribbbleShotsViewController {
     
     func fetchData(userSignal: Observable<User>, dribbbleShotsSignal: Observable<[Shot]>) {
-        
         let sendedShotsSignal = userSignal.flatMap { return Firestore.firestore().rx.fetchShots(from: $0) }
             .catchErrorJustReturn([])
         
-        Observable.zip(dribbbleShotsSignal, sendedShotsSignal) { return ($0, $1) }
-            .map { (dribbbleShots, sendedShots) -> [(Shot, Bool)] in // shot, selected
+        let collectionViewItemsAnimationDidFinish = rx.observe(Bool.self, "collectionViewItemsDidAnimate")
+            .filter { $0 == true }
+        
+        Observable.zip(dribbbleShotsSignal, sendedShotsSignal, collectionViewItemsAnimationDidFinish)
+            .map { (dribbbleShots, sendedShots, animationDidFinish) -> [(Shot, Bool)] in // shot, selected
                 let sendedShotIds = sendedShots.map { $0.id }
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
             .subscribe({ [weak self] in
-                if let items = $0.element {
-                    self?.reloadData.value = items.map { Item.shot((shot: $0.0, sended: $0.1)) }
-                }
+                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: true) } ?? []
+                self?.animateTransitionFromFakeCollectionViewToRealCollectionView(completion: nil)
             })
             .disposed(by: rx.disposeBag)
     }
+    
 }

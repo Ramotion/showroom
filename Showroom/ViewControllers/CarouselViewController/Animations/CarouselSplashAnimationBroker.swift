@@ -6,6 +6,7 @@ struct CarouselSplashAnimationBroker {
   let collectionView: UICollectionView
   let infoButton: UIButton
   let contactUsButton: UIButton
+  let sendShotButton: UIButton
   let pageLabel: UILabel
   let titleContainer: CarouselTitleView
   let topRectangle: UIImageView
@@ -17,6 +18,7 @@ struct CarouselSplashAnimationBroker {
   init(collectionView: UICollectionView,
        infoButton: UIButton,
        contactUsButton: UIButton,
+       sendShotButton: UIButton,
        pageLabel: UILabel,
        titleContainer: CarouselTitleView,
        topRectangle: UIImageView,
@@ -27,6 +29,7 @@ struct CarouselSplashAnimationBroker {
     self.collectionView = collectionView
     self.infoButton = infoButton
     self.contactUsButton = contactUsButton
+    self.sendShotButton = sendShotButton
     self.pageLabel = pageLabel
     self.titleContainer = titleContainer
     self.topRectangle = topRectangle
@@ -34,7 +37,7 @@ struct CarouselSplashAnimationBroker {
     self.backgroudView = backgroudView
     self.bottomContainer = bottomContainer
     
-    [collectionView, titleContainer.rLogo, titleContainer.ramotionLabel, contactUsButton, pageLabel, infoButton].forEach { $0.alpha = 0 }
+    [collectionView, titleContainer.rLogo, titleContainer.ramotionLabel, contactUsButton, sendShotButton, pageLabel, infoButton].forEach { $0.alpha = 0 }
   }
 }
 
@@ -111,11 +114,19 @@ private extension CarouselSplashAnimationBroker {
       .layerPositionY(from: hidePosition , to: hidePosition),
       .alpha(to: 1)
       ])
+    sendShotButton.animate(duration: 0.001, [
+      .layerPositionY(from: hidePosition , to: hidePosition),
+      .alpha(to: 1)
+      ])
     
     contactUsButton.animate(duration: 0.8,
                             delay: 2.2,
                             [.layerPositionY(from: hidePosition, to: startPosition.y)],
                             timing: .easyInEasyOut) 
+    sendShotButton.animate(duration: 0.8,
+                            delay: 2.2,
+                            [.layerPositionY(from: hidePosition, to: startPosition.y)],
+                            timing: .easyInEasyOut)
   }
   
   func collectionViewAnimation() {
