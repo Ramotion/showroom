@@ -4,7 +4,7 @@ import RxSwift
 import Firebase
 import MBProgressHUD
 
-final class DribbbleShotsListViewController: UIViewController, DribbbleShotsListTransitionDestination {
+final class DribbbleShotsListViewController: UIViewController, DribbbleShotsListTransitionDestination, UIViewControllerTransitioningDelegate, ZoomTransitionViewProviding {
     
     fileprivate let networkingManager: NetworkingManager
     fileprivate let userSignal: Observable<User>
@@ -83,6 +83,16 @@ final class DribbbleShotsListViewController: UIViewController, DribbbleShotsList
         })
     }
     
+    func destinationViewForZoomTransition(with identifier: String) -> UIView? {
+        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return nil }
+        return collectionView.cellForItem(at: selectedIndexPath)
+    }
+    
+    func sourceViewForZoomTransition(with identifier: String) -> UIView? {
+        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return nil }
+        return collectionView.cellForItem(at: selectedIndexPath)
+    }
+    
 }
 
 // MARK: Life Cycle
@@ -135,22 +145,24 @@ extension DribbbleShotsListViewController {
                 
             })
             .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
-            .flatMap { param -> Observable<(Shot, User, String)> in
-                return UIAlertController.confirmation(message: "Do you want send this shot?")
-                    .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
-            }
-            .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
-                if let `self` = self { MBProgressHUD.showAdded(to: self.view, animated: true) }
-                return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
-            }
+//            .flatMap { param -> Observable<(Shot, User, String)> in
+//                return UIAlertController.confirmation(message: "Do you want send this shot?")
+//                    .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
+//            }
+//            .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
+//                if let `self` = self { MBProgressHUD.showAdded(to: self.view, animated: true) }
+//                return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
+//            }
             .subscribe { [weak self] in
-                guard let `self` = self else { return }
-                MBProgressHUD.hide(for: self.view, animated: true)
-                switch $0 {
-                case .completed: break
-                case .error: UIAlertController.show(message: "Can't send shot!")
-                case .next: self.fetchData(userSignal: self.userSignal, dribbbleShotsSignal: self.dribbbleShotsSignal)
-                }
+                guard let shot = $0.element?.0 else { return }
+                self?.presentShotViewController(shot: shot)
+//                guard let `self` = self else { return }
+//                MBProgressHUD.hide(for: self.view, animated: true)
+//                switch $0 {
+//                case .completed: break
+//                case .error: UIAlertController.show(message: "Can't send shot!")
+//                case .next: self.fetchData(userSignal: self.userSignal, dribbbleShotsSignal: self.dribbbleShotsSignal)
+//                }
             }
             .disposed(by: rx.disposeBag)
     }
@@ -171,6 +183,24 @@ extension DribbbleShotsListViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    private func presentShotViewController(shot: Shot) {
+        let viewController = ShotViewController { [weak self] _ in
+            self?.dismiss(animated: true)
+        }
+        viewController.modalPresentationStyle = .custom
+        viewController.transitioningDelegate = self
+        present(viewController, animated: true)
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ZoomTransition(identifier: "open shot", direction: .presenting)
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        guard dismissed is ShotViewController else { return nil }
+        return ZoomTransition(identifier: "close shot", direction: .dismissing)
+    }
+    
 }
 
 // MARK: Helpers
@@ -189,7 +219,7 @@ private extension DribbbleShotsListViewController {
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
             .subscribe({ [weak self] in
-                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: true) } ?? []
+                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: false) } ?? []
                 self?.animateTransitionFromFakeCollectionViewToRealCollectionView(completion: nil)
             })
             .disposed(by: rx.disposeBag)

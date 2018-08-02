@@ -56,7 +56,7 @@ extension NetworkingManager {
         return Observable<[Shot]>.create { subscribtion in
             do {
                 let object = try JSONDecoder().decode(Shot.self, from: data)
-                subscribtion.onNext((0..<4).map { _ in object })
+                subscribtion.onNext((0..<44).map { _ in object })
                 subscribtion.onCompleted()
             } catch {
                 subscribtion.onError(error)

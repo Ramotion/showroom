@@ -15,6 +15,9 @@
 		1126AD302109B4B00002B6EB /* DribbleNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126AD2F2109B4B00002B6EB /* DribbleNavigationView.xib */; };
 		1126AD382109C7E80002B6EB /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD372109C7E80002B6EB /* NibLoadable.swift */; };
 		1126AD3C2109CD440002B6EB /* DribbleSendShotButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */; };
+		112DF3632112EDB100935BD6 /* ShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DF3612112EDB100935BD6 /* ShotViewController.swift */; };
+		112DF3642112EDB100935BD6 /* ShotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 112DF3622112EDB100935BD6 /* ShotViewController.xib */; };
+		112DF3662112EE5100935BD6 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DF3652112EE5100935BD6 /* ZoomTransition.swift */; };
 		1134CEAF20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134CEAE20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift */; };
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsListTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsListTransition.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
@@ -169,6 +172,9 @@
 		1126AD2F2109B4B00002B6EB /* DribbleNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbleNavigationView.xib; sourceTree = "<group>"; };
 		1126AD372109C7E80002B6EB /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleSendShotButton.swift; sourceTree = "<group>"; };
+		112DF3612112EDB100935BD6 /* ShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShotViewController.swift; sourceTree = "<group>"; };
+		112DF3622112EDB100935BD6 /* ShotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShotViewController.xib; sourceTree = "<group>"; };
+		112DF3652112EE5100935BD6 /* ZoomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 		1134CEAE20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsListBackgroundView.swift; sourceTree = "<group>"; };
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsListTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsListTransition.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
@@ -328,6 +334,33 @@
 			path = NibLoadable;
 			sourceTree = "<group>";
 		};
+		112DF35F2112ED8F00935BD6 /* ShotsList */ = {
+			isa = PBXGroup;
+			children = (
+				5A3C741B20A4311B006EEE3C /* Cells */,
+				110D486A20EE572C00554011 /* DribbbleShotImageView.swift */,
+				1134CEAE20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift */,
+				110E7C7E20E62D5C00B93CE2 /* DribbbleShotsListCollectionViewLayout.swift */,
+				113C9D4F20EA2C0000031DD1 /* DribbbleShotsListTransition.swift */,
+				5A3C741920A42EEC006EEE3C /* DribbbleShotsListViewController.swift */,
+				110D486820EE556400554011 /* DribbbleShotState.swift */,
+				1126AD2D2109B46C0002B6EB /* DribbleNavigationView.swift */,
+				1126AD2F2109B4B00002B6EB /* DribbleNavigationView.xib */,
+				1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */,
+			);
+			path = ShotsList;
+			sourceTree = "<group>";
+		};
+		112DF3602112ED9F00935BD6 /* Shot */ = {
+			isa = PBXGroup;
+			children = (
+				112DF3612112EDB100935BD6 /* ShotViewController.swift */,
+				112DF3622112EDB100935BD6 /* ShotViewController.xib */,
+				112DF3652112EE5100935BD6 /* ZoomTransition.swift */,
+			);
+			path = Shot;
+			sourceTree = "<group>";
+		};
 		113C9D5720EA6DCB00031DD1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -346,21 +379,13 @@
 			path = UIAlertController;
 			sourceTree = "<group>";
 		};
-		5A3C741820A42EC4006EEE3C /* DribbbleShotsList */ = {
+		5A3C741820A42EC4006EEE3C /* Dribbble */ = {
 			isa = PBXGroup;
 			children = (
-				5A3C741B20A4311B006EEE3C /* Cells */,
-				110D486A20EE572C00554011 /* DribbbleShotImageView.swift */,
-				1134CEAE20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift */,
-				110E7C7E20E62D5C00B93CE2 /* DribbbleShotsListCollectionViewLayout.swift */,
-				113C9D4F20EA2C0000031DD1 /* DribbbleShotsListTransition.swift */,
-				5A3C741920A42EEC006EEE3C /* DribbbleShotsListViewController.swift */,
-				110D486820EE556400554011 /* DribbbleShotState.swift */,
-				1126AD2D2109B46C0002B6EB /* DribbleNavigationView.swift */,
-				1126AD2F2109B4B00002B6EB /* DribbleNavigationView.xib */,
-				1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */,
+				112DF3602112ED9F00935BD6 /* Shot */,
+				112DF35F2112ED8F00935BD6 /* ShotsList */,
 			);
-			path = DribbbleShotsList;
+			path = Dribbble;
 			sourceTree = "<group>";
 		};
 		5A3C741B20A4311B006EEE3C /* Cells */ = {
@@ -834,7 +859,7 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5A3C741820A42EC4006EEE3C /* DribbbleShotsList */,
+				5A3C741820A42EC4006EEE3C /* Dribbble */,
 				9D6F54AD1E97B7750059B49A /* GlidingCollection */,
 				9D6F54ED1E97B8650059B49A /* ElongationPreview */,
 				84C2F9741DFEF45B00E97FD5 /* VRViewController */,
@@ -1155,6 +1180,7 @@
 				9D6F54DE1E97B7750059B49A /* Boots5.jpeg in Resources */,
 				9D6F54DF1E97B7750059B49A /* Boots6.jpeg in Resources */,
 				84C180D41DAE155300C056F8 /* Assets.xcassets in Resources */,
+				112DF3642112EDB100935BD6 /* ShotViewController.xib in Resources */,
 				9D6F54D21E97B7750059B49A /* CollectionCell.xib in Resources */,
 				844AE7301DB4D5D30029FBD4 /* NavigationStack.storyboard in Resources */,
 				84D4B7D51DB107DF00EE38C6 /* ToolsAnimation.plist in Resources */,
@@ -1339,8 +1365,10 @@
 				84760B271DE07A1B00AF36FE /* Deley.swift in Sources */,
 				84B46EF41DAFCF4E0033CB15 /* ConstraintsHalper.swift in Sources */,
 				84D4B78F1DB0C81B00EE38C6 /* DemoCollectionViewCell.swift in Sources */,
+				112DF3632112EDB100935BD6 /* ShotViewController.swift in Sources */,
 				84760B231DE0796800AF36FE /* NodeAnimatable.swift in Sources */,
 				9D6F54D31E97B7750059B49A /* FileManager.swift in Sources */,
+				112DF3662112EE5100935BD6 /* ZoomTransition.swift in Sources */,
 				84760B2A1DE07C3B00AF36FE /* CarouserTitleView.swift in Sources */,
 				113C9D5020EA2C0000031DD1 /* DribbbleShotsListTransition.swift in Sources */,
 				84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */,
