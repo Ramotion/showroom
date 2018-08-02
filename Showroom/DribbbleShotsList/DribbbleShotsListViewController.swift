@@ -4,20 +4,20 @@ import RxSwift
 import Firebase
 import MBProgressHUD
 
-final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransitionDestination {
+final class DribbbleShotsListViewController: UIViewController, DribbbleShotsListTransitionDestination {
     
     fileprivate let networkingManager: NetworkingManager
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
     fileprivate let reloadData = Variable<[DribbbleShotState]>([])
-    private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
+    private var collectionViewLayout: DribbbleShotsListCollectionViewLayout!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet private var backgroundView: UIView!
-    private let navigationView = DribbleShotsNavigationView.loadFromNib()!
+    private let navigationView = DribbleNavigationView.loadFromNib()!
     private let fakeCollectionViewData = Variable<[DribbbleShotState]>((0..<8).map { _ in .wireframe })
-    private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
+    private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsListCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
         let network = NetworkingManager()
@@ -66,7 +66,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
         view.layoutIfNeeded()
     
         // animate
-        (fakeCollectionView.collectionViewLayout as? DribbbleShotsCollectionViewLayout)?.animateItemsInPlace(completion: completion)
+        (fakeCollectionView.collectionViewLayout as? DribbbleShotsListCollectionViewLayout)?.animateItemsInPlace(completion: completion)
     }
     
     private func animateTransitionFromFakeCollectionViewToRealCollectionView(completion: (() -> ())? = nil) {
@@ -86,7 +86,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
 }
 
 // MARK: Life Cycle
-extension DribbbleShotsViewController {
+extension DribbbleShotsListViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,7 +105,7 @@ extension DribbbleShotsViewController {
         collectionView.backgroundView?.isHidden = true
         
         // customize layout
-        let layout = DribbbleShotsCollectionViewLayout()
+        let layout = DribbbleShotsListCollectionViewLayout()
         collectionView.collectionViewLayout = layout
         collectionViewLayout = layout
         
@@ -174,7 +174,7 @@ extension DribbbleShotsViewController {
 }
 
 // MARK: Helpers
-private extension DribbbleShotsViewController {
+private extension DribbbleShotsListViewController {
     
     func fetchData(userSignal: Observable<User>, dribbbleShotsSignal: Observable<[Shot]>) {
         let sendedShotsSignal = userSignal.flatMap { return Firestore.firestore().rx.fetchShots(from: $0) }

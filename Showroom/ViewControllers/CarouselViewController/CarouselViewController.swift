@@ -258,16 +258,16 @@ extension CarouselViewController {
   
   @IBAction func dribbleLogInHandler(_ sender: UIView) {
     let storyboard = UIStoryboard.storyboard(storyboard: .Navigation)
-    let dribbbleShotsVC: DribbbleShotsViewController = storyboard.instantiateViewController()
+    let dribbbleShotsVC: DribbbleShotsListViewController = storyboard.instantiateViewController()
     dribbbleShotsVC.transitioningDelegate = self
     dribbbleShotsVC.modalPresentationStyle = .custom
     self.present(dribbbleShotsVC, animated: true, completion: nil)
   }
 }
 
-extension CarouselViewController : DribbbleShotsTransitionSource {
+extension CarouselViewController : DribbbleShotsListTransitionSource {
   
-  func dribbbleShotsTransitionSourceView() -> UIView {
+  func dribbbleShotsListTransitionSourceView() -> UIView {
     return sendShotButton
   }
   
@@ -277,9 +277,9 @@ extension CarouselViewController : DribbbleShotsTransitionSource {
 extension CarouselViewController: UIViewControllerTransitioningDelegate {
   
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    if presented is DribbbleShotsTransitionDestination {
-      let sourceView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? presenting.view
-      return DribbbleShotsTransition(direction: .presenting(sourceView: sourceView))
+    if presented is DribbbleShotsListTransitionDestination {
+      let sourceView: UIView = (presenting as? DribbbleShotsListTransitionSource)?.dribbbleShotsListTransitionSourceView() ?? presenting.view
+      return DribbbleShotsListTransition(direction: .presenting(sourceView: sourceView))
     } else {
       return OpenControllerTransition(duration: 1)
     }
@@ -287,9 +287,9 @@ extension CarouselViewController: UIViewControllerTransitioningDelegate {
   
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
     let presenting = dismissed.presentingViewController
-    if presenting is DribbbleShotsTransitionSource {
-      let destinationView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? view
-      return DribbbleShotsTransition(direction: .dismissing(destinationView: destinationView))
+    if presenting is DribbbleShotsListTransitionSource {
+      let destinationView: UIView = (presenting as? DribbbleShotsListTransitionSource)?.dribbbleShotsListTransitionSourceView() ?? view
+      return DribbbleShotsListTransition(direction: .dismissing(destinationView: destinationView))
     } else {
       return HideControllerTransition(duration: 0.5)
     }

@@ -1,5 +1,5 @@
 //
-//  DribbbleShotsBackgroundView.swift
+//  DribbbleShotsListBackgroundView.swift
 //  Showroom
 //
 //  Created by Dmitry Nesterenko on 04/07/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DribbbleShotsBackgroundView: UIView {
+class DribbbleShotsListBackgroundView: UIView {
 
     private var topShape: CAShapeLayer?
     private var bottomShape: CAShapeLayer?

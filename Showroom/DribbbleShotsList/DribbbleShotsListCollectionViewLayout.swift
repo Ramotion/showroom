@@ -1,5 +1,5 @@
 //
-//  DribbbleShotsCollectionViewLayout.swift
+//  DribbbleShotsListCollectionViewLayout.swift
 //  Showroom
 //
 //  Created by Dmitry Nesterenko on 29/06/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
+final class DribbbleShotsListCollectionViewLayout: UICollectionViewFlowLayout {
     
     private struct Const {
         static let proposedSectionInset: CGFloat = 21

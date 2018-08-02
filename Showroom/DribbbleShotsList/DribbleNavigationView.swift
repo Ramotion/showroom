@@ -1,5 +1,5 @@
 //
-//  DribbleShotsNavigationView.swift
+//  DribbleNavigationView.swift
 //  Showroom
 //
 //  Created by Dmitry Nesterenko on 26/07/2018.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-private let kDribbleShotsNavigationViewHeight: CGFloat = 80
+private let kDribbleNavigationViewHeight: CGFloat = 80
 
-final class DribbleShotsNavigationView : UIView, NibLoadable {
+final class DribbleNavigationView : UIView, NibLoadable {
     
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private(set) var backButton: UIButton!
@@ -20,7 +20,7 @@ final class DribbleShotsNavigationView : UIView, NibLoadable {
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         var size = super.sizeThatFits(size)
         
-        size.height = kDribbleShotsNavigationViewHeight
+        size.height = kDribbleNavigationViewHeight
         
         return size
     }
@@ -30,7 +30,7 @@ final class DribbleShotsNavigationView : UIView, NibLoadable {
     override var intrinsicContentSize: CGSize {
         var size = super.intrinsicContentSize
         
-        size.height = kDribbleShotsNavigationViewHeight
+        size.height = kDribbleNavigationViewHeight
         
         return size
     }
