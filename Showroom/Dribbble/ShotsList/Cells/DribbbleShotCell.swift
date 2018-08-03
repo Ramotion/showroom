@@ -6,7 +6,7 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     @IBOutlet weak private var shadowImageView: UIImageView!
     @IBOutlet weak private var containerView: UIView!
-    @IBOutlet weak private var imageView: DribbbleShotImageView!
+    @IBOutlet weak internal var imageView: DribbbleShotImageView!
     @IBOutlet weak private var loadingView: UIView!
     @IBOutlet weak private var gifImageView: UIImageView!
 

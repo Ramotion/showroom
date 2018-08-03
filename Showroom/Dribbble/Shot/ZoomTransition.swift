@@ -59,20 +59,23 @@ final class ZoomTransition : NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         let toViewFinalFrame = transitionContext.finalFrame(for: toViewController)
         let duration = transitionDuration(using: transitionContext)
-        let destinationViewFrameInContainerView = destinationView.convert(destinationView.bounds, to: containerView)
-        let sourceViewFrameInContainerView = sourceView.convert(sourceView.bounds, to: containerView)
 
         // insert toView
         toView.alpha = 0
         toView.frame = toViewFinalFrame
         containerView.addSubview(toView)
+        toView.layoutIfNeeded()
+
+        let destinationViewFrameInContainerView = destinationView.convert(destinationView.bounds, to: containerView)
+        let sourceViewFrameInContainerView = sourceView.convert(sourceView.bounds, to: containerView)
         
         // insert source view
         sourceViewSnapshot.frame = sourceViewFrameInContainerView
         containerView.addSubview(sourceViewSnapshot)
         
-        // hide target view
+        // hide source and target views
         destinationView.alpha = 0
+        sourceView.alpha = 0
         
         UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseOut, .layoutSubviews], animations: {
             toView.alpha = 1
@@ -103,9 +106,10 @@ final class ZoomTransition : NSObject, UIViewControllerAnimatedTransitioning {
         sourceViewSnapshot.frame = sourceViewFrameInContainerView
         containerView.addSubview(sourceViewSnapshot)
         
-        // hide target view
+        // hide source and target views
         destinationView.alpha = 0
-
+        sourceView.alpha = 0
+        
         UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseIn, .layoutSubviews], animations: {
             fromView.alpha = 0
             sourceViewSnapshot.frame = destinationViewFrameInContainerView

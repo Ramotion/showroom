@@ -130,7 +130,7 @@ DEPENDENCIES:
   - SwiftyAttributes
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - BoringSSL
     - CircleMenu
@@ -216,4 +216,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c8e6850a964dfc790b189a57db0eb485694330b8
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

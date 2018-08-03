@@ -21,6 +21,8 @@
 		1134CEAF20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1134CEAE20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift */; };
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsListTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsListTransition.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
+		114E8B6B21144EA000F6BF7A /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E8B6A21144EA000F6BF7A /* ScrollViewController.swift */; };
+		114E8B7321144F0900F6BF7A /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114E8B7221144F0900F6BF7A /* KeyboardObserver.swift */; };
 		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
 		11850186210B6FEA004D6433 /* DribbbleShotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11850185210B6FEA004D6433 /* DribbbleShotCell.xib */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
@@ -178,6 +180,8 @@
 		1134CEAE20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsListBackgroundView.swift; sourceTree = "<group>"; };
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsListTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsListTransition.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
+		114E8B6A21144EA000F6BF7A /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		114E8B7221144F0900F6BF7A /* KeyboardObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserver.swift; sourceTree = "<group>"; };
 		117163D520F611DF00D7F340 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		11850185210B6FEA004D6433 /* DribbbleShotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbbleShotCell.xib; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 		112DF3602112ED9F00935BD6 /* Shot */ = {
 			isa = PBXGroup;
 			children = (
+				114E8B7221144F0900F6BF7A /* KeyboardObserver.swift */,
+				114E8B6A21144EA000F6BF7A /* ScrollViewController.swift */,
 				112DF3612112EDB100935BD6 /* ShotViewController.swift */,
 				112DF3622112EDB100935BD6 /* ShotViewController.xib */,
 				112DF3652112EE5100935BD6 /* ZoomTransition.swift */,
@@ -1358,6 +1364,7 @@
 				841C951A1DDEF74B00B997F5 /* ControlCollectionViewCell.swift in Sources */,
 				84F0A97F1DE834F900C02332 /* CircleView.swift in Sources */,
 				84C180CF1DAE155300C056F8 /* CircleViewController.swift in Sources */,
+				114E8B7321144F0900F6BF7A /* KeyboardObserver.swift in Sources */,
 				9D6F550B1E97B8650059B49A /* Villa.swift in Sources */,
 				84D4B7E01DB1273300EE38C6 /* ItemCell.swift in Sources */,
 				84B46EDF1DAFAA6C0033CB15 /* SwitchViewController.swift in Sources */,
@@ -1388,6 +1395,7 @@
 				84D4B7971DB0C94700EE38C6 /* Rotatable.swift in Sources */,
 				9D6F55111E97B8D80059B49A /* UITableView.swift in Sources */,
 				844AE73D1DB4D9870029FBD4 /* ThirdViewController.swift in Sources */,
+				114E8B6B21144EA000F6BF7A /* ScrollViewController.swift in Sources */,
 				1134CEAF20ECB4A9001661F1 /* DribbbleShotsListBackgroundView.swift in Sources */,
 				84F5AB2E1DAF75A600271439 /* FoldingTableViewController.swift in Sources */,
 				84C180CD1DAE155300C056F8 /* AppDelegate.swift in Sources */,

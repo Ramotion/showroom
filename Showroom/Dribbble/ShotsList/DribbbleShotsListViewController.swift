@@ -83,14 +83,21 @@ final class DribbbleShotsListViewController: UIViewController, DribbbleShotsList
         })
     }
     
+    // MARK: - Zoom Animation
+    
     func destinationViewForZoomTransition(with identifier: String) -> UIView? {
-        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return nil }
-        return collectionView.cellForItem(at: selectedIndexPath)
+        guard let cell = collectionViewSelectedCell() else { return nil }
+        return cell.imageView
     }
     
     func sourceViewForZoomTransition(with identifier: String) -> UIView? {
+        guard let cell = collectionViewSelectedCell() else { return nil }
+        return cell.imageView
+    }
+    
+    private func collectionViewSelectedCell() -> DribbbleShotCell? {
         guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return nil }
-        return collectionView.cellForItem(at: selectedIndexPath)
+        return collectionView.cellForItem(at: selectedIndexPath) as? DribbbleShotCell
     }
     
 }
@@ -184,7 +191,7 @@ extension DribbbleShotsListViewController {
     }
     
     private func presentShotViewController(shot: Shot) {
-        let viewController = ShotViewController { [weak self] _ in
+        let viewController = ShotViewController(shot: shot) { [weak self] _ in
             self?.dismiss(animated: true)
         }
         viewController.modalPresentationStyle = .custom
@@ -219,7 +226,7 @@ private extension DribbbleShotsListViewController {
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
             .subscribe({ [weak self] in
-                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: false) } ?? []
+                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: $0.1) } ?? []
                 self?.animateTransitionFromFakeCollectionViewToRealCollectionView(completion: nil)
             })
             .disposed(by: rx.disposeBag)
