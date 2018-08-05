@@ -32,7 +32,7 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     private func updateTransparentOverlayVisibility() {
         guard !isLoading else {
-            imageView.isTransparentOverlayVisible = true
+            imageView.isTransparentOverlayVisible = false
             return
         }
         

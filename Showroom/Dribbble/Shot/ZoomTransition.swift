@@ -110,7 +110,7 @@ final class ZoomTransition : NSObject, UIViewControllerAnimatedTransitioning {
         destinationView.alpha = 0
         sourceView.alpha = 0
         
-        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseIn, .layoutSubviews], animations: {
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseOut, .layoutSubviews], animations: {
             fromView.alpha = 0
             sourceViewSnapshot.frame = destinationViewFrameInContainerView
         }, completion: { finished in

@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Graphik-Semibold.otf">
+            <string>Graphik-Semibold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShotViewController" customModule="Showroom" customModuleProvider="target">
             <connections>
@@ -31,13 +36,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raven App Icon &amp; Splash Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-Rf-vwL">
-                    <rect key="frame" x="40" y="298" width="295" height="24"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <rect key="frame" x="40" y="298" width="295" height="17"/>
+                    <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IFz-Uj-LzC">
-                    <rect key="frame" x="40" y="342" width="295" height="216"/>
+                    <rect key="frame" x="40" y="358" width="295" height="200"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -47,8 +52,9 @@
                         <constraint firstAttribute="height" constant="65" id="rke-F0-Y0A"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="SEND">
-                        <color key="titleColor" red="0.0" green="0.38039215686274508" blue="0.89411764705882346" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>
             </subviews>
@@ -65,7 +71,7 @@
                 <constraint firstItem="T1J-qC-h1G" firstAttribute="top" secondItem="IFz-Uj-LzC" secondAttribute="bottom" constant="20" id="TdF-Be-RNt"/>
                 <constraint firstAttribute="trailing" secondItem="n7h-dR-lDc" secondAttribute="trailing" id="WYm-qo-ata"/>
                 <constraint firstItem="IFz-Uj-LzC" firstAttribute="leading" secondItem="HdK-mV-LPW" secondAttribute="leading" constant="40" id="YeQ-jQ-GZ3"/>
-                <constraint firstItem="IFz-Uj-LzC" firstAttribute="top" secondItem="yM9-Rf-vwL" secondAttribute="bottom" constant="20" id="Zpw-fe-FDy"/>
+                <constraint firstItem="IFz-Uj-LzC" firstAttribute="top" secondItem="yM9-Rf-vwL" secondAttribute="bottom" constant="43" id="Zpw-fe-FDy"/>
                 <constraint firstAttribute="bottom" secondItem="T1J-qC-h1G" secondAttribute="bottom" constant="24" id="r3f-m8-9hV"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="iK8-bW-551"/>

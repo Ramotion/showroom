@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class ShotViewController: ScrollViewController, ZoomTransitionViewProviding {
 
@@ -20,9 +21,10 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
     @IBOutlet private var textView: UITextView!
     @IBOutlet private var sendButton: UIButton!
     private let closeButton = UIButton(type: .system)
+    private var observer: Disposable!
     private let shot: Shot
     private let completion: ((Result) -> Void)?
-    
+
     init(shot: Shot, completion: ((Result) -> Void)?) {
         self.shot = shot
         self.completion = completion
@@ -39,12 +41,14 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollView.keyboardDismissMode = .onDrag
+        
         textView.layer.borderWidth = 1 / UIScreen.main.scale
         textView.layer.borderColor = UIColor(white: 226 / 255.0, alpha: 1).cgColor
         textView.layer.cornerRadius = 10
         
         closeButton.setImage(#imageLiteral(resourceName: "dribbble_close"), for: .normal)
-        closeButton.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        closeButton.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         closeButton.sizeToFit()
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(closeButton)
@@ -58,6 +62,48 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
         shot.imageUrl.flatMap {
             imageView.setImage(url: $0, targetSize: imageView.bounds.size, contentMode: .aspectFill)
         }
+        
+        observer = KeyboardObserver.shared.addObserver(for: .UIKeyboardWillChangeFrame, withinAnimation: { [weak self] in
+            guard let `self` = self else { return }
+            let insetBottom = $0.frameEndBottomInset(in: self.view)
+            self.updateTextViewHeightForKeyboardInsetBottom(insetBottom)
+            self.view.layoutIfNeeded()
+            if insetBottom > 0 {
+                self.scrollToTextViewFirstResponderWithKeyboardBottomInset(insetBottom, animated: false)
+            }
+        })
+    }
+    
+    private func updateTextViewHeightForKeyboardInsetBottom(_ insetBottom: CGFloat) {
+        if insetBottom == 0 {
+            textViewInactiveHeight.flatMap { textViewHeight?.constant = $0 }
+        } else {
+            textViewHeight?.constant = view.bounds.height - insetBottom - (scrollView.contentSize.height - textView.frame.maxY) - 4
+        }
+    }
+    
+    private func scrollToTextViewFirstResponderWithKeyboardBottomInset(_ insetBottom: CGFloat, animated: Bool) {
+        let offsetY = scrollView.contentSize.height - scrollView.bounds.height + insetBottom
+        scrollView.setContentOffset(CGPoint(x: 0, y: offsetY), animated: animated)
+    }
+    
+    // MARK: - Responding to View Events
+    
+    private var viewHasAppeared = false
+    private var textViewInactiveHeight: CGFloat?
+    private var textViewHeight: NSLayoutConstraint?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if !viewHasAppeared {
+            let height = textView.bounds.height
+            textViewInactiveHeight = height
+            textViewHeight = textView.heightAnchor.constraint(equalToConstant: height)
+            textViewHeight?.isActive = true
+            updateTextViewHeightForKeyboardInsetBottom(0)
+        }
+        viewHasAppeared = true
     }
     
     // MARK: - Configuring the View’s Layout Behavior
@@ -65,8 +111,8 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        closeButton.center = CGPoint(x: view.bounds.width - closeButton.bounds.width, y: view.bounds.height - closeButton.bounds.height)
-        sendButton.layer.shadowPath = UIBezierPath(roundedRect: sendButton.bounds, cornerRadius: sendButton.layer.cornerRadius).cgPath
+        closeButton.center = CGPoint(x: view.bounds.width - 53, y: 51)
+             sendButton.layer.shadowPath = UIBezierPath(roundedRect: sendButton.bounds, cornerRadius: sendButton.layer.cornerRadius).cgPath
     }
     
     // MARK: - Zoom Transition
