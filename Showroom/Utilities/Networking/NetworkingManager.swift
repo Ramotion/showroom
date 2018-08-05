@@ -45,7 +45,7 @@ extension NetworkingManager {
     "id": 0,
     "description": "description",
     "html_url": "https://cdn.dribbble.com/users/824641/screenshots/4773637",
-    "title": "title",
+    "title": "Shot Title",
     "images": {
         "normal": "https://cdn.dribbble.com/users/824641/screenshots/4773637/3dflip_teaser.gif"
     },

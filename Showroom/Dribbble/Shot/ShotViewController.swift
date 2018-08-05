@@ -43,6 +43,8 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
         
         scrollView.keyboardDismissMode = .onDrag
         
+        titleLabel.text = shot.title
+        
         textView.layer.borderWidth = 1 / UIScreen.main.scale
         textView.layer.borderColor = UIColor(white: 226 / 255.0, alpha: 1).cgColor
         textView.layer.cornerRadius = 10
