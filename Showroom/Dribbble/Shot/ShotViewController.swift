@@ -48,9 +48,17 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
         textView.layer.borderWidth = 1 / UIScreen.main.scale
         textView.layer.borderColor = UIColor(white: 226 / 255.0, alpha: 1).cgColor
         textView.layer.cornerRadius = 10
+        textView.textContainerInset = UIEdgeInsets(top: 17, left: 8, bottom: 17, right: 8)
+        textView.typingAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.black,
+                                     NSAttributedStringKey.font.rawValue: UIFont(name: "Graphik-Regular", size: 14)!,
+                                     NSAttributedStringKey.paragraphStyle.rawValue: { paragraph -> NSParagraphStyle in
+                                        paragraph.lineSpacing = 6
+                                        return paragraph.copy() as! NSParagraphStyle
+                                     }(NSMutableParagraphStyle())]
+        textView.text = "Universal web VR control created for mobiles. Makes navigation between product sections faster and more natural.|"
         
         closeButton.setImage(#imageLiteral(resourceName: "dribbble_close"), for: .normal)
-        closeButton.contentEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        closeButton.contentEdgeInsets = UIEdgeInsets(padding: 20)
         closeButton.sizeToFit()
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         view.addSubview(closeButton)
