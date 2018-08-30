@@ -18,8 +18,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShotViewController" customModule="Showroom" customModuleProvider="target">
             <connections>
                 <outlet property="imageView" destination="n7h-dR-lDc" id="MDI-Jn-2VK"/>
+                <outlet property="imageViewTopSpace" destination="8eg-kD-tl1" id="AKL-LK-Uoq"/>
                 <outlet property="sendButton" destination="T1J-qC-h1G" id="x8n-zA-09u"/>
                 <outlet property="textView" destination="IFz-Uj-LzC" id="Cc6-cR-eqi"/>
+                <outlet property="textViewTopSpace" destination="Zpw-fe-FDy" id="0qa-S8-V42"/>
                 <outlet property="titleLabel" destination="yM9-Rf-vwL" id="xbe-Sm-5rP"/>
                 <outlet property="view" destination="HdK-mV-LPW" id="lCY-yw-V2r"/>
             </connections>

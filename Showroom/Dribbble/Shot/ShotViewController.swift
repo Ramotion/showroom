@@ -17,8 +17,10 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
     }
     
     @IBOutlet private var imageView: UIImageView!
+    @IBOutlet private var imageViewTopSpace: NSLayoutConstraint!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var textView: UITextView!
+    @IBOutlet private var textViewTopSpace: NSLayoutConstraint!
     @IBOutlet private var sendButton: UIButton!
     private let closeButton = UIButton(type: .system)
     private var observer: Disposable!
@@ -85,10 +87,17 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
     }
     
     private func updateTextViewHeightForKeyboardInsetBottom(_ insetBottom: CGFloat) {
+        let kTextViewTopSpaceConstantDefault: CGFloat = 43
         if insetBottom == 0 {
             textViewInactiveHeight.flatMap { textViewHeight?.constant = $0 }
+            textViewTopSpace.constant = kTextViewTopSpaceConstantDefault
         } else {
-            textViewHeight?.constant = view.bounds.height - insetBottom - (scrollView.contentSize.height - textView.frame.maxY) - 4
+            var textViewHeight = view.bounds.height - insetBottom - (scrollView.contentSize.height - textView.frame.maxY) - 4
+            if #available(iOS 11.0, *) {
+                textViewHeight -= view.safeAreaInsets.top
+            }
+            self.textViewHeight?.constant = textViewHeight
+            textViewTopSpace.constant = kTextViewTopSpaceConstantDefault + 5
         }
     }
     
@@ -123,6 +132,10 @@ final class ShotViewController: ScrollViewController, ZoomTransitionViewProvidin
         
         closeButton.center = CGPoint(x: view.bounds.width - 53, y: 51)
              sendButton.layer.shadowPath = UIBezierPath(roundedRect: sendButton.bounds, cornerRadius: sendButton.layer.cornerRadius).cgPath
+        
+        if #available(iOS 11.0, *) {
+            imageViewTopSpace.constant = -view.safeAreaInsets.top
+        }
     }
     
     // MARK: - Zoom Transition
