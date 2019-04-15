@@ -21,7 +21,7 @@ extension NibLoadable {
     }
     
     public static func loadFromNib(withOwner owner: Any? = nil, options: [AnyHashable: Any]? = nil) -> Self? {
-        return nib.instantiate(withOwner: owner, options: options).first as? Self
+        return nib.instantiate(withOwner: owner, options: options as? [UINib.OptionsKey : Any]).first as? Self
     }
     
 }

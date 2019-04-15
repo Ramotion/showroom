@@ -16,11 +16,11 @@ private extension NodeAnimatinos.Timing {
   
   var popTiming: CAMediaTimingFunction {
     switch self {
-    case .defaultTiming: return CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault)
-    case .linear: return CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear) 
-    case .easyIn: return CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn) 
-    case .easyOut: return CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-    case .easyInEasyOut: return CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    case .defaultTiming: return CAMediaTimingFunction(name: .default)
+    case .linear: return CAMediaTimingFunction(name: .linear)
+    case .easyIn: return CAMediaTimingFunction(name: .easeIn)
+    case .easyOut: return CAMediaTimingFunction(name: .easeOut)
+    case .easyInEasyOut: return CAMediaTimingFunction(name: .easeInEaseOut)
     }
   }
 }

@@ -62,7 +62,7 @@ extension DemoExpandingViewController {
   }
   
   fileprivate func configureNavBar() {
-    navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+    navigationItem.leftBarButtonItem?.image = navigationItem.leftBarButtonItem?.image!.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
   }
 }
 

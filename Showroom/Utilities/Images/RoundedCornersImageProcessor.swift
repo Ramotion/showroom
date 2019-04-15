@@ -9,15 +9,15 @@
 import Foundation
 import Nuke
 
-public struct RoundedCornersImageProcessor: Processing {
-
+public struct RoundedCornersImageProcessor: ImageProcessing {
+    
     public let radius: CGFloat
     
     public init(radius: CGFloat) {
         self.radius = radius
     }
     
-    public func process(_ image: Image) -> Image? {
+    public func process(image: Image, context: ImageProcessingContext) -> Image? {
         UIGraphicsBeginImageContextWithOptions(image.size, false, 0.0)
         
         let clippingPath = UIBezierPath(roundedRect: CGRect(origin: .zero, size: image.size), cornerRadius: radius)

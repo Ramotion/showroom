@@ -77,7 +77,7 @@ extension PageCollectionLayout {
         continue
       }
       
-      if fabs(attributes.center.x - proposedContentOffsetCenterX) < fabs(candidateAttributes!.center.x - proposedContentOffsetCenterX) {
+        if abs(attributes.center.x - proposedContentOffsetCenterX) < abs(candidateAttributes!.center.x - proposedContentOffsetCenterX) {
         candidateAttributes = attributes
       }
     }
@@ -144,7 +144,7 @@ extension PageCollectionLayout {
     }
     
     let inset = collectionView.bounds.size.width / 2 - itemSize.width / 2
-    collectionView.contentInset  = UIEdgeInsetsMake(0, inset, 0, inset)
+    collectionView.contentInset  = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
     collectionView.contentOffset = CGPoint(x: -inset, y: 0)
   }
 }

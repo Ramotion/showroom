@@ -1,8 +1,9 @@
 import UIKit
+import WebKit
 
 class VRViewController: UIViewController {
   
-  @IBOutlet weak var webView: UIWebView!
+  @IBOutlet weak var webView: WKWebView!
   let urlString = "https://ramotion.github.io/vr-menu-demo/main.html"
   
   
@@ -14,8 +15,6 @@ class VRViewController: UIViewController {
       UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
       self?.dismiss(animated: true, completion: nil)
       self?.dismiss(animated: true, completion: nil)
-      
-      
     }
   }
   
@@ -26,10 +25,11 @@ class VRViewController: UIViewController {
 
     if let url = URL(string: urlString) {
       let request = URLRequest(url: url)
-      webView.loadRequest(request)
+        webView.load(request)
       
 //      [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
-      webView.stringByEvaluatingJavaScript(from: "document.documentElement.style.webkitUserSelect='none';")
+//      webView.stringByEvaluatingJavaScript(from: "document.documentElement.style.webkitUserSelect='none';")
+        webView.evaluateJavaScript("document.documentElement.style.webkitUserSelect='none';", completionHandler: nil)
     }
   }
   

@@ -1,4 +1,5 @@
 import UIKit
+import Nuke
 
 private let kContentViewCornerRadius: CGFloat = 5
 
@@ -22,7 +23,7 @@ final class DribbbleShotCell: UICollectionViewCell {
                 loadingView.alpha = 0
                 updateWithShot(shot)
             case .wireframe:
-                imageView.cancelImageRequest()
+                Nuke.cancelRequest(for: imageView)
                 loadingView.alpha = 0
                 updateWithShot(nil)
             }
@@ -60,7 +61,7 @@ final class DribbbleShotCell: UICollectionViewCell {
         super.prepareForReuse()
         
         imageView.image = nil
-        imageView.cancelImageRequest()
+        Nuke.cancelRequest(for: imageView)
     }
     
     // MARK: - Laying out Subviews
@@ -73,12 +74,11 @@ final class DribbbleShotCell: UICollectionViewCell {
         // image url
         if let imageUrl = state.imageUrl {
             startImageLoadingAnimation()
-            imageView.setImage(url: imageUrl, targetSize: imageView.bounds.size, contentMode: .aspectFill, handler: { [weak self] result, fromCache in
-                self?.imageView.image = result.value
-                self?.stopImageLoadingAnimation(completion: nil)
-            })
+            let contentModes = ImageLoadingOptions.ContentModes(success: .scaleAspectFill, failure: .scaleAspectFit, placeholder: .scaleAspectFit)
+            let options = ImageLoadingOptions(contentModes: contentModes)
+            Nuke.loadImage(with: imageUrl, options: options, into: imageView, progress: nil, completion: { [weak self] _, _ in self?.stopImageLoadingAnimation(completion: nil) })
         } else {
-            imageView.cancelImageRequest()
+            Nuke.cancelRequest(for: imageView)
         }
         
         // mask

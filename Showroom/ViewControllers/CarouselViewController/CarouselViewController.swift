@@ -78,10 +78,12 @@ extension CarouselViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    UIApplication.shared.isStatusBarHidden = true
+    if let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+      statusBar.isHidden = true
+    }
     
     collectionViewHeight.constant = CarouselFlowLayout.cellSize.height
-    collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+    collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
     
     splashBrokerAnimation = CarouselSplashAnimationBroker(collectionView: collectionView,
                                                           infoButton: infoButton,

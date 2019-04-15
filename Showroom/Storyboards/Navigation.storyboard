@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nd2-td-3Qt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Nd2-td-3Qt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -89,7 +87,6 @@
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="dcd-w4-RdY" secondAttribute="bottom" constant="5" id="0fN-Bd-gxB"/>
                                                         <constraint firstAttribute="trailing" secondItem="dcd-w4-RdY" secondAttribute="trailing" id="2sw-NP-pm1"/>
-                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="191" id="8bP-kq-JPj"/>
                                                         <constraint firstItem="dcd-w4-RdY" firstAttribute="top" secondItem="nzP-4h-fcC" secondAttribute="top" id="M62-vT-MTj"/>
                                                         <constraint firstItem="dcd-w4-RdY" firstAttribute="leading" secondItem="nzP-4h-fcC" secondAttribute="leading" id="drt-Sz-SEx"/>
                                                     </constraints>
@@ -101,7 +98,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXn-W0-fCr" userLabel="ShareButton">
-                                                    <rect key="frame" x="263" y="191.5" width="44" height="44"/>
+                                                    <rect key="frame" x="263" y="191" width="44" height="44"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="B5n-JY-bTB"/>
                                                         <constraint firstAttribute="height" constant="44" id="bXG-mq-1Mt"/>
@@ -125,7 +122,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 Human Hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruj-18-XtQ">
-                                                    <rect key="frame" x="47" y="366.5" width="232" height="13"/>
+                                                    <rect key="frame" x="47" y="366" width="232" height="13"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588235294117" green="0.59607843137254901" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -138,7 +135,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift, UIKit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3n-GH-DHc">
-                                                    <rect key="frame" x="48" y="338.5" width="239" height="13"/>
+                                                    <rect key="frame" x="48" y="338" width="239" height="13"/>
                                                     <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                     <color key="textColor" red="0.56470588239999997" green="0.59607843140000005" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -235,7 +232,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-xj-2kp">
-                                                <rect key="frame" x="176" y="20.5" width="23.5" height="13"/>
+                                                <rect key="frame" x="176" y="20" width="23.5" height="13"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                 <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -248,7 +245,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHb-Ay-YzI">
-                                        <rect key="frame" x="40" y="54" width="140" height="60"/>
+                                        <rect key="frame" x="40" y="53.5" width="140" height="60"/>
                                         <color key="backgroundColor" red="0.094117647058823528" green="0.38823529411764707" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="sWZ-cJ-Pc7"/>
@@ -262,7 +259,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSk-AB-NwV" customClass="DribbleSendShotButton" customModule="Showroom" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="54" width="140" height="60"/>
+                                        <rect key="frame" x="195" y="53.5" width="140" height="60"/>
                                         <color key="backgroundColor" red="0.98039215686274506" green="0.082352941176470587" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="hD5-AB-kXX"/>
@@ -833,7 +830,7 @@ and go back to home screen.</string>
                                 <rect key="frame" x="0.0" y="525" width="375" height="142"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsr-24-mHx">
-                                        <rect key="frame" x="0.0" y="36" width="125" height="71"/>
+                                        <rect key="frame" x="0.0" y="35.5" width="125" height="71"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYy-fx-67e">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="71"/>
@@ -867,7 +864,7 @@ and go back to home screen.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMQ-1l-xds">
-                                        <rect key="frame" x="125" y="36" width="125" height="71"/>
+                                        <rect key="frame" x="125" y="35.5" width="125" height="71"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mut-ya-b0Z">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="71"/>
@@ -901,7 +898,7 @@ and go back to home screen.</string>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMd-8p-Iox">
-                                        <rect key="frame" x="250" y="36" width="125" height="71"/>
+                                        <rect key="frame" x="250" y="35.5" width="125" height="71"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-wO-wyI">
                                                 <rect key="frame" x="0.0" y="0.0" width="125" height="71"/>
@@ -993,7 +990,7 @@ and go back to home screen.</string>
         <image name="dribbble-icon-1" width="19" height="19"/>
         <image name="facebook" width="35" height="35"/>
         <image name="githubIcon" width="35" height="34"/>
-        <image name="logo00036" width="18" height="31"/>
+        <image name="logo00036" width="18.5" height="31"/>
         <image name="settings-gears" width="17" height="17"/>
         <image name="sharedPopupButton" width="47" height="47"/>
         <image name="topRectangle" width="375" height="151"/>
