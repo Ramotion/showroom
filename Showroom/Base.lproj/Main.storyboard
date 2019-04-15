@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3L-wS-AKN" customClass="CircleMenu" customModule="CircleMenu">
-                                <rect key="frame" x="158" y="304" width="60" height="60"/>
+                                <rect key="frame" x="157.5" y="303.5" width="60" height="60"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="XgC-NE-Fku"/>
@@ -99,7 +98,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="88" height="165"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WP-Af-gZM">
-                                                            <rect key="frame" x="20" y="34" width="41" height="28"/>
+                                                            <rect key="frame" x="19.5" y="33.5" width="41" height="28"/>
                                                             <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="24"/>
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="0.80086043070000001" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -283,7 +282,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="335" height="49"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXZ-bl-JtK">
-                                                                    <rect key="frame" x="14" y="10" width="38" height="29"/>
+                                                                    <rect key="frame" x="14" y="13.5" width="16" height="22"/>
                                                                     <state key="normal" image="burger"/>
                                                                 </button>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# 2618-3157" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-gV-c8b">
@@ -348,13 +347,13 @@
                                                             <rect key="frame" x="115.5" y="117" width="104" height="40"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEDGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLH-89-oWj">
-                                                                    <rect key="frame" x="32" y="0.0" width="39" height="12"/>
+                                                                    <rect key="frame" x="32.5" y="0.0" width="39" height="12"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="10"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1S-uE-D6R">
-                                                                    <rect key="frame" x="31" y="19" width="41" height="21"/>
+                                                                    <rect key="frame" x="31.5" y="19" width="41" height="21"/>
                                                                     <fontDescription key="fontDescription" name="OpenSans-Semibold" family="Open Sans" pointSize="18"/>
                                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
@@ -437,7 +436,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars" translatesAutoresizingMaskIntoConstraints="NO" id="cFe-Jr-Pd6">
-                                                            <rect key="frame" x="79" y="51" width="97" height="17"/>
+                                                            <rect key="frame" x="79" y="51" width="16" height="16"/>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="cm8-qx-YmD" userLabel="photo">
                                                             <rect key="frame" x="22" y="28" width="49" height="49"/>
@@ -447,7 +446,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="box-58-xJ9">
-                                                            <rect key="frame" x="297" y="40" width="16" height="25"/>
+                                                            <rect key="frame" x="297" y="44.5" width="16" height="16"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSf-vX-GIh" userLabel="line">
                                                             <rect key="frame" x="22" y="92" width="291" height="1"/>
@@ -770,10 +769,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S5V-UU-NLq" userLabel="TitleView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Sync" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1El-7h-TA2">
-                                        <rect key="frame" x="140" y="58" width="94" height="19"/>
+                                        <rect key="frame" x="140.5" y="57.5" width="94" height="19"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                                         <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -786,7 +785,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0r-tS-9si" userLabel="container">
-                                <rect key="frame" x="0.0" y="82" width="375" height="504"/>
+                                <rect key="frame" x="0.0" y="81.5" width="375" height="504"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leS-yF-yKr" userLabel="Blue View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="252"/>
@@ -795,13 +794,13 @@
                                                 <rect key="frame" x="8" y="45.5" width="359" height="161.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connect Contacts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ph6-0C-6Jf">
-                                                        <rect key="frame" x="104" y="0.0" width="150" height="23"/>
+                                                        <rect key="frame" x="104.5" y="0.0" width="150" height="23"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                                         <color key="textColor" red="0.1215686275" green="0.71764705880000002" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1m7-Ec-ZOh" userLabel="Description">
-                                                        <rect key="frame" x="62.5" y="33" width="233.5" height="28.5"/>
+                                                        <rect key="frame" x="63" y="33" width="233.5" height="28.5"/>
                                                         <string key="text">All your phone Contacts will be automatically 
 added to your friends list.</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
@@ -809,7 +808,7 @@ added to your friends list.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="HFe-Xj-Znk">
-                                                        <rect key="frame" x="134" y="108.5" width="22" height="35"/>
+                                                        <rect key="frame" x="133.5" y="108.5" width="22" height="35"/>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_users1" translatesAutoresizingMaskIntoConstraints="NO" id="V00-Rl-vy6">
                                                         <rect key="frame" x="90" y="96.5" width="38" height="55"/>
@@ -851,7 +850,7 @@ added to your friends list.</string>
                                         <rect key="frame" x="0.0" y="252" width="375" height="252"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLq-xb-a9U" userLabel="CenterView">
-                                                <rect key="frame" x="0.0" y="49.5" width="375" height="154.5"/>
+                                                <rect key="frame" x="0.0" y="49" width="375" height="154.5"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_users2" translatesAutoresizingMaskIntoConstraints="NO" id="ALk-9j-O6q">
                                                         <rect key="frame" x="139" y="99.5" width="38" height="55"/>
@@ -869,7 +868,7 @@ added to your friends list.</string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_phone_off" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-hx-KBq">
-                                                        <rect key="frame" x="109" y="109.5" width="22" height="35"/>
+                                                        <rect key="frame" x="108.5" y="109.5" width="22" height="35"/>
                                                     </imageView>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0U4-cI-mYM" customClass="RAMPaperSwitch" customModule="RAMPaperSwitch">
                                                         <rect key="frame" x="224" y="111.5" width="51" height="31"/>
@@ -1028,14 +1027,14 @@ added to your friends list.</string>
                                 <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusIcon" translatesAutoresizingMaskIntoConstraints="NO" id="PFM-5i-C3P">
-                                        <rect key="frame" x="26" y="24" width="28" height="28"/>
+                                        <rect key="frame" x="26" y="23.5" width="28" height="28"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="m7d-o7-aqp"/>
                                             <constraint firstAttribute="height" constant="28" id="vdL-SQ-Z8C"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.64999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UPLOAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mad-kc-OX4">
-                                        <rect key="frame" x="72" y="27" width="66" height="22"/>
+                                        <rect key="frame" x="72" y="26.5" width="66" height="22"/>
                                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1092,7 +1091,7 @@ added to your friends list.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2du-od-Sjb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2390" y="603"/>
+            <point key="canvasLocation" x="2390" y="602"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="E1K-hT-Q86">
@@ -1106,26 +1105,29 @@ added to your friends list.</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6R-qV-Ym2">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C96-4B-AGq">
+                                <rect key="frame" x="0.0" y="28" width="375" height="639"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="N6R-qV-Ym2" secondAttribute="trailing" id="9Pd-fF-SQ3"/>
-                            <constraint firstItem="N6R-qV-Ym2" firstAttribute="leading" secondItem="U60-AG-mVS" secondAttribute="leading" id="MkB-iQ-vuV"/>
-                            <constraint firstItem="N6R-qV-Ym2" firstAttribute="top" secondItem="TGn-tM-cBU" secondAttribute="bottom" id="e6m-Wm-zJQ"/>
-                            <constraint firstItem="3W5-MT-yLG" firstAttribute="top" secondItem="N6R-qV-Ym2" secondAttribute="bottom" id="zxM-fp-DVy"/>
+                            <constraint firstItem="C96-4B-AGq" firstAttribute="leading" secondItem="U60-AG-mVS" secondAttribute="leading" id="iO2-Lf-vxj"/>
+                            <constraint firstItem="3W5-MT-yLG" firstAttribute="top" secondItem="C96-4B-AGq" secondAttribute="bottom" id="iRi-OH-nfw"/>
+                            <constraint firstItem="C96-4B-AGq" firstAttribute="top" secondItem="TGn-tM-cBU" secondAttribute="bottom" constant="8" id="lOm-Cm-aWA"/>
+                            <constraint firstAttribute="trailing" secondItem="C96-4B-AGq" secondAttribute="trailing" id="n6y-W2-sjh"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="N6R-qV-Ym2" id="fV3-zZ-mMT"/>
+                        <outlet property="webView" destination="C96-4B-AGq" id="0q3-A6-N0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zut-3j-Tgi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="602"/>
+            <point key="canvasLocation" x="3268" y="601.34932533733138"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="RAN-O0-JZ0">
@@ -1174,7 +1176,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="La Crescenta-Montrose, CA91020 Glendale NO. 7911847" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyB-BY-IWb">
-                                                    <rect key="frame" x="131" y="49.5" width="228" height="26.5"/>
+                                                    <rect key="frame" x="131" y="49" width="228" height="26.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.49803921569999998" green="0.51764705879999995" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -1208,7 +1210,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="gol-OU-NDO">
-                                                    <rect key="frame" x="299" y="34" width="14" height="13"/>
+                                                    <rect key="frame" x="299" y="33.5" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Allan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E5d-gl-31b">
                                                     <rect key="frame" x="108" y="31" width="74" height="18"/>
@@ -1264,7 +1266,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="Zpz-JZ-hq8">
-                                                    <rect key="frame" x="299" y="34" width="14" height="13"/>
+                                                    <rect key="frame" x="299" y="33.5" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amada Iin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-tM-npo">
                                                     <rect key="frame" x="108" y="31" width="68" height="18"/>
@@ -1320,7 +1322,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="v95-sM-Y5E">
-                                                    <rect key="frame" x="299" y="34" width="14" height="13"/>
+                                                    <rect key="frame" x="299" y="33.5" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Allan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abr-9p-r5A">
                                                     <rect key="frame" x="108" y="31" width="74" height="18"/>
@@ -1376,7 +1378,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="v9B-GL-alo">
-                                                    <rect key="frame" x="299" y="34" width="14" height="13"/>
+                                                    <rect key="frame" x="299" y="33.5" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amada Iin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gb-2Z-dKJ">
                                                     <rect key="frame" x="108" y="31" width="68" height="18"/>
@@ -1432,7 +1434,7 @@ added to your friends list.</string>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heand" translatesAutoresizingMaskIntoConstraints="NO" id="gA5-XF-sxu">
-                                                    <rect key="frame" x="299" y="34" width="14" height="13"/>
+                                                    <rect key="frame" x="299" y="33.5" width="14" height="13"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peter Allan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kO-ff-IvR">
                                                     <rect key="frame" x="108" y="31" width="74" height="18"/>
@@ -1489,7 +1491,7 @@ added to your friends list.</string>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="yUf-Wc-KWA">
-                                    <rect key="frame" x="95" y="9" width="51" height="16"/>
+                                    <rect key="frame" x="94.5" y="8.5" width="51" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="16" id="3fJ-mh-8t9"/>
                                         <constraint firstAttribute="width" constant="51" id="6z2-Z5-IJk"/>
@@ -1566,7 +1568,7 @@ added to your friends list.</string>
                                 <constraint firstItem="YKE-UU-ujm" firstAttribute="centerX" secondItem="INk-0Z-OPY" secondAttribute="centerX" id="xbv-jg-Bgr"/>
                             </constraints>
                         </view>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="locationButton" id="zLE-h7-MET" customClass="AnimatingBarButton" customModule="DemoExpandingCollection" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="locationButton" id="zLE-h7-MET" customClass="AnimatingBarButton" customModule="Showroom" customModuleProvider="target">
                             <color key="tintColor" name="controlLightHighlightColor" catalog="System" colorSpace="catalog"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="string" keyPath="normalImageName" value="locationButton"/>
@@ -1597,19 +1599,19 @@ added to your friends list.</string>
         <image name="burger" width="38" height="29"/>
         <image name="closeButton" width="120" height="120"/>
         <image name="dots" width="14" height="84"/>
-        <image name="face1" width="40" height="39"/>
-        <image name="face2" width="40" height="39"/>
-        <image name="heand" width="14" height="13"/>
-        <image name="image" width="340" height="165"/>
-        <image name="img_phone_off" width="22" height="35"/>
-        <image name="img_users1" width="38" height="55"/>
-        <image name="img_users2" width="38" height="55"/>
+        <image name="face1" width="40.5" height="39.5"/>
+        <image name="face2" width="40.5" height="39.5"/>
+        <image name="heand" width="14.5" height="13.5"/>
+        <image name="image" width="340.5" height="165"/>
+        <image name="img_phone_off" width="22.5" height="35.5"/>
+        <image name="img_users1" width="38.5" height="55.5"/>
+        <image name="img_users2" width="38.5" height="55.5"/>
         <image name="locationButton" width="20" height="20"/>
         <image name="map" width="375" height="124"/>
         <image name="menuButton" width="120" height="120"/>
         <image name="photo" width="98" height="98"/>
         <image name="searchIcon" width="20" height="20"/>
         <image name="stars" width="97" height="17"/>
-        <image name="starsCollection" width="77" height="11"/>
+        <image name="starsCollection" width="77" height="11.5"/>
     </resources>
 </document>

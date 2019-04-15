@@ -140,14 +140,14 @@ extension MenuPopUpViewController {
   
   @IBAction func copyLinkHandler(_ sender: Any) {
     showInfoView()
-    AppAnalytics.event(.google(name: "Buttons", parametr: "copy link popup: \(shareUrlString)"))
+    AppAnalytics.event(.google(name: "Buttons", parametr: "copy link popup: \(shareUrlString ?? "")"))
     UIPasteboard.general.string = shareUrlString
   }
   
   @IBAction func sharedHandler(_ sender: Any) {
     
-    AppAnalytics.event(.google(name: "Buttons", parametr: "shared link popup: \(shareUrlString)"))
-    let activity = UIActivityViewController(activityItems: [shareUrlString], applicationActivities: nil)
+    AppAnalytics.event(.google(name: "Buttons", parametr: "shared link popup: \(shareUrlString ?? "")"))
+    let activity = UIActivityViewController(activityItems: [shareUrlString ?? ""], applicationActivities: nil)
     present(activity, animated: true, completion: nil)
   }
   

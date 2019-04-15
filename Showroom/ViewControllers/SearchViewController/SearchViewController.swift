@@ -11,7 +11,7 @@ class SearchViewController: UIViewController {
   
   private var ramReel: RAMReel<RAMCell, UITextField, SimplePrefixQueryDataSource>!
   private let loadingOverlay = UIView()
-  private let loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    private let loadingIndicator = UIActivityIndicatorView(style: .whiteLarge)
   
   init(viewModel: ReelSearchViewModel) {
     self.viewModel = viewModel

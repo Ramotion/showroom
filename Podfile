@@ -1,4 +1,4 @@
-platform :ios, '10.0'
+#platform :ios, '12.0'
 
 target 'Showroom' do
   use_frameworks!

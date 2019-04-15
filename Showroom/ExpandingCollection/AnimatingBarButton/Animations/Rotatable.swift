@@ -35,7 +35,7 @@ extension Rotatable {
     animation.duration            = duration
     animation.fromValue           = from
     animation.toValue             = to
-    animation.fillMode            = kCAFillModeForwards
+    animation.fillMode            = .forwards
     animation.isRemovedOnCompletion = false
     return animation
   }

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
 
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
     configureNavigationBar()
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: Handle callback url
 extension AppDelegate {
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if (url.host == "oauth") {
             OAuthSwift.handle(url: url)
         }
@@ -51,8 +51,8 @@ extension AppDelegate {
         
         if let font = UIFont(name: "Avenir-medium", size: 18) {
             UINavigationBar.appearance().titleTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.white,
-                NSAttributedStringKey.font: font,
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: font,
             ]
         }
     }

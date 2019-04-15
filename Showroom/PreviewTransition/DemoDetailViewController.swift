@@ -32,12 +32,15 @@ extension DemoDetailViewController {
   
   override public func viewWillAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    UIApplication.shared.isStatusBarHidden = false
+    if let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as? UIView{
+      statusBar.isHidden = false
+    }
   }
   
   override public func viewWillDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    UIApplication.shared.isStatusBarHidden = true
+    let statusBar: UIView = UIApplication.shared.value(forKey: "statusBar") as! UIView
+    statusBar.isHidden = true
   }
   
   override open var shouldAutorotate: Bool {
@@ -94,7 +97,7 @@ extension DemoDetailViewController {
     controlView.insertSubview(screnShotImageView, at: 0)
     
     // added constraints
-    [NSLayoutAttribute.left, .right, .bottom, .top].forEach { attribute in
+    [NSLayoutConstraint.Attribute.left, .right, .bottom, .top].forEach { attribute in
       (self.controlView, screnShotImageView) >>>- {
         $0.attribute = attribute
         return
@@ -114,7 +117,7 @@ extension DemoDetailViewController {
     onView.addSubview(blueView)
     
     // add constraints
-    [NSLayoutAttribute.left, .right, .bottom, .top].forEach { attribute in
+    [NSLayoutConstraint.Attribute.left, .right, .bottom, .top].forEach { attribute in
       (onView, blueView) >>>- {
         $0.attribute = attribute
         return

@@ -35,7 +35,7 @@ class ElongationDemoViewController: ElongationViewController {
   }
   
   override func openDetailView(for indexPath: IndexPath) {
-    let detailViewController = ElongationDemoDetailViewController(style: UITableViewStyle.grouped)
+    let detailViewController = ElongationDemoDetailViewController(style: .grouped)
     let villa = datasource[indexPath.row]
     detailViewController.title = villa.title
     expand(viewController: detailViewController)
@@ -76,7 +76,7 @@ extension ElongationDemoViewController {
         kCTFontAttributeName: UIFont.robotoFont(ofSize: 22, weight: .medium),
         kCTKernAttributeName: 8.2,
         kCTForegroundColorAttributeName: UIColor.white
-      ] as [NSAttributedStringKey : Any])
+        ] as [NSAttributedString.Key : Any])
     
     cell.topImageView?.image = UIImage(named: villa.imageName)
     cell.localityLabel?.attributedText = attributedLocality
