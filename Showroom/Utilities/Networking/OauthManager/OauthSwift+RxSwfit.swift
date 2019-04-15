@@ -22,14 +22,14 @@ private enum API {
     if let token = KeychainManager.getKeychain() {
       return Observable.just(token)
     }
-    guard let rootVC = UIViewController.current else { return Observable.empty() }
+//    guard let rootVC = UIViewController.current else { return Observable.empty() }
     
-    let handler = SafariURLHandler(viewController: rootVC, oauthSwift: API.oauthswift)
-    handler.factory = { url in
-      let controller = SFSafariViewController(url: url)
-      return controller
-    }
-    API.oauthswift.authorizeURLHandler = handler
+//    let handler = SafariURLHandler(viewController: rootVC, oauthSwift: API.oauthswift)
+//    handler.factory = { url in
+//      let controller = SFSafariViewController(url: url)
+//      return controller
+//    }
+//    API.oauthswift.authorizeURLHandler = handler
     
     return Observable.just(1)
       .delay(0.1, scheduler: MainScheduler.instance) // delay for showing registration screen
@@ -68,6 +68,7 @@ extension OAuth2Swift {
 extension Reactive where Base: URLSession {
   
   func dataWithRecallToken(getURL: String, parametrs: [String]?) -> Observable<Data> {
+    print("///////////////////////////////////////////\nWe are here\n///////////////////////////////////////////")
     let parametrString = parametrs?.reduce("") { $0 + "&" + $1 } ?? ""
     return API.tokenObservable
       .flatMap { token -> Observable<URLRequest> in

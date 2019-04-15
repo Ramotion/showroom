@@ -6,7 +6,7 @@ import MBProgressHUD
 
 final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransitionDestination {
     
-    fileprivate let networkingManager: NetworkingManager
+    fileprivate let networkingManager = NetworkingManager()
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
@@ -20,11 +20,11 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
-        let network = NetworkingManager()
-        self.networkingManager = network
-        self.userSignal = network.fetchDribbbleUser()
+//        let network = NetworkingManager()
+//        self.networkingManager = network
+        self.userSignal = networkingManager.fetchDribbbleUser()
         
-        self.dribbbleShotsSignal = network.fetchDribbbleShots()
+        self.dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
             .map { $0.filter { shot in shot.animated } }
         
