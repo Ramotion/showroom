@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 import OAuthSwift
-import SafariServices
+//import SafariServices
 
 private enum API {
   
@@ -68,7 +68,6 @@ extension OAuth2Swift {
 extension Reactive where Base: URLSession {
   
   func dataWithRecallToken(getURL: String, parametrs: [String]?) -> Observable<Data> {
-    print("///////////////////////////////////////////\nWe are here\n///////////////////////////////////////////")
     let parametrString = parametrs?.reduce("") { $0 + "&" + $1 } ?? ""
     return API.tokenObservable
       .flatMap { token -> Observable<URLRequest> in

@@ -68,17 +68,16 @@ extension NetworkingManager {
     private func fetch<T>(getUrl: String, parametrs: [String]? = nil) -> Observable<T> where T: Codable {
         return URLSession.shared.rx.dataWithRecallToken(getURL: getUrl, parametrs: parametrs)
             .flatMap { data -> Observable<T> in
-                #if DEBUG
-                if let json = try? JSONSerialization.jsonObject(with: data) { print(json) }
-                #endif
+//                #if DEBUG
+//                if let json = try? JSONSerialization.jsonObject(with: data) { print(json) }
+//                #endif
                 do {
                     let user = try JSONDecoder().decode(T.self, from: data)
-                    print("////////////////\nUser: \(user)\n////////////////")
                     return Observable.just(user)
                 } catch {
-                    #if DEBUG
-                    print(error)
-                    #endif
+//                    #if DEBUG
+//                    print(error)
+//                    #endif
                     return Observable.empty()
                 }
         }
