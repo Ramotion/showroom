@@ -1,6 +1,7 @@
 import UIKit
 import OAuthSwift
 import RxSwift
+//import RxCocoa
 import Firebase
 import MBProgressHUD
 
@@ -10,6 +11,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
+//    fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     fileprivate let reloadData = Variable<[DribbbleShotState]>([])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
@@ -22,9 +24,9 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     required init?(coder aDecoder: NSCoder) {
 //        let network = NetworkingManager()
 //        self.networkingManager = network
-        self.userSignal = networkingManager.fetchDribbbleUser()
+        userSignal = networkingManager.fetchDribbbleUser()
         
-        self.dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
+        dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
             .map { $0.filter { shot in shot.animated } }
         
@@ -56,7 +58,9 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
         fakeCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         fakeCollectionViewData
             .asObservable()
-            .bind(to: fakeCollectionView.rx.items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
+            .bind(to: fakeCollectionView
+            .rx
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
                 cell.state = element
             }
             .disposed(by: rx.disposeBag)
@@ -96,6 +100,7 @@ extension DribbbleShotsViewController {
         navigationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 0)
         navigationView.sizeToFit()
         navigationView.backButton.addTarget(self, action: #selector(doneHandler), for: .touchUpInside)
+        
         view.addSubview(navigationView)
         updateNavigationView()
         
@@ -113,7 +118,9 @@ extension DribbbleShotsViewController {
         
         let reloadDataSignal = reloadData.asObservable()
         reloadDataSignal
-            .bind(to: collectionView.rx.items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
+            .bind(to: collectionView
+            .rx
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
                 cell.state = element
             }
             .disposed(by: rx.disposeBag)
@@ -124,15 +131,18 @@ extension DribbbleShotsViewController {
         .disposed(by: rx.disposeBag)
         
         // MARK: Item did select
-        collectionView.rx
+        collectionView
+            .rx
             .modelSelected(DribbbleShotState.self)
             .flatMap({ item -> Observable<Shot> in
                 switch item {
-                case .default(let shot): return Observable.just(shot)
-                case .sent: return Observable.empty()
-                case .wireframe: return Observable.empty()
+                case .default(let shot):
+                    return Observable.just(shot)
+                case .sent (let shot):
+                    return Observable.just(shot)
+                case .wireframe:
+                    return Observable.empty()
                 }
-                
             })
             .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
             .flatMap { param -> Observable<(Shot, User, String)> in
@@ -167,10 +177,9 @@ extension DribbbleShotsViewController {
     }
     
     // MARK: Actions
-    @objc func doneHandler() {
+    @objc private func doneHandler() {
         dismiss(animated: true, completion: nil)
     }
-    
 }
 
 // MARK: Helpers
