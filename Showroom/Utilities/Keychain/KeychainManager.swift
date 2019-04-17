@@ -14,7 +14,6 @@ final class KeychainManager {
 extension KeychainManager {
     
     static func setKeychain(token: OAuth2Swift.DribbbleToken) {
-        print("save token: \(token)")
         let keychain = Keychain(server: Key.server, protocolType: .https, authenticationType: .htmlForm)
         keychain[Key.token] = token
     }
