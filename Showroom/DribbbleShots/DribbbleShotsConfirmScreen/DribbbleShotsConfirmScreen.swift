@@ -102,7 +102,6 @@ final class DribbbleShotsConfirmVC: UIViewController {
         return  Observable.create { [weak self] (observer) -> Disposable in
             self?.closeButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in
                 observer.onCompleted()
-//                self?.closeAction?()
                 self?.dismiss(animated: true, completion: nil)
             })
             self?.sendButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in

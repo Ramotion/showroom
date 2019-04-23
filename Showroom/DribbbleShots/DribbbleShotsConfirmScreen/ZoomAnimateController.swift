@@ -13,7 +13,7 @@ final class ZoomAnimateController: NSObject, UIViewControllerAnimatedTransitioni
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.2
+        return 0.33
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
@@ -36,16 +36,19 @@ final class ZoomAnimateController: NSObject, UIViewControllerAnimatedTransitioni
         transitionContext.containerView.addSubview(destinationVC.view)
         transitionContext.containerView.addSubview(snapshot)
         destinationVC.view.isHidden = true
+        snapshot.alpha = 0
         
         UIView.animate(
             withDuration: transitionDuration(using: transitionContext),
             delay: 0,
             options: [.curveEaseInOut, .layoutSubviews],
-            animations: { snapshot.frame = finalFrame },
+            animations: {
+                snapshot.frame = finalFrame
+                snapshot.alpha = 1
+            },
             completion: { _ in
                 destinationVC.view.isHidden = false
                 snapshot.removeFromSuperview()
-                sourceVC.view.layer.transform = CATransform3DIdentity
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
     }
@@ -56,12 +59,16 @@ final class ZoomAnimateController: NSObject, UIViewControllerAnimatedTransitioni
         transitionContext.containerView.insertSubview(destinationVC.view, at: 0)
         transitionContext.containerView.addSubview(snapshot)
         sourceVC.view.isHidden = true
+        snapshot.alpha = 1
         
         UIView.animate(
             withDuration: transitionDuration(using: transitionContext),
             delay: 0,
             options: [.curveEaseIn, .layoutSubviews],
-            animations: { [weak self] in snapshot.frame = self?.originFrame ?? .zero },
+            animations: { [weak self] in
+                snapshot.frame = self?.originFrame ?? .zero
+                snapshot.alpha = 0
+            },
             completion: { _ in
                 sourceVC.view.isHidden = false
                 snapshot.removeFromSuperview()

@@ -18,6 +18,7 @@
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
 		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
 		11850186210B6FEA004D6433 /* DribbbleShotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11850185210B6FEA004D6433 /* DribbbleShotCell.xib */; };
+		371ABA7D226F468C001FC4FE /* RingProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ABA7C226F468C001FC4FE /* RingProgressBar.swift */; };
 		373178F922675729005E5888 /* DribbbleShotsConfirmScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */; };
 		3733DA2C22661EBB00D7630C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */; };
 		3741C5542269A0D50043E3F4 /* ConfirmScreenTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */; };
@@ -177,6 +178,7 @@
 		117163D520F611DF00D7F340 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		11850185210B6FEA004D6433 /* DribbbleShotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbbleShotCell.xib; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
+		371ABA7C226F468C001FC4FE /* RingProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressBar.swift; sourceTree = "<group>"; };
 		373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsConfirmScreen.swift; sourceTree = "<group>"; };
 		3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmScreenTheme.swift; sourceTree = "<group>"; };
@@ -348,6 +350,14 @@
 				1042B3AC551DEF61838D9BEB /* Pods_Showroom.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		371ABA7B226F4651001FC4FE /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				371ABA7C226F468C001FC4FE /* RingProgressBar.swift */,
+			);
+			path = ProgressBar;
 			sourceTree = "<group>";
 		};
 		3741C5512269A0030043E3F4 /* DribbbleShotsConfirmScreen */ = {
@@ -909,6 +919,7 @@
 		84F0A97C1DE834A900C02332 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				371ABA7B226F4651001FC4FE /* ProgressBar */,
 				842E1D2B1E05394F00F75DF9 /* ThingerView */,
 				84F0A97D1DE834C900C02332 /* CircleView */,
 			);
@@ -1337,6 +1348,7 @@
 				9D7F045D1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift in Sources */,
 				9D6F55021E97B8650059B49A /* LoremSwiftum.swift in Sources */,
 				844AE7291DB4C6BD0029FBD4 /* WordReader.swift in Sources */,
+				371ABA7D226F468C001FC4FE /* RingProgressBar.swift in Sources */,
 				84B46EF01DAFCED10033CB15 /* ScreenShot.swift in Sources */,
 				84F5AB301DAF765D00271439 /* DemoFoldginCell.swift in Sources */,
 				844AE73B1DB4D9870029FBD4 /* FirstTableViewController.swift in Sources */,

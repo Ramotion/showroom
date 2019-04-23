@@ -38,7 +38,7 @@ final class DribbbleShotCell: UICollectionViewCell {
                 loadingView.alpha = 0
                 updateWithShot(shot)
             case .sent(let shot):
-                checkIfSent(shotID: shot.id)
+//                checkIfSent(shotID: shot.id)
                 setNeedsLayout()
                 loadingView.alpha = 0
                 updateWithShot(shot)
@@ -46,7 +46,8 @@ final class DribbbleShotCell: UICollectionViewCell {
                 Nuke.cancelRequest(for: imageView)
                 loadingView.alpha = 0
                 updateWithShot(nil)
-            }        }
+            }
+        }
     }
     
     private func updateWithShot(_ shot: Shot?) {
@@ -81,7 +82,10 @@ final class DribbbleShotCell: UICollectionViewCell {
             startImageLoadingAnimation()
             let contentModes = ImageLoadingOptions.ContentModes(success: .scaleAspectFill, failure: .scaleAspectFit, placeholder: .scaleAspectFit)
             let options = ImageLoadingOptions(contentModes: contentModes)
-            Nuke.loadImage(with: imageUrl, options: options, into: imageView, progress: nil, completion: { [weak self] _, _ in self?.stopImageLoadingAnimation(completion: nil) })
+            Nuke.loadImage(with: imageUrl, options: options, into: imageView, progress: nil, completion: { [weak self] _, _ in
+                self?.stopImageLoadingAnimation(completion: nil)
+                self?.checkIfSent()
+            })
         } else {
             Nuke.cancelRequest(for: imageView)
         }
@@ -155,17 +159,23 @@ final class DribbbleShotCell: UICollectionViewCell {
         shouldCompleteAnimation = true
     }
     
-    private func checkIfSent(shotID: Int) {
-        let db = Firestore.firestore()
-        let docRef = db.collection("shots").whereField("id", isEqualTo: shotID)
-        docRef.getDocuments { [weak self] (document, error) in
-            guard error == nil else {
-                print("Document Error: ", error ?? "")
-                return
+    private func checkIfSent() {
+        
+        switch state {
+        case .default: break
+        case .sent(let shot):
+            let db = Firestore.firestore()
+            let docRef = db.collection("shots").whereField("id", isEqualTo: shot.id)
+            docRef.getDocuments { [weak self] (document, error) in
+                guard error == nil else {
+                    print("Document Error: ", error ?? "")
+                    return
+                }
+                if document?.count != 0 {
+                    self?.isEnabled = false
+                }
             }
-            if document?.count != 0 {
-                self?.isEnabled = false
-            }
+        case .wireframe: break
         }
     }
 }

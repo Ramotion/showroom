@@ -152,12 +152,16 @@ extension DribbbleShotsViewController {
                     .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
             }
             .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
+                ////////////////////
                 if let `self` = self { MBProgressHUD.showAdded(to: self.view, animated: true) }
+                ////////////////////
                 return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
             }
             .subscribe { [weak self] in
                 guard let `self` = self else { return }
+                ////////////////////
                 MBProgressHUD.hide(for: self.view, animated: true)
+                ////////////////////
                 switch $0 {
                 case .completed: break
                 case .error: UIAlertController.show(message: "Can't send shot!")
