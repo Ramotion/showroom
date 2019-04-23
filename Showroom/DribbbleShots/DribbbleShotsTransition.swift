@@ -9,13 +9,10 @@
 import UIKit
 
 protocol DribbbleShotsTransitionSource {
-    
     func dribbbleShotsTransitionSourceView() -> UIView
-    
 }
 
 protocol DribbbleShotsTransitionDestination {
-    
 }
 
 final class DribbbleShotsTransition : NSObject, UIViewControllerAnimatedTransitioning {

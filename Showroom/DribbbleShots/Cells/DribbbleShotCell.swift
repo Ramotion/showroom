@@ -1,5 +1,6 @@
 import UIKit
 import Nuke
+import Firebase
 
 private let kContentViewCornerRadius: CGFloat = 5
 
@@ -10,7 +11,25 @@ final class DribbbleShotCell: UICollectionViewCell {
     @IBOutlet weak private var imageView: DribbbleShotImageView!
     @IBOutlet weak private var loadingView: UIView!
     @IBOutlet weak private var gifImageView: UIImageView!
-
+    
+    private var isLoading = false
+    private var loadingAnimationCompletion: (() -> ())?
+    private var shouldCompleteAnimation = false
+    
+    var isEnabled = true {
+        didSet {
+            if !isEnabled {
+                self.isUserInteractionEnabled = false
+                gifImageView.alpha = 0.3
+                imageView.alpha = 0.3
+            } else {
+                self.isUserInteractionEnabled = true
+                gifImageView.alpha = 1
+                imageView.alpha = 1
+            }
+        }
+    }
+    
     var state: DribbbleShotState = .wireframe {
         didSet {
             switch state {
@@ -19,6 +38,7 @@ final class DribbbleShotCell: UICollectionViewCell {
                 loadingView.alpha = 0
                 updateWithShot(shot)
             case .sent(let shot):
+                checkIfSent(shotID: shot.id)
                 setNeedsLayout()
                 loadingView.alpha = 0
                 updateWithShot(shot)
@@ -26,23 +46,7 @@ final class DribbbleShotCell: UICollectionViewCell {
                 Nuke.cancelRequest(for: imageView)
                 loadingView.alpha = 0
                 updateWithShot(nil)
-            }
-            updateTransparentOverlayVisibility()
-        }
-    }
-    
-    private func updateTransparentOverlayVisibility() {
-        guard !isLoading else {
-            imageView.isTransparentOverlayVisible = true
-            return
-        }
-        
-        switch state {
-        case .default, .wireframe:
-            imageView.isTransparentOverlayVisible = false
-        case .sent:
-            imageView.isTransparentOverlayVisible = true
-        }
+            }        }
     }
     
     private func updateWithShot(_ shot: Shot?) {
@@ -62,6 +66,7 @@ final class DribbbleShotCell: UICollectionViewCell {
         
         imageView.image = nil
         Nuke.cancelRequest(for: imageView)
+        isEnabled = true
     }
     
     // MARK: - Laying out Subviews
@@ -111,8 +116,6 @@ final class DribbbleShotCell: UICollectionViewCell {
         }
     }
     
-    private var isLoading = false
-    
     private func startImageLoadingAnimation() {
         guard !isLoading else { return }
         isLoading = true
@@ -121,7 +124,6 @@ final class DribbbleShotCell: UICollectionViewCell {
     }
     
     private func animateLoadingView() {
-        updateTransparentOverlayVisibility()
         imageView.alpha = 0
         loadingView.alpha = 1
 
@@ -137,7 +139,6 @@ final class DribbbleShotCell: UICollectionViewCell {
                 self?.loadingView.frame = initialFrame.offsetBy(dx: initialFrame.width * 2, dy: 0)
                 self?.imageView.alpha = 1
                 self?.loadingView.alpha = 0
-                self?.updateTransparentOverlayVisibility()
             }, completion: { finished in
                 if shouldCompleteAnimation {
                     self?.loadingAnimationCompletion?()
@@ -149,12 +150,22 @@ final class DribbbleShotCell: UICollectionViewCell {
         })
     }
     
-    private var loadingAnimationCompletion: (() -> ())?
-    private var shouldCompleteAnimation = false
-    
     private func stopImageLoadingAnimation(completion: (() -> ())?) {
         loadingAnimationCompletion = completion
         shouldCompleteAnimation = true
     }
     
+    private func checkIfSent(shotID: Int) {
+        let db = Firestore.firestore()
+        let docRef = db.collection("shots").whereField("id", isEqualTo: shotID)
+        docRef.getDocuments { [weak self] (document, error) in
+            guard error == nil else {
+                print("Document Error: ", error ?? "")
+                return
+            }
+            if document?.count != 0 {
+                self?.isEnabled = false
+            }
+        }
+    }
 }

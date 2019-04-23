@@ -22,8 +22,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
-//        let network = NetworkingManager()
-//        self.networkingManager = network
+        
         userSignal = networkingManager.fetchDribbbleUser()
         
         dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
@@ -120,9 +119,7 @@ extension DribbbleShotsViewController {
         reloadDataSignal
             .bind(to: collectionView
             .rx
-            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
-                cell.state = element
-            }
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in cell.state = element }
             .disposed(by: rx.disposeBag)
         
         reloadDataSignal.subscribe { [weak self] _ in
@@ -145,8 +142,13 @@ extension DribbbleShotsViewController {
                 }
             })
             .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
-            .flatMap { param -> Observable<(Shot, User, String)> in
-                return UIAlertController.confirmation(message: "Do you want send this shot?")
+            .flatMap {[weak self] param -> Observable<(Shot, User, String)> in
+                let confirmationVC = DribbbleShotsConfirmVC()
+                confirmationVC.imageUrl = param.0.imageUrl
+                confirmationVC.title = param.0.description ?? ""
+                confirmationVC.transitioningDelegate = self!
+                self?.present(confirmationVC, animated: true, completion: nil)
+                return confirmationVC.create()
                     .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
             }
             .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
@@ -203,5 +205,15 @@ private extension DribbbleShotsViewController {
             })
             .disposed(by: rx.disposeBag)
     }
+}
+
+extension DribbbleShotsViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            return ZoomAnimateController(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .presenting)
+    }
     
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            guard let _ = dismissed as? DribbbleShotsConfirmVC else { return nil }
+            return ZoomAnimateController(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .dismissing)
+    }
 }

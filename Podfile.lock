@@ -59,7 +59,7 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/UserDefaults (~> 5.2)
-  - FoldingCell (5.0.0)
+  - FoldingCell (5.0.1)
   - GlidingCollection (2.1.0)
   - GoogleAppMeasurement (5.8.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
@@ -218,7 +218,7 @@ SPEC CHECKSUMS:
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
   FirebaseFirestore: faca891c0f0d1d6c10c793473e2f6a29d75014b5
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
-  FoldingCell: 49f5e6a036241db1a177610b4d4137d961ddd40a
+  FoldingCell: 9197b915a415af9e52a857964066797af6a51c2b
   GlidingCollection: a15dbd9ec1775c781453bc36e6104d0c9dec20fb
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleUtilities: 273e67030e0de313e7304f6dcfa96fc5214f6c23

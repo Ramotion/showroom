@@ -590,31 +590,33 @@ To help you evaluate the quality of development, we have created a mobile applic
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="61l-Ib-Mma" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="qzb-hP-hO7" userLabel="BackgroundView" customClass="DribbbleShotsBackgroundView" customModule="Showroom" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <rect key="frame" x="0.0" y="0.0" width="377" height="555"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1P-hk-vhw">
-                            <rect key="frame" x="99" y="144.5" width="122" height="239"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="200"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please post an animated shot on Dribbble first" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-LY-jee">
+                            <rect key="frame" x="0.0" y="242.5" width="377" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="PSe-Uu-2WD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="20"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oer-LY-jee">
-                            <rect key="frame" x="0.0" y="220" width="320" height="48"/>
-                            <string key="text">You do not have an 
-animated shot</string>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dribbleIconBig" translatesAutoresizingMaskIntoConstraints="NO" id="ayx-gj-7Op">
+                            <rect key="frame" x="159.5" y="148.5" width="58" height="58"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="58" id="Tlc-9y-WDz"/>
+                                <constraint firstAttribute="height" constant="58" id="rEg-lx-uVb"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.082352941176470587" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Oer-LY-jee" firstAttribute="leading" secondItem="qzb-hP-hO7" secondAttribute="leading" id="N9w-98-G0y"/>
-                        <constraint firstItem="l1P-hk-vhw" firstAttribute="centerX" secondItem="qzb-hP-hO7" secondAttribute="centerX" id="Xe5-CP-eL4"/>
-                        <constraint firstItem="Oer-LY-jee" firstAttribute="centerY" secondItem="l1P-hk-vhw" secondAttribute="centerY" constant="-20" id="hMt-k7-1qb"/>
-                        <constraint firstAttribute="trailing" secondItem="Oer-LY-jee" secondAttribute="trailing" id="r25-sJ-6en"/>
-                        <constraint firstItem="l1P-hk-vhw" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" constant="24" id="u3h-GD-ptA"/>
+                        <constraint firstAttribute="trailing" secondItem="Oer-LY-jee" secondAttribute="trailing" id="N9T-SK-4m8"/>
+                        <constraint firstItem="Oer-LY-jee" firstAttribute="leading" secondItem="qzb-hP-hO7" secondAttribute="leading" id="UIy-Pg-yKV"/>
+                        <constraint firstItem="Oer-LY-jee" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" constant="-10" id="a74-UV-nhM"/>
+                        <constraint firstItem="ayx-gj-7Op" firstAttribute="centerY" secondItem="qzb-hP-hO7" secondAttribute="centerY" constant="-100" id="eNR-tf-Y2D"/>
+                        <constraint firstItem="ayx-gj-7Op" firstAttribute="centerX" secondItem="qzb-hP-hO7" secondAttribute="centerX" id="khS-z2-QnW"/>
                     </constraints>
                 </view>
             </objects>
@@ -987,6 +989,7 @@ and go back to home screen.</string>
         <image name="copyLinkPopupButton" width="47" height="47"/>
         <image name="dribbble-ball" width="35" height="35"/>
         <image name="dribbble-icon-1" width="19" height="19"/>
+        <image name="dribbleIconBig" width="116" height="116"/>
         <image name="facebook" width="35" height="35"/>
         <image name="githubIcon" width="35" height="34"/>
         <image name="logo00036" width="18.5" height="31"/>
