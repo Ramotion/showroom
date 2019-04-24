@@ -4,7 +4,6 @@ import EasyPeasy
 import Nuke
 
 final class DribbbleShotsConfirmVC: UIViewController {
-    var closeAction: (() -> Void)?
     var imageUrl: URL?
     var shotTitle = ""
     private let closeButton = UIButton()
@@ -12,9 +11,11 @@ final class DribbbleShotsConfirmVC: UIViewController {
     private let titleTextView = UITextView()
     private let messageTextView = UITextView()
     private let sendButton = UIButton()
+    private let ringAnimation = CABasicAnimation(keyPath: "transform.rotation")
     
     private let safeAreaTopInset = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
     
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -85,6 +86,9 @@ final class DribbbleShotsConfirmVC: UIViewController {
             Top(.closeButtonSidePadding + safeAreaTopInset).to(view)
         )
         closeButton.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal)
+        closeButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in
+            self?.dismiss(animated: true, completion: nil)
+        })
         
         NotificationCenter.default.addObserver(
             self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil
@@ -97,18 +101,17 @@ final class DribbbleShotsConfirmVC: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        sendButton.imageView?.layer.removeAllAnimations()
+    }
+    
     // MARK: Helpers
     func create() -> Observable<String> {
         return  Observable.create { [weak self] (observer) -> Disposable in
-            self?.closeButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in
-                observer.onCompleted()
-                self?.dismiss(animated: true, completion: nil)
-            })
             self?.sendButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in
+                self?.animateRing()
                 observer.onNext(self?.messageTextView.text ?? "")
                 observer.onCompleted()
-//                self?.closeAction?()
-                self?.dismiss(animated: true, completion: nil)
             })
             return Disposables.create()
         }
@@ -143,5 +146,18 @@ final class DribbbleShotsConfirmVC: UIViewController {
         shotImageView.easy.layout(Top(view.safeAreaInsets.top).to(view))
         titleTextView.easy.layout(Bottom(.titleTextViewBottomPadding).to(messageTextView))
         UIView.animate(withDuration: 0.3) { [weak self] in self?.view.layoutIfNeeded() }
+    }
+    
+    private func animateRing() {
+        sendButton.setTitle(nil, for: .normal)
+        let ringImage = DrawFigure.openRing(radius: 19, color: .white, lineWidth: 3)
+        sendButton.setImage(ringImage, for: .normal)
+        
+        ringAnimation.fromValue = 0
+        ringAnimation.toValue = 2 * CGFloat.pi
+        ringAnimation.duration = 1
+        ringAnimation.fillMode = CAMediaTimingFillMode.forwards
+        ringAnimation.repeatCount = .infinity
+        sendButton.imageView?.layer.add(ringAnimation, forKey: nil)
     }
 }

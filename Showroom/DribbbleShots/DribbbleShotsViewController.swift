@@ -119,7 +119,8 @@ extension DribbbleShotsViewController {
         reloadDataSignal
             .bind(to: collectionView
             .rx
-            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in cell.state = element }
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)
+                    ) { row, element, cell in cell.state = element }
             .disposed(by: rx.disposeBag)
         
         reloadDataSignal.subscribe { [weak self] _ in
@@ -151,23 +152,23 @@ extension DribbbleShotsViewController {
                 return confirmationVC.create()
                     .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
             }
-            .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
-                ////////////////////
-                if let `self` = self { MBProgressHUD.showAdded(to: self.view, animated: true) }
-                ////////////////////
+            .flatMap { (shot, user, message) -> Observable<Void> in
                 return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
             }
-            .subscribe { [weak self] in
-                guard let `self` = self else { return }
-                ////////////////////
-                MBProgressHUD.hide(for: self.view, animated: true)
-                ////////////////////
-                switch $0 {
-                case .completed: break
-                case .error: UIAlertController.show(message: "Can't send shot!")
-                case .next: self.fetchData(userSignal: self.userSignal, dribbbleShotsSignal: self.dribbbleShotsSignal)
-                }
-            }
+            .subscribe(
+                // Fix completion. onCompleted called after saving shot into firestore and saving must be called when button tapped.
+                onNext: { [weak self] in
+                    print("Next")
+                    self!.fetchData(userSignal: self!.userSignal, dribbbleShotsSignal: self!.dribbbleShotsSignal)
+                    if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
+            },
+                onError: { error in
+                    UIAlertController.show(message: "Can't send shot!")
+            },
+                onCompleted: {
+                    print("completed")
+//                    if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
+            })
             .disposed(by: rx.disposeBag)
     }
     

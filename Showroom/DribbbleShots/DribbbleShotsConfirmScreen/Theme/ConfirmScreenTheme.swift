@@ -28,6 +28,32 @@ struct DrawFigure {
         imagesCache.setObject(resizableImage, forKey: key)
         return resizableImage
     }
+    
+    static func openRing(radius: CGFloat, color: UIColor, lineWidth: CGFloat) -> UIImage {
+        let imagesCache = NSCache<NSString, UIImage>()
+        imagesCache.name = "Generated Images Cache"
+        let key = "openRing_\(radius)_\(color)_\(lineWidth)" as NSString
+        if let cached = imagesCache.object(forKey: key) { return cached }
+        
+        let size = CGSize(width: radius * 2, height: radius * 2)
+        let image = UIGraphicsImageRenderer(size: size).image { context in
+            
+            let path = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius),
+                                          radius: radius - 1.5, startAngle: -0.2 * CGFloat.pi,
+                                          endAngle: 1.1 * CGFloat.pi, clockwise: true)
+            
+            path.lineWidth = lineWidth
+            color.setStroke()
+            path.stroke()
+        }
+        
+        let resizableImage = image.resizableImage(withCapInsets: UIEdgeInsets(top: radius, left: radius, bottom: radius, right: radius), resizingMode: .stretch)
+        
+        imagesCache.setObject(resizableImage, forKey: key)
+        return resizableImage
+    }
+    
+    
 }
 
 // MARK: Sizes

@@ -18,15 +18,7 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     var isEnabled = true {
         didSet {
-            if !isEnabled {
-                self.isUserInteractionEnabled = false
-                gifImageView.alpha = 0.3
-                imageView.alpha = 0.3
-            } else {
-                self.isUserInteractionEnabled = true
-                gifImageView.alpha = 1
-                imageView.alpha = 1
-            }
+            isEnabled ? setCellEnabled() : setCellDisabled()
         }
     }
     
@@ -38,7 +30,6 @@ final class DribbbleShotCell: UICollectionViewCell {
                 loadingView.alpha = 0
                 updateWithShot(shot)
             case .sent(let shot):
-//                checkIfSent(shotID: shot.id)
                 setNeedsLayout()
                 loadingView.alpha = 0
                 updateWithShot(shot)
@@ -64,7 +55,6 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         imageView.image = nil
         Nuke.cancelRequest(for: imageView)
         isEnabled = true
@@ -74,8 +64,8 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         contentView.layoutIfNeeded()
+        checkIfSent()
 
         // image url
         if let imageUrl = state.imageUrl {
@@ -84,7 +74,7 @@ final class DribbbleShotCell: UICollectionViewCell {
             let options = ImageLoadingOptions(contentModes: contentModes)
             Nuke.loadImage(with: imageUrl, options: options, into: imageView, progress: nil, completion: { [weak self] _, _ in
                 self?.stopImageLoadingAnimation(completion: nil)
-                self?.checkIfSent()
+//                self?.checkIfSent()
             })
         } else {
             Nuke.cancelRequest(for: imageView)
@@ -177,5 +167,17 @@ final class DribbbleShotCell: UICollectionViewCell {
             }
         case .wireframe: break
         }
+    }
+    
+    private func setCellEnabled() {
+        self.isUserInteractionEnabled = true
+        gifImageView.alpha = 1
+        imageView.alpha = 1
+    }
+    
+    private func setCellDisabled() {
+        self.isUserInteractionEnabled = false
+        gifImageView.alpha = 0.3
+        imageView.alpha = 0.3
     }
 }
