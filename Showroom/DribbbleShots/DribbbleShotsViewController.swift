@@ -49,7 +49,6 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private func animateCollectionViewItemsInPlace(completion: @escaping () -> ()) {
         // add fake collection view above real collection view to animate wireframes
         // and then remove it from view hierarchy
-//        fakeCollectionView.registerNib(DribbbleShotCell.self)
         fakeCollectionView.register(DribbbleShotCell.self)
         fakeCollectionView.isUserInteractionEnabled = false
         fakeCollectionView.backgroundColor = view.backgroundColor
@@ -59,7 +58,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
             .asObservable()
             .bind(to: fakeCollectionView
             .rx
-            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in cell.state = element }
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in cell.shotState.accept(element) }
             .disposed(by: rx.disposeBag)
         view.insertSubview(fakeCollectionView, aboveSubview: collectionView)
     
@@ -102,7 +101,6 @@ extension DribbbleShotsViewController {
         updateNavigationView()
         
         // customize collection
-//        collectionView.registerNib(DribbbleShotCell.self)
         collectionView.register(DribbbleShotCell.self)
         collectionView.backgroundView = backgroundView
         collectionView.backgroundView?.isHidden = true
@@ -119,7 +117,7 @@ extension DribbbleShotsViewController {
             .bind(to: collectionView
             .rx
             .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)
-                    ) { row, element, cell in cell.state = element }
+                    ) { row, element, cell in cell.shotState.accept(element) }
             .disposed(by: rx.disposeBag)
         
         reloadDataSignal.subscribe { [weak self] _ in

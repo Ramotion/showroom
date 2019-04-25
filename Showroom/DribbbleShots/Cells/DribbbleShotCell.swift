@@ -12,39 +12,19 @@ final class DribbbleShotCell: UICollectionViewCell {
     private let shotImageView = UIImageView()
     private let gifImageView = UIImageView()
     private let loadingView = UIView()
+    private let wrapView = UIView()
     
     private var isLoading = false
     private var loadingAnimationCompletion: (() -> ())?
     private var shouldCompleteAnimation = false
     
-    private let shotIsEnabled = BehaviorRelay<Bool>(value: true)
+    var shotState = BehaviorRelay<DribbbleShotState>(value: .wireframe)
     
     var isEnabled = true {
         didSet {
             isEnabled ? setCellEnabled() : setCellDisabled()
         }
     }
-    
-    var state: DribbbleShotState = .wireframe {
-        didSet {
-            switch state {
-            case .default:
-                prepareForLoadingImage()
-//                loadingView.alpha = 0
-//                updateWithShot(shot)
-            case .sent:
-                prepareForLoadingImage()
-//                loadingView.alpha = 0
-//                updateWithShot(shot)
-            case .wireframe:
-                Nuke.cancelRequest(for: shotImageView)
-                prepareForLoadingImage()
-//                loadingView.alpha = 0
-//                updateWithShot(nil)
-            }
-        }
-    }
-    
     
     // MARK: Initialize
     override init(frame: CGRect) {
@@ -55,14 +35,24 @@ final class DribbbleShotCell: UICollectionViewCell {
         contentView.setRoundedMask(radius: 5, size: CGSize(width: contentView.bounds.width, height: contentView.bounds.height))
         
         setSubviews()
+        
+        shotState
+            .asObservable()
+            .subscribe (
+                onNext: {[weak self] shotState in
+                    switch shotState {
+                    case .default:
+                        self?.prepareForLoadingImage()
+                    case .sent:
+                        self?.prepareForLoadingImage()
+                    case .wireframe:
+                        Nuke.cancelRequest(for: self!.shotImageView)
+                    }
+                }
+            ).disposed(by: rx.disposeBag)
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
-    
-    private func updateWithShot(_ shot: Shot?) {
-        let isAnimated = shot?.animated ?? false
-        gifImageView.isHidden = !isAnimated
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -71,16 +61,15 @@ final class DribbbleShotCell: UICollectionViewCell {
         isEnabled = true
     }
     
-    // MARK: - Laying out Subviews
+    // MARK: Helpers
     private func prepareForLoadingImage() {
-        checkIfSent()
-        
-        if let imageUrl = state.imageUrl {
+        if let imageUrl = shotState.value.imageUrl {
             startImageLoadingAnimation()
-
+            
             let contentModes = ImageLoadingOptions.ContentModes(success: .scaleAspectFill, failure: .scaleAspectFill, placeholder: .scaleAspectFill)
             let options = ImageLoadingOptions(contentModes: contentModes)
             Nuke.loadImage(with: imageUrl, options: options, into: shotImageView, progress: nil, completion: { [weak self] _, _ in
+                self?.checkIfSent()
                 self?.stopImageLoadingAnimation(completion: nil)
             })
         } else {
@@ -98,6 +87,16 @@ final class DribbbleShotCell: UICollectionViewCell {
         )
         shotImageView.alpha = 0
         
+        contentView.addSubview(gifImageView)
+        gifImageView.easy.layout(
+            Width(28),
+            Height(15),
+            Top(13).to(contentView),
+            Right(13).to(contentView)
+        )
+        gifImageView.image = #imageLiteral(resourceName: "ico_gif")
+        gifImageView.alpha = 0
+        
         contentView.addSubview(loadingView)
         loadingView.easy.layout(
             Top().to(contentView),
@@ -108,17 +107,23 @@ final class DribbbleShotCell: UICollectionViewCell {
         loadingView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.2)
         loadingView.alpha = 0
         
-        contentView.addSubview(gifImageView)
-        gifImageView.easy.layout(
-            Width(28),
-            Height(15),
-            Top(13).to(contentView),
-            Right(13).to(contentView)
+        wrapView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.3998822774)
+        contentView.addSubview(wrapView)
+        wrapView.easy.layout(
+            Top().to(contentView),
+            Left().to(contentView),
+            Right().to(contentView),
+            Bottom().to(contentView)
         )
-        gifImageView.image = #imageLiteral(resourceName: "ico_gif")
-        gifImageView.alpha = 0
+        wrapView.isHidden = true
     }
     
+    private func updateWithShot(_ shot: Shot?) {
+        let isAnimated = shot?.animated ?? false
+        gifImageView.isHidden = !isAnimated
+    }
+    
+    // MARK: Actions
     private func startImageLoadingAnimation() {
         guard !isLoading else { return }
         isLoading = true
@@ -160,7 +165,7 @@ final class DribbbleShotCell: UICollectionViewCell {
     }
     
     private func checkIfSent() {
-        switch state {
+        switch shotState.value {
         case .default: break
         case .sent(let shot):
             let db = Firestore.firestore()
@@ -179,15 +184,13 @@ final class DribbbleShotCell: UICollectionViewCell {
     }
     
     private func setCellEnabled() {
-        self.isUserInteractionEnabled = true
-        gifImageView.alpha = 1
-        shotImageView.alpha = 1
+        isUserInteractionEnabled = true
+        wrapView.isHidden = true
     }
     
     private func setCellDisabled() {
-        self.isUserInteractionEnabled = false
-        gifImageView.alpha = 0.3
-        shotImageView.alpha = 0.3
+        isUserInteractionEnabled = false
+        wrapView.isHidden = false
     }
     
     private func dropShadow(color: UIColor, radius: CGFloat, side: CGFloat, opasity: Float) {
