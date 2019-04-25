@@ -11,14 +11,14 @@ import UIKit
 final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
     
     private struct Const {
-        static let proposedSectionInset: CGFloat = 21
+        static let proposedSectionInset: CGFloat = 30
     }
     
     override init() {
         super.init()
         
         minimumInteritemSpacing = 0
-        minimumLineSpacing = 0
+        minimumLineSpacing = Const.proposedSectionInset
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,10 +41,10 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
         
         // calculate item size and insets
         let collectionViewWidth = collectionView?.bounds.width ?? 0
-        let width = max(round((collectionViewWidth - Const.proposedSectionInset * 2) / 2), 0)
+        let width = max(round((collectionViewWidth - Const.proposedSectionInset * 3) / 2), 0)
         itemSize = CGSize(width: width, height: width)
-        sectionInset.left = floor((collectionViewWidth - itemSize.width * 2) / 2)
-        sectionInset.right = collectionViewWidth - itemSize.width * 2 - sectionInset.left
+        sectionInset.left = Const.proposedSectionInset
+        sectionInset.right = Const.proposedSectionInset
         
         super.prepare()
     }
@@ -91,12 +91,9 @@ final class DribbbleShotsCollectionViewLayout: UICollectionViewFlowLayout {
                 group.leave()
             })
         }
-        
         group.notify(queue: .main) {
           completion?()
         }
-        
         group.leave()
     }
-    
 }

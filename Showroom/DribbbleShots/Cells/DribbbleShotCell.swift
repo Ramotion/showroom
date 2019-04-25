@@ -1,20 +1,23 @@
 import UIKit
 import Nuke
 import Firebase
+import EasyPeasy
+import RxSwift
+import RxCocoa
 
 private let kContentViewCornerRadius: CGFloat = 5
 
 final class DribbbleShotCell: UICollectionViewCell {
     
-    @IBOutlet weak private var shadowImageView: UIImageView!
-    @IBOutlet weak private var containerView: UIView!
-    @IBOutlet weak private var imageView: DribbbleShotImageView!
-    @IBOutlet weak private var loadingView: UIView!
-    @IBOutlet weak private var gifImageView: UIImageView!
+    private let shotImageView = UIImageView()
+    private let gifImageView = UIImageView()
+    private let loadingView = UIView()
     
     private var isLoading = false
     private var loadingAnimationCompletion: (() -> ())?
     private var shouldCompleteAnimation = false
+    
+    private let shotIsEnabled = BehaviorRelay<Bool>(value: true)
     
     var isEnabled = true {
         didSet {
@@ -25,113 +28,120 @@ final class DribbbleShotCell: UICollectionViewCell {
     var state: DribbbleShotState = .wireframe {
         didSet {
             switch state {
-            case .default(let shot):
-                setNeedsLayout()
-                loadingView.alpha = 0
-                updateWithShot(shot)
-            case .sent(let shot):
-                setNeedsLayout()
-                loadingView.alpha = 0
-                updateWithShot(shot)
+            case .default:
+                prepareForLoadingImage()
+//                loadingView.alpha = 0
+//                updateWithShot(shot)
+            case .sent:
+                prepareForLoadingImage()
+//                loadingView.alpha = 0
+//                updateWithShot(shot)
             case .wireframe:
-                Nuke.cancelRequest(for: imageView)
-                loadingView.alpha = 0
-                updateWithShot(nil)
+                Nuke.cancelRequest(for: shotImageView)
+                prepareForLoadingImage()
+//                loadingView.alpha = 0
+//                updateWithShot(nil)
             }
         }
     }
+    
+    
+    // MARK: Initialize
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        contentView.backgroundColor = #colorLiteral(red: 0.8235294118, green: 0.368627451, blue: 0.5529411765, alpha: 1)
+        dropShadow(color: .black, radius: 5, side: 2, opasity: 0.8)
+        contentView.setRoundedMask(radius: 5, size: CGSize(width: contentView.bounds.width, height: contentView.bounds.height))
+        
+        setSubviews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     private func updateWithShot(_ shot: Shot?) {
         let isAnimated = shot?.animated ?? false
         gifImageView.isHidden = !isAnimated
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        backgroundColor = nil
-        containerView.backgroundColor = UIColor(white: 1, alpha: 0.1)
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView.image = nil
-        Nuke.cancelRequest(for: imageView)
+        shotImageView.image = nil
+        Nuke.cancelRequest(for: shotImageView)
         isEnabled = true
     }
     
     // MARK: - Laying out Subviews
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.layoutIfNeeded()
+    private func prepareForLoadingImage() {
         checkIfSent()
-
-        // image url
+        
         if let imageUrl = state.imageUrl {
             startImageLoadingAnimation()
-            let contentModes = ImageLoadingOptions.ContentModes(success: .scaleAspectFill, failure: .scaleAspectFit, placeholder: .scaleAspectFit)
+
+            let contentModes = ImageLoadingOptions.ContentModes(success: .scaleAspectFill, failure: .scaleAspectFill, placeholder: .scaleAspectFill)
             let options = ImageLoadingOptions(contentModes: contentModes)
-            Nuke.loadImage(with: imageUrl, options: options, into: imageView, progress: nil, completion: { [weak self] _, _ in
+            Nuke.loadImage(with: imageUrl, options: options, into: shotImageView, progress: nil, completion: { [weak self] _, _ in
                 self?.stopImageLoadingAnimation(completion: nil)
-//                self?.checkIfSent()
             })
         } else {
-            Nuke.cancelRequest(for: imageView)
+            Nuke.cancelRequest(for: shotImageView)
         }
+    }
+    
+    private func setSubviews() {
+        contentView.addSubview(shotImageView)
+        shotImageView.easy.layout(
+            Top().to(contentView),
+            Left().to(contentView),
+            Right().to(contentView),
+            Bottom().to(contentView)
+        )
+        shotImageView.alpha = 0
         
-        // mask
-        do {
-            let maskView: UIImageView
-            if let mask = containerView.mask as? UIImageView {
-                maskView = mask
-            } else {
-                maskView = UIImageView()
-                containerView.mask = maskView
-            }
-            maskView.frame = containerView.bounds
-            let maskViewImageSize = maskView.image?.size ?? .zero
-            if maskViewImageSize != maskView.bounds.size {
-                let image = UIImage.image(size: containerView.bounds.size) { context in
-                    UIBezierPath(roundedRect: containerView.bounds, cornerRadius: kContentViewCornerRadius).fill()
-                }
-                maskView.image = image
-            }
-        }
-
-        // shadow
-        do {
-            let image = UIImage.image(size: shadowImageView.bounds.size) { context in
-                UIColor(red: 254 / 255.0, green: 55 / 255.0, blue: 138 / 255.0, alpha: 1).setFill()
-                context.cgContext.setShadow(offset: CGSize(width: 0, height: 3), blur: 25, color: UIColor(white: 0, alpha: 0.12).cgColor)
-                UIBezierPath(roundedRect: containerView.frame, cornerRadius: kContentViewCornerRadius).fill()
-            }
-            shadowImageView.image = image
-        }
+        contentView.addSubview(loadingView)
+        loadingView.easy.layout(
+            Top().to(contentView),
+            Left().to(contentView),
+            Right().to(contentView),
+            Bottom().to(contentView)
+        )
+        loadingView.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.2)
+        loadingView.alpha = 0
+        
+        contentView.addSubview(gifImageView)
+        gifImageView.easy.layout(
+            Width(28),
+            Height(15),
+            Top(13).to(contentView),
+            Right(13).to(contentView)
+        )
+        gifImageView.image = #imageLiteral(resourceName: "ico_gif")
+        gifImageView.alpha = 0
     }
     
     private func startImageLoadingAnimation() {
         guard !isLoading else { return }
         isLoading = true
-        
         animateLoadingView()
     }
     
     private func animateLoadingView() {
-        imageView.alpha = 0
+        shotImageView.alpha = 0
+        gifImageView.alpha = 0
         loadingView.alpha = 1
 
-        let initialFrame = containerView.bounds.offsetBy(dx: -containerView.bounds.width, dy: 0)
+        let initialFrame = contentView.bounds.offsetBy(dx: -contentView.bounds.width, dy: 0)
         loadingView.frame = initialFrame
-        
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {
-            self.loadingView.frame = initialFrame.offsetBy(dx: initialFrame.width, dy: 0)
+
+        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut], animations: {[weak self] in
+            self?.loadingView.frame = initialFrame.offsetBy(dx: initialFrame.width, dy: 0)
         }, completion: { [weak self] finished in
             let shouldCompleteAnimation = self?.shouldCompleteAnimation ?? false
-            
+
             UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
                 self?.loadingView.frame = initialFrame.offsetBy(dx: initialFrame.width * 2, dy: 0)
-                self?.imageView.alpha = 1
+                self?.shotImageView.alpha = 1
+                self?.gifImageView.alpha = 1
                 self?.loadingView.alpha = 0
             }, completion: { finished in
                 if shouldCompleteAnimation {
@@ -150,7 +160,6 @@ final class DribbbleShotCell: UICollectionViewCell {
     }
     
     private func checkIfSent() {
-        
         switch state {
         case .default: break
         case .sent(let shot):
@@ -172,12 +181,31 @@ final class DribbbleShotCell: UICollectionViewCell {
     private func setCellEnabled() {
         self.isUserInteractionEnabled = true
         gifImageView.alpha = 1
-        imageView.alpha = 1
+        shotImageView.alpha = 1
     }
     
     private func setCellDisabled() {
         self.isUserInteractionEnabled = false
         gifImageView.alpha = 0.3
-        imageView.alpha = 0.3
+        shotImageView.alpha = 0.3
+    }
+    
+    private func dropShadow(color: UIColor, radius: CGFloat, side: CGFloat, opasity: Float) {
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.clear.cgColor
+        
+        layer.shadowColor = color.cgColor
+        layer.shadowOffset = CGSize(width: side, height: side)
+        layer.shadowRadius = radius
+        layer.shadowOpacity = opasity
+    }
+}
+
+extension UIView {
+    func setRoundedMask(radius: CGFloat, size: CGSize) {
+        let maskImageView = UIImageView()
+        maskImageView.image = DrawFigure.roundedRect(radius: radius, color: .black, fillColor: .black, strokeWidth: 1)
+            maskImageView.frame = CGRect(origin: .zero, size: size)
+        self.mask = maskImageView
     }
 }

@@ -1,7 +1,7 @@
 import UIKit
 import OAuthSwift
 import RxSwift
-//import RxCocoa
+import RxCocoa
 import Firebase
 import MBProgressHUD
 
@@ -11,14 +11,13 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
-//    fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
-    fileprivate let reloadData = Variable<[DribbbleShotState]>([])
+    fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet private var backgroundView: UIView!
     private let navigationView = DribbleShotsNavigationView.loadFromNib()!
-    private let fakeCollectionViewData = Variable<[DribbbleShotState]>((0..<8).map { _ in .wireframe })
+    private let fakeCollectionViewData = BehaviorRelay<[DribbbleShotState]>(value: (0..<8).map { _ in .wireframe })
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,7 +49,8 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private func animateCollectionViewItemsInPlace(completion: @escaping () -> ()) {
         // add fake collection view above real collection view to animate wireframes
         // and then remove it from view hierarchy
-        fakeCollectionView.registerNib(DribbbleShotCell.self)
+//        fakeCollectionView.registerNib(DribbbleShotCell.self)
+        fakeCollectionView.register(DribbbleShotCell.self)
         fakeCollectionView.isUserInteractionEnabled = false
         fakeCollectionView.backgroundColor = view.backgroundColor
         fakeCollectionView.frame = view.bounds
@@ -59,9 +59,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
             .asObservable()
             .bind(to: fakeCollectionView
             .rx
-            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
-                cell.state = element
-            }
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in cell.state = element }
             .disposed(by: rx.disposeBag)
         view.insertSubview(fakeCollectionView, aboveSubview: collectionView)
     
@@ -104,7 +102,8 @@ extension DribbbleShotsViewController {
         updateNavigationView()
         
         // customize collection
-        collectionView.registerNib(DribbbleShotCell.self)
+//        collectionView.registerNib(DribbbleShotCell.self)
+        collectionView.register(DribbbleShotCell.self)
         collectionView.backgroundView = backgroundView
         collectionView.backgroundView?.isHidden = true
         
@@ -205,7 +204,7 @@ private extension DribbbleShotsViewController {
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
             .subscribe({ [weak self] in
-                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: true) } ?? []
+                self?.reloadData.accept($0.element?.map { DribbbleShotState(shot: $0.0, sent: true) } ?? [])
                 self?.animateTransitionFromFakeCollectionViewToRealCollectionView(completion: nil)
             })
             .disposed(by: rx.disposeBag)
