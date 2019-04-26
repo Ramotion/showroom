@@ -142,7 +142,12 @@ extension DribbbleShotsViewController {
             .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
             .flatMap {[weak self] param -> Observable<(Shot, User, String)> in
                 let confirmationVC = DribbbleShotsConfirmVC()
-                confirmationVC.imageUrl = param.0.imageUrl
+                if let largeImage = param.0.images.hidpi {
+                    confirmationVC.imageUrl = URL(string: largeImage)
+                } else {
+                    confirmationVC.imageUrl = param.0.imageUrl
+                }
+                
                 confirmationVC.title = param.0.description ?? ""
                 confirmationVC.transitioningDelegate = self!
                 self?.present(confirmationVC, animated: true, completion: nil)

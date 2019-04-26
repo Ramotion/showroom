@@ -112,7 +112,6 @@ extension CarouselViewController {
     if #available(iOS 10.0, *) {
       collectionView?.isPrefetchingEnabled = false
     }
-    //    preloadSearchVC()
   }
   
   override func viewDidAppear(_ animated: Bool) {

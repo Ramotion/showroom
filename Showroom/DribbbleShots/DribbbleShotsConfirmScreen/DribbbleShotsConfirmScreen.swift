@@ -58,8 +58,8 @@ final class DribbbleShotsConfirmVC: UIViewController {
         
         view.addSubview(shotImageView)
         shotImageView.easy.layout(
-            Height(.shotImageViewHeight).with(.high),
-            Top(safeAreaTopInset).to(view),
+            Height(.shotImageViewHeight + safeAreaTopInset).with(.high),
+            Top().to(view),
             Left().to(view),
             Right().to(view)
         )

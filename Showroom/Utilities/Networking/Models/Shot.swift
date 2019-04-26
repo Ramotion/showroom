@@ -10,6 +10,7 @@ struct Shot: Codable {
     
     struct Images: Codable {
         let normal: String
+        let hidpi: String?
     }
     
     var imageUrl: URL? {
