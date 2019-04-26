@@ -137,14 +137,17 @@ final class DribbbleShotsConfirmVC: UIViewController {
         
         titleTextView.easy.layout(Bottom(.titleTextViewBottomPadding + view.safeAreaInsets.top * 2).to(messageTextView))
         
+        titleTextView.alpha = 0
+        
         UIView.animate(withDuration: 0.3) { [weak self] in self?.view.layoutIfNeeded() }
     }
     
     private func moveContentDown() {
         sendButton.easy.layout(Bottom(.sendButtonBottomPadding).to(view))
         closeButton.easy.layout(Top(.closeButtonSidePadding + view.safeAreaInsets.top).to(view))
-        shotImageView.easy.layout(Top(view.safeAreaInsets.top).to(view))
+        shotImageView.easy.layout(Top().to(view))
         titleTextView.easy.layout(Bottom(.titleTextViewBottomPadding).to(messageTextView))
+        titleTextView.alpha = 1
         UIView.animate(withDuration: 0.3) { [weak self] in self?.view.layoutIfNeeded() }
     }
     

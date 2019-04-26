@@ -148,7 +148,7 @@ extension DribbbleShotsViewController {
                     confirmationVC.imageUrl = param.0.imageUrl
                 }
                 
-                confirmationVC.title = param.0.description ?? ""
+                confirmationVC.shotTitle = param.0.description ?? ""
                 confirmationVC.transitioningDelegate = self!
                 self?.present(confirmationVC, animated: true, completion: nil)
                 return confirmationVC.create()
