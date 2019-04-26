@@ -19,8 +19,7 @@ class ElongationDemoViewController: ElongationViewController {
     setup()
 
     // Setup Showroom
-    _ = MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.elongationPreview.sharedURL) { [weak self] in
-      self?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.elongationPreview.sharedURL) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
     }
   }
@@ -40,7 +39,6 @@ class ElongationDemoViewController: ElongationViewController {
     detailViewController.title = villa.title
     expand(viewController: detailViewController)
   }
-  
 }
 
 // MARK: - Setup ⛏
@@ -84,5 +82,4 @@ extension ElongationDemoViewController {
     cell.aboutTitleLabel?.text = villa.title
     cell.aboutDescriptionLabel?.text = villa.description
   }
-  
 }

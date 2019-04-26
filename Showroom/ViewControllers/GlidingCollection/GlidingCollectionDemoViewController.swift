@@ -22,8 +22,7 @@ class GlidingCollectionDemoViewController: UIViewController {
     setup()
     
     // Setup Showroom
-    _ = MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.glidingCollection.sharedURL) { [weak self] in
-      self?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.glidingCollection.sharedURL) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
     }
   }
@@ -105,11 +104,11 @@ extension GlidingCollectionDemoViewController: UICollectionViewDataSource, UICol
     return cell
   }
   
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let section = glidingView.expandedItemIndex
-    let item = indexPath.item
-    print("Selected item #\(item) in section #\(section)")
-  }
+//  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    let section = glidingView.expandedItemIndex
+//    let item = indexPath.item
+//    print("Selected item #\(item) in section #\(section)")
+//  }
   
 }
 

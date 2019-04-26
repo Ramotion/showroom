@@ -4,6 +4,7 @@ import expanding_collection
 class DemoExpandingTableViewController: ExpandingTableViewController {
   
   fileprivate var scrollOffsetY: CGFloat = 0
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     configureNavBar()
@@ -14,9 +15,8 @@ class DemoExpandingTableViewController: ExpandingTableViewController {
         tableView.contentInsetAdjustmentBehavior = .never
     }
     
-    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
-      self?.navigationController?.dismiss(animated: true, completion: nil)
-      self?.navigationController?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.expandingCollection.sharedURL) { [weak self] in
+      self?.dismiss(animated: true, completion: nil)
     }
   }
   

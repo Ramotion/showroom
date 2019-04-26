@@ -41,9 +41,8 @@ extension OnboardingViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/paper-onboarding") { [weak self] in
-      self?.navigationController?.dismiss(animated: true, completion: nil)
-      self?.navigationController?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.paperOnboarding.sharedURL) { [weak self] in
+      self?.dismiss(animated: true, completion: nil)
     }
   }
   

@@ -15,7 +15,6 @@ class AnimatedTabBarViewController: RAMAnimatedTabBarController {
     super.viewDidLoad()
     MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.animationTabBar.sharedURL) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
-      self?.dismiss(animated: true, completion: nil)
     }
   }
   

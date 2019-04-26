@@ -26,6 +26,7 @@ final class DribbbleShotsTransition : NSObject, UIViewControllerAnimatedTransiti
     
     init(direction: Direction) {
         self.direction = direction
+        super.init()
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
@@ -102,9 +103,7 @@ final class DribbbleShotsTransition : NSObject, UIViewControllerAnimatedTransiti
             } else {
                 fromView.mask = nil
             }
-            
             transitionContext.completeTransition(didComplete)
         })
     }
-    
 }
