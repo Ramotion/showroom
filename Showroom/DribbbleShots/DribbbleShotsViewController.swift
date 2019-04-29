@@ -162,7 +162,11 @@ extension DribbbleShotsViewController {
                 onNext: { [weak self] in
                     print("Next")
                     self!.fetchData(userSignal: self!.userSignal, dribbbleShotsSignal: self!.dribbbleShotsSignal)
-                    if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
+                    if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: {
+                        let successMessage = "We will contact with you soon.\nThank you for your interest."
+                        UIAlertController.show(message: successMessage)
+                        })
+                    }
             },
                 onError: { error in
                     UIAlertController.show(message: "Can't send shot!")

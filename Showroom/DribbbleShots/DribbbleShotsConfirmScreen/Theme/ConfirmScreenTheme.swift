@@ -72,7 +72,8 @@ extension CGFloat {
     static let messageTextViewBottomPadding: CGFloat    = 20
     static let titleTextViewBottomPadding: CGFloat      = 10
     static let titleTextViewTopPadding: CGFloat         = 19
-    static let closeButtonSidePadding: CGFloat          = 39
+    static let closeButtonSidePadding: CGFloat          = 37
+    static let closeButtonTopPadding: CGFloat           = 31
 }
 
 // MARK: Colors

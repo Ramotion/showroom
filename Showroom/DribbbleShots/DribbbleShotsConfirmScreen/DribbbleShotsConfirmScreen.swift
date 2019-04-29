@@ -83,7 +83,7 @@ final class DribbbleShotsConfirmVC: UIViewController {
         closeButton.easy.layout(
             Size(.closeButtonSide),
             Right(.closeButtonSidePadding).to(view),
-            Top(.closeButtonSidePadding + safeAreaTopInset).to(view)
+            Top(.closeButtonTopPadding + safeAreaTopInset).to(view)
         )
         closeButton.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal)
         closeButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in
