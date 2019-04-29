@@ -19,7 +19,7 @@ class AnimatedTabBarViewController: RAMAnimatedTabBarController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    super.viewWillAppear(animated)
     ThingersTapViewController.showPopup(on: self)
   }
   

@@ -384,6 +384,39 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		37AD519E2276D9F5001BA82E /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */,
+				84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */,
+			);
+			path = FoldingCell;
+			sourceTree = "<group>";
+		};
+		37AD519F2276DA5A001BA82E /* CircleMenu */ = {
+			isa = PBXGroup;
+			children = (
+				84C180CE1DAE155300C056F8 /* CircleViewController.swift */,
+			);
+			path = CircleMenu;
+			sourceTree = "<group>";
+		};
+		37AD51A02276DA77001BA82E /* PaperSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */,
+			);
+			path = PaperSwitch;
+			sourceTree = "<group>";
+		};
+		37AD51A12276DA8C001BA82E /* PaginationController */ = {
+			isa = PBXGroup;
+			children = (
+				84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */,
+			);
+			path = PaginationController;
+			sourceTree = "<group>";
+		};
 		37F82ECD2268C19C00E72FC4 /* DribbbleShotNavigationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +914,10 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				37AD51A12276DA8C001BA82E /* PaginationController */,
+				37AD51A02276DA77001BA82E /* PaperSwitch */,
+				37AD519F2276DA5A001BA82E /* CircleMenu */,
+				37AD519E2276D9F5001BA82E /* FoldingCell */,
 				5A3C741820A42EC4006EEE3C /* DribbbleShots */,
 				9D6F54AD1E97B7750059B49A /* GlidingCollection */,
 				9D6F54ED1E97B8650059B49A /* ElongationPreview */,
@@ -894,11 +931,6 @@
 				84D4B7D21DB1077300EE38C6 /* AnimationTabBar */,
 				84D4B7861DB0C7CC00EE38C6 /* ExpandingCollection */,
 				84B46EE81DAFCC1C0033CB15 /* PreviewTransition */,
-				84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */,
-				84C180CE1DAE155300C056F8 /* CircleViewController.swift */,
-				84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */,
-				84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */,
-				84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

@@ -97,8 +97,11 @@ final class DribbbleShotsConfirmVC: UIViewController {
             self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil
         )
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(onViewTap(sender:)))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideTextView(sender:)))
         view.addGestureRecognizer(tap)
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(hideTextView(sender:)))
+        swipeDown.direction = .down
+        messageTextView.addGestureRecognizer(swipeDown)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -126,7 +129,7 @@ final class DribbbleShotsConfirmVC: UIViewController {
     
     @objc private func keyboardWillHide(notification: NSNotification) { moveContentDown() }
     
-    @objc private func onViewTap(sender: UITapGestureRecognizer? = nil) { messageTextView.resignFirstResponder() }
+    @objc private func hideTextView(sender: UITapGestureRecognizer? = nil) { messageTextView.resignFirstResponder() }
     
     private func moveContentUp(offset: CGFloat) {
         sendButton.easy.layout(Bottom(offset + .sendButtonBottomPadding).to(view))

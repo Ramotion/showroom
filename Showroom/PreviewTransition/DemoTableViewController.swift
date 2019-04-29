@@ -17,10 +17,6 @@ extension DemoTableViewController {
     }
   }
   
-  override open var shouldAutorotate: Bool {
-    return false
-  }
-  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     ThingersTapViewController.showPopup(on: self)

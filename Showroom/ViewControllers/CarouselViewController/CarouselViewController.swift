@@ -133,10 +133,6 @@ extension CarouselViewController {
     
     AppAnalytics.screen(event: .google(name: "CarouselViewController", vc: self))
   }
-  
-  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    return .portrait
-  }
 }
 
 // MARK: Configure

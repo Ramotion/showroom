@@ -46,10 +46,6 @@ extension OnboardingViewController {
     }
   }
   
-  override var shouldAutorotate: Bool {
-    return false
-  }
-  
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
