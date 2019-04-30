@@ -59,7 +59,7 @@ struct DrawFigure {
 // MARK: Sizes
 extension CGFloat {
     // Buttons
-    static let closeButtonSide: CGFloat                 = 27
+    static let closeButtonSide: CGFloat                 = 49
     static let sendButtonHeight: CGFloat                = 65
     // Text Views
     static let messageTextViewHeight: CGFloat           = 200
@@ -72,8 +72,8 @@ extension CGFloat {
     static let messageTextViewBottomPadding: CGFloat    = 20
     static let titleTextViewBottomPadding: CGFloat      = 10
     static let titleTextViewTopPadding: CGFloat         = 19
-    static let closeButtonSidePadding: CGFloat          = 37
-    static let closeButtonTopPadding: CGFloat           = 31
+    static let closeButtonSidePadding: CGFloat          = 26
+    static let closeButtonTopPadding: CGFloat           = 20
 }
 
 // MARK: Colors

@@ -14,6 +14,11 @@ final class DribbbleShotsConfirmVC: UIViewController {
     private let ringAnimation = CABasicAnimation(keyPath: "transform.rotation")
     
     private let safeAreaTopInset = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
+    private var messageTextViewHeight: CGFloat {
+        let topPart = .shotImageViewHeight + .titleTextViewTopPadding + titleTextView.frame.size.height + .titleTextViewBottomPadding
+        let bottomPart = .messageTextViewBottomPadding + .sendButtonHeight + .sendButtonBottomPadding
+        return (view.bounds.height - safeAreaTopInset - topPart - bottomPart)
+    }
     
     // MARK: Life Cycle
     override func viewDidLoad() {
@@ -31,6 +36,29 @@ final class DribbbleShotsConfirmVC: UIViewController {
             shotImageView.image = #imageLiteral(resourceName: "dribbleIconBig")
         }
         
+        view.addSubview(shotImageView)
+        shotImageView.easy.layout(
+            Height(.shotImageViewHeight + safeAreaTopInset),
+            Top().to(view),
+            Left().to(view),
+            Right().to(view)
+        )
+        shotImageView.backgroundColor = .clear
+        
+        view.addSubview(titleTextView)
+        titleTextView.easy.layout(
+            Top(.titleTextViewTopPadding).to(shotImageView),
+            Left(.subviewsSidePadding).to(view),
+            Right(.subviewsSidePadding).to(view)
+        )
+        titleTextView.text = shotTitle.withoutHtmlTags
+        titleTextView.textAlignment = .left
+        titleTextView.font = .graphik(style: .graphikRegular, size: 20)
+        titleTextView.sizeToFit()
+        titleTextView.isEditable = false
+        titleTextView.isScrollEnabled = false
+        
+        
         view.addSubview(sendButton)
         sendButton.easy.layout(
             Height(.sendButtonHeight),
@@ -44,11 +72,6 @@ final class DribbbleShotsConfirmVC: UIViewController {
         sendButton.setTitle("SEND", for: .normal)
         
         view.addSubview(messageTextView)
-        messageTextView.easy.layout(
-            Left(.subviewsSidePadding).to(view),
-            Right(.subviewsSidePadding).to(view),
-            Bottom(.messageTextViewBottomPadding).to(sendButton)
-        )
         messageTextView.textAlignment = .left
         messageTextView.font = .graphik(style: .graphikRegular, size: 14)
         messageTextView.backgroundColor = .clear
@@ -56,36 +79,13 @@ final class DribbbleShotsConfirmVC: UIViewController {
         messageTextView.layer.borderColor = UIColor.lightGrey.cgColor
         messageTextView.layer.cornerRadius = 7
         
-        view.addSubview(shotImageView)
-        shotImageView.easy.layout(
-            Height(.shotImageViewHeight + safeAreaTopInset).with(.high),
-            Top().to(view),
-            Left().to(view),
-            Right().to(view)
-        )
-        shotImageView.backgroundColor = .clear
-        
-        view.addSubview(titleTextView)
-        titleTextView.easy.layout(
-            Top(.titleTextViewTopPadding).to(shotImageView),
-            Left(.subviewsSidePadding).to(view),
-            Right(.subviewsSidePadding).to(view),
-            Bottom(.titleTextViewBottomPadding).to(messageTextView)
-        )
-        titleTextView.text = shotTitle.withoutHtmlTags
-        titleTextView.textAlignment = .left
-        titleTextView.font = .graphik(style: .graphikRegular, size: 20)
-        titleTextView.sizeToFit()
-        titleTextView.isEditable = false
-        titleTextView.isScrollEnabled = false
-        
         view.addSubview(closeButton)
         closeButton.easy.layout(
             Size(.closeButtonSide),
             Right(.closeButtonSidePadding).to(view),
             Top(.closeButtonTopPadding + safeAreaTopInset).to(view)
         )
-        closeButton.setBackgroundImage(#imageLiteral(resourceName: "close"), for: .normal)
+        closeButton.setImage(#imageLiteral(resourceName: "close"), for: .normal)
         closeButton.addTarget(for: .touchUpInside, actionClosure: { [weak self] in
             self?.dismiss(animated: true, completion: nil)
         })
@@ -102,6 +102,16 @@ final class DribbbleShotsConfirmVC: UIViewController {
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(hideTextView(sender:)))
         swipeDown.direction = .down
         messageTextView.addGestureRecognizer(swipeDown)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        messageTextView.easy.layout(
+            Height(messageTextViewHeight),
+            Left(.subviewsSidePadding).to(view),
+            Right(.subviewsSidePadding).to(view),
+            Bottom(.messageTextViewBottomPadding).to(sendButton)
+        )
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -133,12 +143,15 @@ final class DribbbleShotsConfirmVC: UIViewController {
     
     private func moveContentUp(offset: CGFloat) {
         sendButton.easy.layout(Bottom(offset + .sendButtonBottomPadding).to(view))
-        closeButton.easy.layout(Top(-30).to(view))
+        closeButton.easy.layout(Top(-.closeButtonSide).to(view))
         
-        let shotImageOffset: CGFloat = view.safeAreaInsets.top + .shotImageViewHeight + .titleTextViewTopPadding + titleTextView.frame.size.height
+        let topPart = safeAreaTopInset + 4 + .messageTextViewBottomPadding
+        let bottomPart = .sendButtonHeight + .sendButtonBottomPadding + offset
+        let messageTopPositionHeight = view.bounds.height - topPart - bottomPart
+        messageTextView.easy.layout(Height(messageTopPositionHeight))
+        
+        let shotImageOffset: CGFloat = safeAreaTopInset + .shotImageViewHeight + .titleTextViewTopPadding + titleTextView.frame.size.height
         shotImageView.easy.layout(Top(-shotImageOffset).to(view))
-        
-        titleTextView.easy.layout(Bottom(.titleTextViewBottomPadding + view.safeAreaInsets.top * 2).to(messageTextView))
         
         titleTextView.alpha = 0
         
@@ -147,9 +160,9 @@ final class DribbbleShotsConfirmVC: UIViewController {
     
     private func moveContentDown() {
         sendButton.easy.layout(Bottom(.sendButtonBottomPadding).to(view))
-        closeButton.easy.layout(Top(.closeButtonSidePadding + view.safeAreaInsets.top).to(view))
+        messageTextView.easy.layout(Height(messageTextViewHeight))
+        closeButton.easy.layout(Top(.closeButtonTopPadding + safeAreaTopInset).to(view))
         shotImageView.easy.layout(Top().to(view))
-        titleTextView.easy.layout(Bottom(.titleTextViewBottomPadding).to(messageTextView))
         titleTextView.alpha = 1
         UIView.animate(withDuration: 0.3) { [weak self] in self?.view.layoutIfNeeded() }
     }
