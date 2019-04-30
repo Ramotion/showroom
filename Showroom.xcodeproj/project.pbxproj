@@ -24,7 +24,7 @@
 		377F8D252268523900D3B4A2 /* UIControl+Actionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */; };
 		377F8D282268BCBB00D3B4A2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */; };
 		37C85B06226DBE3E001D34B9 /* DribbbleShotImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85B05226DBE3E001D34B9 /* DribbbleShotImageView.swift */; };
-		37C85B08226DE6D0001D34B9 /* ZoomAnimateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85B07226DE6D0001D34B9 /* ZoomAnimateController.swift */; };
+		37C85B08226DE6D0001D34B9 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85B07226DE6D0001D34B9 /* ZoomTransition.swift */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
 		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
@@ -183,7 +183,7 @@
 		377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Actionable.swift"; sourceTree = "<group>"; };
 		377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		37C85B05226DBE3E001D34B9 /* DribbbleShotImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleShotImageView.swift; sourceTree = "<group>"; };
-		37C85B07226DE6D0001D34B9 /* ZoomAnimateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomAnimateController.swift; sourceTree = "<group>"; };
+		37C85B07226DE6D0001D34B9 /* ZoomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
 		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
 		5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsViewController.swift; sourceTree = "<group>"; };
@@ -363,7 +363,6 @@
 			children = (
 				3741C5522269A0A60043E3F4 /* Theme */,
 				373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */,
-				37C85B07226DE6D0001D34B9 /* ZoomAnimateController.swift */,
 			);
 			path = DribbbleShotsConfirmScreen;
 			sourceTree = "<group>";
@@ -711,6 +710,7 @@
 		846E6FAA1DF1907600A7F02E /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				37C85B07226DE6D0001D34B9 /* ZoomTransition.swift */,
 				846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */,
 				84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */,
 				84B743E91DFC077200504C7A /* OpenControllerTransition.swift */,
@@ -1405,7 +1405,7 @@
 				9D6F54D41E97B7750059B49A /* GlidingCollectionDemoViewController.swift in Sources */,
 				110D486920EE556400554011 /* DribbbleShotState.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
-				37C85B08226DE6D0001D34B9 /* ZoomAnimateController.swift in Sources */,
+				37C85B08226DE6D0001D34B9 /* ZoomTransition.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
 				84FC43071E165B5B008D4BC4 /* PageCollectionLayout.swift in Sources */,
 				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,

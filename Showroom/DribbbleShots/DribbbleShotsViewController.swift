@@ -220,11 +220,11 @@ private extension DribbbleShotsViewController {
 
 extension DribbbleShotsViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-            return ZoomAnimateController(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .presenting)
+            return ZoomTransition(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .presenting)
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
             guard let _ = dismissed as? DribbbleShotsConfirmVC else { return nil }
-            return ZoomAnimateController(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .dismissing)
+            return ZoomTransition(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .dismissing)
     }
 }

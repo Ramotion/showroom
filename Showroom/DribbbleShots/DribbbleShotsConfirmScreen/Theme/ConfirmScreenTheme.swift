@@ -63,17 +63,13 @@ extension CGFloat {
     static let sendButtonHeight: CGFloat                = 65
     // Text Views
     static let messageTextViewHeight: CGFloat           = 200
-//    static let titleTextViewHeight: CGFloat             = 50
     // Image Views
     static let shotImageViewHeight: CGFloat             = 270
     // Paddings
     static let subviewsSidePadding: CGFloat             = 41
     static let sendButtonBottomPadding: CGFloat         = 24
     static let messageTextViewBottomPadding: CGFloat    = 20
-    static let titleTextViewBottomPadding: CGFloat      = 10
-    static let titleTextViewTopPadding: CGFloat         = 19
-    static let closeButtonSidePadding: CGFloat          = 26
-    static let closeButtonTopPadding: CGFloat           = 20
+    static let messageTextViewTopPadding: CGFloat       = 20
 }
 
 // MARK: Colors

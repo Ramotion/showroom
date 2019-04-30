@@ -1,6 +1,6 @@
 import UIKit
 
-final class ZoomAnimateController: NSObject, UIViewControllerAnimatedTransitioning {
+final class ZoomTransition: NSObject, UIViewControllerAnimatedTransitioning {
     
     enum Direction { case presenting, dismissing }
     
