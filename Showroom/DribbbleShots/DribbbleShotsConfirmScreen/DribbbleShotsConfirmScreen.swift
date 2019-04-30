@@ -2,12 +2,24 @@ import UIKit
 import RxSwift
 import EasyPeasy
 import Nuke
+import Gifu
+
+extension Gifu.GIFImageView {
+    public override func display(image: Image?) {
+        prepareForReuse()
+        if let data = image?.animatedImageData {
+            animate(withGIFData: data)
+        } else {
+            self.image = image
+        }
+    }
+}
 
 final class DribbbleShotsConfirmVC: UIViewController {
     var imageUrl: URL?
     var shotTitle = ""
     private let closeButton = UIButton()
-    private let shotImageView = UIImageView()
+    private let shotImageView = Gifu.GIFImageView()
     private let messageTextView = UITextView()
     private let sendButton = UIButton()
     private let ringAnimation = CABasicAnimation(keyPath: "transform.rotation")
@@ -24,6 +36,8 @@ final class DribbbleShotsConfirmVC: UIViewController {
         super.viewDidLoad()
     
         view.backgroundColor = .white
+        
+        ImagePipeline.Configuration.isAnimatedImageDataEnabled = true
         
         if let url = imageUrl {
             let options = ImageLoadingOptions(
