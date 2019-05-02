@@ -19,7 +19,7 @@
 		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
 		371ABA7D226F468C001FC4FE /* RingProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ABA7C226F468C001FC4FE /* RingProgressBar.swift */; };
 		373178F922675729005E5888 /* DribbbleShotsConfirmScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */; };
-		3733DA2C22661EBB00D7630C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */; };
+		373999CA227AC95B00E18200 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 373999C9227AC95A00E18200 /* GoogleService-Info.plist */; };
 		3741C5542269A0D50043E3F4 /* ConfirmScreenTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */; };
 		377F8D252268523900D3B4A2 /* UIControl+Actionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */; };
 		377F8D282268BCBB00D3B4A2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */; };
@@ -178,7 +178,7 @@
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
 		371ABA7C226F468C001FC4FE /* RingProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressBar.swift; sourceTree = "<group>"; };
 		373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsConfirmScreen.swift; sourceTree = "<group>"; };
-		3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		373999C9227AC95A00E18200 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmScreenTheme.swift; sourceTree = "<group>"; };
 		377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Actionable.swift"; sourceTree = "<group>"; };
 		377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -805,7 +805,7 @@
 		84C180CB1DAE155300C056F8 /* Showroom */ = {
 			isa = PBXGroup;
 			children = (
-				3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */,
+				373999C9227AC95A00E18200 /* GoogleService-Info.plist */,
 				5ABFAC8420A1884600088C0B /* Showroom.entitlements */,
 				84F0A97C1DE834A900C02332 /* Views */,
 				841C951E1DDF035400B997F5 /* Fonts */,
@@ -1209,7 +1209,6 @@
 			files = (
 				9D6F55041E97B8650059B49A /* Roboto-Medium.ttf in Resources */,
 				9D6F54E41E97B7750059B49A /* Gloves4.jpeg in Resources */,
-				3733DA2C22661EBB00D7630C /* GoogleService-Info.plist in Resources */,
 				9D6F54D81E97B7750059B49A /* Bindings4.jpeg in Resources */,
 				9D6F54EC1E97B7750059B49A /* Hoodie6.jpeg in Resources */,
 				9D6F54D51E97B7750059B49A /* Bindings1.jpeg in Resources */,
@@ -1249,6 +1248,7 @@
 				8476E7161DDF2D010043B32C /* Graphik-Medium.otf in Resources */,
 				9D6F54EA1E97B7750059B49A /* Hoodie4.jpeg in Resources */,
 				84D4B7901DB0C81B00EE38C6 /* DemoCollectionViewCell.xib in Resources */,
+				373999CA227AC95B00E18200 /* GoogleService-Info.plist in Resources */,
 				9D6F54E31E97B7750059B49A /* Gloves3.jpeg in Resources */,
 				9D6F54E51E97B7750059B49A /* Gloves5.jpeg in Resources */,
 			);

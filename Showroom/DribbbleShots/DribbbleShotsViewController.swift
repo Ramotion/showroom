@@ -21,7 +21,6 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
-        
         userSignal = networkingManager.fetchDribbbleUser()
         
         dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
@@ -29,6 +28,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
             .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
+        firebaseSignIn()
     }
     
     // MARK: - Responding to View Events
@@ -164,12 +164,14 @@ extension DribbbleShotsViewController {
                     self!.fetchData(userSignal: self!.userSignal, dribbbleShotsSignal: self!.dribbbleShotsSignal)
                     if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: {
                         let successMessage = "We will contact with you soon.\nThank you for your interest."
-                        UIAlertController.show(message: successMessage)
+                        UIAlertController.show(message: successMessage, completionAction: { })
                         })
                     }
             },
                 onError: { error in
-                    UIAlertController.show(message: "Can't send shot!")
+                    UIAlertController.show(message: "Can't send shot!", completionAction: {
+                        if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
+                    })
             },
                 onCompleted: {
                     print("completed")
@@ -191,7 +193,27 @@ extension DribbbleShotsViewController {
     
     // MARK: Actions
     @objc private func doneHandler() {
+        firebaseSignOut()
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func firebaseSignIn() {
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            if let err = error {
+                print(err.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    private func firebaseSignOut() {
+        let auth = Auth.auth()
+        
+        do {
+            try auth.signOut()
+        } catch let err {
+            print(err.localizedDescription)
+        }
     }
 }
 

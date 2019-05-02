@@ -28,9 +28,9 @@ extension UIAlertController {
         }
     }
     
-    static func show(message: String) {
+    static func show(message: String, completionAction: @escaping () -> Void) {
         let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let actionOk = UIAlertAction(title: "Ok", style: .cancel, handler: { _ in })
+        let actionOk = UIAlertAction(title: "Ok", style: .cancel, handler: { _ in completionAction() })
         alert.addAction(actionOk)
         UIViewController.current?.present(alert, animated: true, completion: nil)
     }

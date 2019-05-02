@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>784543263296-7q3r1uged14aeb9h7kv9du7hpv377490.apps.googleusercontent.com</string>
+	<string>864790586116-ema4f3cfem37midl1lspkkpi9crndgkt.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.784543263296-7q3r1uged14aeb9h7kv9du7hpv377490</string>
+	<string>com.googleusercontent.apps.864790586116-ema4f3cfem37midl1lspkkpi9crndgkt</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCrR7sukdn-DEZhXwN5g1uR04h2NrhrlYw</string>
+	<string>AIzaSyCmO-mTnLeTe-wDv5kVT1YaRNb_d6A6o0o</string>
 	<key>GCM_SENDER_ID</key>
-	<string>784543263296</string>
+	<string>864790586116</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.ramotion.showroom</string>
 	<key>PROJECT_ID</key>
-	<string>showroom-a8f35</string>
+	<string>showroom-ios</string>
 	<key>STORAGE_BUCKET</key>
-	<string>showroom-a8f35.appspot.com</string>
+	<string>showroom-ios.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:784543263296:ios:275183c2e2c2b2fe</string>
+	<string>1:864790586116:ios:275183c2e2c2b2fe</string>
 	<key>DATABASE_URL</key>
-	<string>https://showroom-a8f35.firebaseio.com</string>
+	<string>https://showroom-ios.firebaseio.com</string>
 </dict>
 </plist>
