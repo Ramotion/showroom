@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		110D486920EE556400554011 /* DribbbleShotState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D486820EE556400554011 /* DribbbleShotState.swift */; };
-		110D486B20EE572C00554011 /* DribbbleShotImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110D486A20EE572C00554011 /* DribbbleShotImageView.swift */; };
 		110E7C7F20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */; };
 		1126AD2E2109B46C0002B6EB /* DribbleShotsNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */; };
 		1126AD302109B4B00002B6EB /* DribbleShotsNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */; };
@@ -18,8 +17,14 @@
 		113C9D5020EA2C0000031DD1 /* DribbbleShotsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */; };
 		113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */; };
 		117163D620F611DF00D7F340 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117163D520F611DF00D7F340 /* UIImage+Extension.swift */; };
-		11850186210B6FEA004D6433 /* DribbbleShotCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11850185210B6FEA004D6433 /* DribbbleShotCell.xib */; };
-		3733DA2C22661EBB00D7630C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */; };
+		371ABA7D226F468C001FC4FE /* RingProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371ABA7C226F468C001FC4FE /* RingProgressBar.swift */; };
+		373178F922675729005E5888 /* DribbbleShotsConfirmScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */; };
+		373999CA227AC95B00E18200 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 373999C9227AC95A00E18200 /* GoogleService-Info.plist */; };
+		3741C5542269A0D50043E3F4 /* ConfirmScreenTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */; };
+		377F8D252268523900D3B4A2 /* UIControl+Actionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */; };
+		377F8D282268BCBB00D3B4A2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */; };
+		37C85B06226DBE3E001D34B9 /* DribbbleShotImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85B05226DBE3E001D34B9 /* DribbbleShotImageView.swift */; };
+		37C85B08226DE6D0001D34B9 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C85B07226DE6D0001D34B9 /* ZoomTransition.swift */; };
 		5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */; };
 		5A08989820AC36F400FCAE54 /* UIAlertController+RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */; };
 		5A3C741A20A42EEC006EEE3C /* DribbbleShotsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */; };
@@ -161,7 +166,6 @@
 /* Begin PBXFileReference section */
 		1042B3AC551DEF61838D9BEB /* Pods_Showroom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Showroom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		110D486820EE556400554011 /* DribbbleShotState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotState.swift; sourceTree = "<group>"; };
-		110D486A20EE572C00554011 /* DribbbleShotImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotImageView.swift; sourceTree = "<group>"; };
 		110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsCollectionViewLayout.swift; sourceTree = "<group>"; };
 		1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbleShotsNavigationView.swift; sourceTree = "<group>"; };
 		1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbleShotsNavigationView.xib; sourceTree = "<group>"; };
@@ -171,9 +175,15 @@
 		113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsTransition.swift; sourceTree = "<group>"; };
 		113C9D5820EA6DE700031DD1 /* RoundedCornersImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersImageProcessor.swift; sourceTree = "<group>"; };
 		117163D520F611DF00D7F340 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		11850185210B6FEA004D6433 /* DribbbleShotCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DribbbleShotCell.xib; sourceTree = "<group>"; };
 		35EAF185BD8EE70244DEB4A2 /* Pods-Showroom.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Showroom.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Showroom/Pods-Showroom.debug.xcconfig"; sourceTree = "<group>"; };
-		3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		371ABA7C226F468C001FC4FE /* RingProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressBar.swift; sourceTree = "<group>"; };
+		373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsConfirmScreen.swift; sourceTree = "<group>"; };
+		373999C9227AC95A00E18200 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmScreenTheme.swift; sourceTree = "<group>"; };
+		377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Actionable.swift"; sourceTree = "<group>"; };
+		377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		37C85B05226DBE3E001D34B9 /* DribbbleShotImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DribbbleShotImageView.swift; sourceTree = "<group>"; };
+		37C85B07226DE6D0001D34B9 /* ZoomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
 		5A08989320AC1EA600FCAE54 /* Firestore+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+RxSwift.swift"; sourceTree = "<group>"; };
 		5A08989720AC36F400FCAE54 /* UIAlertController+RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RxSwift.swift"; sourceTree = "<group>"; };
 		5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DribbbleShotsViewController.swift; sourceTree = "<group>"; };
@@ -340,6 +350,81 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		371ABA7B226F4651001FC4FE /* ProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				371ABA7C226F468C001FC4FE /* RingProgressBar.swift */,
+			);
+			path = ProgressBar;
+			sourceTree = "<group>";
+		};
+		3741C5512269A0030043E3F4 /* DribbbleShotsConfirmScreen */ = {
+			isa = PBXGroup;
+			children = (
+				3741C5522269A0A60043E3F4 /* Theme */,
+				373178F822675729005E5888 /* DribbbleShotsConfirmScreen.swift */,
+			);
+			path = DribbbleShotsConfirmScreen;
+			sourceTree = "<group>";
+		};
+		3741C5522269A0A60043E3F4 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3741C5532269A0D50043E3F4 /* ConfirmScreenTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		377F8D262268BC8600D3B4A2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				377F8D272268BCBB00D3B4A2 /* String+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		37AD519E2276D9F5001BA82E /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */,
+				84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */,
+			);
+			path = FoldingCell;
+			sourceTree = "<group>";
+		};
+		37AD519F2276DA5A001BA82E /* CircleMenu */ = {
+			isa = PBXGroup;
+			children = (
+				84C180CE1DAE155300C056F8 /* CircleViewController.swift */,
+			);
+			path = CircleMenu;
+			sourceTree = "<group>";
+		};
+		37AD51A02276DA77001BA82E /* PaperSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */,
+			);
+			path = PaperSwitch;
+			sourceTree = "<group>";
+		};
+		37AD51A12276DA8C001BA82E /* PaginationController */ = {
+			isa = PBXGroup;
+			children = (
+				84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */,
+			);
+			path = PaginationController;
+			sourceTree = "<group>";
+		};
+		37F82ECD2268C19C00E72FC4 /* DribbbleShotNavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */,
+				1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */,
+			);
+			path = DribbbleShotNavigationView;
+			sourceTree = "<group>";
+		};
 		5A08989620AC36D300FCAE54 /* UIAlertController */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,16 +436,16 @@
 		5A3C741820A42EC4006EEE3C /* DribbbleShots */ = {
 			isa = PBXGroup;
 			children = (
+				37C85B05226DBE3E001D34B9 /* DribbbleShotImageView.swift */,
+				3741C5512269A0030043E3F4 /* DribbbleShotsConfirmScreen */,
+				37F82ECD2268C19C00E72FC4 /* DribbbleShotNavigationView */,
 				5A3C741B20A4311B006EEE3C /* Cells */,
-				110D486A20EE572C00554011 /* DribbbleShotImageView.swift */,
 				1134CEAE20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift */,
 				110E7C7E20E62D5C00B93CE2 /* DribbbleShotsCollectionViewLayout.swift */,
 				110D486820EE556400554011 /* DribbbleShotState.swift */,
 				113C9D4F20EA2C0000031DD1 /* DribbbleShotsTransition.swift */,
 				5A3C741920A42EEC006EEE3C /* DribbbleShotsViewController.swift */,
 				1126AD3B2109CD440002B6EB /* DribbleSendShotButton.swift */,
-				1126AD2D2109B46C0002B6EB /* DribbleShotsNavigationView.swift */,
-				1126AD2F2109B4B00002B6EB /* DribbleShotsNavigationView.xib */,
 			);
 			path = DribbbleShots;
 			sourceTree = "<group>";
@@ -369,7 +454,6 @@
 			isa = PBXGroup;
 			children = (
 				5A3C741C20A4312C006EEE3C /* DribbbleShotCell.swift */,
-				11850185210B6FEA004D6433 /* DribbbleShotCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -454,6 +538,7 @@
 		841C95141DDEF30900B997F5 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				377F8D242268523900D3B4A2 /* UIControl+Actionable.swift */,
 				1126AD362109C7DE0002B6EB /* NibLoadable */,
 				84D1A73E1E017A5A00120164 /* Analitycs */,
 				84760B1E1DE0794D00AF36FE /* Animations */,
@@ -625,6 +710,7 @@
 		846E6FAA1DF1907600A7F02E /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				37C85B07226DE6D0001D34B9 /* ZoomTransition.swift */,
 				846E6FAB1DF1909200A7F02E /* ShowAlphaModalTransition.swift */,
 				84E1D09B1DF2B754006F620F /* MenuPopUpTransition.swift */,
 				84B743E91DFC077200504C7A /* OpenControllerTransition.swift */,
@@ -719,13 +805,14 @@
 		84C180CB1DAE155300C056F8 /* Showroom */ = {
 			isa = PBXGroup;
 			children = (
-				3733DA2B22661EBB00D7630C /* GoogleService-Info.plist */,
+				373999C9227AC95A00E18200 /* GoogleService-Info.plist */,
 				5ABFAC8420A1884600088C0B /* Showroom.entitlements */,
 				84F0A97C1DE834A900C02332 /* Views */,
 				841C951E1DDF035400B997F5 /* Fonts */,
 				841C95141DDEF30900B997F5 /* Utilities */,
 				841C950E1DDEED1300B997F5 /* Storyboards */,
 				844AE71C1DB4AD4E0029FBD4 /* Enums */,
+				377F8D262268BC8600D3B4A2 /* Extensions */,
 				84D4B7DB1DB11DA400EE38C6 /* ViewControllers */,
 				84C180CC1DAE155300C056F8 /* AppDelegate.swift */,
 				84C180D31DAE155300C056F8 /* Assets.xcassets */,
@@ -827,6 +914,10 @@
 		84D4B7DB1DB11DA400EE38C6 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				37AD51A12276DA8C001BA82E /* PaginationController */,
+				37AD51A02276DA77001BA82E /* PaperSwitch */,
+				37AD519F2276DA5A001BA82E /* CircleMenu */,
+				37AD519E2276D9F5001BA82E /* FoldingCell */,
 				5A3C741820A42EC4006EEE3C /* DribbbleShots */,
 				9D6F54AD1E97B7750059B49A /* GlidingCollection */,
 				9D6F54ED1E97B8650059B49A /* ElongationPreview */,
@@ -840,11 +931,6 @@
 				84D4B7D21DB1077300EE38C6 /* AnimationTabBar */,
 				84D4B7861DB0C7CC00EE38C6 /* ExpandingCollection */,
 				84B46EE81DAFCC1C0033CB15 /* PreviewTransition */,
-				84F5AB2D1DAF75A600271439 /* FoldingTableViewController.swift */,
-				84C180CE1DAE155300C056F8 /* CircleViewController.swift */,
-				84F5AB2F1DAF765D00271439 /* DemoFoldginCell.swift */,
-				84B46EDE1DAFAA6C0033CB15 /* SwitchViewController.swift */,
-				84B46EE31DAFB9AD0033CB15 /* OnboardingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -862,6 +948,7 @@
 		84F0A97C1DE834A900C02332 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				371ABA7B226F4651001FC4FE /* ProgressBar */,
 				842E1D2B1E05394F00F75DF9 /* ThingerView */,
 				84F0A97D1DE834C900C02332 /* CircleView */,
 			);
@@ -1099,10 +1186,9 @@
 			};
 			buildConfigurationList = 84C180C41DAE155300C056F8 /* Build configuration list for PBXProject "Showroom" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -1123,10 +1209,8 @@
 			files = (
 				9D6F55041E97B8650059B49A /* Roboto-Medium.ttf in Resources */,
 				9D6F54E41E97B7750059B49A /* Gloves4.jpeg in Resources */,
-				3733DA2C22661EBB00D7630C /* GoogleService-Info.plist in Resources */,
 				9D6F54D81E97B7750059B49A /* Bindings4.jpeg in Resources */,
 				9D6F54EC1E97B7750059B49A /* Hoodie6.jpeg in Resources */,
-				11850186210B6FEA004D6433 /* DribbbleShotCell.xib in Resources */,
 				9D6F54D51E97B7750059B49A /* Bindings1.jpeg in Resources */,
 				9D6F54EB1E97B7750059B49A /* Hoodie5.jpeg in Resources */,
 				9D6F54E11E97B7750059B49A /* Gloves1.jpeg in Resources */,
@@ -1164,6 +1248,7 @@
 				8476E7161DDF2D010043B32C /* Graphik-Medium.otf in Resources */,
 				9D6F54EA1E97B7750059B49A /* Hoodie4.jpeg in Resources */,
 				84D4B7901DB0C81B00EE38C6 /* DemoCollectionViewCell.xib in Resources */,
+				373999CA227AC95B00E18200 /* GoogleService-Info.plist in Resources */,
 				9D6F54E31E97B7750059B49A /* Gloves3.jpeg in Resources */,
 				9D6F54E51E97B7750059B49A /* Gloves5.jpeg in Resources */,
 			);
@@ -1189,6 +1274,7 @@
 				"${BUILT_PRODUCTS_DIR}/ElongationPreview/ElongationPreview.framework",
 				"${BUILT_PRODUCTS_DIR}/FoldingCell/FoldingCell.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/GlidingCollection/GlidingCollection.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1226,6 +1312,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ElongationPreview.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FoldingCell.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GlidingCollection.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
@@ -1291,6 +1378,7 @@
 				9D7F045D1ED4B5A1001B1A27 /* AnimatedTabBarViewController.swift in Sources */,
 				9D6F55021E97B8650059B49A /* LoremSwiftum.swift in Sources */,
 				844AE7291DB4C6BD0029FBD4 /* WordReader.swift in Sources */,
+				371ABA7D226F468C001FC4FE /* RingProgressBar.swift in Sources */,
 				84B46EF01DAFCED10033CB15 /* ScreenShot.swift in Sources */,
 				84F5AB301DAF765D00271439 /* DemoFoldginCell.swift in Sources */,
 				844AE73B1DB4D9870029FBD4 /* FirstTableViewController.swift in Sources */,
@@ -1300,12 +1388,14 @@
 				841C95171DDEF39100B997F5 /* EasyCollectionView.swift in Sources */,
 				9D6F55001E97B8650059B49A /* ElongationDemoDetailViewController.swift in Sources */,
 				9D6F54D11E97B7750059B49A /* CollectionCell.swift in Sources */,
+				377F8D282268BCBB00D3B4A2 /* String+Extensions.swift in Sources */,
 				9D7F045B1ED4A2F3001B1A27 /* SearchViewModel.swift in Sources */,
 				5A3C742620A48C83006EEE3C /* UIViewController+Extensions.swift in Sources */,
 				5A3C741D20A4312C006EEE3C /* DribbbleShotCell.swift in Sources */,
 				5A3C741F20A43E2E006EEE3C /* NetworkingManager.swift in Sources */,
 				84B46EE41DAFB9AD0033CB15 /* OnboardingViewController.swift in Sources */,
 				9D6F55071E97B8650059B49A /* DemoElongationCell.swift in Sources */,
+				3741C5542269A0D50043E3F4 /* ConfirmScreenTheme.swift in Sources */,
 				5A08989420AC1EA600FCAE54 /* Firestore+RxSwift.swift in Sources */,
 				84E1D09F1DF2B863006F620F /* PopUpPresenter.swift in Sources */,
 				844AE73C1DB4D9870029FBD4 /* SecondViewController.swift in Sources */,
@@ -1317,6 +1407,7 @@
 				9D6F54D41E97B7750059B49A /* GlidingCollectionDemoViewController.swift in Sources */,
 				110D486920EE556400554011 /* DribbbleShotState.swift in Sources */,
 				84D4B7961DB0C94700EE38C6 /* AnimationBarButton.swift in Sources */,
+				37C85B08226DE6D0001D34B9 /* ZoomTransition.swift in Sources */,
 				841C95131DDEEED400B997F5 /* CarouselViewController.swift in Sources */,
 				84FC43071E165B5B008D4BC4 /* PageCollectionLayout.swift in Sources */,
 				842E3F461DF0214E0071037A /* CarouselSplashAnimationBroker.swift in Sources */,
@@ -1340,7 +1431,6 @@
 				84D4B78E1DB0C81B00EE38C6 /* DemoExpandingTableViewController.swift in Sources */,
 				113C9D5920EA6DE700031DD1 /* RoundedCornersImageProcessor.swift in Sources */,
 				846E6FAC1DF1909200A7F02E /* ShowAlphaModalTransition.swift in Sources */,
-				110D486B20EE572C00554011 /* DribbbleShotImageView.swift in Sources */,
 				842E1D2D1E05396F00F75DF9 /* ThingerView.swift in Sources */,
 				84C2F9761DFEF48200E97FD5 /* VRViewController.swift in Sources */,
 				844AE73A1DB4D9870029FBD4 /* FifthViewController.swift in Sources */,
@@ -1350,16 +1440,19 @@
 				844AE7271DB4C5F40029FBD4 /* SearchViewController.swift in Sources */,
 				844AE71E1DB4AD9F0029FBD4 /* RAMControls.swift in Sources */,
 				5A9C4DF520A1CD0600CB629D /* OauthSwift+RxSwfit.swift in Sources */,
+				377F8D252268523900D3B4A2 /* UIControl+Actionable.swift in Sources */,
 				84D4B7971DB0C94700EE38C6 /* Rotatable.swift in Sources */,
 				9D6F55111E97B8D80059B49A /* UITableView.swift in Sources */,
 				844AE73D1DB4D9870029FBD4 /* ThirdViewController.swift in Sources */,
 				1134CEAF20ECB4A9001661F1 /* DribbbleShotsBackgroundView.swift in Sources */,
 				84F5AB2E1DAF75A600271439 /* FoldingTableViewController.swift in Sources */,
 				84C180CD1DAE155300C056F8 /* AppDelegate.swift in Sources */,
+				373178F922675729005E5888 /* DribbbleShotsConfirmScreen.swift in Sources */,
 				84B46EF21DAFCF180033CB15 /* LayerAnimationHalper.swift in Sources */,
 				846C58611E14F36400EE98E8 /* Analytics.swift in Sources */,
 				84D4B7DE1DB1251F00EE38C6 /* MainViewController.swift in Sources */,
 				842E3F431DF016FF0071037A /* AboutTopView.swift in Sources */,
+				37C85B06226DBE3E001D34B9 /* DribbbleShotImageView.swift in Sources */,
 				84B46EEA1DAFCC7E0033CB15 /* Extensions.swift in Sources */,
 				84760B251DE0796800AF36FE /* PopAnimationFactory.swift in Sources */,
 				5A79F83120A9C68C0049E3C4 /* FirebaseShot.swift in Sources */,
@@ -1517,8 +1610,7 @@
 					"-ObjC",
 				);
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = singlefile;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};

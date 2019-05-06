@@ -19,16 +19,4 @@ extension ThreeThingersTouchCompatibility where Self: UIViewController {
   }
 }
 
-//extension ThreeThingersTouchCompatibility where Self: UITableViewController {
-//  
-//  var threeThingersToch: ControlEvent<UITapGestureRecognizer> {
-//    
-//    let gesture = UITapGestureRecognizer()
-//    gesture.numberOfTouchesRequired = 3
-//    tableView.addGestureRecognizer(gesture)
-//    
-//    return gesture.rx.event
-//  }
-//}
-
 extension UIViewController: ThreeThingersTouchCompatibility {}

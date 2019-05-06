@@ -1,7 +1,7 @@
 import UIKit
 import OAuthSwift
 import RxSwift
-//import RxCocoa
+import RxCocoa
 import Firebase
 import MBProgressHUD
 
@@ -11,19 +11,16 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
     
-//    fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
-    fileprivate let reloadData = Variable<[DribbbleShotState]>([])
+    fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet private var backgroundView: UIView!
     private let navigationView = DribbleShotsNavigationView.loadFromNib()!
-    private let fakeCollectionViewData = Variable<[DribbbleShotState]>((0..<8).map { _ in .wireframe })
+    private let fakeCollectionViewData = BehaviorRelay<[DribbbleShotState]>(value: (0..<8).map { _ in .wireframe })
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
-//        let network = NetworkingManager()
-//        self.networkingManager = network
         userSignal = networkingManager.fetchDribbbleUser()
         
         dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
@@ -31,6 +28,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
             .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
+        firebaseSignIn()
     }
     
     // MARK: - Responding to View Events
@@ -51,7 +49,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private func animateCollectionViewItemsInPlace(completion: @escaping () -> ()) {
         // add fake collection view above real collection view to animate wireframes
         // and then remove it from view hierarchy
-        fakeCollectionView.registerNib(DribbbleShotCell.self)
+        fakeCollectionView.register(DribbbleShotCell.self)
         fakeCollectionView.isUserInteractionEnabled = false
         fakeCollectionView.backgroundColor = view.backgroundColor
         fakeCollectionView.frame = view.bounds
@@ -60,9 +58,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
             .asObservable()
             .bind(to: fakeCollectionView
             .rx
-            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
-                cell.state = element
-            }
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in cell.shotState.accept(element) }
             .disposed(by: rx.disposeBag)
         view.insertSubview(fakeCollectionView, aboveSubview: collectionView)
     
@@ -105,7 +101,7 @@ extension DribbbleShotsViewController {
         updateNavigationView()
         
         // customize collection
-        collectionView.registerNib(DribbbleShotCell.self)
+        collectionView.register(DribbbleShotCell.self)
         collectionView.backgroundView = backgroundView
         collectionView.backgroundView?.isHidden = true
         
@@ -120,9 +116,8 @@ extension DribbbleShotsViewController {
         reloadDataSignal
             .bind(to: collectionView
             .rx
-            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)) { row, element, cell in
-                cell.state = element
-            }
+            .items(cellIdentifier: String(describing: DribbbleShotCell.self), cellType: DribbbleShotCell.self)
+                    ) { row, element, cell in cell.shotState.accept(element) }
             .disposed(by: rx.disposeBag)
         
         reloadDataSignal.subscribe { [weak self] _ in
@@ -145,23 +140,43 @@ extension DribbbleShotsViewController {
                 }
             })
             .withLatestFrom(userSignal, resultSelector: { return ($0, $1) })
-            .flatMap { param -> Observable<(Shot, User, String)> in
-                return UIAlertController.confirmation(message: "Do you want send this shot?")
+            .flatMap {[weak self] param -> Observable<(Shot, User, String)> in
+                let confirmationVC = DribbbleShotsConfirmVC()
+                if let largeImage = param.0.images.hidpi {
+                    confirmationVC.imageUrl = URL(string: largeImage)
+                } else {
+                    confirmationVC.imageUrl = param.0.imageUrl
+                }
+                
+                confirmationVC.shotTitle = param.0.description ?? ""
+                confirmationVC.transitioningDelegate = self!
+                self?.present(confirmationVC, animated: true, completion: nil)
+                return confirmationVC.create()
                     .withLatestFrom(Observable.just(param)) { message, shotInfo in (shotInfo.0, shotInfo.1, message) }
             }
-            .flatMap { [weak self] (shot, user, message) -> Observable<Void> in
-                if let `self` = self { MBProgressHUD.showAdded(to: self.view, animated: true) }
+            .flatMap { (shot, user, message) -> Observable<Void> in
                 return Firestore.firestore().rx.save(shot: shot, user: user, message: message)
             }
-            .subscribe { [weak self] in
-                guard let `self` = self else { return }
-                MBProgressHUD.hide(for: self.view, animated: true)
-                switch $0 {
-                case .completed: break
-                case .error: UIAlertController.show(message: "Can't send shot!")
-                case .next: self.fetchData(userSignal: self.userSignal, dribbbleShotsSignal: self.dribbbleShotsSignal)
-                }
-            }
+            .subscribe(
+                // Fix completion. onCompleted called after saving shot into firestore and saving must be called when button tapped.
+                onNext: { [weak self] in
+                    print("Next")
+                    self!.fetchData(userSignal: self!.userSignal, dribbbleShotsSignal: self!.dribbbleShotsSignal)
+                    if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: {
+                        let successMessage = "We will contact with you soon.\nThank you for your interest."
+                        UIAlertController.show(message: successMessage, completionAction: { })
+                        })
+                    }
+            },
+                onError: { error in
+                    UIAlertController.show(message: "Can't send shot!", completionAction: {
+                        if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
+                    })
+            },
+                onCompleted: {
+                    print("completed")
+//                    if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
+            })
             .disposed(by: rx.disposeBag)
     }
     
@@ -178,7 +193,27 @@ extension DribbbleShotsViewController {
     
     // MARK: Actions
     @objc private func doneHandler() {
+        firebaseSignOut()
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func firebaseSignIn() {
+        Auth.auth().signInAnonymously() { (authResult, error) in
+            if let err = error {
+                print(err.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    private func firebaseSignOut() {
+        let auth = Auth.auth()
+        
+        do {
+            try auth.signOut()
+        } catch let err {
+            print(err.localizedDescription)
+        }
     }
 }
 
@@ -198,10 +233,20 @@ private extension DribbbleShotsViewController {
                 return dribbbleShots.map { ($0, sendedShotIds.contains($0.id)) }
             }
             .subscribe({ [weak self] in
-                self?.reloadData.value = $0.element?.map { DribbbleShotState(shot: $0.0, sent: true) } ?? []
+                self?.reloadData.accept($0.element?.map { DribbbleShotState(shot: $0.0, sent: true) } ?? [])
                 self?.animateTransitionFromFakeCollectionViewToRealCollectionView(completion: nil)
             })
             .disposed(by: rx.disposeBag)
     }
+}
+
+extension DribbbleShotsViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            return ZoomTransition(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .presenting)
+    }
     
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            guard let _ = dismissed as? DribbbleShotsConfirmVC else { return nil }
+            return ZoomTransition(originFrame: CGRect(x: view.bounds.width / 2 - 65, y: view.bounds.height / 2 - 65, width: 130, height: 130), direction: .dismissing)
+    }
 }

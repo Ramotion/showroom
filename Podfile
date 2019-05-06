@@ -30,6 +30,7 @@ pod 'GlidingCollection'
 pod 'OAuthSwift'
 pod 'RxAlamofire'
 pod 'Nuke'
+pod 'Gifu'
 pod 'KeychainAccess'
 pod 'MBProgressHUD'
 

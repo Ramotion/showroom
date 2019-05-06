@@ -4,16 +4,14 @@ import WebKit
 class VRViewController: UIViewController {
   
   @IBOutlet weak var webView: WKWebView!
-  let urlString = "https://ramotion.github.io/vr-menu-demo/main.html"
+  let urlString = Showroom.Control.vr.sharedURL
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
-    _ = MenuPopUpViewController.showPopup(on: self, url: urlString, isRotate: true) { [weak self] in
+    MenuPopUpViewController.showPopup(on: self, url: urlString, isRotate: true) { [weak self] in
       UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
-      self?.dismiss(animated: true, completion: nil)
       self?.dismiss(animated: true, completion: nil)
     }
   }

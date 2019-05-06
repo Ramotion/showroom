@@ -22,14 +22,9 @@ extension DemoExpandingViewController {
     addGestureToView(collectionView!)
     configureNavBar()
     
-    MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/expanding-collection") { [weak self] in
-      self?.navigationController?.dismiss(animated: true, completion: nil)
-      self?.navigationController?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.expandingCollection.sharedURL) { [weak self] in
+      self?.dismiss(animated: true, completion: nil)
     }
-  }
-  
-  override open var shouldAutorotate: Bool {
-    return false
   }
   
   override func viewDidAppear(_ animated: Bool) {

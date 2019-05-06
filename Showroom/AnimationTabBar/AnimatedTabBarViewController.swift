@@ -15,12 +15,11 @@ class AnimatedTabBarViewController: RAMAnimatedTabBarController {
     super.viewDidLoad()
     MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.animationTabBar.sharedURL) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
-      self?.dismiss(animated: true, completion: nil)
     }
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+    super.viewWillAppear(animated)
     ThingersTapViewController.showPopup(on: self)
   }
   

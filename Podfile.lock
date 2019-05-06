@@ -59,7 +59,8 @@ PODS:
     - FirebaseCore (~> 5.2)
     - GoogleUtilities/Environment (~> 5.2)
     - GoogleUtilities/UserDefaults (~> 5.2)
-  - FoldingCell (5.0.0)
+  - FoldingCell (5.0.1)
+  - Gifu (3.2.0)
   - GlidingCollection (2.1.0)
   - GoogleAppMeasurement (5.8.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
@@ -142,6 +143,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - FoldingCell
+  - Gifu
   - GlidingCollection
   - KeychainAccess
   - MBProgressHUD
@@ -177,6 +179,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - FoldingCell
+    - Gifu
     - GlidingCollection
     - GoogleAppMeasurement
     - GoogleUtilities
@@ -218,7 +221,8 @@ SPEC CHECKSUMS:
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
   FirebaseFirestore: faca891c0f0d1d6c10c793473e2f6a29d75014b5
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
-  FoldingCell: 49f5e6a036241db1a177610b4d4137d961ddd40a
+  FoldingCell: 9197b915a415af9e52a857964066797af6a51c2b
+  Gifu: 7bcb6427457d85e0b4dff5a84ec5947ac19a93ea
   GlidingCollection: a15dbd9ec1775c781453bc36e6104d0c9dec20fb
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleUtilities: 273e67030e0de313e7304f6dcfa96fc5214f6c23
@@ -245,6 +249,6 @@ SPEC CHECKSUMS:
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
   SwiftyAttributes: 4052d19536cf17f7fa9aead9d7840463ae14da7e
 
-PODFILE CHECKSUM: 03cf46acda03d710faa13acdc09947c1fadc0705
+PODFILE CHECKSUM: af9b6b3235c54e4f3fafa8fba5c6835febd20206
 
 COCOAPODS: 1.6.1

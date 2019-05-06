@@ -12,14 +12,9 @@ extension DemoTableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/preview-transition") { [weak self] in
-      self?.navigationController?.dismiss(animated: true, completion: nil)
-      self?.navigationController?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.previewTransition.sharedURL) { [weak self] in
+      self?.dismiss(animated: true, completion: nil)
     }
-  }
-  
-  override open var shouldAutorotate: Bool {
-    return false
   }
   
   override func viewDidAppear(_ animated: Bool) {

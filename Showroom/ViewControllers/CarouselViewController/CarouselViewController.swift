@@ -1,5 +1,5 @@
 import UIKit
-import EasyPeasy
+//import EasyPeasy
 import Device
 
 extension UINavigationController {
@@ -43,7 +43,7 @@ class CarouselViewController: UIViewController {
     //                                               .reelSearch,
     .animationTabBar,
     //                                               .navigationStack,
-    .vr,
+    .vr
     ]
   
   fileprivate var splashBrokerAnimation: CarouselSplashAnimationBroker!
@@ -112,7 +112,6 @@ extension CarouselViewController {
     if #available(iOS 10.0, *) {
       collectionView?.isPrefetchingEnabled = false
     }
-    //    preloadSearchVC()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -133,10 +132,6 @@ extension CarouselViewController {
     super.viewWillDisappear(animated)
     
     AppAnalytics.screen(event: .google(name: "CarouselViewController", vc: self))
-  }
-  
-  override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-    return .portrait
   }
 }
 
@@ -203,9 +198,9 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
     let item = items[indexPath.row]
-    
-    
+
     let vc: UIViewController
     switch item {
     case .foldingCell:  vc = foldingCellVC
@@ -217,7 +212,7 @@ extension CarouselViewController: UICollectionViewDelegate, UICollectionViewData
     vc.modalPresentationStyle = .custom
     present(vc, animated: true) { [weak vc] in
       guard let vc = vc else { return }
-      
+
       AppAnalytics.screen(event: .google(name: item.title, vc: vc))
     }
   }
@@ -283,17 +278,21 @@ extension CarouselViewController: UIViewControllerTransitioningDelegate {
       let sourceView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? presenting.view
       return DribbbleShotsTransition(direction: .presenting(sourceView: sourceView))
     } else {
-      return OpenControllerTransition(duration: 1)
+      let openController = OpenControllerTransition(direction: .presenting)
+//      openController.animationCompletionHandler = { [weak self] in self?.transitionController(isOpen: true) }
+      return openController
     }
   }
   
   func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-    let presenting = dismissed.presentingViewController
-    if presenting is DribbbleShotsTransitionSource {
-      let destinationView: UIView = (presenting as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? view
+//    let presenting = dismissed.presentingViewController
+    if dismissed is DribbbleShotsTransitionDestination {
+      let destinationView: UIView = (dismissed.presentingViewController as? DribbbleShotsTransitionSource)?.dribbbleShotsTransitionSourceView() ?? view
       return DribbbleShotsTransition(direction: .dismissing(destinationView: destinationView))
     } else {
-      return HideControllerTransition(duration: 0.5)
+      let dismissController = OpenControllerTransition(direction: .dismissing)
+//      openController.animationCompletionHandler = { [weak self] in self?.transitionController(isOpen: false) }
+      return dismissController
     }
   }
 }

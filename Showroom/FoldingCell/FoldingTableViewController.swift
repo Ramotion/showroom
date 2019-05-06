@@ -30,8 +30,7 @@ class FoldingTableViewController: UITableViewController {
       return tableView.dequeueReusableCell(withIdentifier: String(describing: DemoFoldginCell.self), for: indexPath)
     }
     
-    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/circle-menu") { [weak self] in
-      self?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.circleMenu.sharedURL) { [weak self] in
       self?.dismiss(animated: true, completion: nil)
     }
   }
@@ -83,9 +82,5 @@ class FoldingTableViewController: UITableViewController {
       tableView.beginUpdates()
       tableView.endUpdates()
     }, completion: nil)
-  }
-  
-  override open var shouldAutorotate: Bool {
-    return false
   }
 }

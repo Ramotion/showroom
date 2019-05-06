@@ -1,7 +1,7 @@
 import UIKit
 import RAMPaperSwitch
 
-class SwitchViewController: UIViewController {
+class SwitchViewController: UIViewController  {
   
   @IBOutlet weak var connectContactsLabel: UILabel!
   @IBOutlet weak var phone1ImageView: UIImageView!
@@ -20,14 +20,9 @@ extension SwitchViewController {
     
     setupPaperSwitch()
     
-    _ = MenuPopUpViewController.showPopup(on: self, url: "https://github.com/Ramotion/paper-switch") { [weak self] in
-      self?.navigationController?.dismiss(animated: true, completion: nil)
-      self?.navigationController?.dismiss(animated: true, completion: nil)
+    MenuPopUpViewController.showPopup(on: self, url: Showroom.Control.paperSwitch.sharedURL) { [weak self] in
+      self?.dismiss(animated: true, completion: nil)
     }
-  }
-  
-  override var shouldAutorotate: Bool {
-    return false
   }
   
   override func viewDidAppear(_ animated: Bool) {
