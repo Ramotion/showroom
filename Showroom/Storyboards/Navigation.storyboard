@@ -191,10 +191,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="98.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RamotionLogo" translatesAutoresizingMaskIntoConstraints="NO" id="JVo-Yy-gXj">
-                                        <rect key="frame" x="72" y="39.5" width="162" height="20"/>
+                                        <rect key="frame" x="72.5" y="39.5" width="162" height="20"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo00036" translatesAutoresizingMaskIntoConstraints="NO" id="nCs-JV-4Cr">
-                                        <rect key="frame" x="40" y="34" width="18" height="31"/>
+                                        <rect key="frame" x="40" y="34" width="18.5" height="31"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOG-ol-Mae">
                                         <rect key="frame" x="300" y="24.5" width="50" height="50"/>
@@ -231,7 +231,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/13" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Z-xj-2kp">
-                                                <rect key="frame" x="176" y="20" width="23.5" height="13"/>
+                                                <rect key="frame" x="176" y="20.5" width="23.5" height="13"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="13"/>
                                                 <color key="textColor" red="0.72941176470588232" green="0.74117647058823533" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -240,49 +240,52 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="i5Z-xj-2kp" firstAttribute="centerX" secondItem="gz0-k6-5sb" secondAttribute="centerX" id="Uom-39-lOe"/>
+                                            <constraint firstAttribute="height" constant="53.5" id="lPI-pk-NqL"/>
                                             <constraint firstItem="i5Z-xj-2kp" firstAttribute="centerY" secondItem="gz0-k6-5sb" secondAttribute="centerY" id="xkX-Ih-f21"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHb-Ay-YzI">
-                                        <rect key="frame" x="40" y="53.5" width="140" height="60"/>
-                                        <color key="backgroundColor" red="0.094117647058823528" green="0.38823529411764707" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="sWZ-cJ-Pc7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
-                                        <state key="normal" title="CONTACT US">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="contactUsHandler:" destination="Nd2-td-3Qt" eventType="touchUpInside" id="6jk-mo-MOm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSk-AB-NwV" customClass="DribbleSendShotButton" customModule="Showroom" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="53.5" width="140" height="60"/>
-                                        <color key="backgroundColor" red="0.98039215686274506" green="0.082352941176470587" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="hD5-AB-kXX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="SEND SHOT" image="dribbble-icon-1"/>
-                                        <connections>
-                                            <action selector="dribbleLogInHandler:" destination="Nd2-td-3Qt" eventType="touchUpInside" id="Rtd-Fr-1Qz"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="tDA-YK-HTQ">
+                                        <rect key="frame" x="50" y="47.5" width="275" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHb-Ay-YzI">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="60"/>
+                                                <color key="backgroundColor" red="0.094117647058823528" green="0.38823529411764707" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="Tzs-f5-dIB"/>
+                                                    <constraint firstAttribute="height" constant="60" id="sWZ-cJ-Pc7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
+                                                <state key="normal" title="CONTACT US">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="contactUsHandler:" destination="Nd2-td-3Qt" eventType="touchUpInside" id="6jk-mo-MOm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSk-AB-NwV" customClass="DribbleSendShotButton" customModule="Showroom" customModuleProvider="target">
+                                                <rect key="frame" x="145" y="0.0" width="130" height="60"/>
+                                                <color key="backgroundColor" red="0.98039215686274506" green="0.082352941176470587" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="130" id="NWw-M2-f4V"/>
+                                                    <constraint firstAttribute="height" constant="60" id="hD5-AB-kXX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Graphik-Medium" family="Graphik" pointSize="17"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="SEND SHOT" image="dribbble-icon-1"/>
+                                                <connections>
+                                                    <action selector="dribbleLogInHandler:" destination="Nd2-td-3Qt" eventType="touchUpInside" id="Rtd-Fr-1Qz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="JSk-AB-NwV" firstAttribute="width" secondItem="iHb-Ay-YzI" secondAttribute="width" id="JYg-Mz-qYq"/>
-                                    <constraint firstItem="iHb-Ay-YzI" firstAttribute="centerY" secondItem="p5N-fz-01k" secondAttribute="centerY" constant="6" id="Lxj-UG-PN1"/>
-                                    <constraint firstItem="JSk-AB-NwV" firstAttribute="centerY" secondItem="iHb-Ay-YzI" secondAttribute="centerY" id="WA9-H1-4u1"/>
-                                    <constraint firstItem="iHb-Ay-YzI" firstAttribute="leading" secondItem="p5N-fz-01k" secondAttribute="leading" constant="40" id="Zem-4Y-tSf"/>
-                                    <constraint firstAttribute="trailing" secondItem="JSk-AB-NwV" secondAttribute="trailing" constant="40" id="aka-JD-tnY"/>
+                                    <constraint firstItem="tDA-YK-HTQ" firstAttribute="centerX" secondItem="p5N-fz-01k" secondAttribute="centerX" id="5BP-gf-qEz"/>
+                                    <constraint firstItem="tDA-YK-HTQ" firstAttribute="centerY" secondItem="p5N-fz-01k" secondAttribute="centerY" id="HSi-cP-fLx"/>
                                     <constraint firstItem="gz0-k6-5sb" firstAttribute="top" secondItem="p5N-fz-01k" secondAttribute="top" id="fxC-jg-trS"/>
                                     <constraint firstAttribute="trailing" secondItem="gz0-k6-5sb" secondAttribute="trailing" id="gHX-tg-E9J"/>
-                                    <constraint firstItem="iHb-Ay-YzI" firstAttribute="top" secondItem="gz0-k6-5sb" secondAttribute="bottom" id="meh-eL-HgS"/>
                                     <constraint firstItem="gz0-k6-5sb" firstAttribute="leading" secondItem="p5N-fz-01k" secondAttribute="leading" id="nTF-YN-zYc"/>
-                                    <constraint firstItem="JSk-AB-NwV" firstAttribute="leading" secondItem="iHb-Ay-YzI" secondAttribute="trailing" constant="15" id="yFL-Cw-BcT"/>
                                 </constraints>
                             </view>
                         </subviews>
