@@ -7,8 +7,8 @@ import OAuthSwift
 private enum API {
   
   static let oauthswift = OAuth2Swift(
-    consumerKey:    "1211f46766942273935abc6201f1cfe98f8c12b10c0c48d307981a0d3d0cecfc", // consumerKey
-    consumerSecret: "ffa1ff732f13e6e0b7162318cfc4373eac0193710a84019d87b47af4c40782c4", // consumerSecret
+    consumerKey:    "7fab3efc357e770a5713317bf458da381b37eaf91e74b999a9dc928cd0c9b5cc", // consumerKey
+    consumerSecret: "8fd6a6b8bfd066dfee15d468c47756489be2c376bc32a94ffd309fc118a80428", // consumerSecret
     authorizeUrl:   "https://dribbble.com/oauth/authorize",
     accessTokenUrl: "https://dribbble.com/oauth/token",
     responseType:   "code"
