@@ -350,7 +350,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="450" id="APm-pj-4K4"/>
                                             </constraints>
-                                            <string key="text">For seven years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
+                                            <mutableString key="text">For nine years Ramotion has been designing for those who desire to improve their lives and the lives of others by inventing and implementing digital products.
 
 We are very proud that our customers entrusted us with such an important task as the improvement of their products' user interfaces.
 
@@ -358,7 +358,7 @@ Today, we are pleased to introduce an evolved Ramotion, featuring designs in nat
 
 To help you evaluate the quality of development, we have created a mobile application which demos working examples. We hope this will help you learn more about what we offer.
 
-© 2017, Ramotion Inc.</string>
+© 2019, Ramotion Inc.</mutableString>
                                             <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
