@@ -2,7 +2,6 @@ import Foundation
 import RxSwift
 import RxCocoa
 import OAuthSwift
-//import SafariServices
 
 private enum API {
   
@@ -22,14 +21,6 @@ private enum API {
     if let token = KeychainManager.getKeychain() {
       return Observable.just(token)
     }
-//    guard let rootVC = UIViewController.current else { return Observable.empty() }
-    
-//    let handler = SafariURLHandler(viewController: rootVC, oauthSwift: API.oauthswift)
-//    handler.factory = { url in
-//      let controller = SFSafariViewController(url: url)
-//      return controller
-//    }
-//    API.oauthswift.authorizeURLHandler = handler
     
     return Observable.just(1)
       .delay(0.1, scheduler: MainScheduler.instance) // delay for showing registration screen

@@ -8,8 +8,14 @@ import MBProgressHUD
 final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransitionDestination {
     
     fileprivate let networkingManager = NetworkingManager()
-    fileprivate let userSignal: Observable<User>
-    fileprivate let dribbbleShotsSignal: Observable<[Shot]>
+    fileprivate var userSignal: Observable<User> {
+        return networkingManager.fetchDribbbleUser()
+    }
+    fileprivate var dribbbleShotsSignal: Observable<[Shot]> {
+        return networkingManager.fetchDribbbleShots()
+                .catchErrorJustReturn([])
+                .map { $0.filter { shot in shot.animated } }
+    }
     
     fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
@@ -21,11 +27,11 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
-        userSignal = networkingManager.fetchDribbbleUser()
+//        userSignal = networkingManager.fetchDribbbleUser()
         
-        dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
-            .catchErrorJustReturn([])
-            .map { $0.filter { shot in shot.animated } }
+//        dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
+//            .catchErrorJustReturn([])
+//            .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
         firebaseSignIn()
@@ -70,13 +76,15 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     }
     
     private func animateTransitionFromFakeCollectionViewToRealCollectionView(completion: (() -> ())? = nil) {
-        guard fakeCollectionView.superview != nil else {
-            completion?()
-            return
+        DispatchQueue.main.async { [weak self] in
+            guard self?.fakeCollectionView.superview != nil else {
+                completion?()
+                return
+            }
         }
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: { [weak self] in
-            self?.fakeCollectionView.alpha = 0
+            DispatchQueue.main.async { self?.fakeCollectionView.alpha = 0 }
         }, completion: { [weak self] _ in
             self?.fakeCollectionView.removeFromSuperview()
             completion?()
@@ -183,8 +191,10 @@ extension DribbbleShotsViewController {
     private func updateNavigationView() {
         let numberOfElements = reloadData.value.count
         if numberOfElements == 0 {
-            collectionView.backgroundView?.isHidden = false
-            navigationView.backgroundColor = .clear
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.backgroundView?.isHidden = false
+                self?.navigationView.backgroundColor = .clear
+            }
         } else {
             collectionView.backgroundView?.isHidden = true
             navigationView.backgroundColor = view.backgroundColor?.withAlphaComponent(0.90)
