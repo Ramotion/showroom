@@ -8,15 +8,9 @@ import MBProgressHUD
 final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransitionDestination {
     
     fileprivate let networkingManager = NetworkingManager()
-    fileprivate var userSignal: Observable<User> {
-        return networkingManager.fetchDribbbleUser()
-    }
-    fileprivate var dribbbleShotsSignal: Observable<[Shot]> {
-        return networkingManager.fetchDribbbleShots()
-                .catchErrorJustReturn([])
-                .map { $0.filter { shot in shot.animated } }
-    }
-    
+    fileprivate let userSignal: Observable<User>
+    fileprivate let dribbbleShotsSignal: Observable<[Shot]>
+    var user: User?
     fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
@@ -27,14 +21,15 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     private let fakeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: DribbbleShotsCollectionViewLayout())
     
     required init?(coder aDecoder: NSCoder) {
-//        userSignal = networkingManager.fetchDribbbleUser()
-        
-//        dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
-//            .catchErrorJustReturn([])
-//            .map { $0.filter { shot in shot.animated } }
+        userSignal = networkingManager.fetchDribbbleUser()
+
+        dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
+            .catchErrorJustReturn([])
+            .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
         firebaseSignIn()
+        userSignal.subscribe(onNext: { [weak self] user in self?.user = user }).disposed(by: rx.disposeBag)
     }
     
     // MARK: - Responding to View Events
@@ -203,7 +198,7 @@ extension DribbbleShotsViewController {
     
     // MARK: Actions
     @objc private func doneHandler() {
-        firebaseSignOut()
+//        firebaseSignOut()
         dismiss(animated: true, completion: nil)
     }
     

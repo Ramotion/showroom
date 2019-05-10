@@ -37,6 +37,18 @@ extension AppDelegate {
         }
         return true
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        let topVC = UIApplication.getTopMostViewController()
+        guard topVC is DribbbleShotsViewController else { return }
+        let dribbbleVC = topVC as! DribbbleShotsViewController
+        if dribbbleVC.user == nil {
+            dribbbleVC.dismiss(animated: true, completion: {
+                let message = "You must be logged in\nto send a shot."
+                UIAlertController.show(message: message, completionAction: { })
+            })
+        }
+    }
 }
 
 extension AppDelegate {
