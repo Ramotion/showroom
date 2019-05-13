@@ -10,7 +10,7 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     fileprivate let networkingManager = NetworkingManager()
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
-    var user: User?
+    var user = BehaviorRelay<User>(value: User(id: 0, name: "", html_url: ""))
     fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
@@ -29,7 +29,14 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
         
         super.init(coder: aDecoder)
         firebaseSignIn()
-        userSignal.subscribe(onNext: { [weak self] user in self?.user = user }).disposed(by: rx.disposeBag)
+        userSignal.subscribe(
+            onNext: { [weak self] user in self?.user.accept(user) },
+            onError: { error in
+                print(error)
+                return
+        }
+            )
+            .disposed(by: rx.disposeBag)
     }
     
     // MARK: - Responding to View Events
@@ -212,10 +219,8 @@ extension DribbbleShotsViewController {
     }
     
     private func firebaseSignOut() {
-        let auth = Auth.auth()
-        
         do {
-            try auth.signOut()
+            try Auth.auth().signOut()
         } catch let err {
             print(err.localizedDescription)
         }

@@ -11,6 +11,7 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     private let shotImageView = UIImageView()
     private let gifImageView = UIImageView()
+    private let sentMarkImageView = UIImageView()
     private let loadingView = UIView()
     private let wrapView = UIView()
     
@@ -20,7 +21,7 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     var shotState = BehaviorRelay<DribbbleShotState>(value: .wireframe)
     
-    var isEnabled = true {
+    private var isEnabled = true {
         didSet {
             isEnabled ? setCellEnabled() : setCellDisabled()
         }
@@ -96,6 +97,17 @@ final class DribbbleShotCell: UICollectionViewCell {
         )
         gifImageView.image = #imageLiteral(resourceName: "ico_gif")
         gifImageView.alpha = 0
+        
+        contentView.addSubview(sentMarkImageView)
+        sentMarkImageView.easy.layout(
+            Width(64),
+            Height(27),
+            Left(10).to(contentView),
+            Bottom(10).to(contentView)
+        )
+        sentMarkImageView.image = #imageLiteral(resourceName: "sentMark")
+        sentMarkImageView.alpha = 0
+        sentMarkImageView.layer.zPosition = 10
         
         contentView.addSubview(loadingView)
         loadingView.easy.layout(
@@ -185,11 +197,13 @@ final class DribbbleShotCell: UICollectionViewCell {
     
     private func setCellEnabled() {
         isUserInteractionEnabled = true
+        sentMarkImageView.alpha = 0
         wrapView.isHidden = true
     }
     
     private func setCellDisabled() {
         isUserInteractionEnabled = false
+        sentMarkImageView.alpha = 1
         wrapView.isHidden = false
     }
     

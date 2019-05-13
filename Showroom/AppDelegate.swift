@@ -9,6 +9,7 @@
 import UIKit
 import ElongationPreview
 import OAuthSwift
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,14 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+        // Override point for customization after application launch.
+        
+        configureNavigationBar()
+        AppAnalytics.configuration([.google])
+        configureElongationPreviewControl()
+        ReelSearchViewModel.shared.initializeDatabase()
     
-    configureNavigationBar()
-    AppAnalytics.configuration([.google])
-    configureElongationPreviewControl()
-    ReelSearchViewModel.shared.initializeDatabase()
-    
-    return true
+        return true
   }
 }
 
@@ -42,12 +43,25 @@ extension AppDelegate {
         let topVC = UIApplication.getTopMostViewController()
         guard topVC is DribbbleShotsViewController else { return }
         let dribbbleVC = topVC as! DribbbleShotsViewController
-        if dribbbleVC.user == nil {
-            dribbbleVC.dismiss(animated: true, completion: {
-                let message = "You must be logged in\nto send a shot."
-                UIAlertController.show(message: message, completionAction: { })
+        
+        dribbbleVC.user
+            .asObservable()
+            .subscribe(onNext: { [weak dribbbleVC] user in
+                if user.id == 0 {
+                    dribbbleVC?.dismiss(animated: true, completion: {
+                        let message = "You must be logged in\nto send a shot."
+                        UIAlertController.show(message: message, completionAction: { })
+                    })
+                }
             })
-        }
+            .disposed(by: rx.disposeBag)
+        
+//        if dribbbleVC.user == nil {
+//            dribbbleVC.dismiss(animated: true, completion: {
+//                let message = "You must be logged in\nto send a shot."
+//                UIAlertController.show(message: message, completionAction: { })
+//            })
+//        }
     }
 }
 
