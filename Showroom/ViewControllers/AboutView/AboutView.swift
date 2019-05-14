@@ -58,7 +58,7 @@ extension AboutView {
     let urlString: String
     switch item {
     case .dribbble: urlString = "https://dribbble.com/ramotion/?utm_source=showroom&utm_medium=special&utm_campaign=socialbuton"
-    case .facebook: urlString = "https://facebook.com/ramotioncom"
+    case .facebook: urlString = "https://facebook.com/Ramotion"
     case .twitter: urlString = "https://twitter.com/ramotion"
     case .github: urlString = "https://github.com/ramotion"
     case .instagram:

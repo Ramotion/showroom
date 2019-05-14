@@ -9,6 +9,7 @@
 import UIKit
 import ElongationPreview
 import OAuthSwift
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,14 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+        // Override point for customization after application launch.
+        
+        configureNavigationBar()
+        AppAnalytics.configuration([.google])
+        configureElongationPreviewControl()
+        ReelSearchViewModel.shared.initializeDatabase()
     
-    configureNavigationBar()
-    AppAnalytics.configuration([.google])
-    configureElongationPreviewControl()
-    ReelSearchViewModel.shared.initializeDatabase()
-    
-    return true
+        return true
   }
 }
 
@@ -36,6 +37,18 @@ extension AppDelegate {
             OAuthSwift.handle(url: url)
         }
         return true
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        let topVC = UIApplication.getTopMostViewController()
+        guard topVC is DribbbleShotsViewController else { return }
+        
+        if KeychainManager.getKeychain() == nil {
+            topVC?.dismiss(animated: true, completion: {
+                let message = "You must be logged in\nto send a shot."
+                UIAlertController.show(message: message, completionAction: { })
+            })
+        }
     }
 }
 

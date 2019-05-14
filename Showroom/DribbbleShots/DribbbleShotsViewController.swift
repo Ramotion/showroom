@@ -10,7 +10,6 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     fileprivate let networkingManager = NetworkingManager()
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
-    
     fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
@@ -22,12 +21,16 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     
     required init?(coder aDecoder: NSCoder) {
         userSignal = networkingManager.fetchDribbbleUser()
-        
         dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
             .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
+        // Fix issue with autorization
+        userSignal.take(1).subscribe(onError: { error in
+            print("error: \(error.localizedDescription)")
+            return
+        }).disposed(by: rx.disposeBag)
         firebaseSignIn()
     }
     
@@ -70,19 +73,20 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     }
     
     private func animateTransitionFromFakeCollectionViewToRealCollectionView(completion: (() -> ())? = nil) {
-        guard fakeCollectionView.superview != nil else {
-            completion?()
-            return
+        DispatchQueue.main.async { [weak self] in
+            guard self?.fakeCollectionView.superview != nil else {
+                completion?()
+                return
+            }
         }
         
         UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: { [weak self] in
-            self?.fakeCollectionView.alpha = 0
+            DispatchQueue.main.async { self?.fakeCollectionView.alpha = 0 }
         }, completion: { [weak self] _ in
             self?.fakeCollectionView.removeFromSuperview()
             completion?()
         })
     }
-    
 }
 
 // MARK: Life Cycle
@@ -90,7 +94,7 @@ extension DribbbleShotsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // navigation view
         navigationView.autoresizingMask = .flexibleWidth
         navigationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 0)
@@ -169,6 +173,7 @@ extension DribbbleShotsViewController {
                     }
             },
                 onError: { error in
+                    print("Error: \(error) ")
                     UIAlertController.show(message: "Can't send shot!", completionAction: {
                         if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
                     })
@@ -183,8 +188,10 @@ extension DribbbleShotsViewController {
     private func updateNavigationView() {
         let numberOfElements = reloadData.value.count
         if numberOfElements == 0 {
-            collectionView.backgroundView?.isHidden = false
-            navigationView.backgroundColor = .clear
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.backgroundView?.isHidden = false
+                self?.navigationView.backgroundColor = .clear
+            }
         } else {
             collectionView.backgroundView?.isHidden = true
             navigationView.backgroundColor = view.backgroundColor?.withAlphaComponent(0.90)
@@ -193,7 +200,7 @@ extension DribbbleShotsViewController {
     
     // MARK: Actions
     @objc private func doneHandler() {
-        firebaseSignOut()
+//        firebaseSignOut()
         dismiss(animated: true, completion: nil)
     }
     
@@ -207,10 +214,8 @@ extension DribbbleShotsViewController {
     }
     
     private func firebaseSignOut() {
-        let auth = Auth.auth()
-        
         do {
-            try auth.signOut()
+            try Auth.auth().signOut()
         } catch let err {
             print(err.localizedDescription)
         }

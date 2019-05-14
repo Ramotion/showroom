@@ -2,13 +2,12 @@ import Foundation
 import RxSwift
 import RxCocoa
 import OAuthSwift
-//import SafariServices
 
 private enum API {
   
   static let oauthswift = OAuth2Swift(
-    consumerKey:    "1211f46766942273935abc6201f1cfe98f8c12b10c0c48d307981a0d3d0cecfc", // consumerKey
-    consumerSecret: "ffa1ff732f13e6e0b7162318cfc4373eac0193710a84019d87b47af4c40782c4", // consumerSecret
+    consumerKey:    "7fab3efc357e770a5713317bf458da381b37eaf91e74b999a9dc928cd0c9b5cc", // consumerKey
+    consumerSecret: "8fd6a6b8bfd066dfee15d468c47756489be2c376bc32a94ffd309fc118a80428", // consumerSecret
     authorizeUrl:   "https://dribbble.com/oauth/authorize",
     accessTokenUrl: "https://dribbble.com/oauth/token",
     responseType:   "code"
@@ -22,14 +21,6 @@ private enum API {
     if let token = KeychainManager.getKeychain() {
       return Observable.just(token)
     }
-//    guard let rootVC = UIViewController.current else { return Observable.empty() }
-    
-//    let handler = SafariURLHandler(viewController: rootVC, oauthSwift: API.oauthswift)
-//    handler.factory = { url in
-//      let controller = SFSafariViewController(url: url)
-//      return controller
-//    }
-//    API.oauthswift.authorizeURLHandler = handler
     
     return Observable.just(1)
       .delay(0.1, scheduler: MainScheduler.instance) // delay for showing registration screen
@@ -37,7 +28,7 @@ private enum API {
       .map {
         KeychainManager.setKeychain(token: $0) // save token
         return $0
-    }
+      }
   }
 }
 
@@ -52,11 +43,11 @@ extension OAuth2Swift {
         scope: "",
         state: "state1234",
         success: { credential, response, parameters in
-          observable.on(.next(credential.oauthToken))
-          observable.on(.completed)
+          observable.onNext(credential.oauthToken)
+          observable.onCompleted()
       },
         failure: { error in
-          observable.on(.error(error))
+          observable.onError(error)
       })
       return Disposables.create {
         task?.cancel()
