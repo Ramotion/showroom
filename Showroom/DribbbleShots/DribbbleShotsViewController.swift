@@ -10,7 +10,6 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     fileprivate let networkingManager = NetworkingManager()
     fileprivate let userSignal: Observable<User>
     fileprivate let dribbbleShotsSignal: Observable<[Shot]>
-    var user = BehaviorRelay<User>(value: User(id: 0, name: "", html_url: ""))
     fileprivate let reloadData = BehaviorRelay<[DribbbleShotState]>(value: [])
     private var collectionViewLayout: DribbbleShotsCollectionViewLayout!
     
@@ -22,21 +21,17 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
     
     required init?(coder aDecoder: NSCoder) {
         userSignal = networkingManager.fetchDribbbleUser()
-
         dribbbleShotsSignal = networkingManager.fetchDribbbleShots()
             .catchErrorJustReturn([])
             .map { $0.filter { shot in shot.animated } }
         
         super.init(coder: aDecoder)
+        // Fix issue with autorization
+        userSignal.take(1).subscribe(onError: { error in
+            print("error: \(error.localizedDescription)")
+            return
+        }).disposed(by: rx.disposeBag)
         firebaseSignIn()
-        userSignal.subscribe(
-            onNext: { [weak self] user in self?.user.accept(user) },
-            onError: { error in
-                print(error)
-                return
-        }
-            )
-            .disposed(by: rx.disposeBag)
     }
     
     // MARK: - Responding to View Events
@@ -92,7 +87,6 @@ final class DribbbleShotsViewController: UIViewController, DribbbleShotsTransiti
             completion?()
         })
     }
-    
 }
 
 // MARK: Life Cycle
@@ -100,7 +94,7 @@ extension DribbbleShotsViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // navigation view
         navigationView.autoresizingMask = .flexibleWidth
         navigationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 0)
@@ -179,6 +173,7 @@ extension DribbbleShotsViewController {
                     }
             },
                 onError: { error in
+                    print("Error: \(error) ")
                     UIAlertController.show(message: "Can't send shot!", completionAction: {
                         if let topController = UIApplication.getTopMostViewController() { topController.dismiss(animated: true, completion: nil) }
                     })

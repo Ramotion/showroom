@@ -28,7 +28,7 @@ private enum API {
       .map {
         KeychainManager.setKeychain(token: $0) // save token
         return $0
-    }
+      }
   }
 }
 
@@ -43,11 +43,11 @@ extension OAuth2Swift {
         scope: "",
         state: "state1234",
         success: { credential, response, parameters in
-          observable.on(.next(credential.oauthToken))
-          observable.on(.completed)
+          observable.onNext(credential.oauthToken)
+          observable.onCompleted()
       },
         failure: { error in
-          observable.on(.error(error))
+          observable.onError(error)
       })
       return Disposables.create {
         task?.cancel()

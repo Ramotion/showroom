@@ -42,26 +42,13 @@ extension AppDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         let topVC = UIApplication.getTopMostViewController()
         guard topVC is DribbbleShotsViewController else { return }
-        let dribbbleVC = topVC as! DribbbleShotsViewController
         
-        dribbbleVC.user
-            .asObservable()
-            .subscribe(onNext: { [weak dribbbleVC] user in
-                if user.id == 0 {
-                    dribbbleVC?.dismiss(animated: true, completion: {
-                        let message = "You must be logged in\nto send a shot."
-                        UIAlertController.show(message: message, completionAction: { })
-                    })
-                }
+        if KeychainManager.getKeychain() == nil {
+            topVC?.dismiss(animated: true, completion: {
+                let message = "You must be logged in\nto send a shot."
+                UIAlertController.show(message: message, completionAction: { })
             })
-            .disposed(by: rx.disposeBag)
-        
-//        if dribbbleVC.user == nil {
-//            dribbbleVC.dismiss(animated: true, completion: {
-//                let message = "You must be logged in\nto send a shot."
-//                UIAlertController.show(message: message, completionAction: { })
-//            })
-//        }
+        }
     }
 }
 
