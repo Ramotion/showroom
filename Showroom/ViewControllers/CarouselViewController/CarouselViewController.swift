@@ -248,7 +248,7 @@ extension CarouselViewController {
   @IBAction func contactUsHandler(_ sender: Any) {
     AppAnalytics.event(.google(name: "Buttons", parametr: "contact us"))
     
-    if let url = URL(string: "https://business.ramotion.com/?utm_source=showroom&utm_medium=special&utm_campaign=v1/#Contact") {
+    if let url = URL(string: "https://dev.ramotion.com/") {
       UIApplication.shared.open(url)
     }
   }
