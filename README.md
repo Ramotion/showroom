@@ -7,17 +7,17 @@ We are very pleased that our work has found an echo among different engineers an
 
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/animated-tab-bar/master/Screenshots/tab-bar-icons-iphone-ramotion-animation-interface-design.gif)](https://github.com/Ramotion/animated-tab-bar)
-##RAMAnimatedTabBarController
+## RAMAnimatedTabBarController
 Swift module for adding animation to tabbar items
 <br><br><br><br>
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/expanding-collection/master/preview.gif)](https://github.com/Ramotion/expanding-collection)
-##ExpandingCollection
+## ExpandingCollection
 Card peek/pop controller
 <br><br><br><br>
 
 [![Animation](https://raw.githubusercontent.com/Ramotion/navigation-stack/master/Navigation-Stack.gif)](https://github.com/Ramotion/navigation-stack)
-##NavigationStack
+## NavigationStack
 Stack-modeled navigation controller
 
 ## Play with our UI controls here
